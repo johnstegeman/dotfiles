@@ -1,0 +1,8 @@
+{
+    "workbench.colorTheme": "Solarized Light",
+    "security.workspace.trust.banner": "never",
+    "security.workspace.trust.untrustedFiles": "open",
+    "redhat.telemetry.enabled": false,
+    "window.autoDetectHighContrast": false,
+    "extensions.ignoreRecommendations": true
+}
