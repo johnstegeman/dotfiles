@@ -1,0 +1,63 @@
+# Enable Powerlevel10k instant prompt. Should stay close to the top of ~/.zshrc.
+# Initialization code that may require console input (password prompts, [y/n]
+# confirmations, etc.) must go above this block; everything else may go below.
+if [[ -r "${XDG_CACHE_HOME:-$HOME/.cache}/p10k-instant-prompt-${(%):-%n}.zsh" ]]; then
+  source "${XDG_CACHE_HOME:-$HOME/.cache}/p10k-instant-prompt-${(%):-%n}.zsh"
+fi
+
+####### Utility functions
+source_if_exists() { [ -f "$1" ] && source "$1" }
+
+source_directory() {
+if [ -d "$1" ]; then
+  for file in "$1"/*.zsh; do
+     source "$file"
+  done
+fi
+}
+
+export TERM=xterm-256color
+
+# Path to your oh-my-zsh installation.
+export ZSH=~/.oh-my-zsh
+ZSH_THEME="powerlevel10k/powerlevel10k"
+
+ENABLE_CORRECTION="false"
+COMPLETION_WAITING_DOTS="true"
+
+#/bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)"
+
+export PATH=/opt/homebrew/bin:~/bin:$PATH
+alias dircolors='gdircolors'
+
+plugins=(
+#  autoupdate
+  zsh-autosuggestions
+  history-substring-search
+
+  direnv
+  zsh-dircolors-solarized
+
+  colored-man-pages
+  history
+)
+source_if_exists $ZSH/oh-my-zsh.sh
+
+#ZSH_CUSTOM_AUTOUPDATE_QUIET=true
+DISABLE_AUTO_UPDATE="true"
+
+# fzf
+source_if_exists ~/.fzf.zsh
+
+# syntax highlighting plugin
+
+source_if_exists /usr/local/share/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
+
+# history substring search plugin
+
+source_if_exists /usr/local/share/zsh-history-substring-search/zsh-history-substring-search.zsh
+
+source_directory ~/.zsh_custom
+# To customize prompt, run `p10k configure` or edit ~/.p10k.zsh.
+[[ ! -f ~/.p10k.zsh ]] || source ~/.p10k.zsh
+
