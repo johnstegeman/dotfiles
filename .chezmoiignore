@@ -1,0 +1,40 @@
+{{ if ne .chezmoi.os "darwin" }}
+.zsh_custom/homebrew.zsh
+.zsh_custom/macshorts.zsh
+Library
+Library/*
+Library/**/*
+.config/k9s/config.yml
+Brewfile
+config/Brewfile
+.iterm2_prefs
+.iterm2_prefs/*
+.iterm2_prefs/**/*
+.desktop_backgrounds
+.desktop_backgrounds/*
+.desktop_backgrounds/**/*
+{{ else }}
+.config/Bitwarden\ CLI/data.json
+{{ end }}
+.oh-my-zsh/cache
+.oh-my-zsh/cache/*
+.oh-my-zsh/cache/**/*
+.oh-my-zsh/custom/themes/powerlevel10k/gitstatus
+.oh-my-zsh/custom/themes/powerlevel10k/gitstatus/*
+.oh-my-zsh/custom/themes/powerlevel10k/gitstatus/**/*
+.oh-my-zsh/custom/themes/powerlevel10k/powerlevel10k.zsh-theme.zwc
+.oh-my-zsh/custom/themes/powerlevel10k/powerlevel9k.zsh-theme.zwc
+.oh-my-zsh/custom/themes/powerlevel10k/internal/configure.zsh.zwc
+.oh-my-zsh/custom/themes/powerlevel10k/internal/icons.zsh.zwc
+.oh-my-zsh/custom/themes/powerlevel10k/internal/p10k.zsh.zwc
+.oh-my-zsh/custom/themes/powerlevel10k/internal/parser.zsh.zwc
+.oh-my-zsh/custom/themes/powerlevel10k/internal/worker.zsh.zwc
+settings.json
+.k9s/config.yml
+config/Brewfile
+config/com.googlecode.iterm2.plist
+.ssh/known_hosts
+.config/configstore
+.config/configstore/*
+.config/configstore/**/*
+.lnav/*.json

@@ -1,0 +1,5 @@
+let g:netrw_dirhistmax  =10
+let g:netrw_dirhist_cnt =3
+let g:netrw_dirhist_1='/Users/john/.bash_sessions'
+let g:netrw_dirhist_2='/Users/john/.ssh'
+let g:netrw_dirhist_3='/Users/john'

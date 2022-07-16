@@ -1,0 +1,1787 @@
+2020-06-19T11:23:52.089 E lnav_config.cc:107 syscall failed `mkdir(path.c_str(), 0755)' -- File exists
+2020-06-19T11:23:52.090 E lnav_config.cc:112 syscall failed `mkdir(path.c_str(), 0755)' -- File exists
+2020-06-19T11:23:52.090 E lnav_config.cc:117 syscall failed `mkdir(path.c_str(), 0755)' -- File exists
+2020-06-19T11:23:52.090 E lnav_config.cc:122 syscall failed `mkdir(path.c_str(), 0755)' -- File exists
+2020-06-19T11:23:52.090 E lnav_config.cc:141 syscall failed `mkdir(path.c_str(), 0755)' -- File exists
+2020-06-19T11:23:52.090 I lnav.cc:1983 lnav started
+2020-06-19T11:23:52.090 D lnav_config.cc:461 foo x06 1
+2020-06-19T11:23:52.090 D lnav_config.cc:461 foo x0c 1
+2020-06-19T11:23:52.090 D lnav_config.cc:461 foo x12 1
+2020-06-19T11:23:52.090 D lnav_config.cc:461 foo x21 1
+2020-06-19T11:23:52.090 D lnav_config.cc:461 foo x23 1
+2020-06-19T11:23:52.090 D lnav_config.cc:461 foo x24 1
+2020-06-19T11:23:52.090 D lnav_config.cc:461 foo x25 1
+2020-06-19T11:23:52.090 D lnav_config.cc:461 foo x31 1
+2020-06-19T11:23:52.090 D lnav_config.cc:461 foo x32 1
+2020-06-19T11:23:52.090 D lnav_config.cc:461 foo x33 1
+2020-06-19T11:23:52.090 D lnav_config.cc:461 foo x34 1
+2020-06-19T11:23:52.090 D lnav_config.cc:461 foo x35 1
+2020-06-19T11:23:52.090 D lnav_config.cc:461 foo x36 1
+2020-06-19T11:23:52.090 D lnav_config.cc:461 foo x37 1
+2020-06-19T11:23:52.090 D lnav_config.cc:461 foo x38 1
+2020-06-19T11:23:52.090 D lnav_config.cc:461 foo x3f 1
+2020-06-19T11:23:52.090 D lnav_config.cc:461 foo x40 1
+2020-06-19T11:23:52.090 D lnav_config.cc:461 foo x45 2
+2020-06-19T11:23:52.090 D lnav_config.cc:461 foo x4e 2
+2020-06-19T11:23:52.090 D lnav_config.cc:461 foo x50 2
+2020-06-19T11:23:52.090 D lnav_config.cc:461 foo x51 1
+2020-06-19T11:23:52.091 D lnav_config.cc:461 foo x57 2
+2020-06-19T11:23:52.091 D lnav_config.cc:461 foo x58 1
+2020-06-19T11:23:52.091 D lnav_config.cc:461 foo x59 1
+2020-06-19T11:23:52.091 D lnav_config.cc:461 foo x5e 1
+2020-06-19T11:23:52.091 D lnav_config.cc:461 foo x63 2
+2020-06-19T11:23:52.091 D lnav_config.cc:461 foo x65 2
+2020-06-19T11:23:52.091 D lnav_config.cc:461 foo x67 1
+2020-06-19T11:23:52.091 D lnav_config.cc:461 foo x69 2
+2020-06-19T11:23:52.091 D lnav_config.cc:461 foo x6d 2
+2020-06-19T11:23:52.091 D lnav_config.cc:461 foo x6e 2
+2020-06-19T11:23:52.091 D lnav_config.cc:461 foo x71 1
+2020-06-19T11:23:52.091 D lnav_config.cc:461 foo x76 1
+2020-06-19T11:23:52.091 D lnav_config.cc:461 foo x77 2
+2020-06-19T11:23:52.091 D lnav_config.cc:461 foo x79 1
+2020-06-19T11:23:52.091 D lnav_config.cc:461 foo x7b 2
+2020-06-19T11:23:52.091 D lnav_config.cc:461 foo x7d 2
+2020-06-19T11:23:52.092 D sqlite-extension-func.cc:697 help AS
+2020-06-19T11:23:52.092 D sqlite-extension-func.cc:697 help AS
+2020-06-19T11:23:52.092 D sqlite-extension-func.cc:697 help AS
+2020-06-19T11:23:52.092 D sqlite-extension-func.cc:697 help AS
+2020-06-19T11:23:52.092 D sqlite-extension-func.cc:697 help AS
+2020-06-19T11:23:52.092 D sqlite-extension-func.cc:697 help ATTACH
+2020-06-19T11:23:52.092 D sqlite-extension-func.cc:697 help CASE
+2020-06-19T11:23:52.092 D sqlite-extension-func.cc:697 help CAST
+2020-06-19T11:23:52.092 D sqlite-extension-func.cc:697 help CREATE
+2020-06-19T11:23:52.092 D sqlite-extension-func.cc:697 help CREATE
+2020-06-19T11:23:52.092 D sqlite-extension-func.cc:697 help DATABASE
+2020-06-19T11:23:52.092 D sqlite-extension-func.cc:697 help DATABASE
+2020-06-19T11:23:52.092 D sqlite-extension-func.cc:697 help DELETE
+2020-06-19T11:23:52.092 D sqlite-extension-func.cc:697 help DETACH
+2020-06-19T11:23:52.092 D sqlite-extension-func.cc:697 help DROP
+2020-06-19T11:23:52.092 D sqlite-extension-func.cc:697 help DROP
+2020-06-19T11:23:52.092 D sqlite-extension-func.cc:697 help DROP
+2020-06-19T11:23:52.092 D sqlite-extension-func.cc:697 help DROP
+2020-06-19T11:23:52.092 D sqlite-extension-func.cc:697 help ELSE
+2020-06-19T11:23:52.092 D sqlite-extension-func.cc:697 help END
+2020-06-19T11:23:52.092 D sqlite-extension-func.cc:697 help FROM
+2020-06-19T11:23:52.092 D sqlite-extension-func.cc:697 help FROM
+2020-06-19T11:23:52.092 D sqlite-extension-func.cc:697 help GROUP BY
+2020-06-19T11:23:52.092 D sqlite-extension-func.cc:697 help INDEX
+2020-06-19T11:23:52.092 D sqlite-extension-func.cc:697 help INSERT
+2020-06-19T11:23:52.092 D sqlite-extension-func.cc:697 help INTO
+2020-06-19T11:23:52.092 D sqlite-extension-func.cc:697 help LIMIT
+2020-06-19T11:23:52.092 D sqlite-extension-func.cc:697 help ORDER BY
+2020-06-19T11:23:52.092 D sqlite-extension-func.cc:697 help RECURSIVE
+2020-06-19T11:23:52.092 D sqlite-extension-func.cc:697 help SELECT
+2020-06-19T11:23:52.092 D sqlite-extension-func.cc:697 help SET
+2020-06-19T11:23:52.092 D sqlite-extension-func.cc:697 help TABLE
+2020-06-19T11:23:52.092 D sqlite-extension-func.cc:697 help TABLE
+2020-06-19T11:23:52.092 D sqlite-extension-func.cc:697 help TRIGGER
+2020-06-19T11:23:52.092 D sqlite-extension-func.cc:697 help UPDATE
+2020-06-19T11:23:52.092 D sqlite-extension-func.cc:697 help VALUES
+2020-06-19T11:23:52.092 D sqlite-extension-func.cc:697 help VIEW
+2020-06-19T11:23:52.092 D sqlite-extension-func.cc:697 help VIEW
+2020-06-19T11:23:52.092 D sqlite-extension-func.cc:697 help WHEN
+2020-06-19T11:23:52.092 D sqlite-extension-func.cc:697 help WHERE
+2020-06-19T11:23:52.092 D sqlite-extension-func.cc:697 help WHERE
+2020-06-19T11:23:52.092 D sqlite-extension-func.cc:697 help WHERE
+2020-06-19T11:23:52.092 D sqlite-extension-func.cc:697 help WITH
+2020-06-19T11:23:52.092 D sqlite-extension-func.cc:697 help abs
+2020-06-19T11:23:52.092 D sqlite-extension-func.cc:697 help avg
+2020-06-19T11:23:52.092 D sqlite-extension-func.cc:697 help basename
+2020-06-19T11:23:52.092 D sqlite-extension-func.cc:697 help changes
+2020-06-19T11:23:52.092 D sqlite-extension-func.cc:697 help char
+2020-06-19T11:23:52.092 D sqlite-extension-func.cc:697 help coalesce
+2020-06-19T11:23:52.092 D sqlite-extension-func.cc:697 help count
+2020-06-19T11:23:52.092 D sqlite-extension-func.cc:697 help date
+2020-06-19T11:23:52.092 D sqlite-extension-func.cc:697 help datetime
+2020-06-19T11:23:52.092 D sqlite-extension-func.cc:697 help dirname
+2020-06-19T11:23:52.092 D sqlite-extension-func.cc:697 help endswith
+2020-06-19T11:23:52.092 D sqlite-extension-func.cc:697 help extract
+2020-06-19T11:23:52.092 D sqlite-extension-func.cc:697 help gethostbyaddr
+2020-06-19T11:23:52.092 D sqlite-extension-func.cc:697 help gethostbyname
+2020-06-19T11:23:52.092 D sqlite-extension-func.cc:697 help glob
+2020-06-19T11:23:52.092 D sqlite-extension-func.cc:697 help group_concat
+2020-06-19T11:23:52.092 D sqlite-extension-func.cc:697 help group_spooky_hash
+2020-06-19T11:23:52.092 D sqlite-extension-func.cc:697 help hex
+2020-06-19T11:23:52.092 D sqlite-extension-func.cc:697 help ifnull
+2020-06-19T11:23:52.092 D sqlite-extension-func.cc:697 help instr
+2020-06-19T11:23:52.092 D sqlite-extension-func.cc:697 help jget
+2020-06-19T11:23:52.092 D sqlite-extension-func.cc:697 help joinpath
+2020-06-19T11:23:52.092 D sqlite-extension-func.cc:697 help json_contains
+2020-06-19T11:23:52.092 D sqlite-extension-func.cc:697 help julianday
+2020-06-19T11:23:52.092 D sqlite-extension-func.cc:697 help last_insert_rowid
+2020-06-19T11:23:52.092 D sqlite-extension-func.cc:697 help leftstr
+2020-06-19T11:23:52.092 D sqlite-extension-func.cc:697 help length
+2020-06-19T11:23:52.092 D sqlite-extension-func.cc:697 help like
+2020-06-19T11:23:52.092 D sqlite-extension-func.cc:697 help likelihood
+2020-06-19T11:23:52.092 D sqlite-extension-func.cc:697 help likely
+2020-06-19T11:23:52.092 D sqlite-extension-func.cc:697 help load_extension
+2020-06-19T11:23:52.092 D sqlite-extension-func.cc:697 help log_top_datetime
+2020-06-19T11:23:52.092 D sqlite-extension-func.cc:697 help log_top_line
+2020-06-19T11:23:52.092 D sqlite-extension-func.cc:697 help lower
+2020-06-19T11:23:52.092 D sqlite-extension-func.cc:697 help ltrim
+2020-06-19T11:23:52.092 D sqlite-extension-func.cc:697 help max
+2020-06-19T11:23:52.092 D sqlite-extension-func.cc:697 help min
+2020-06-19T11:23:52.092 D sqlite-extension-func.cc:697 help nullif
+2020-06-19T11:23:52.092 D sqlite-extension-func.cc:697 help printf
+2020-06-19T11:23:52.092 D sqlite-extension-func.cc:697 help quote
+2020-06-19T11:23:52.092 D sqlite-extension-func.cc:697 help random
+2020-06-19T11:23:52.092 D sqlite-extension-func.cc:697 help randomblob
+2020-06-19T11:23:52.092 D sqlite-extension-func.cc:697 help readlink
+2020-06-19T11:23:52.092 D sqlite-extension-func.cc:697 help realpath
+2020-06-19T11:23:52.092 D sqlite-extension-func.cc:697 help regexp
+2020-06-19T11:23:52.092 D sqlite-extension-func.cc:697 help regexp_match
+2020-06-19T11:23:52.092 D sqlite-extension-func.cc:697 help regexp_replace
+2020-06-19T11:23:52.092 D sqlite-extension-func.cc:697 help replace
+2020-06-19T11:23:52.092 D sqlite-extension-func.cc:697 help replicate
+2020-06-19T11:23:52.092 D sqlite-extension-func.cc:697 help reverse
+2020-06-19T11:23:52.092 D sqlite-extension-func.cc:697 help rightstr
+2020-06-19T11:23:52.092 D sqlite-extension-func.cc:697 help round
+2020-06-19T11:23:52.092 D sqlite-extension-func.cc:697 help rtrim
+2020-06-19T11:23:52.092 D sqlite-extension-func.cc:697 help spooky_hash
+2020-06-19T11:23:52.092 D sqlite-extension-func.cc:697 help sqlite_compileoption_get
+2020-06-19T11:23:52.092 D sqlite-extension-func.cc:697 help sqlite_compileoption_used
+2020-06-19T11:23:52.092 D sqlite-extension-func.cc:697 help sqlite_source_id
+2020-06-19T11:23:52.092 D sqlite-extension-func.cc:697 help sqlite_version
+2020-06-19T11:23:52.092 D sqlite-extension-func.cc:697 help startswith
+2020-06-19T11:23:52.092 D sqlite-extension-func.cc:697 help strftime
+2020-06-19T11:23:52.092 D sqlite-extension-func.cc:697 help substr
+2020-06-19T11:23:52.092 D sqlite-extension-func.cc:697 help sum
+2020-06-19T11:23:52.092 D sqlite-extension-func.cc:697 help time
+2020-06-19T11:23:52.092 D sqlite-extension-func.cc:697 help timediff
+2020-06-19T11:23:52.092 D sqlite-extension-func.cc:697 help timeslice
+2020-06-19T11:23:52.092 D sqlite-extension-func.cc:697 help total
+2020-06-19T11:23:52.092 D sqlite-extension-func.cc:697 help total_changes
+2020-06-19T11:23:52.092 D sqlite-extension-func.cc:697 help trim
+2020-06-19T11:23:52.092 D sqlite-extension-func.cc:697 help typeof
+2020-06-19T11:23:52.092 D sqlite-extension-func.cc:697 help unicode
+2020-06-19T11:23:52.092 D sqlite-extension-func.cc:697 help unlikely
+2020-06-19T11:23:52.092 D sqlite-extension-func.cc:697 help upper
+2020-06-19T11:23:52.092 D sqlite-extension-func.cc:697 help zeroblob
+2020-06-19T11:23:52.094 D log_format_loader.cc:839 Loading default formats
+2020-06-19T11:23:52.094 D log_format_loader.cc:82 Loading format -- access_log
+2020-06-19T11:23:52.094 D log_format_loader.cc:82 Loading format -- autodeploy_log
+2020-06-19T11:23:52.094 D log_format_loader.cc:82 Loading format -- block_log
+2020-06-19T11:23:52.094 D log_format_loader.cc:82 Loading format -- candlepin_log
+2020-06-19T11:23:52.094 D log_format_loader.cc:82 Loading format -- choose_repo_log
+2020-06-19T11:23:52.094 D log_format_loader.cc:82 Loading format -- cups_log
+2020-06-19T11:23:52.095 D log_format_loader.cc:82 Loading format -- dpkg_log
+2020-06-19T11:23:52.095 D log_format_loader.cc:82 Loading format -- elb_log
+2020-06-19T11:23:52.095 D log_format_loader.cc:82 Loading format -- alb_log
+2020-06-19T11:23:52.095 D log_format_loader.cc:82 Loading format -- engine_log
+2020-06-19T11:23:52.095 D log_format_loader.cc:82 Loading format -- error_log
+2020-06-19T11:23:52.095 D log_format_loader.cc:82 Loading format -- fsck_hfs_log
+2020-06-19T11:23:52.095 D log_format_loader.cc:82 Loading format -- glog_log
+2020-06-19T11:23:52.095 D log_format_loader.cc:82 Loading format -- haproxy_log
+2020-06-19T11:23:52.095 D log_format_loader.cc:82 Loading format -- java_log
+2020-06-19T11:23:52.095 D log_format_loader.cc:82 Loading format -- journald_json_log
+2020-06-19T11:23:52.096 D log_format_loader.cc:82 Loading format -- katello_log
+2020-06-19T11:23:52.096 D log_format_loader.cc:82 Loading format -- openam_log
+2020-06-19T11:23:52.096 D log_format_loader.cc:82 Loading format -- openamdb_log
+2020-06-19T11:23:52.096 D log_format_loader.cc:82 Loading format -- openstack_log
+2020-06-19T11:23:52.096 D log_format_loader.cc:82 Loading format -- page_log
+2020-06-19T11:23:52.096 D log_format_loader.cc:82 Loading format -- papertrail_log
+2020-06-19T11:23:52.096 D log_format_loader.cc:82 Loading format -- snaplogic_log
+2020-06-19T11:23:52.096 D log_format_loader.cc:82 Loading format -- sssd_log
+2020-06-19T11:23:52.096 D log_format_loader.cc:82 Loading format -- strace_log
+2020-06-19T11:23:52.096 D log_format_loader.cc:82 Loading format -- sudo_log
+2020-06-19T11:23:52.096 D log_format_loader.cc:82 Loading format -- syslog_log
+2020-06-19T11:23:52.096 D log_format_loader.cc:82 Loading format -- tcf_log
+2020-06-19T11:23:52.096 D log_format_loader.cc:82 Loading format -- tcsh_history
+2020-06-19T11:23:52.096 D log_format_loader.cc:82 Loading format -- uwsgi_log
+2020-06-19T11:23:52.097 D log_format_loader.cc:82 Loading format -- vdsm_log
+2020-06-19T11:23:52.097 D log_format_loader.cc:82 Loading format -- vmk_log
+2020-06-19T11:23:52.097 D log_format_loader.cc:82 Loading format -- vmw_log
+2020-06-19T11:23:52.097 D log_format_loader.cc:82 Loading format -- xmlrpc_log
+2020-06-19T11:23:52.097 I log_format_loader.cc:807 loading formats from path: /etc/lnav/formats/*/*.json
+2020-06-19T11:23:52.097 I log_format_loader.cc:807 loading formats from path: /usr/local/Cellar/lnav/0.8.5_1/etc/lnav/formats/*/*.json
+2020-06-19T11:23:52.097 I log_format_loader.cc:807 loading formats from path: /Users/jstegeman/.lnav//formats/*/*.json
+2020-06-19T11:23:52.098 W log_format.cc:1423 alb_log/regex/std:body field 'body' not found in pattern
+2020-06-19T11:23:52.098 W log_format.cc:1412 block_log/regex/std:level field 'level' not found in pattern
+2020-06-19T11:23:52.098 W log_format.cc:1412 candlepin_log/regex/other:level field 'level' not found in pattern
+2020-06-19T11:23:52.098 W log_format.cc:1412 candlepin_log/regex/reqorg:level field 'level' not found in pattern
+2020-06-19T11:23:52.099 W log_format_loader.cc:896 Format collision, format 'cups_log' matches sample from 'error_log'
+2020-06-19T11:23:52.099 W log_format.cc:1412 dpkg_log/regex/std:level field 'level' not found in pattern
+2020-06-19T11:23:52.099 E pcrepp.cc:168 pcre err -8
+2020-06-19T11:23:52.100 W log_format_loader.cc:896 Format collision, format 'engine_log' matches sample from 'vdsm_log'
+2020-06-19T11:23:52.100 W log_format_loader.cc:896 Format collision, format 'error_log' matches sample from 'cups_log'
+2020-06-19T11:23:52.100 W log_format.cc:1412 fsck_hfs_log/regex/std:level field 'level' not found in pattern
+2020-06-19T11:23:52.100 W log_format.cc:1412 haproxy_log/regex/event_started:level field 'level' not found in pattern
+2020-06-19T11:23:52.100 W log_format.cc:1423 haproxy_log/regex/event_started:body field 'body' not found in pattern
+2020-06-19T11:23:52.100 W log_format.cc:1412 haproxy_log/regex/event_stopped:level field 'level' not found in pattern
+2020-06-19T11:23:52.100 W log_format.cc:1423 haproxy_log/regex/event_stopped:body field 'body' not found in pattern
+2020-06-19T11:23:52.100 W log_format.cc:1412 haproxy_log/regex/event_stopping:level field 'level' not found in pattern
+2020-06-19T11:23:52.100 W log_format.cc:1423 haproxy_log/regex/event_stopping:body field 'body' not found in pattern
+2020-06-19T11:23:52.100 W log_format.cc:1412 haproxy_log/regex/http:level field 'level' not found in pattern
+2020-06-19T11:23:52.100 W log_format.cc:1423 haproxy_log/regex/http:body field 'body' not found in pattern
+2020-06-19T11:23:52.100 W log_format.cc:1412 haproxy_log/regex/ssl:level field 'level' not found in pattern
+2020-06-19T11:23:52.100 W log_format.cc:1423 haproxy_log/regex/ssl:body field 'body' not found in pattern
+2020-06-19T11:23:52.100 W log_format.cc:1412 haproxy_log/regex/tcp:level field 'level' not found in pattern
+2020-06-19T11:23:52.100 W log_format.cc:1423 haproxy_log/regex/tcp:body field 'body' not found in pattern
+2020-06-19T11:23:52.101 W log_format.cc:1423 katello_log/regex/log:body field 'body' not found in pattern
+2020-06-19T11:23:52.101 W log_format.cc:1412 openamdb_log/regex/std:level field 'level' not found in pattern
+2020-06-19T11:23:52.102 W log_format.cc:1412 page_log/regex/1.7:level field 'level' not found in pattern
+2020-06-19T11:23:52.102 W log_format.cc:1412 page_log/regex/pre-1.7:level field 'level' not found in pattern
+2020-06-19T11:23:52.102 W log_format.cc:1412 sssd_log/regex/core:level field 'level' not found in pattern
+2020-06-19T11:23:52.102 W log_format.cc:1412 sssd_log/regex/module:level field 'level' not found in pattern
+2020-06-19T11:23:52.102 W log_format.cc:1423 sudo_log/regex/std:body field 'body' not found in pattern
+2020-06-19T11:23:52.103 W log_format_loader.cc:896 Format collision, format 'syslog_log' matches sample from 'haproxy_log'
+2020-06-19T11:23:52.103 W log_format.cc:1412 tcf_log/regex/std:level field 'level' not found in pattern
+2020-06-19T11:23:52.103 W log_format.cc:1412 tcsh_history/regex/std:level field 'level' not found in pattern
+2020-06-19T11:23:52.104 W log_format.cc:1412 xmlrpc_log/regex/main:level field 'level' not found in pattern
+2020-06-19T11:23:52.104 W log_format_loader.cc:928 Detected a cycle...
+2020-06-19T11:23:52.104 W log_format_loader.cc:936   Skipping builtin format -- cups_log
+2020-06-19T11:23:52.104 W log_format_loader.cc:936   Skipping builtin format -- error_log
+2020-06-19T11:23:52.104 I log_format_loader.cc:962 Format order:
+2020-06-19T11:23:52.104 I log_format_loader.cc:966   access_log
+2020-06-19T11:23:52.104 I log_format_loader.cc:966   alb_log
+2020-06-19T11:23:52.104 I log_format_loader.cc:966   autodeploy_log
+2020-06-19T11:23:52.104 I log_format_loader.cc:966   block_log
+2020-06-19T11:23:52.104 I log_format_loader.cc:966   candlepin_log
+2020-06-19T11:23:52.104 I log_format_loader.cc:966   choose_repo_log
+2020-06-19T11:23:52.104 I log_format_loader.cc:966   dpkg_log
+2020-06-19T11:23:52.104 I log_format_loader.cc:966   elb_log
+2020-06-19T11:23:52.104 I log_format_loader.cc:966   fsck_hfs_log
+2020-06-19T11:23:52.104 I log_format_loader.cc:966   glog_log
+2020-06-19T11:23:52.104 I log_format_loader.cc:966   haproxy_log
+2020-06-19T11:23:52.104 I log_format_loader.cc:966   java_log
+2020-06-19T11:23:52.104 I log_format_loader.cc:966   journald_json_log
+2020-06-19T11:23:52.104 I log_format_loader.cc:966   katello_log
+2020-06-19T11:23:52.104 I log_format_loader.cc:966   openam_log
+2020-06-19T11:23:52.104 I log_format_loader.cc:966   openamdb_log
+2020-06-19T11:23:52.104 I log_format_loader.cc:966   openstack_log
+2020-06-19T11:23:52.104 I log_format_loader.cc:966   page_log
+2020-06-19T11:23:52.104 I log_format_loader.cc:966   papertrail_log
+2020-06-19T11:23:52.104 I log_format_loader.cc:966   snaplogic_log
+2020-06-19T11:23:52.104 I log_format_loader.cc:966   sssd_log
+2020-06-19T11:23:52.104 I log_format_loader.cc:966   strace_log
+2020-06-19T11:23:52.104 I log_format_loader.cc:966   sudo_log
+2020-06-19T11:23:52.104 I log_format_loader.cc:966   tcf_log
+2020-06-19T11:23:52.104 I log_format_loader.cc:966   tcsh_history
+2020-06-19T11:23:52.104 I log_format_loader.cc:966   uwsgi_log
+2020-06-19T11:23:52.104 I log_format_loader.cc:966   vdsm_log
+2020-06-19T11:23:52.104 I log_format_loader.cc:966   vmk_log
+2020-06-19T11:23:52.104 I log_format_loader.cc:966   vmw_log
+2020-06-19T11:23:52.104 I log_format_loader.cc:966   xmlrpc_log
+2020-06-19T11:23:52.104 I log_format_loader.cc:966   engine_log
+2020-06-19T11:23:52.104 I log_format_loader.cc:966   syslog_log
+2020-06-19T11:23:52.104 I log_format_loader.cc:966   cups_log
+2020-06-19T11:23:52.104 I log_format_loader.cc:966   error_log
+2020-06-19T11:23:52.104 D log_vtab_impl.cc:125 log_vtab_impl.get_table_statement() -> CREATE TABLE all_logs  (
+  log_line        INTEGER  PRIMARY KEY,            -- The line number for the log message
+  log_part        TEXT     COLLATE naturalnocase,  -- The partition the message is in
+  log_time        DATETIME,                        -- The adjusted timestamp for the log message
+  log_actual_time DATETIME HIDDEN,                 -- The timestamp from the original log file for this message
+  log_idle_msecs  INTEGER,                         -- The difference in time between this messages and the previous
+  log_level       TEXT     COLLATE loglevel,       -- The log message level
+  log_mark        BOOLEAN,                         -- True if the log message was marked
+  log_comment     TEXT,                            -- The comment for this message
+  log_tags        TEXT,                            -- A JSON list of tags for this message
+  log_filters     TEXT,                            -- A JSON list of filter IDs that matched this message
+  -- BEGIN Format-specific fields:
+  log_format      TEXT     COLLATE 'BINARY'       ,
+  log_msg_format  TEXT     COLLATE 'BINARY'       ,
+  log_msg_schema  TEXT    hidden COLLATE 'BINARY'       ,
+
+  -- END Format-specific fields
+  log_path        TEXT HIDDEN COLLATE naturalnocase, -- The path to the log file this message is from
+  log_text        TEXT HIDDEN,                       -- The full text of the log message
+  log_body        TEXT HIDDEN                        -- The body of the log message
+);
+
+2020-06-19T11:23:52.105 D log_vtab_impl.cc:211 creating log format table: all_logs = 0x7f8dcd809890
+2020-06-19T11:23:52.105 D log_vtab_impl.cc:125 log_vtab_impl.get_table_statement() -> CREATE TABLE generic_log  (
+  log_line        INTEGER  PRIMARY KEY,            -- The line number for the log message
+  log_part        TEXT     COLLATE naturalnocase,  -- The partition the message is in
+  log_time        DATETIME,                        -- The adjusted timestamp for the log message
+  log_actual_time DATETIME HIDDEN,                 -- The timestamp from the original log file for this message
+  log_idle_msecs  INTEGER,                         -- The difference in time between this messages and the previous
+  log_level       TEXT     COLLATE loglevel,       -- The log message level
+  log_mark        BOOLEAN,                         -- True if the log message was marked
+  log_comment     TEXT,                            -- The comment for this message
+  log_tags        TEXT,                            -- A JSON list of tags for this message
+  log_filters     TEXT,                            -- A JSON list of filter IDs that matched this message
+  -- BEGIN Format-specific fields:
+
+  -- END Format-specific fields
+  log_path        TEXT HIDDEN COLLATE naturalnocase, -- The path to the log file this message is from
+  log_text        TEXT HIDDEN,                       -- The full text of the log message
+  log_body        TEXT HIDDEN                        -- The body of the log message
+);
+
+2020-06-19T11:23:52.105 D log_vtab_impl.cc:211 creating log format table: generic_log = 0x7f8dcd80b640
+2020-06-19T11:23:52.105 D log_vtab_impl.cc:125 log_vtab_impl.get_table_statement() -> CREATE TABLE access_log  (
+  log_line        INTEGER  PRIMARY KEY,            -- The line number for the log message
+  log_part        TEXT     COLLATE naturalnocase,  -- The partition the message is in
+  log_time        DATETIME,                        -- The adjusted timestamp for the log message
+  log_actual_time DATETIME HIDDEN,                 -- The timestamp from the original log file for this message
+  log_idle_msecs  INTEGER,                         -- The difference in time between this messages and the previous
+  log_level       TEXT     COLLATE loglevel,       -- The log message level
+  log_mark        BOOLEAN,                         -- True if the log message was marked
+  log_comment     TEXT,                            -- The comment for this message
+  log_tags        TEXT,                            -- A JSON list of tags for this message
+  log_filters     TEXT,                            -- A JSON list of filter IDs that matched this message
+  -- BEGIN Format-specific fields:
+  c_ip            TEXT     COLLATE 'ipaddress'    , -- The client IP address
+  cs_method       TEXT     COLLATE 'BINARY'       , -- The request method
+  cs_referer      TEXT     COLLATE 'BINARY'       , -- The client's referrer
+  cs_uri_query    TEXT     COLLATE 'BINARY'       , -- The query parameters in the request URI
+  cs_uri_stem     TEXT     COLLATE 'BINARY'       , -- The path part of the request URI
+  cs_user_agent   TEXT     COLLATE 'BINARY'       , -- The client's HTTP agent
+  cs_username     TEXT     COLLATE 'BINARY'       , -- The username passed from the client to the server
+  cs_version      TEXT     COLLATE 'BINARY'       , -- The client's HTTP version
+  sc_bytes        INTEGER  COLLATE 'BINARY'       , -- The number of bytes returned by the server
+  sc_status       INTEGER  COLLATE 'BINARY'       , -- The status code returned by the server
+
+  -- END Format-specific fields
+  log_path        TEXT HIDDEN COLLATE naturalnocase,
+2020-06-19T11:23:52.105 D log_vtab_impl.cc:211 creating log format table: access_log = 0x7f8dcd80af00
+2020-06-19T11:23:52.105 D log_vtab_impl.cc:125 log_vtab_impl.get_table_statement() -> CREATE TABLE alb_log  (
+  log_line        INTEGER  PRIMARY KEY,            -- The line number for the log message
+  log_part        TEXT     COLLATE naturalnocase,  -- The partition the message is in
+  log_time        DATETIME,                        -- The adjusted timestamp for the log message
+  log_actual_time DATETIME HIDDEN,                 -- The timestamp from the original log file for this message
+  log_idle_msecs  INTEGER,                         -- The difference in time between this messages and the previous
+  log_level       TEXT     COLLATE loglevel,       -- The log message level
+  log_mark        BOOLEAN,                         -- True if the log message was marked
+  log_comment     TEXT,                            -- The comment for this message
+  log_tags        TEXT,                            -- A JSON list of tags for this message
+  log_filters     TEXT,                            -- A JSON list of filter IDs that matched this message
+  -- BEGIN Format-specific fields:
+  chosen_cert_arn          TEXT     COLLATE 'BINARY'       ,
+  client_ip                TEXT     COLLATE 'ipaddress'    ,
+  client_port              INTEGER  COLLATE 'BINARY'       ,
+  cs_method                TEXT     COLLATE 'BINARY'       ,
+  cs_uri_query             TEXT     COLLATE 'BINARY'       ,
+  cs_uri_stem              TEXT     COLLATE 'BINARY'       ,
+  cs_version               TEXT     COLLATE 'BINARY'       ,
+  domain_name              TEXT     COLLATE 'BINARY'       ,
+  elb_status_code          INTEGER  COLLATE 'BINARY'       ,
+  matched_rule_priority    INTEGER  COLLATE 'BINARY'       ,
+  received_bytes           INTEGER  COLLATE 'BINARY'       ,
+  request_processing_time  FLOAT    COLLATE 'BINARY'       ,
+  response_processing_time FLOAT    COLLATE 'BINARY'       ,
+  sent_bytes               INTEGER  COLLATE 'BINARY'       ,
+  ssl_cipher               TEXT     COLLATE 'BINARY'       ,
+  ssl_protocol             TEXT     COLLA
+2020-06-19T11:23:52.105 D log_vtab_impl.cc:211 creating log format table: alb_log = 0x7f8dcd80c190
+2020-06-19T11:23:52.105 D log_vtab_impl.cc:125 log_vtab_impl.get_table_statement() -> CREATE TABLE autodeploy_log  (
+  log_line        INTEGER  PRIMARY KEY,            -- The line number for the log message
+  log_part        TEXT     COLLATE naturalnocase,  -- The partition the message is in
+  log_time        DATETIME,                        -- The adjusted timestamp for the log message
+  log_actual_time DATETIME HIDDEN,                 -- The timestamp from the original log file for this message
+  log_idle_msecs  INTEGER,                         -- The difference in time between this messages and the previous
+  log_level       TEXT     COLLATE loglevel,       -- The log message level
+  log_mark        BOOLEAN,                         -- True if the log message was marked
+  log_comment     TEXT,                            -- The comment for this message
+  log_tags        TEXT,                            -- A JSON list of tags for this message
+  log_filters     TEXT,                            -- A JSON list of filter IDs that matched this message
+  -- BEGIN Format-specific fields:
+  module          TEXT     COLLATE 'BINARY'       , -- The name of the module that generated the message
+  pid             INTEGER  COLLATE 'BINARY'       , -- The ID of the process that generated the message
+
+  -- END Format-specific fields
+  log_path        TEXT HIDDEN COLLATE naturalnocase, -- The path to the log file this message is from
+  log_text        TEXT HIDDEN,                       -- The full text of the log message
+  log_body        TEXT HIDDEN                        -- The body of the log message
+);
+
+2020-06-19T11:23:52.105 D log_vtab_impl.cc:211 creating log format table: autodeploy_log = 0x7f8dcd80d1e0
+2020-06-19T11:23:52.105 D log_vtab_impl.cc:125 log_vtab_impl.get_table_statement() -> CREATE TABLE block_log  (
+  log_line        INTEGER  PRIMARY KEY,            -- The line number for the log message
+  log_part        TEXT     COLLATE naturalnocase,  -- The partition the message is in
+  log_time        DATETIME,                        -- The adjusted timestamp for the log message
+  log_actual_time DATETIME HIDDEN,                 -- The timestamp from the original log file for this message
+  log_idle_msecs  INTEGER,                         -- The difference in time between this messages and the previous
+  log_level       TEXT     COLLATE loglevel,       -- The log message level
+  log_mark        BOOLEAN,                         -- True if the log message was marked
+  log_comment     TEXT,                            -- The comment for this message
+  log_tags        TEXT,                            -- A JSON list of tags for this message
+  log_filters     TEXT,                            -- A JSON list of filter IDs that matched this message
+  -- BEGIN Format-specific fields:
+
+  -- END Format-specific fields
+  log_path        TEXT HIDDEN COLLATE naturalnocase, -- The path to the log file this message is from
+  log_text        TEXT HIDDEN,                       -- The full text of the log message
+  log_body        TEXT HIDDEN                        -- The body of the log message
+);
+
+2020-06-19T11:23:52.105 D log_vtab_impl.cc:211 creating log format table: block_log = 0x7f8dcd80cc30
+2020-06-19T11:23:52.105 D log_vtab_impl.cc:125 log_vtab_impl.get_table_statement() -> CREATE TABLE candlepin_log  (
+  log_line        INTEGER  PRIMARY KEY,            -- The line number for the log message
+  log_part        TEXT     COLLATE naturalnocase,  -- The partition the message is in
+  log_time        DATETIME,                        -- The adjusted timestamp for the log message
+  log_actual_time DATETIME HIDDEN,                 -- The timestamp from the original log file for this message
+  log_idle_msecs  INTEGER,                         -- The difference in time between this messages and the previous
+  log_level       TEXT     COLLATE loglevel,       -- The log message level
+  log_mark        BOOLEAN,                         -- True if the log message was marked
+  log_comment     TEXT,                            -- The comment for this message
+  log_tags        TEXT,                            -- A JSON list of tags for this message
+  log_filters     TEXT,                            -- A JSON list of filter IDs that matched this message
+  -- BEGIN Format-specific fields:
+  alert_level     TEXT     COLLATE 'BINARY'       ,
+  module          TEXT     COLLATE 'BINARY'       ,
+  org             TEXT     COLLATE 'BINARY'       ,
+  req             TEXT     COLLATE 'BINARY'       ,
+
+  -- END Format-specific fields
+  log_path        TEXT HIDDEN COLLATE naturalnocase, -- The path to the log file this message is from
+  log_text        TEXT HIDDEN,                       -- The full text of the log message
+  log_body        TEXT HIDDEN                        -- The body of the log message
+);
+
+2020-06-19T11:23:52.105 D log_vtab_impl.cc:211 creating log format table: candlepin_log = 0x7f8dcd80e390
+2020-06-19T11:23:52.105 D log_vtab_impl.cc:125 log_vtab_impl.get_table_statement() -> CREATE TABLE choose_repo_log  (
+  log_line        INTEGER  PRIMARY KEY,            -- The line number for the log message
+  log_part        TEXT     COLLATE naturalnocase,  -- The partition the message is in
+  log_time        DATETIME,                        -- The adjusted timestamp for the log message
+  log_actual_time DATETIME HIDDEN,                 -- The timestamp from the original log file for this message
+  log_idle_msecs  INTEGER,                         -- The difference in time between this messages and the previous
+  log_level       TEXT     COLLATE loglevel,       -- The log message level
+  log_mark        BOOLEAN,                         -- True if the log message was marked
+  log_comment     TEXT,                            -- The comment for this message
+  log_tags        TEXT,                            -- A JSON list of tags for this message
+  log_filters     TEXT,                            -- A JSON list of filter IDs that matched this message
+  -- BEGIN Format-specific fields:
+
+  -- END Format-specific fields
+  log_path        TEXT HIDDEN COLLATE naturalnocase, -- The path to the log file this message is from
+  log_text        TEXT HIDDEN,                       -- The full text of the log message
+  log_body        TEXT HIDDEN                        -- The body of the log message
+);
+
+2020-06-19T11:23:52.105 D log_vtab_impl.cc:211 creating log format table: choose_repo_log = 0x7f8dcd80da20
+2020-06-19T11:23:52.105 D log_vtab_impl.cc:125 log_vtab_impl.get_table_statement() -> CREATE TABLE dpkg_log  (
+  log_line        INTEGER  PRIMARY KEY,            -- The line number for the log message
+  log_part        TEXT     COLLATE naturalnocase,  -- The partition the message is in
+  log_time        DATETIME,                        -- The adjusted timestamp for the log message
+  log_actual_time DATETIME HIDDEN,                 -- The timestamp from the original log file for this message
+  log_idle_msecs  INTEGER,                         -- The difference in time between this messages and the previous
+  log_level       TEXT     COLLATE loglevel,       -- The log message level
+  log_mark        BOOLEAN,                         -- True if the log message was marked
+  log_comment     TEXT,                            -- The comment for this message
+  log_tags        TEXT,                            -- A JSON list of tags for this message
+  log_filters     TEXT,                            -- A JSON list of filter IDs that matched this message
+  -- BEGIN Format-specific fields:
+  action            TEXT     COLLATE 'BINARY'       ,
+  available_version TEXT     COLLATE 'BINARY'       ,
+  installed_version TEXT     COLLATE 'BINARY'       ,
+  package           TEXT     COLLATE 'BINARY'       ,
+  status            TEXT     COLLATE 'BINARY'       ,
+
+  -- END Format-specific fields
+  log_path        TEXT HIDDEN COLLATE naturalnocase, -- The path to the log file this message is from
+  log_text        TEXT HIDDEN,                       -- The full text of the log message
+  log_body        TEXT HIDDEN                        -- The body of the log message
+);
+
+2020-06-19T11:23:52.105 D log_vtab_impl.cc:211 creating log format table: dpkg_log = 0x7f8dcd80e750
+2020-06-19T11:23:52.105 D log_vtab_impl.cc:125 log_vtab_impl.get_table_statement() -> CREATE TABLE elb_log  (
+  log_line        INTEGER  PRIMARY KEY,            -- The line number for the log message
+  log_part        TEXT     COLLATE naturalnocase,  -- The partition the message is in
+  log_time        DATETIME,                        -- The adjusted timestamp for the log message
+  log_actual_time DATETIME HIDDEN,                 -- The timestamp from the original log file for this message
+  log_idle_msecs  INTEGER,                         -- The difference in time between this messages and the previous
+  log_level       TEXT     COLLATE loglevel,       -- The log message level
+  log_mark        BOOLEAN,                         -- True if the log message was marked
+  log_comment     TEXT,                            -- The comment for this message
+  log_tags        TEXT,                            -- A JSON list of tags for this message
+  log_filters     TEXT,                            -- A JSON list of filter IDs that matched this message
+  -- BEGIN Format-specific fields:
+  backend_ip               TEXT     COLLATE 'ipaddress'    ,
+  backend_port             INTEGER  COLLATE 'BINARY'       ,
+  backend_processing_time  FLOAT    COLLATE 'BINARY'       ,
+  backend_status_code      INTEGER  COLLATE 'BINARY'       ,
+  client_ip                TEXT     COLLATE 'ipaddress'    ,
+  client_port              INTEGER  COLLATE 'BINARY'       ,
+  cs_method                TEXT     COLLATE 'BINARY'       ,
+  cs_uri_query             TEXT     COLLATE 'BINARY'       ,
+  cs_uri_stem              TEXT     COLLATE 'BINARY'       ,
+  cs_version               TEXT     COLLATE 'BINARY'       ,
+  elb                      TEXT     COLLATE 'BINARY'       ,
+  elb_status_code          INTEGER  COLLATE 'BINARY'       ,
+  received_bytes           INTEGER  COLLATE 'BINARY'       ,
+  request_processing_time  FLOAT    COLLATE 'BINARY'       ,
+  response_processing_time FLOAT    COLLATE 'BINARY'       ,
+  sent_bytes               INTEGER  COLLA
+2020-06-19T11:23:52.105 D log_vtab_impl.cc:211 creating log format table: elb_log = 0x7f8dcd80e7f0
+2020-06-19T11:23:52.106 D log_vtab_impl.cc:125 log_vtab_impl.get_table_statement() -> CREATE TABLE fsck_hfs_log  (
+  log_line        INTEGER  PRIMARY KEY,            -- The line number for the log message
+  log_part        TEXT     COLLATE naturalnocase,  -- The partition the message is in
+  log_time        DATETIME,                        -- The adjusted timestamp for the log message
+  log_actual_time DATETIME HIDDEN,                 -- The timestamp from the original log file for this message
+  log_idle_msecs  INTEGER,                         -- The difference in time between this messages and the previous
+  log_level       TEXT     COLLATE loglevel,       -- The log message level
+  log_mark        BOOLEAN,                         -- True if the log message was marked
+  log_comment     TEXT,                            -- The comment for this message
+  log_tags        TEXT,                            -- A JSON list of tags for this message
+  log_filters     TEXT,                            -- A JSON list of filter IDs that matched this message
+  -- BEGIN Format-specific fields:
+  device          TEXT     COLLATE 'BINARY'       ,
+
+  -- END Format-specific fields
+  log_path        TEXT HIDDEN COLLATE naturalnocase, -- The path to the log file this message is from
+  log_text        TEXT HIDDEN,                       -- The full text of the log message
+  log_body        TEXT HIDDEN                        -- The body of the log message
+);
+
+2020-06-19T11:23:52.106 D log_vtab_impl.cc:211 creating log format table: fsck_hfs_log = 0x7f8dcd80f030
+2020-06-19T11:23:52.106 D log_vtab_impl.cc:125 log_vtab_impl.get_table_statement() -> CREATE TABLE glog_log  (
+  log_line        INTEGER  PRIMARY KEY,            -- The line number for the log message
+  log_part        TEXT     COLLATE naturalnocase,  -- The partition the message is in
+  log_time        DATETIME,                        -- The adjusted timestamp for the log message
+  log_actual_time DATETIME HIDDEN,                 -- The timestamp from the original log file for this message
+  log_idle_msecs  INTEGER,                         -- The difference in time between this messages and the previous
+  log_level       TEXT     COLLATE loglevel,       -- The log message level
+  log_mark        BOOLEAN,                         -- True if the log message was marked
+  log_comment     TEXT,                            -- The comment for this message
+  log_tags        TEXT,                            -- A JSON list of tags for this message
+  log_filters     TEXT,                            -- A JSON list of filter IDs that matched this message
+  -- BEGIN Format-specific fields:
+  src_file        TEXT     COLLATE 'BINARY'       ,
+  src_line        INTEGER  COLLATE 'BINARY'       ,
+  thread          INTEGER  COLLATE 'BINARY'       ,
+
+  -- END Format-specific fields
+  log_path        TEXT HIDDEN COLLATE naturalnocase, -- The path to the log file this message is from
+  log_text        TEXT HIDDEN,                       -- The full text of the log message
+  log_body        TEXT HIDDEN                        -- The body of the log message
+);
+
+2020-06-19T11:23:52.106 D log_vtab_impl.cc:211 creating log format table: glog_log = 0x7f8dcd8103d0
+2020-06-19T11:23:52.106 D log_vtab_impl.cc:125 log_vtab_impl.get_table_statement() -> CREATE TABLE haproxy_log  (
+  log_line        INTEGER  PRIMARY KEY,            -- The line number for the log message
+  log_part        TEXT     COLLATE naturalnocase,  -- The partition the message is in
+  log_time        DATETIME,                        -- The adjusted timestamp for the log message
+  log_actual_time DATETIME HIDDEN,                 -- The timestamp from the original log file for this message
+  log_idle_msecs  INTEGER,                         -- The difference in time between this messages and the previous
+  log_level       TEXT     COLLATE loglevel,       -- The log message level
+  log_mark        BOOLEAN,                         -- True if the log message was marked
+  log_comment     TEXT,                            -- The comment for this message
+  log_tags        TEXT,                            -- A JSON list of tags for this message
+  log_filters     TEXT,                            -- A JSON list of filter IDs that matched this message
+  -- BEGIN Format-specific fields:
+  frontend_name             TEXT     COLLATE 'BINARY'       ,
+  logging_host              TEXT     COLLATE 'BINARY'       ,
+  pid                       INTEGER  COLLATE 'BINARY'       ,
+  process_name              TEXT     COLLATE 'BINARY'       ,
+  backend_connections       INTEGER  COLLATE 'BINARY'       ,
+  frontend_connections      INTEGER  COLLATE 'BINARY'       ,
+  stopping_timeout          INTEGER  COLLATE 'BINARY'       ,
+  accept_date               TEXT     COLLATE 'BINARY'       ,
+  actconn                   INTEGER  COLLATE 'BINARY'       ,
+  backend_name              TEXT     COLLATE 'BINARY'       ,
+  backend_queue             INTEGER  COLLATE 'BINARY'       ,
+  beconn                    INTEGER  COLLATE 'BINARY'       ,
+  bytes_read                INTEGER  COLLATE 'BINARY'       ,
+  captured_request_cookie   TEXT     COLLATE 'BINARY'       ,
+  captured_request_headers  TEXT     COLLATE 'BINARY'       ,
+  captured_response_co
+2020-06-19T11:23:52.106 D log_vtab_impl.cc:211 creating log format table: haproxy_log = 0x7f8dcd80fdb0
+2020-06-19T11:23:52.106 D log_vtab_impl.cc:125 log_vtab_impl.get_table_statement() -> CREATE TABLE java_log  (
+  log_line        INTEGER  PRIMARY KEY,            -- The line number for the log message
+  log_part        TEXT     COLLATE naturalnocase,  -- The partition the message is in
+  log_time        DATETIME,                        -- The adjusted timestamp for the log message
+  log_actual_time DATETIME HIDDEN,                 -- The timestamp from the original log file for this message
+  log_idle_msecs  INTEGER,                         -- The difference in time between this messages and the previous
+  log_level       TEXT     COLLATE loglevel,       -- The log message level
+  log_mark        BOOLEAN,                         -- True if the log message was marked
+  log_comment     TEXT,                            -- The comment for this message
+  log_tags        TEXT,                            -- A JSON list of tags for this message
+  log_filters     TEXT,                            -- A JSON list of filter IDs that matched this message
+  -- BEGIN Format-specific fields:
+  alert_level     TEXT     COLLATE 'BINARY'       ,
+  jvm_no          INTEGER  COLLATE 'BINARY'       ,
+  class           TEXT     COLLATE 'BINARY'       ,
+  debug_level     TEXT     COLLATE 'BINARY'       ,
+  function        TEXT     COLLATE 'BINARY'       ,
+
+  -- END Format-specific fields
+  log_path        TEXT HIDDEN COLLATE naturalnocase, -- The path to the log file this message is from
+  log_text        TEXT HIDDEN,                       -- The full text of the log message
+  log_body        TEXT HIDDEN                        -- The body of the log message
+);
+
+2020-06-19T11:23:52.106 D log_vtab_impl.cc:211 creating log format table: java_log = 0x7f8dcd80f2f0
+2020-06-19T11:23:52.106 D log_vtab_impl.cc:125 log_vtab_impl.get_table_statement() -> CREATE TABLE journald_json_log  (
+  log_line        INTEGER  PRIMARY KEY,            -- The line number for the log message
+  log_part        TEXT     COLLATE naturalnocase,  -- The partition the message is in
+  log_time        DATETIME,                        -- The adjusted timestamp for the log message
+  log_actual_time DATETIME HIDDEN,                 -- The timestamp from the original log file for this message
+  log_idle_msecs  INTEGER,                         -- The difference in time between this messages and the previous
+  log_level       TEXT     COLLATE loglevel,       -- The log message level
+  log_mark        BOOLEAN,                         -- True if the log message was marked
+  log_comment     TEXT,                            -- The comment for this message
+  log_tags        TEXT,                            -- A JSON list of tags for this message
+  log_filters     TEXT,                            -- A JSON list of filter IDs that matched this message
+  -- BEGIN Format-specific fields:
+  PRIORITY              TEXT     COLLATE 'BINARY'       ,
+  SYSLOG_IDENTIFIER     TEXT     COLLATE 'BINARY'       ,
+  _PID                  INTEGER  COLLATE 'BINARY'       ,
+  _SYSTEMD_UNIT         TEXT     COLLATE 'BINARY'       ,
+  __MONOTONIC_TIMESTAMP INTEGER  COLLATE 'BINARY'       ,
+
+  -- END Format-specific fields
+  log_path        TEXT HIDDEN COLLATE naturalnocase, -- The path to the log file this message is from
+  log_text        TEXT HIDDEN,                       -- The full text of the log message
+  log_body        TEXT HIDDEN                        -- The body of the log message
+);
+
+2020-06-19T11:23:52.106 D log_vtab_impl.cc:211 creating log format table: journald_json_log = 0x7f8dcd80ff90
+2020-06-19T11:23:52.106 D log_vtab_impl.cc:125 log_vtab_impl.get_table_statement() -> CREATE TABLE katello_log  (
+  log_line        INTEGER  PRIMARY KEY,            -- The line number for the log message
+  log_part        TEXT     COLLATE naturalnocase,  -- The partition the message is in
+  log_time        DATETIME,                        -- The adjusted timestamp for the log message
+  log_actual_time DATETIME HIDDEN,                 -- The timestamp from the original log file for this message
+  log_idle_msecs  INTEGER,                         -- The difference in time between this messages and the previous
+  log_level       TEXT     COLLATE loglevel,       -- The log message level
+  log_mark        BOOLEAN,                         -- True if the log message was marked
+  log_comment     TEXT,                            -- The comment for this message
+  log_tags        TEXT,                            -- A JSON list of tags for this message
+  log_filters     TEXT,                            -- A JSON list of filter IDs that matched this message
+  -- BEGIN Format-specific fields:
+  alert_level     TEXT     COLLATE 'BINARY'       ,
+  message         TEXT     COLLATE 'BINARY'       ,
+  module          TEXT     COLLATE 'BINARY'       ,
+
+  -- END Format-specific fields
+  log_path        TEXT HIDDEN COLLATE naturalnocase, -- The path to the log file this message is from
+  log_text        TEXT HIDDEN,                       -- The full text of the log message
+  log_body        TEXT HIDDEN                        -- The body of the log message
+);
+
+2020-06-19T11:23:52.106 D log_vtab_impl.cc:211 creating log format table: katello_log = 0x7f8dcd810ea0
+2020-06-19T11:23:52.106 D log_vtab_impl.cc:125 log_vtab_impl.get_table_statement() -> CREATE TABLE openam_log  (
+  log_line        INTEGER  PRIMARY KEY,            -- The line number for the log message
+  log_part        TEXT     COLLATE naturalnocase,  -- The partition the message is in
+  log_time        DATETIME,                        -- The adjusted timestamp for the log message
+  log_actual_time DATETIME HIDDEN,                 -- The timestamp from the original log file for this message
+  log_idle_msecs  INTEGER,                         -- The difference in time between this messages and the previous
+  log_level       TEXT     COLLATE loglevel,       -- The log message level
+  log_mark        BOOLEAN,                         -- True if the log message was marked
+  log_comment     TEXT,                            -- The comment for this message
+  log_tags        TEXT,                            -- A JSON list of tags for this message
+  log_filters     TEXT,                            -- A JSON list of filter IDs that matched this message
+  -- BEGIN Format-specific fields:
+  contextid       TEXT     COLLATE 'BINARY'       ,
+  data            TEXT     COLLATE 'BINARY'       ,
+  domain          TEXT     COLLATE 'BINARY'       ,
+  hostname        TEXT     COLLATE 'ipaddress'    ,
+  ipaddr          TEXT     COLLATE 'ipaddress'    ,
+  loggedby        TEXT     COLLATE 'BINARY'       ,
+  loginid         TEXT     COLLATE 'BINARY'       ,
+  messageid       TEXT     COLLATE 'BINARY'       ,
+  modulename      TEXT     COLLATE 'BINARY'       ,
+  nameid          TEXT     COLLATE 'BINARY'       ,
+
+  -- END Format-specific fields
+  log_path        TEXT HIDDEN COLLATE naturalnocase, -- The path to the log file this message is from
+  log_text        TEXT HIDDEN,                       -- The full text of the log message
+  log_body        TEXT HIDDEN                        -- The body of the log message
+);
+
+2020-06-19T11:23:52.106 D log_vtab_impl.cc:211 creating log format table: openam_log = 0x7f8dcd8115b0
+2020-06-19T11:23:52.106 D log_vtab_impl.cc:125 log_vtab_impl.get_table_statement() -> CREATE TABLE openamdb_log  (
+  log_line        INTEGER  PRIMARY KEY,            -- The line number for the log message
+  log_part        TEXT     COLLATE naturalnocase,  -- The partition the message is in
+  log_time        DATETIME,                        -- The adjusted timestamp for the log message
+  log_actual_time DATETIME HIDDEN,                 -- The timestamp from the original log file for this message
+  log_idle_msecs  INTEGER,                         -- The difference in time between this messages and the previous
+  log_level       TEXT     COLLATE loglevel,       -- The log message level
+  log_mark        BOOLEAN,                         -- True if the log message was marked
+  log_comment     TEXT,                            -- The comment for this message
+  log_tags        TEXT,                            -- A JSON list of tags for this message
+  log_filters     TEXT,                            -- A JSON list of filter IDs that matched this message
+  -- BEGIN Format-specific fields:
+
+  -- END Format-specific fields
+  log_path        TEXT HIDDEN COLLATE naturalnocase, -- The path to the log file this message is from
+  log_text        TEXT HIDDEN,                       -- The full text of the log message
+  log_body        TEXT HIDDEN                        -- The body of the log message
+);
+
+2020-06-19T11:23:52.106 D log_vtab_impl.cc:211 creating log format table: openamdb_log = 0x7f8dcd813120
+2020-06-19T11:23:52.106 D log_vtab_impl.cc:125 log_vtab_impl.get_table_statement() -> CREATE TABLE openstack_log  (
+  log_line        INTEGER  PRIMARY KEY,            -- The line number for the log message
+  log_part        TEXT     COLLATE naturalnocase,  -- The partition the message is in
+  log_time        DATETIME,                        -- The adjusted timestamp for the log message
+  log_actual_time DATETIME HIDDEN,                 -- The timestamp from the original log file for this message
+  log_idle_msecs  INTEGER,                         -- The difference in time between this messages and the previous
+  log_level       TEXT     COLLATE loglevel,       -- The log message level
+  log_mark        BOOLEAN,                         -- True if the log message was marked
+  log_comment     TEXT,                            -- The comment for this message
+  log_tags        TEXT,                            -- A JSON list of tags for this message
+  log_filters     TEXT,                            -- A JSON list of filter IDs that matched this message
+  -- BEGIN Format-specific fields:
+  logger          TEXT     COLLATE 'BINARY'       ,
+  pid             TEXT     COLLATE 'BINARY'       ,
+  tid             TEXT     COLLATE 'BINARY'       ,
+
+  -- END Format-specific fields
+  log_path        TEXT HIDDEN COLLATE naturalnocase, -- The path to the log file this message is from
+  log_text        TEXT HIDDEN,                       -- The full text of the log message
+  log_body        TEXT HIDDEN                        -- The body of the log message
+);
+
+2020-06-19T11:23:52.106 D log_vtab_impl.cc:211 creating log format table: openstack_log = 0x7f8dcd813190
+2020-06-19T11:23:52.106 D log_vtab_impl.cc:125 log_vtab_impl.get_table_statement() -> CREATE TABLE page_log  (
+  log_line        INTEGER  PRIMARY KEY,            -- The line number for the log message
+  log_part        TEXT     COLLATE naturalnocase,  -- The partition the message is in
+  log_time        DATETIME,                        -- The adjusted timestamp for the log message
+  log_actual_time DATETIME HIDDEN,                 -- The timestamp from the original log file for this message
+  log_idle_msecs  INTEGER,                         -- The difference in time between this messages and the previous
+  log_level       TEXT     COLLATE loglevel,       -- The log message level
+  log_mark        BOOLEAN,                         -- True if the log message was marked
+  log_comment     TEXT,                            -- The comment for this message
+  log_tags        TEXT,                            -- A JSON list of tags for this message
+  log_filters     TEXT,                            -- A JSON list of filter IDs that matched this message
+  -- BEGIN Format-specific fields:
+  job_billing              TEXT     COLLATE 'BINARY'       ,
+  job_id                   INTEGER  COLLATE 'BINARY'       ,
+  job_name                 TEXT     COLLATE 'BINARY'       ,
+  job_originating_hostname TEXT     COLLATE 'ipaddress'    ,
+  media                    TEXT     COLLATE 'BINARY'       ,
+  num_copies               INTEGER  COLLATE 'BINARY'       ,
+  page_number              TEXT     COLLATE 'BINARY'       ,
+  printer                  TEXT     COLLATE 'BINARY'       ,
+  sides                    TEXT     COLLATE 'BINARY'       ,
+  username                 TEXT     COLLATE 'BINARY'       ,
+
+  -- END Format-specific fields
+  log_path        TEXT HIDDEN COLLATE naturalnocase, -- The path to the log file this message is from
+  log_text        TEXT HIDDEN,                       -- The full text of the log message
+  log_body        TEXT HIDDEN                        -- The body of the log message
+);
+
+2020-06-19T11:23:52.106 D log_vtab_impl.cc:211 creating log format table: page_log = 0x7f8dcd8135c0
+2020-06-19T11:23:52.107 D log_vtab_impl.cc:125 log_vtab_impl.get_table_statement() -> CREATE TABLE papertrail_log  (
+  log_line        INTEGER  PRIMARY KEY,            -- The line number for the log message
+  log_part        TEXT     COLLATE naturalnocase,  -- The partition the message is in
+  log_time        DATETIME,                        -- The adjusted timestamp for the log message
+  log_actual_time DATETIME HIDDEN,                 -- The timestamp from the original log file for this message
+  log_idle_msecs  INTEGER,                         -- The difference in time between this messages and the previous
+  log_level       TEXT     COLLATE loglevel,       -- The log message level
+  log_mark        BOOLEAN,                         -- True if the log message was marked
+  log_comment     TEXT,                            -- The comment for this message
+  log_tags        TEXT,                            -- A JSON list of tags for this message
+  log_filters     TEXT,                            -- A JSON list of filter IDs that matched this message
+  -- BEGIN Format-specific fields:
+  display_received_at TEXT     COLLATE 'BINARY'       ,
+  hostname            TEXT     COLLATE 'BINARY'       ,
+  program             TEXT     COLLATE 'BINARY'       ,
+
+  -- END Format-specific fields
+  log_path        TEXT HIDDEN COLLATE naturalnocase, -- The path to the log file this message is from
+  log_text        TEXT HIDDEN,                       -- The full text of the log message
+  log_body        TEXT HIDDEN                        -- The body of the log message
+);
+
+2020-06-19T11:23:52.107 D log_vtab_impl.cc:211 creating log format table: papertrail_log = 0x7f8dcd813a70
+2020-06-19T11:23:52.107 D log_vtab_impl.cc:125 log_vtab_impl.get_table_statement() -> CREATE TABLE snaplogic_log  (
+  log_line        INTEGER  PRIMARY KEY,            -- The line number for the log message
+  log_part        TEXT     COLLATE naturalnocase,  -- The partition the message is in
+  log_time        DATETIME,                        -- The adjusted timestamp for the log message
+  log_actual_time DATETIME HIDDEN,                 -- The timestamp from the original log file for this message
+  log_idle_msecs  INTEGER,                         -- The difference in time between this messages and the previous
+  log_level       TEXT     COLLATE loglevel,       -- The log message level
+  log_mark        BOOLEAN,                         -- True if the log message was marked
+  log_comment     TEXT,                            -- The comment for this message
+  log_tags        TEXT,                            -- A JSON list of tags for this message
+  log_filters     TEXT,                            -- A JSON list of filter IDs that matched this message
+  -- BEGIN Format-specific fields:
+  comp_rid        TEXT     COLLATE 'BINARY'       ,
+  facility        TEXT     COLLATE 'BINARY'       ,
+  invoker         TEXT     COLLATE 'BINARY'       ,
+  logger          TEXT     COLLATE 'BINARY'       ,
+  msgid           TEXT     COLLATE 'BINARY'       ,
+  pipe_rid        TEXT     COLLATE 'BINARY'       ,
+  resource_name   TEXT     COLLATE 'BINARY'       ,
+
+  -- END Format-specific fields
+  log_path        TEXT HIDDEN COLLATE naturalnocase, -- The path to the log file this message is from
+  log_text        TEXT HIDDEN,                       -- The full text of the log message
+  log_body        TEXT HIDDEN                        -- The body of the log message
+);
+
+2020-06-19T11:23:52.107 D log_vtab_impl.cc:211 creating log format table: snaplogic_log = 0x7f8dcd814040
+2020-06-19T11:23:52.107 D log_vtab_impl.cc:125 log_vtab_impl.get_table_statement() -> CREATE TABLE sssd_log  (
+  log_line        INTEGER  PRIMARY KEY,            -- The line number for the log message
+  log_part        TEXT     COLLATE naturalnocase,  -- The partition the message is in
+  log_time        DATETIME,                        -- The adjusted timestamp for the log message
+  log_actual_time DATETIME HIDDEN,                 -- The timestamp from the original log file for this message
+  log_idle_msecs  INTEGER,                         -- The difference in time between this messages and the previous
+  log_level       TEXT     COLLATE loglevel,       -- The log message level
+  log_mark        BOOLEAN,                         -- True if the log message was marked
+  log_comment     TEXT,                            -- The comment for this message
+  log_tags        TEXT,                            -- A JSON list of tags for this message
+  log_filters     TEXT,                            -- A JSON list of filter IDs that matched this message
+  -- BEGIN Format-specific fields:
+  debug_level     TEXT     COLLATE 'BINARY'       ,
+  function        TEXT     COLLATE 'BINARY'       ,
+  module          TEXT     COLLATE 'BINARY'       ,
+
+  -- END Format-specific fields
+  log_path        TEXT HIDDEN COLLATE naturalnocase, -- The path to the log file this message is from
+  log_text        TEXT HIDDEN,                       -- The full text of the log message
+  log_body        TEXT HIDDEN                        -- The body of the log message
+);
+
+2020-06-19T11:23:52.107 D log_vtab_impl.cc:211 creating log format table: sssd_log = 0x7f8dcd8136d0
+2020-06-19T11:23:52.107 D log_vtab_impl.cc:125 log_vtab_impl.get_table_statement() -> CREATE TABLE strace_log  (
+  log_line        INTEGER  PRIMARY KEY,            -- The line number for the log message
+  log_part        TEXT     COLLATE naturalnocase,  -- The partition the message is in
+  log_time        DATETIME,                        -- The adjusted timestamp for the log message
+  log_actual_time DATETIME HIDDEN,                 -- The timestamp from the original log file for this message
+  log_idle_msecs  INTEGER,                         -- The difference in time between this messages and the previous
+  log_level       TEXT     COLLATE loglevel,       -- The log message level
+  log_mark        BOOLEAN,                         -- True if the log message was marked
+  log_comment     TEXT,                            -- The comment for this message
+  log_tags        TEXT,                            -- A JSON list of tags for this message
+  log_filters     TEXT,                            -- A JSON list of filter IDs that matched this message
+  -- BEGIN Format-specific fields:
+  duration        FLOAT    COLLATE 'BINARY'       ,
+  errno           TEXT     COLLATE 'BINARY'       ,
+  rc              INTEGER  COLLATE 'BINARY'       ,
+  syscall         TEXT     COLLATE 'BINARY'       ,
+  args            TEXT     COLLATE 'BINARY'       ,
+
+  -- END Format-specific fields
+  log_path        TEXT HIDDEN COLLATE naturalnocase, -- The path to the log file this message is from
+  log_text        TEXT HIDDEN,                       -- The full text of the log message
+  log_body        TEXT HIDDEN                        -- The body of the log message
+);
+
+2020-06-19T11:23:52.107 D log_vtab_impl.cc:211 creating log format table: strace_log = 0x7f8dcd815060
+2020-06-19T11:23:52.107 D log_vtab_impl.cc:125 log_vtab_impl.get_table_statement() -> CREATE TABLE sudo_log  (
+  log_line        INTEGER  PRIMARY KEY,            -- The line number for the log message
+  log_part        TEXT     COLLATE naturalnocase,  -- The partition the message is in
+  log_time        DATETIME,                        -- The adjusted timestamp for the log message
+  log_actual_time DATETIME HIDDEN,                 -- The timestamp from the original log file for this message
+  log_idle_msecs  INTEGER,                         -- The difference in time between this messages and the previous
+  log_level       TEXT     COLLATE loglevel,       -- The log message level
+  log_mark        BOOLEAN,                         -- True if the log message was marked
+  log_comment     TEXT,                            -- The comment for this message
+  log_tags        TEXT,                            -- A JSON list of tags for this message
+  log_filters     TEXT,                            -- A JSON list of filter IDs that matched this message
+  -- BEGIN Format-specific fields:
+  command         TEXT     COLLATE 'BINARY'       ,
+  error_msg       TEXT     COLLATE 'BINARY'       ,
+  login           TEXT     COLLATE 'BINARY'       ,
+  pwd             TEXT     COLLATE 'BINARY'       ,
+  tty             TEXT     COLLATE 'BINARY'       ,
+  user            TEXT     COLLATE 'BINARY'       ,
+
+  -- END Format-specific fields
+  log_path        TEXT HIDDEN COLLATE naturalnocase, -- The path to the log file this message is from
+  log_text        TEXT HIDDEN,                       -- The full text of the log message
+  log_body        TEXT HIDDEN                        -- The body of the log message
+);
+
+2020-06-19T11:23:52.107 D log_vtab_impl.cc:211 creating log format table: sudo_log = 0x7f8dcd815da0
+2020-06-19T11:23:52.107 D log_vtab_impl.cc:125 log_vtab_impl.get_table_statement() -> CREATE TABLE tcf_log  (
+  log_line        INTEGER  PRIMARY KEY,            -- The line number for the log message
+  log_part        TEXT     COLLATE naturalnocase,  -- The partition the message is in
+  log_time        DATETIME,                        -- The adjusted timestamp for the log message
+  log_actual_time DATETIME HIDDEN,                 -- The timestamp from the original log file for this message
+  log_idle_msecs  INTEGER,                         -- The difference in time between this messages and the previous
+  log_level       TEXT     COLLATE loglevel,       -- The log message level
+  log_mark        BOOLEAN,                         -- True if the log message was marked
+  log_comment     TEXT,                            -- The comment for this message
+  log_tags        TEXT,                            -- A JSON list of tags for this message
+  log_filters     TEXT,                            -- A JSON list of filter IDs that matched this message
+  -- BEGIN Format-specific fields:
+  dir             TEXT     COLLATE 'BINARY'       ,
+  msg             TEXT     COLLATE 'BINARY'       ,
+  name            TEXT     COLLATE 'BINARY'       ,
+  service         TEXT     COLLATE 'BINARY'       ,
+  token           TEXT     COLLATE 'BINARY'       ,
+  type            TEXT     COLLATE 'BINARY'       ,
+
+  -- END Format-specific fields
+  log_path        TEXT HIDDEN COLLATE naturalnocase, -- The path to the log file this message is from
+  log_text        TEXT HIDDEN,                       -- The full text of the log message
+  log_body        TEXT HIDDEN                        -- The body of the log message
+);
+
+2020-06-19T11:23:52.107 D log_vtab_impl.cc:211 creating log format table: tcf_log = 0x7f8dcd815880
+2020-06-19T11:23:52.107 D log_vtab_impl.cc:125 log_vtab_impl.get_table_statement() -> CREATE TABLE tcsh_history  (
+  log_line        INTEGER  PRIMARY KEY,            -- The line number for the log message
+  log_part        TEXT     COLLATE naturalnocase,  -- The partition the message is in
+  log_time        DATETIME,                        -- The adjusted timestamp for the log message
+  log_actual_time DATETIME HIDDEN,                 -- The timestamp from the original log file for this message
+  log_idle_msecs  INTEGER,                         -- The difference in time between this messages and the previous
+  log_level       TEXT     COLLATE loglevel,       -- The log message level
+  log_mark        BOOLEAN,                         -- True if the log message was marked
+  log_comment     TEXT,                            -- The comment for this message
+  log_tags        TEXT,                            -- A JSON list of tags for this message
+  log_filters     TEXT,                            -- A JSON list of filter IDs that matched this message
+  -- BEGIN Format-specific fields:
+
+  -- END Format-specific fields
+  log_path        TEXT HIDDEN COLLATE naturalnocase, -- The path to the log file this message is from
+  log_text        TEXT HIDDEN,                       -- The full text of the log message
+  log_body        TEXT HIDDEN                        -- The body of the log message
+);
+
+2020-06-19T11:23:52.107 D log_vtab_impl.cc:211 creating log format table: tcsh_history = 0x7f8dcd817070
+2020-06-19T11:23:52.107 D log_vtab_impl.cc:125 log_vtab_impl.get_table_statement() -> CREATE TABLE uwsgi_log  (
+  log_line        INTEGER  PRIMARY KEY,            -- The line number for the log message
+  log_part        TEXT     COLLATE naturalnocase,  -- The partition the message is in
+  log_time        DATETIME,                        -- The adjusted timestamp for the log message
+  log_actual_time DATETIME HIDDEN,                 -- The timestamp from the original log file for this message
+  log_idle_msecs  INTEGER,                         -- The difference in time between this messages and the previous
+  log_level       TEXT     COLLATE loglevel,       -- The log message level
+  log_mark        BOOLEAN,                         -- True if the log message was marked
+  log_comment     TEXT,                            -- The comment for this message
+  log_tags        TEXT,                            -- A JSON list of tags for this message
+  log_filters     TEXT,                            -- A JSON list of filter IDs that matched this message
+  -- BEGIN Format-specific fields:
+  c_ip            TEXT     COLLATE 'ipaddress'    ,
+  cs_bytes        INTEGER  COLLATE 'BINARY'       ,
+  cs_method       TEXT     COLLATE 'BINARY'       ,
+  cs_uri_query    TEXT     COLLATE 'BINARY'       ,
+  cs_uri_stem     TEXT     COLLATE 'BINARY'       ,
+  cs_username     TEXT     COLLATE 'BINARY'       ,
+  cs_vars         INTEGER  COLLATE 'BINARY'       ,
+  cs_version      TEXT     COLLATE 'BINARY'       ,
+  s_app           TEXT     COLLATE 'BINARY'       ,
+  s_core          TEXT     COLLATE 'BINARY'       ,
+  s_pid           TEXT     COLLATE 'BINARY'       ,
+  s_req           INTEGER  COLLATE 'BINARY'       ,
+  s_runtime       FLOAT    COLLATE 'BINARY'       ,
+  s_switches      INTEGER  COLLATE 'BINARY'       ,
+  s_worker_reqs   INTEGER  COLLATE 'BINARY'       ,
+  sc_bytes        INTEGER  COLLATE 'BINARY'       ,
+  sc_header_bytes INTEGER  COLLATE 'BINARY'       ,
+  sc_headers      INTEGER  COLLATE 'BINARY'       ,
+  sc_status       
+2020-06-19T11:23:52.107 D log_vtab_impl.cc:211 creating log format table: uwsgi_log = 0x7f8dcd814c80
+2020-06-19T11:23:52.107 D log_vtab_impl.cc:125 log_vtab_impl.get_table_statement() -> CREATE TABLE vdsm_log  (
+  log_line        INTEGER  PRIMARY KEY,            -- The line number for the log message
+  log_part        TEXT     COLLATE naturalnocase,  -- The partition the message is in
+  log_time        DATETIME,                        -- The adjusted timestamp for the log message
+  log_actual_time DATETIME HIDDEN,                 -- The timestamp from the original log file for this message
+  log_idle_msecs  INTEGER,                         -- The difference in time between this messages and the previous
+  log_level       TEXT     COLLATE loglevel,       -- The log message level
+  log_mark        BOOLEAN,                         -- True if the log message was marked
+  log_comment     TEXT,                            -- The comment for this message
+  log_tags        TEXT,                            -- A JSON list of tags for this message
+  log_filters     TEXT,                            -- A JSON list of filter IDs that matched this message
+  -- BEGIN Format-specific fields:
+  func            TEXT     COLLATE 'BINARY'       ,
+  logger          TEXT     COLLATE 'BINARY'       ,
+  module          TEXT     COLLATE 'BINARY'       ,
+  src_line        INTEGER  COLLATE 'BINARY'       ,
+  tid             TEXT     COLLATE 'BINARY'       ,
+  src_file        TEXT     COLLATE 'BINARY'       ,
+  thread          TEXT     COLLATE 'BINARY'       ,
+  traceback       TEXT     COLLATE 'BINARY'       ,
+
+  -- END Format-specific fields
+  log_path        TEXT HIDDEN COLLATE naturalnocase, -- The path to the log file this message is from
+  log_text        TEXT HIDDEN,                       -- The full text of the log message
+  log_body        TEXT HIDDEN                        -- The body of the log message
+);
+
+2020-06-19T11:23:52.107 D log_vtab_impl.cc:211 creating log format table: vdsm_log = 0x7f8dcd814d10
+2020-06-19T11:23:52.107 D log_vtab_impl.cc:125 log_vtab_impl.get_table_statement() -> CREATE TABLE vmk_log  (
+  log_line        INTEGER  PRIMARY KEY,            -- The line number for the log message
+  log_part        TEXT     COLLATE naturalnocase,  -- The partition the message is in
+  log_time        DATETIME,                        -- The adjusted timestamp for the log message
+  log_actual_time DATETIME HIDDEN,                 -- The timestamp from the original log file for this message
+  log_idle_msecs  INTEGER,                         -- The difference in time between this messages and the previous
+  log_level       TEXT     COLLATE loglevel,       -- The log message level
+  log_mark        BOOLEAN,                         -- True if the log message was marked
+  log_comment     TEXT,                            -- The comment for this message
+  log_tags        TEXT,                            -- A JSON list of tags for this message
+  log_filters     TEXT,                            -- A JSON list of filter IDs that matched this message
+  -- BEGIN Format-specific fields:
+  cpu             INTEGER  COLLATE 'BINARY'       ,
+  subsystem       TEXT     COLLATE 'BINARY'       ,
+  world_id        INTEGER  COLLATE 'BINARY'       ,
+
+  -- END Format-specific fields
+  log_path        TEXT HIDDEN COLLATE naturalnocase, -- The path to the log file this message is from
+  log_text        TEXT HIDDEN,                       -- The full text of the log message
+  log_body        TEXT HIDDEN                        -- The body of the log message
+);
+
+2020-06-19T11:23:52.107 D log_vtab_impl.cc:211 creating log format table: vmk_log = 0x7f8dcd818010
+2020-06-19T11:23:52.107 D log_vtab_impl.cc:125 log_vtab_impl.get_table_statement() -> CREATE TABLE vmw_log  (
+  log_line        INTEGER  PRIMARY KEY,            -- The line number for the log message
+  log_part        TEXT     COLLATE naturalnocase,  -- The partition the message is in
+  log_time        DATETIME,                        -- The adjusted timestamp for the log message
+  log_actual_time DATETIME HIDDEN,                 -- The timestamp from the original log file for this message
+  log_idle_msecs  INTEGER,                         -- The difference in time between this messages and the previous
+  log_level       TEXT     COLLATE loglevel,       -- The log message level
+  log_mark        BOOLEAN,                         -- True if the log message was marked
+  log_comment     TEXT,                            -- The comment for this message
+  log_tags        TEXT,                            -- A JSON list of tags for this message
+  log_filters     TEXT,                            -- A JSON list of filter IDs that matched this message
+  -- BEGIN Format-specific fields:
+  comp            TEXT     COLLATE 'BINARY'       ,
+  opid            TEXT     COLLATE 'BINARY'       ,
+  tid             TEXT     COLLATE 'BINARY'       ,
+  user            TEXT     COLLATE 'BINARY'       ,
+  prc             TEXT     COLLATE 'BINARY'       ,
+  src             TEXT     COLLATE 'BINARY'       ,
+  sub             TEXT     COLLATE 'BINARY'       ,
+
+  -- END Format-specific fields
+  log_path        TEXT HIDDEN COLLATE naturalnocase, -- The path to the log file this message is from
+  log_text        TEXT HIDDEN,                       -- The full text of the log message
+  log_body        TEXT HIDDEN                        -- The body of the log message
+);
+
+2020-06-19T11:23:52.108 D log_vtab_impl.cc:211 creating log format table: vmw_log = 0x7f8dcd818540
+2020-06-19T11:23:52.108 D log_vtab_impl.cc:125 log_vtab_impl.get_table_statement() -> CREATE TABLE xmlrpc_log  (
+  log_line        INTEGER  PRIMARY KEY,            -- The line number for the log message
+  log_part        TEXT     COLLATE naturalnocase,  -- The partition the message is in
+  log_time        DATETIME,                        -- The adjusted timestamp for the log message
+  log_actual_time DATETIME HIDDEN,                 -- The timestamp from the original log file for this message
+  log_idle_msecs  INTEGER,                         -- The difference in time between this messages and the previous
+  log_level       TEXT     COLLATE loglevel,       -- The log message level
+  log_mark        BOOLEAN,                         -- True if the log message was marked
+  log_comment     TEXT,                            -- The comment for this message
+  log_tags        TEXT,                            -- A JSON list of tags for this message
+  log_filters     TEXT,                            -- A JSON list of filter IDs that matched this message
+  -- BEGIN Format-specific fields:
+  client_ip       TEXT     COLLATE 'BINARY'       ,
+  function        TEXT     COLLATE 'BINARY'       ,
+  module          TEXT     COLLATE 'BINARY'       ,
+  pid             INTEGER  COLLATE 'BINARY'       ,
+
+  -- END Format-specific fields
+  log_path        TEXT HIDDEN COLLATE naturalnocase, -- The path to the log file this message is from
+  log_text        TEXT HIDDEN,                       -- The full text of the log message
+  log_body        TEXT HIDDEN                        -- The body of the log message
+);
+
+2020-06-19T11:23:52.108 D log_vtab_impl.cc:211 creating log format table: xmlrpc_log = 0x7f8dcd818dc0
+2020-06-19T11:23:52.108 D log_vtab_impl.cc:125 log_vtab_impl.get_table_statement() -> CREATE TABLE engine_log  (
+  log_line        INTEGER  PRIMARY KEY,            -- The line number for the log message
+  log_part        TEXT     COLLATE naturalnocase,  -- The partition the message is in
+  log_time        DATETIME,                        -- The adjusted timestamp for the log message
+  log_actual_time DATETIME HIDDEN,                 -- The timestamp from the original log file for this message
+  log_idle_msecs  INTEGER,                         -- The difference in time between this messages and the previous
+  log_level       TEXT     COLLATE loglevel,       -- The log message level
+  log_mark        BOOLEAN,                         -- True if the log message was marked
+  log_comment     TEXT,                            -- The comment for this message
+  log_tags        TEXT,                            -- A JSON list of tags for this message
+  log_filters     TEXT,                            -- A JSON list of filter IDs that matched this message
+  -- BEGIN Format-specific fields:
+  logger          TEXT     COLLATE 'BINARY'       ,
+  tid             TEXT     COLLATE 'BINARY'       ,
+  thread          TEXT     COLLATE 'BINARY'       ,
+
+  -- END Format-specific fields
+  log_path        TEXT HIDDEN COLLATE naturalnocase, -- The path to the log file this message is from
+  log_text        TEXT HIDDEN,                       -- The full text of the log message
+  log_body        TEXT HIDDEN                        -- The body of the log message
+);
+
+2020-06-19T11:23:52.108 D log_vtab_impl.cc:211 creating log format table: engine_log = 0x7f8dcd817ca0
+2020-06-19T11:23:52.108 D log_vtab_impl.cc:125 log_vtab_impl.get_table_statement() -> CREATE TABLE syslog_log  (
+  log_line        INTEGER  PRIMARY KEY,            -- The line number for the log message
+  log_part        TEXT     COLLATE naturalnocase,  -- The partition the message is in
+  log_time        DATETIME,                        -- The adjusted timestamp for the log message
+  log_actual_time DATETIME HIDDEN,                 -- The timestamp from the original log file for this message
+  log_idle_msecs  INTEGER,                         -- The difference in time between this messages and the previous
+  log_level       TEXT     COLLATE loglevel,       -- The log message level
+  log_mark        BOOLEAN,                         -- True if the log message was marked
+  log_comment     TEXT,                            -- The comment for this message
+  log_tags        TEXT,                            -- A JSON list of tags for this message
+  log_filters     TEXT,                            -- A JSON list of filter IDs that matched this message
+  -- BEGIN Format-specific fields:
+  log_hostname    TEXT     COLLATE 'ipaddress'    , -- The name of the host that generated the message
+  log_msgid       TEXT     COLLATE 'BINARY'       ,
+  log_pid         TEXT     COLLATE 'BINARY'       , -- The ID of the process that generated the message
+  log_pri         INTEGER  COLLATE 'BINARY'       , -- The priority level of the message
+  log_procname    TEXT     COLLATE 'BINARY'       , -- The name of the process that generated the message
+  log_struct      TEXT     COLLATE 'BINARY'       ,
+  syslog_version  INTEGER  COLLATE 'BINARY'       , -- The version of the syslog format used for this message
+
+  -- END Format-specific fields
+  log_path        TEXT HIDDEN COLLATE naturalnocase, -- The path to the log file this message is from
+  log_text        TEXT HIDDEN,                       -- The full text of the log message
+  log_body        TEXT HIDDEN                        -- The body of the log message
+);
+
+2020-06-19T11:23:52.108 D log_vtab_impl.cc:211 creating log format table: syslog_log = 0x7f8dcd819620
+2020-06-19T11:23:52.108 D log_vtab_impl.cc:125 log_vtab_impl.get_table_statement() -> CREATE TABLE cups_log  (
+  log_line        INTEGER  PRIMARY KEY,            -- The line number for the log message
+  log_part        TEXT     COLLATE naturalnocase,  -- The partition the message is in
+  log_time        DATETIME,                        -- The adjusted timestamp for the log message
+  log_actual_time DATETIME HIDDEN,                 -- The timestamp from the original log file for this message
+  log_idle_msecs  INTEGER,                         -- The difference in time between this messages and the previous
+  log_level       TEXT     COLLATE loglevel,       -- The log message level
+  log_mark        BOOLEAN,                         -- True if the log message was marked
+  log_comment     TEXT,                            -- The comment for this message
+  log_tags        TEXT,                            -- A JSON list of tags for this message
+  log_filters     TEXT,                            -- A JSON list of filter IDs that matched this message
+  -- BEGIN Format-specific fields:
+  level           TEXT     COLLATE 'BINARY'       ,
+  section         TEXT     COLLATE 'BINARY'       ,
+
+  -- END Format-specific fields
+  log_path        TEXT HIDDEN COLLATE naturalnocase, -- The path to the log file this message is from
+  log_text        TEXT HIDDEN,                       -- The full text of the log message
+  log_body        TEXT HIDDEN                        -- The body of the log message
+);
+
+2020-06-19T11:23:52.108 D log_vtab_impl.cc:211 creating log format table: cups_log = 0x7f8dcd819350
+2020-06-19T11:23:52.108 D log_vtab_impl.cc:125 log_vtab_impl.get_table_statement() -> CREATE TABLE error_log  (
+  log_line        INTEGER  PRIMARY KEY,            -- The line number for the log message
+  log_part        TEXT     COLLATE naturalnocase,  -- The partition the message is in
+  log_time        DATETIME,                        -- The adjusted timestamp for the log message
+  log_actual_time DATETIME HIDDEN,                 -- The timestamp from the original log file for this message
+  log_idle_msecs  INTEGER,                         -- The difference in time between this messages and the previous
+  log_level       TEXT     COLLATE loglevel,       -- The log message level
+  log_mark        BOOLEAN,                         -- True if the log message was marked
+  log_comment     TEXT,                            -- The comment for this message
+  log_tags        TEXT,                            -- A JSON list of tags for this message
+  log_filters     TEXT,                            -- A JSON list of filter IDs that matched this message
+  -- BEGIN Format-specific fields:
+  c_ip            TEXT     COLLATE 'ipaddress'    , -- The client IP address
+  c_port          INTEGER  COLLATE 'BINARY'       ,
+  module          TEXT     COLLATE 'BINARY'       ,
+  pid             INTEGER  COLLATE 'BINARY'       ,
+
+  -- END Format-specific fields
+  log_path        TEXT HIDDEN COLLATE naturalnocase, -- The path to the log file this message is from
+  log_text        TEXT HIDDEN,                       -- The full text of the log message
+  log_body        TEXT HIDDEN                        -- The body of the log message
+);
+
+2020-06-19T11:23:52.108 D log_vtab_impl.cc:211 creating log format table: error_log = 0x7f8dcd81abb0
+2020-06-19T11:23:52.108 I log_format_loader.cc:978 executing SQL files in path: /etc/lnav/formats/*/*.sql
+2020-06-19T11:23:52.108 I log_format_loader.cc:978 executing SQL files in path: /usr/local/Cellar/lnav/0.8.5_1/etc/lnav/formats/*/*.sql
+2020-06-19T11:23:52.108 I log_format_loader.cc:978 executing SQL files in path: /Users/jstegeman/.lnav//formats/*/*.sql
+2020-06-19T11:23:52.110 I logfile.cc:88 Creating logfile: fd=4; size=5911541; mtime=1585252494; filename=/Users/jstegeman/Alex_Data.tgz
+2020-06-19T11:23:52.110 I lnav.cc:971 loading new file: filename=/Users/jstegeman/Alex_Data.tgz
+2020-06-19T11:23:52.112 I logfile.cc:88 Creating logfile: fd=6; size=10672; mtime=1585829360; filename=/Users/jstegeman/Alex_Export.tgz
+2020-06-19T11:23:52.112 I lnav.cc:971 loading new file: filename=/Users/jstegeman/Alex_Export.tgz
+2020-06-19T11:23:52.204 I logfile.cc:88 Creating logfile: fd=8; size=23317; mtime=1592484063; filename=/Users/jstegeman/hive-site.xml
+2020-06-19T11:23:52.204 I lnav.cc:971 loading new file: filename=/Users/jstegeman/hive-site.xml
+2020-06-19T11:23:52.205 I logfile.cc:88 Creating logfile: fd=9; size=167; mtime=1591266706; filename=/Users/jstegeman/krb5.conf
+2020-06-19T11:23:52.205 I lnav.cc:971 loading new file: filename=/Users/jstegeman/krb5.conf
+2020-06-19T11:23:52.206 I logfile.cc:88 Creating logfile: fd=10; size=1092; mtime=1587651138; filename=/Users/jstegeman/open-asset-descriptor.json
+2020-06-19T11:23:52.206 I lnav.cc:971 loading new file: filename=/Users/jstegeman/open-asset-descriptor.json
+2020-06-19T11:23:52.208 I logfile.cc:88 Creating logfile: fd=11; size=1457; mtime=1585141974; filename=/Users/jstegeman/service.txt
+2020-06-19T11:23:52.208 I lnav.cc:971 loading new file: filename=/Users/jstegeman/service.txt
+2020-06-19T11:23:52.208 I lnav.cc:2395 startup: lnav 0.8.5
+2020-06-19T11:23:52.208 I lnav_log.cc:173 uname:
+2020-06-19T11:23:52.208 I lnav_log.cc:174   sysname=Darwin
+2020-06-19T11:23:52.208 I lnav_log.cc:175   nodename=C02Y1068JGH5
+2020-06-19T11:23:52.208 I lnav_log.cc:176   machine=x86_64
+2020-06-19T11:23:52.208 I lnav_log.cc:177   release=19.5.0
+2020-06-19T11:23:52.208 I lnav_log.cc:178   version=Darwin Kernel Version 19.5.0: Tue May 26 20:41:44 PDT 2020; root:xnu-6153.121.2~2/RELEASE_X86_64
+2020-06-19T11:23:52.208 I lnav_log.cc:179 Environment:
+2020-06-19T11:23:52.208 I lnav_log.cc:180   HOME=/Users/jstegeman
+2020-06-19T11:23:52.208 I lnav_log.cc:181   LANG=en_US.UTF-8
+2020-06-19T11:23:52.208 I lnav_log.cc:182   PATH=/Users/jstegeman/.okta/bin:/Users/jstegeman/.jenv/shims:/Users/jstegeman/.jenv/bin:/usr/local/bin:/usr/bin:/bin:/usr/sbin:/sbin:/Applications/VMware Fusion.app/Contents/Public
+2020-06-19T11:23:52.208 I lnav_log.cc:183   TERM=xterm-256color
+2020-06-19T11:23:52.208 I lnav_log.cc:184   TZ=(null)
+2020-06-19T11:23:52.208 I lnav_log.cc:185 Process:
+2020-06-19T11:23:52.208 I lnav_log.cc:186   pid=3979
+2020-06-19T11:23:52.208 I lnav_log.cc:187   ppid=3840
+2020-06-19T11:23:52.208 I lnav_log.cc:188   pgrp=3979
+2020-06-19T11:23:52.208 I lnav_log.cc:189   uid=501
+2020-06-19T11:23:52.208 I lnav_log.cc:190   gid=20
+2020-06-19T11:23:52.208 I lnav_log.cc:191   euid=501
+2020-06-19T11:23:52.208 I lnav_log.cc:192   egid=20
+2020-06-19T11:23:52.208 I lnav_log.cc:197   cwd=/Users/jstegeman
+2020-06-19T11:23:52.208 I lnav_log.cc:199 Executable:
+2020-06-19T11:23:52.208 I lnav_log.cc:200   version=lnav 0.8.5
+2020-06-19T11:23:52.208 I lnav_log.cc:203 rusage:
+2020-06-19T11:23:52.208 I lnav_log.cc:203   utime=0.020752
+2020-06-19T11:23:52.208 I lnav_log.cc:203   stime=0.008752
+2020-06-19T11:23:52.208 I lnav_log.cc:203   maxrss=4628480
+2020-06-19T11:23:52.208 I lnav_log.cc:203   ixrss=0
+2020-06-19T11:23:52.208 I lnav_log.cc:203   idrss=0
+2020-06-19T11:23:52.208 I lnav_log.cc:203   isrss=0
+2020-06-19T11:23:52.208 I lnav_log.cc:203   minflt=1369
+2020-06-19T11:23:52.208 I lnav_log.cc:203   majflt=0
+2020-06-19T11:23:52.208 I lnav_log.cc:203   nswap=0
+2020-06-19T11:23:52.208 I lnav_log.cc:203   inblock=0
+2020-06-19T11:23:52.208 I lnav_log.cc:203   oublock=0
+2020-06-19T11:23:52.208 I lnav_log.cc:203   msgsnd=0
+2020-06-19T11:23:52.208 I lnav_log.cc:203   msgrcv=0
+2020-06-19T11:23:52.208 I lnav_log.cc:203   nsignals=0
+2020-06-19T11:23:52.208 I lnav_log.cc:203   nvcsw=22
+2020-06-19T11:23:52.208 I lnav_log.cc:203   nivcsw=19
+2020-06-19T11:23:52.208 I lnav.cc:2397 Libraries:
+2020-06-19T11:23:52.208 I lnav.cc:2399   bzip=1.0.6, 6-Sept-2010
+2020-06-19T11:23:52.208 I lnav.cc:2404   ncurses=5.7
+2020-06-19T11:23:52.208 I lnav.cc:2405   pcre=8.43 2019-02-23
+2020-06-19T11:23:52.208 I lnav.cc:2406   readline=8.0
+2020-06-19T11:23:52.208 I lnav.cc:2407   sqlite=3.28.0
+2020-06-19T11:23:52.208 I lnav.cc:2408   zlib=1.2.11
+2020-06-19T11:23:52.208 I lnav.cc:2409 lnav_data:
+2020-06-19T11:23:52.208 I lnav.cc:2410   flags=0
+2020-06-19T11:23:52.208 I lnav.cc:2411   commands:
+2020-06-19T11:23:52.208 I lnav.cc:2418   files:
+2020-06-19T11:23:52.208 I lnav.cc:2423     /Users/jstegeman/*
+2020-06-19T11:23:52.208 I session_data.cc:306 init_session: time=1592580232; id=19cc02ae6595bef6c67254dd35382815
+2020-06-19T11:23:52.208 I lnav.cc:2548   session_id=19cc02ae6595bef6c67254dd35382815
+2020-06-19T11:23:52.211 W view_helpers.cc:374 Not executing example: ATTACH DATABASE '/tmp/customers.db' AS customers
+2020-06-19T11:23:52.211 I command_executor.cc:116 Executing SQL: SELECT CAST(1.23 AS INTEGER)
+2020-06-19T11:23:52.212 D view_helpers.cc:368 example: SELECT CAST(1.23 AS INTEGER)
+2020-06-19T11:23:52.212 D view_helpers.cc:370 example result: 1
+2020-06-19T11:23:52.212 W view_helpers.cc:374 Not executing example: ATTACH DATABASE '/tmp/customers.db' AS customers
+2020-06-19T11:23:52.212 W view_helpers.cc:374 Not executing example: SELECT CASE 1 WHEN 0 THEN 'zero' WHEN 1 THEN 'one' END
+2020-06-19T11:23:52.212 I command_executor.cc:116 Executing SQL: SELECT CAST(1.23 AS INTEGER)
+2020-06-19T11:23:52.212 D view_helpers.cc:368 example: SELECT CAST(1.23 AS INTEGER)
+2020-06-19T11:23:52.212 D view_helpers.cc:370 example result: 11
+2020-06-19T11:23:52.212 W view_helpers.cc:374 Not executing example: ATTACH DATABASE '/tmp/customers.db' AS customers
+2020-06-19T11:23:52.212 W view_helpers.cc:374 Not executing example: DETACH DATABASE customers
+2020-06-19T11:23:52.212 W view_helpers.cc:374 Not executing example: SELECT * FROM syslog_log
+2020-06-19T11:23:52.212 W view_helpers.cc:374 Not executing example: DETACH DATABASE customers
+2020-06-19T11:23:52.212 W view_helpers.cc:374 Not executing example: SELECT CASE 1 WHEN 0 THEN 'zero' WHEN 1 THEN 'one' END
+2020-06-19T11:23:52.212 W view_helpers.cc:374 Not executing example: SELECT CASE 1 WHEN 0 THEN 'zero' WHEN 1 THEN 'one' END
+2020-06-19T11:23:52.212 W view_helpers.cc:374 Not executing example: SELECT * FROM syslog_log
+2020-06-19T11:23:52.212 W view_helpers.cc:374 Not executing example: SELECT * FROM syslog_log
+2020-06-19T11:23:52.212 W view_helpers.cc:374 Not executing example: SELECT * FROM syslog_log
+2020-06-19T11:23:52.212 W view_helpers.cc:374 Not executing example: INSERT INTO environ VALUES ('MSG', 'HELLO, WORLD!')
+2020-06-19T11:23:52.212 W view_helpers.cc:374 Not executing example: INSERT INTO environ VALUES ('MSG', 'HELLO, WORLD!')
+2020-06-19T11:23:52.212 W view_helpers.cc:374 Not executing example: SELECT * FROM syslog_log
+2020-06-19T11:23:52.212 W view_helpers.cc:374 Not executing example: SELECT * FROM syslog_log
+2020-06-19T11:23:52.212 W view_helpers.cc:374 Not executing example: SELECT * FROM syslog_log
+2020-06-19T11:23:52.212 W view_helpers.cc:374 Not executing example: UPDATE syslog_log SET log_mark = 1 WHERE log_line = 40
+2020-06-19T11:23:52.212 W view_helpers.cc:374 Not executing example: UPDATE syslog_log SET log_mark = 1 WHERE log_line = 40
+2020-06-19T11:23:52.212 W view_helpers.cc:374 Not executing example: INSERT INTO environ VALUES ('MSG', 'HELLO, WORLD!')
+2020-06-19T11:23:52.212 W view_helpers.cc:374 Not executing example: SELECT CASE 1 WHEN 0 THEN 'zero' WHEN 1 THEN 'one' END
+2020-06-19T11:23:52.212 W view_helpers.cc:374 Not executing example: SELECT * FROM syslog_log
+2020-06-19T11:23:52.212 W view_helpers.cc:374 Not executing example: SELECT * FROM syslog_log
+2020-06-19T11:23:52.212 W view_helpers.cc:374 Not executing example: UPDATE syslog_log SET log_mark = 1 WHERE log_line = 40
+2020-06-19T11:23:52.212 I command_executor.cc:116 Executing SQL: SELECT abs(-1)
+2020-06-19T11:23:52.212 D view_helpers.cc:368 example: SELECT abs(-1)
+2020-06-19T11:23:52.212 D view_helpers.cc:370 example result: 1
+2020-06-19T11:23:52.212 I command_executor.cc:116 Executing SQL: SELECT avg(ex_duration) FROM lnav_example_log
+2020-06-19T11:23:52.212 D view_helpers.cc:368 example: SELECT avg(ex_duration) FROM lnav_example_log
+2020-06-19T11:23:52.212 D view_helpers.cc:370 example result: 4.25
+2020-06-19T11:23:52.212 I command_executor.cc:116 Executing SQL: SELECT ex_procname, avg(ex_duration) FROM lnav_example_log GROUP BY ex_procname
+2020-06-19T11:23:52.212 D view_helpers.cc:368 example: SELECT ex_procname, avg(ex_duration) FROM lnav_example_log GROUP BY ex_procname
+2020-06-19T11:23:52.212 D view_helpers.cc:370 example result: ex_procname avg(ex_duration) 
+gw                       5.0 
+hw                       2.0 
+2020-06-19T11:23:52.212 I command_executor.cc:116 Executing SQL: SELECT basename('foobar')
+2020-06-19T11:23:52.212 D view_helpers.cc:368 example: SELECT basename('foobar')
+2020-06-19T11:23:52.212 D view_helpers.cc:370 example result: foobar
+2020-06-19T11:23:52.212 I command_executor.cc:116 Executing SQL: SELECT basename('foo/bar')
+2020-06-19T11:23:52.212 D view_helpers.cc:368 example: SELECT basename('foo/bar')
+2020-06-19T11:23:52.212 D view_helpers.cc:370 example result: bar
+2020-06-19T11:23:52.212 I command_executor.cc:116 Executing SQL: SELECT basename('foo/bar/')
+2020-06-19T11:23:52.212 D view_helpers.cc:368 example: SELECT basename('foo/bar/')
+2020-06-19T11:23:52.212 D view_helpers.cc:370 example result: bar
+2020-06-19T11:23:52.212 I command_executor.cc:116 Executing SQL: SELECT basename('')
+2020-06-19T11:23:52.212 D view_helpers.cc:368 example: SELECT basename('')
+2020-06-19T11:23:52.212 D view_helpers.cc:370 example result: .
+2020-06-19T11:23:52.212 I command_executor.cc:116 Executing SQL: SELECT basename('foo\bar')
+2020-06-19T11:23:52.212 D view_helpers.cc:368 example: SELECT basename('foo\bar')
+2020-06-19T11:23:52.212 D view_helpers.cc:370 example result: bar
+2020-06-19T11:23:52.212 I command_executor.cc:116 Executing SQL: SELECT basename('foobar')
+2020-06-19T11:23:52.212 D view_helpers.cc:368 example: SELECT basename('foobar')
+2020-06-19T11:23:52.212 D view_helpers.cc:370 example result: foobar
+2020-06-19T11:23:52.212 I command_executor.cc:116 Executing SQL: SELECT basename('/')
+2020-06-19T11:23:52.212 D view_helpers.cc:368 example: SELECT basename('/')
+2020-06-19T11:23:52.212 D view_helpers.cc:370 example result: /
+2020-06-19T11:23:52.212 I command_executor.cc:116 Executing SQL: SELECT char(0x48, 0x49)
+2020-06-19T11:23:52.212 D view_helpers.cc:368 example: SELECT char(0x48, 0x49)
+2020-06-19T11:23:52.212 D view_helpers.cc:370 example result: HI
+2020-06-19T11:23:52.212 I command_executor.cc:116 Executing SQL: SELECT coalesce(null, 0, null)
+2020-06-19T11:23:52.212 D view_helpers.cc:368 example: SELECT coalesce(null, 0, null)
+2020-06-19T11:23:52.212 D view_helpers.cc:370 example result: 0
+2020-06-19T11:23:52.212 I command_executor.cc:116 Executing SQL: SELECT count(*) FROM lnav_example_log
+2020-06-19T11:23:52.212 D view_helpers.cc:368 example: SELECT count(*) FROM lnav_example_log
+2020-06-19T11:23:52.212 D view_helpers.cc:370 example result: 4
+2020-06-19T11:23:52.212 I command_executor.cc:116 Executing SQL: SELECT count(log_part) FROM lnav_example_log
+2020-06-19T11:23:52.212 D view_helpers.cc:368 example: SELECT count(log_part) FROM lnav_example_log
+2020-06-19T11:23:52.212 D view_helpers.cc:370 example result: 2
+2020-06-19T11:23:52.212 I command_executor.cc:116 Executing SQL: SELECT date('2017-01-02T03:04:05')
+2020-06-19T11:23:52.212 D view_helpers.cc:368 example: SELECT date('2017-01-02T03:04:05')
+2020-06-19T11:23:52.212 D view_helpers.cc:370 example result: 2017-01-02
+2020-06-19T11:23:52.212 I command_executor.cc:116 Executing SQL: SELECT date('2017-01-02T03:04:05', '+1 day')
+2020-06-19T11:23:52.212 D view_helpers.cc:368 example: SELECT date('2017-01-02T03:04:05', '+1 day')
+2020-06-19T11:23:52.212 D view_helpers.cc:370 example result: 2017-01-03
+2020-06-19T11:23:52.212 I command_executor.cc:116 Executing SQL: SELECT date(1491341842, 'unixepoch')
+2020-06-19T11:23:52.212 D view_helpers.cc:368 example: SELECT date(1491341842, 'unixepoch')
+2020-06-19T11:23:52.212 D view_helpers.cc:370 example result: 2017-04-04
+2020-06-19T11:23:52.212 I command_executor.cc:116 Executing SQL: SELECT datetime('2017-01-02T03:04:05')
+2020-06-19T11:23:52.212 D view_helpers.cc:368 example: SELECT datetime('2017-01-02T03:04:05')
+2020-06-19T11:23:52.212 D view_helpers.cc:370 example result: 2017-01-02 03:04:05
+2020-06-19T11:23:52.212 I command_executor.cc:116 Executing SQL: SELECT datetime('2017-01-02T03:04:05', '+1 minute')
+2020-06-19T11:23:52.212 D view_helpers.cc:368 example: SELECT datetime('2017-01-02T03:04:05', '+1 minute')
+2020-06-19T11:23:52.212 D view_helpers.cc:370 example result: 2017-01-02 03:05:05
+2020-06-19T11:23:52.212 I command_executor.cc:116 Executing SQL: SELECT datetime(1491341842, 'unixepoch')
+2020-06-19T11:23:52.212 D view_helpers.cc:368 example: SELECT datetime(1491341842, 'unixepoch')
+2020-06-19T11:23:52.212 D view_helpers.cc:370 example result: 2017-04-04 21:37:22
+2020-06-19T11:23:52.212 I command_executor.cc:116 Executing SQL: SELECT dirname('foo/bar')
+2020-06-19T11:23:52.212 D view_helpers.cc:368 example: SELECT dirname('foo/bar')
+2020-06-19T11:23:52.212 D view_helpers.cc:370 example result: foo
+2020-06-19T11:23:52.212 I command_executor.cc:116 Executing SQL: SELECT dirname('/foo/bar')
+2020-06-19T11:23:52.212 D view_helpers.cc:368 example: SELECT dirname('/foo/bar')
+2020-06-19T11:23:52.212 D view_helpers.cc:370 example result: /foo
+2020-06-19T11:23:52.212 I command_executor.cc:116 Executing SQL: SELECT dirname('/bar')
+2020-06-19T11:23:52.212 D view_helpers.cc:368 example: SELECT dirname('/bar')
+2020-06-19T11:23:52.212 D view_helpers.cc:370 example result: /
+2020-06-19T11:23:52.212 I command_executor.cc:116 Executing SQL: SELECT dirname('foo\bar')
+2020-06-19T11:23:52.212 D view_helpers.cc:368 example: SELECT dirname('foo\bar')
+2020-06-19T11:23:52.212 D view_helpers.cc:370 example result: foo
+2020-06-19T11:23:52.212 I command_executor.cc:116 Executing SQL: SELECT dirname('')
+2020-06-19T11:23:52.212 D view_helpers.cc:368 example: SELECT dirname('')
+2020-06-19T11:23:52.212 D view_helpers.cc:370 example result: .
+2020-06-19T11:23:52.212 I command_executor.cc:116 Executing SQL: SELECT endswith('notbad.jpg', '.jpg')
+2020-06-19T11:23:52.212 D view_helpers.cc:368 example: SELECT endswith('notbad.jpg', '.jpg')
+2020-06-19T11:23:52.212 D view_helpers.cc:370 example result: 1
+2020-06-19T11:23:52.212 I command_executor.cc:116 Executing SQL: SELECT endswith('notbad.png', '.jpg')
+2020-06-19T11:23:52.212 D view_helpers.cc:368 example: SELECT endswith('notbad.png', '.jpg')
+2020-06-19T11:23:52.212 D view_helpers.cc:370 example result: 0
+2020-06-19T11:23:52.212 I command_executor.cc:116 Executing SQL: SELECT extract('foo=1 bar=2 name="Rolo Tomassi"')
+2020-06-19T11:23:52.212 D view_helpers.cc:368 example: SELECT extract('foo=1 bar=2 name="Rolo Tomassi"')
+2020-06-19T11:23:52.212 D view_helpers.cc:370 example result: {"foo":1,"bar":2,"name":"Rolo Tomassi"}
+2020-06-19T11:23:52.212 I command_executor.cc:116 Executing SQL: SELECT extract('1.0 abc 2.0')
+2020-06-19T11:23:52.212 D view_helpers.cc:368 example: SELECT extract('1.0 abc 2.0')
+2020-06-19T11:23:52.212 D view_helpers.cc:370 example result: {"col_0":1.0,"col_1":2.0}
+2020-06-19T11:23:52.212 I command_executor.cc:116 Executing SQL: SELECT gethostbyaddr('127.0.0.1')
+2020-06-19T11:23:52.213 D view_helpers.cc:368 example: SELECT gethostbyaddr('127.0.0.1')
+2020-06-19T11:23:52.213 D view_helpers.cc:370 example result: localhost
+2020-06-19T11:23:52.213 I command_executor.cc:116 Executing SQL: SELECT gethostbyname('localhost')
+2020-06-19T11:23:52.214 D view_helpers.cc:368 example: SELECT gethostbyname('localhost')
+2020-06-19T11:23:52.214 D view_helpers.cc:370 example result: 127.0.0.1
+2020-06-19T11:23:52.214 I command_executor.cc:116 Executing SQL: SELECT glob('a*', 'abc')
+2020-06-19T11:23:52.214 D view_helpers.cc:368 example: SELECT glob('a*', 'abc')
+2020-06-19T11:23:52.214 D view_helpers.cc:370 example result: 1
+2020-06-19T11:23:52.214 I command_executor.cc:116 Executing SQL: SELECT group_concat(ex_procname) FROM lnav_example_log
+2020-06-19T11:23:52.214 D view_helpers.cc:368 example: SELECT group_concat(ex_procname) FROM lnav_example_log
+2020-06-19T11:23:52.214 D view_helpers.cc:370 example result: hw,gw,gw,gw
+2020-06-19T11:23:52.214 I command_executor.cc:116 Executing SQL: SELECT group_concat(ex_procname, ', ') FROM lnav_example_log
+2020-06-19T11:23:52.214 D view_helpers.cc:368 example: SELECT group_concat(ex_procname, ', ') FROM lnav_example_log
+2020-06-19T11:23:52.214 D view_helpers.cc:370 example result: hw, gw, gw, gw
+2020-06-19T11:23:52.214 I command_executor.cc:116 Executing SQL: SELECT group_concat(DISTINCT ex_procname) FROM lnav_example_log
+2020-06-19T11:23:52.214 D view_helpers.cc:368 example: SELECT group_concat(DISTINCT ex_procname) FROM lnav_example_log
+2020-06-19T11:23:52.214 D view_helpers.cc:370 example result: hw,gw
+2020-06-19T11:23:52.214 I command_executor.cc:116 Executing SQL: SELECT spooky_hash('abc', '123')
+2020-06-19T11:23:52.214 D view_helpers.cc:368 example: SELECT spooky_hash('abc', '123')
+2020-06-19T11:23:52.214 D view_helpers.cc:370 example result: 4e7a190aead058cb123c94290f29c34a
+2020-06-19T11:23:52.214 I command_executor.cc:116 Executing SQL: SELECT group_spooky_hash(column1) FROM (VALUES ('abc'), ('123'))
+2020-06-19T11:23:52.214 D view_helpers.cc:368 example: SELECT group_spooky_hash(column1) FROM (VALUES ('abc'), ('123'))
+2020-06-19T11:23:52.214 D view_helpers.cc:370 example result: 4e7a190aead058cb123c94290f29c34a
+2020-06-19T11:23:52.214 I command_executor.cc:116 Executing SQL: SELECT hex('abc')
+2020-06-19T11:23:52.214 D view_helpers.cc:368 example: SELECT hex('abc')
+2020-06-19T11:23:52.214 D view_helpers.cc:370 example result: 616263
+2020-06-19T11:23:52.214 I command_executor.cc:116 Executing SQL: SELECT ifnull(null, 0)
+2020-06-19T11:23:52.214 D view_helpers.cc:368 example: SELECT ifnull(null, 0)
+2020-06-19T11:23:52.214 D view_helpers.cc:370 example result: 0
+2020-06-19T11:23:52.214 I command_executor.cc:116 Executing SQL: SELECT instr('abc', 'b')
+2020-06-19T11:23:52.214 D view_helpers.cc:368 example: SELECT instr('abc', 'b')
+2020-06-19T11:23:52.214 D view_helpers.cc:370 example result: 2
+2020-06-19T11:23:52.214 I command_executor.cc:116 Executing SQL: SELECT jget('1', '')
+2020-06-19T11:23:52.214 D view_helpers.cc:368 example: SELECT jget('1', '')
+2020-06-19T11:23:52.214 D view_helpers.cc:370 example result: 1
+2020-06-19T11:23:52.214 I command_executor.cc:116 Executing SQL: SELECT jget('{ "a": 1, "b": 2 }', '/b')
+2020-06-19T11:23:52.214 D view_helpers.cc:368 example: SELECT jget('{ "a": 1, "b": 2 }', '/b')
+2020-06-19T11:23:52.214 D view_helpers.cc:370 example result: 2
+2020-06-19T11:23:52.214 I command_executor.cc:116 Executing SQL: SELECT jget(null, '/msg', 'Hello')
+2020-06-19T11:23:52.214 D view_helpers.cc:368 example: SELECT jget(null, '/msg', 'Hello')
+2020-06-19T11:23:52.214 D view_helpers.cc:370 example result: Hello
+2020-06-19T11:23:52.214 I command_executor.cc:116 Executing SQL: SELECT joinpath('foo', 'bar')
+2020-06-19T11:23:52.214 D view_helpers.cc:368 example: SELECT joinpath('foo', 'bar')
+2020-06-19T11:23:52.214 D view_helpers.cc:370 example result: foo/bar
+2020-06-19T11:23:52.214 I command_executor.cc:116 Executing SQL: SELECT joinpath('', 'foo', 'bar')
+2020-06-19T11:23:52.214 D view_helpers.cc:368 example: SELECT joinpath('', 'foo', 'bar')
+2020-06-19T11:23:52.214 D view_helpers.cc:370 example result: foo/bar
+2020-06-19T11:23:52.214 I command_executor.cc:116 Executing SQL: SELECT joinpath('/', 'foo', 'bar')
+2020-06-19T11:23:52.214 D view_helpers.cc:368 example: SELECT joinpath('/', 'foo', 'bar')
+2020-06-19T11:23:52.214 D view_helpers.cc:370 example result: /foo/bar
+2020-06-19T11:23:52.214 I command_executor.cc:116 Executing SQL: SELECT joinpath('/', 'foo', '/bar')
+2020-06-19T11:23:52.214 D view_helpers.cc:368 example: SELECT joinpath('/', 'foo', '/bar')
+2020-06-19T11:23:52.214 D view_helpers.cc:370 example result: /bar
+2020-06-19T11:23:52.214 I command_executor.cc:116 Executing SQL: SELECT json_contains('[1, 2, 3]', 4)
+2020-06-19T11:23:52.214 D view_helpers.cc:368 example: SELECT json_contains('[1, 2, 3]', 4)
+2020-06-19T11:23:52.214 D view_helpers.cc:370 example result: 0
+2020-06-19T11:23:52.214 I command_executor.cc:116 Executing SQL: SELECT json_contains('["abc", "def"]', 'def')
+2020-06-19T11:23:52.214 D view_helpers.cc:368 example: SELECT json_contains('["abc", "def"]', 'def')
+2020-06-19T11:23:52.214 D view_helpers.cc:370 example result: 1
+2020-06-19T11:23:52.214 I command_executor.cc:116 Executing SQL: SELECT julianday('2017-01-02T03:04:05')
+2020-06-19T11:23:52.214 D view_helpers.cc:368 example: SELECT julianday('2017-01-02T03:04:05')
+2020-06-19T11:23:52.214 D view_helpers.cc:370 example result: 2457755.62783565
+2020-06-19T11:23:52.214 I command_executor.cc:116 Executing SQL: SELECT julianday('2017-01-02T03:04:05', '+1 minute')
+2020-06-19T11:23:52.214 D view_helpers.cc:368 example: SELECT julianday('2017-01-02T03:04:05', '+1 minute')
+2020-06-19T11:23:52.214 D view_helpers.cc:370 example result: 2457755.62853009
+2020-06-19T11:23:52.214 I command_executor.cc:116 Executing SQL: SELECT julianday(1491341842, 'unixepoch')
+2020-06-19T11:23:52.214 D view_helpers.cc:368 example: SELECT julianday(1491341842, 'unixepoch')
+2020-06-19T11:23:52.214 D view_helpers.cc:370 example result: 2457848.40094907
+2020-06-19T11:23:52.214 I command_executor.cc:116 Executing SQL: SELECT leftstr('abc', 1)
+2020-06-19T11:23:52.214 D view_helpers.cc:368 example: SELECT leftstr('abc', 1)
+2020-06-19T11:23:52.214 D view_helpers.cc:370 example result: a
+2020-06-19T11:23:52.214 I command_executor.cc:116 Executing SQL: SELECT leftstr('abc', 10)
+2020-06-19T11:23:52.214 D view_helpers.cc:368 example: SELECT leftstr('abc', 10)
+2020-06-19T11:23:52.214 D view_helpers.cc:370 example result: abc
+2020-06-19T11:23:52.214 I command_executor.cc:116 Executing SQL: SELECT length('abc')
+2020-06-19T11:23:52.214 D view_helpers.cc:368 example: SELECT length('abc')
+2020-06-19T11:23:52.214 D view_helpers.cc:370 example result: 3
+2020-06-19T11:23:52.214 I command_executor.cc:116 Executing SQL: SELECT like('%b%', 'aabcc')
+2020-06-19T11:23:52.214 D view_helpers.cc:368 example: SELECT like('%b%', 'aabcc')
+2020-06-19T11:23:52.214 D view_helpers.cc:370 example result: 1
+2020-06-19T11:23:52.214 I command_executor.cc:116 Executing SQL: SELECT like('%b:%', 'aab%', ':')
+2020-06-19T11:23:52.214 D view_helpers.cc:368 example: SELECT like('%b:%', 'aab%', ':')
+2020-06-19T11:23:52.214 D view_helpers.cc:370 example result: 1
+2020-06-19T11:23:52.214 I command_executor.cc:116 Executing SQL: SELECT lower('AbC')
+2020-06-19T11:23:52.214 D view_helpers.cc:368 example: SELECT lower('AbC')
+2020-06-19T11:23:52.214 D view_helpers.cc:370 example result: abc
+2020-06-19T11:23:52.214 I command_executor.cc:116 Executing SQL: SELECT ltrim('   abc')
+2020-06-19T11:23:52.214 D view_helpers.cc:368 example: SELECT ltrim('   abc')
+2020-06-19T11:23:52.214 D view_helpers.cc:370 example result: abc
+2020-06-19T11:23:52.214 I command_executor.cc:116 Executing SQL: SELECT ltrim('aaaabbbc', 'ab')
+2020-06-19T11:23:52.214 D view_helpers.cc:368 example: SELECT ltrim('aaaabbbc', 'ab')
+2020-06-19T11:23:52.214 D view_helpers.cc:370 example result: c
+2020-06-19T11:23:52.214 I command_executor.cc:116 Executing SQL: SELECT max(2, 1, 3)
+2020-06-19T11:23:52.214 D view_helpers.cc:368 example: SELECT max(2, 1, 3)
+2020-06-19T11:23:52.214 D view_helpers.cc:370 example result: 3
+2020-06-19T11:23:52.214 I command_executor.cc:116 Executing SQL: SELECT max(status) FROM http_status_codes
+2020-06-19T11:23:52.214 D view_helpers.cc:368 example: SELECT max(status) FROM http_status_codes
+2020-06-19T11:23:52.214 D view_helpers.cc:370 example result: 511
+2020-06-19T11:23:52.214 I command_executor.cc:116 Executing SQL: SELECT min(2, 1, 3)
+2020-06-19T11:23:52.215 D view_helpers.cc:368 example: SELECT min(2, 1, 3)
+2020-06-19T11:23:52.215 D view_helpers.cc:370 example result: 1
+2020-06-19T11:23:52.215 I command_executor.cc:116 Executing SQL: SELECT min(status) FROM http_status_codes
+2020-06-19T11:23:52.215 D view_helpers.cc:368 example: SELECT min(status) FROM http_status_codes
+2020-06-19T11:23:52.215 D view_helpers.cc:370 example result: 100
+2020-06-19T11:23:52.215 I command_executor.cc:116 Executing SQL: SELECT nullif(1, 1)
+2020-06-19T11:23:52.215 D view_helpers.cc:368 example: SELECT nullif(1, 1)
+2020-06-19T11:23:52.215 D view_helpers.cc:370 example result: <NULL>
+2020-06-19T11:23:52.215 I command_executor.cc:116 Executing SQL: SELECT nullif(1, 2)
+2020-06-19T11:23:52.215 D view_helpers.cc:368 example: SELECT nullif(1, 2)
+2020-06-19T11:23:52.215 D view_helpers.cc:370 example result: 1
+2020-06-19T11:23:52.215 I command_executor.cc:116 Executing SQL: SELECT printf('Hello, %s!', 'World')
+2020-06-19T11:23:52.215 D view_helpers.cc:368 example: SELECT printf('Hello, %s!', 'World')
+2020-06-19T11:23:52.215 D view_helpers.cc:370 example result: Hello, World!
+2020-06-19T11:23:52.215 I command_executor.cc:116 Executing SQL: SELECT printf('align: % 10s', 'small')
+2020-06-19T11:23:52.215 D view_helpers.cc:368 example: SELECT printf('align: % 10s', 'small')
+2020-06-19T11:23:52.215 D view_helpers.cc:370 example result: align:      small
+2020-06-19T11:23:52.215 I command_executor.cc:116 Executing SQL: SELECT printf('value: %05d', 11)
+2020-06-19T11:23:52.215 D view_helpers.cc:368 example: SELECT printf('value: %05d', 11)
+2020-06-19T11:23:52.215 D view_helpers.cc:370 example result: value: 00011
+2020-06-19T11:23:52.215 I command_executor.cc:116 Executing SQL: SELECT quote('abc')
+2020-06-19T11:23:52.215 D view_helpers.cc:368 example: SELECT quote('abc')
+2020-06-19T11:23:52.215 D view_helpers.cc:370 example result: 'abc'
+2020-06-19T11:23:52.215 I command_executor.cc:116 Executing SQL: SELECT quote('abc''123')
+2020-06-19T11:23:52.215 D view_helpers.cc:368 example: SELECT quote('abc''123')
+2020-06-19T11:23:52.215 D view_helpers.cc:370 example result: 'abc''123'
+2020-06-19T11:23:52.215 I command_executor.cc:116 Executing SQL: SELECT * FROM regexp_capture('a=1; b=2', '(\w+)=(\d+)')
+2020-06-19T11:23:52.215 D view_helpers.cc:368 example: SELECT * FROM regexp_capture('a=1; b=2', '(\w+)=(\d+)')
+2020-06-19T11:23:52.215 D view_helpers.cc:370 example result: match_index capture_index capture_name capture_count range_start range_stop content 
+          0             0 <NULL>                   3           0          3 a=1     
+          0             1                          3           0          1 a       
+          0             2                          3           2          3 1       
+          1             0 <NULL>                   3           5          8 b=2     
+          1             1                          3           5          6 b       
+          1             2                          3           7          8 2       
+2020-06-19T11:23:52.215 I command_executor.cc:116 Executing SQL: SELECT regexp_match('(\d+)', '123')
+2020-06-19T11:23:52.215 D view_helpers.cc:368 example: SELECT regexp_match('(\d+)', '123')
+2020-06-19T11:23:52.215 D view_helpers.cc:370 example result: 123
+2020-06-19T11:23:52.215 I command_executor.cc:116 Executing SQL: SELECT regexp_match('(\d+) (\w+)', '123 four')
+2020-06-19T11:23:52.215 D view_helpers.cc:368 example: SELECT regexp_match('(\d+) (\w+)', '123 four')
+2020-06-19T11:23:52.215 D view_helpers.cc:370 example result: {"col_0":123,"col_1":"four"}
+2020-06-19T11:23:52.215 I command_executor.cc:116 Executing SQL: SELECT regexp_match('(?<num>\d+) (?<str>\w+)', '123 four')
+2020-06-19T11:23:52.215 D view_helpers.cc:368 example: SELECT regexp_match('(?<num>\d+) (?<str>\w+)', '123 four')
+2020-06-19T11:23:52.215 D view_helpers.cc:370 example result: {"num":123,"str":"four"}
+2020-06-19T11:23:52.215 I command_executor.cc:116 Executing SQL: SELECT regexp_replace('Hello, World!', '^(\w+)', 'Goodbye')
+2020-06-19T11:23:52.215 D view_helpers.cc:368 example: SELECT regexp_replace('Hello, World!', '^(\w+)', 'Goodbye')
+2020-06-19T11:23:52.215 D view_helpers.cc:370 example result: Goodbye, World!
+2020-06-19T11:23:52.215 I command_executor.cc:116 Executing SQL: SELECT regexp_replace('123 abc', '(\w+)', '<\1>')
+2020-06-19T11:23:52.215 D view_helpers.cc:368 example: SELECT regexp_replace('123 abc', '(\w+)', '<\1>')
+2020-06-19T11:23:52.215 D view_helpers.cc:370 example result: <123> <abc>
+2020-06-19T11:23:52.215 I command_executor.cc:116 Executing SQL: SELECT replace('abc', 'x', 'z')
+2020-06-19T11:23:52.215 D view_helpers.cc:368 example: SELECT replace('abc', 'x', 'z')
+2020-06-19T11:23:52.215 D view_helpers.cc:370 example result: abc
+2020-06-19T11:23:52.215 I command_executor.cc:116 Executing SQL: SELECT replace('abc', 'a', 'z')
+2020-06-19T11:23:52.215 D view_helpers.cc:368 example: SELECT replace('abc', 'a', 'z')
+2020-06-19T11:23:52.215 D view_helpers.cc:370 example result: zbc
+2020-06-19T11:23:52.215 I command_executor.cc:116 Executing SQL: SELECT replicate('abc', 3)
+2020-06-19T11:23:52.215 D view_helpers.cc:368 example: SELECT replicate('abc', 3)
+2020-06-19T11:23:52.215 D view_helpers.cc:370 example result: abcabcabc
+2020-06-19T11:23:52.215 I command_executor.cc:116 Executing SQL: SELECT reverse('abc')
+2020-06-19T11:23:52.215 D view_helpers.cc:368 example: SELECT reverse('abc')
+2020-06-19T11:23:52.215 D view_helpers.cc:370 example result: cba
+2020-06-19T11:23:52.215 I command_executor.cc:116 Executing SQL: SELECT rightstr('abc', 1)
+2020-06-19T11:23:52.215 D view_helpers.cc:368 example: SELECT rightstr('abc', 1)
+2020-06-19T11:23:52.215 D view_helpers.cc:370 example result: c
+2020-06-19T11:23:52.215 I command_executor.cc:116 Executing SQL: SELECT rightstr('abc', 10)
+2020-06-19T11:23:52.215 D view_helpers.cc:368 example: SELECT rightstr('abc', 10)
+2020-06-19T11:23:52.215 D view_helpers.cc:370 example result: abc
+2020-06-19T11:23:52.215 I command_executor.cc:116 Executing SQL: SELECT round(123.456)
+2020-06-19T11:23:52.215 D view_helpers.cc:368 example: SELECT round(123.456)
+2020-06-19T11:23:52.215 D view_helpers.cc:370 example result: 123.0
+2020-06-19T11:23:52.215 I command_executor.cc:116 Executing SQL: SELECT round(123.456, 1)
+2020-06-19T11:23:52.215 D view_helpers.cc:368 example: SELECT round(123.456, 1)
+2020-06-19T11:23:52.215 D view_helpers.cc:370 example result: 123.5
+2020-06-19T11:23:52.215 I command_executor.cc:116 Executing SQL: SELECT round(123.456, 5)
+2020-06-19T11:23:52.215 D view_helpers.cc:368 example: SELECT round(123.456, 5)
+2020-06-19T11:23:52.215 D view_helpers.cc:370 example result: 123.456
+2020-06-19T11:23:52.215 I command_executor.cc:116 Executing SQL: SELECT ltrim('abc   ')
+2020-06-19T11:23:52.215 D view_helpers.cc:368 example: SELECT ltrim('abc   ')
+2020-06-19T11:23:52.215 D view_helpers.cc:370 example result: abc   
+2020-06-19T11:23:52.215 I command_executor.cc:116 Executing SQL: SELECT ltrim('abbbbcccc', 'bc')
+2020-06-19T11:23:52.215 D view_helpers.cc:368 example: SELECT ltrim('abbbbcccc', 'bc')
+2020-06-19T11:23:52.215 D view_helpers.cc:370 example result: abbbbcccc
+2020-06-19T11:23:52.215 I command_executor.cc:116 Executing SQL: SELECT spooky_hash('Hello, World!')
+2020-06-19T11:23:52.215 D view_helpers.cc:368 example: SELECT spooky_hash('Hello, World!')
+2020-06-19T11:23:52.215 D view_helpers.cc:370 example result: 0b1d52cc5427db4c6a9eed9d3e5700f4
+2020-06-19T11:23:52.215 I command_executor.cc:116 Executing SQL: SELECT spooky_hash('Hello, World!', NULL)
+2020-06-19T11:23:52.215 D view_helpers.cc:368 example: SELECT spooky_hash('Hello, World!', NULL)
+2020-06-19T11:23:52.215 D view_helpers.cc:370 example result: c96ee75d48e6ea444fee8af948f6da25
+2020-06-19T11:23:52.215 I command_executor.cc:116 Executing SQL: SELECT spooky_hash('Hello, World!', '')
+2020-06-19T11:23:52.215 D view_helpers.cc:368 example: SELECT spooky_hash('Hello, World!', '')
+2020-06-19T11:23:52.215 D view_helpers.cc:370 example result: c96ee75d48e6ea444fee8af948f6da25
+2020-06-19T11:23:52.215 I command_executor.cc:116 Executing SQL: SELECT spooky_hash('Hello, World!', 123)
+2020-06-19T11:23:52.215 D view_helpers.cc:368 example: SELECT spooky_hash('Hello, World!', 123)
+2020-06-19T11:23:52.215 D view_helpers.cc:370 example result: f96b3d9c1a19f4394c97a1b79b1880df
+2020-06-19T11:23:52.215 I command_executor.cc:116 Executing SQL: SELECT sqlite_compileoption_used('ENABLE_FTS3')
+2020-06-19T11:23:52.215 D view_helpers.cc:368 example: SELECT sqlite_compileoption_used('ENABLE_FTS3')
+2020-06-19T11:23:52.215 D view_helpers.cc:370 example result: 1
+2020-06-19T11:23:52.215 I command_executor.cc:116 Executing SQL: SELECT startswith('foobar', 'foo')
+2020-06-19T11:23:52.215 D view_helpers.cc:368 example: SELECT startswith('foobar', 'foo')
+2020-06-19T11:23:52.215 D view_helpers.cc:370 example result: 1
+2020-06-19T11:23:52.215 I command_executor.cc:116 Executing SQL: SELECT startswith('foobar', 'bar')
+2020-06-19T11:23:52.215 D view_helpers.cc:368 example: SELECT startswith('foobar', 'bar')
+2020-06-19T11:23:52.215 D view_helpers.cc:370 example result: 0
+2020-06-19T11:23:52.215 I command_executor.cc:116 Executing SQL: SELECT strftime('%Y', '2017-01-02T03:04:05')
+2020-06-19T11:23:52.215 D view_helpers.cc:368 example: SELECT strftime('%Y', '2017-01-02T03:04:05')
+2020-06-19T11:23:52.215 D view_helpers.cc:370 example result: 2017
+2020-06-19T11:23:52.215 I command_executor.cc:116 Executing SQL: SELECT strftime('The time is: %H%M%S', '2017-01-02T03:04:05', '+1 minute')
+2020-06-19T11:23:52.215 D view_helpers.cc:368 example: SELECT strftime('The time is: %H%M%S', '2017-01-02T03:04:05', '+1 minute')
+2020-06-19T11:23:52.215 D view_helpers.cc:370 example result: The time is: 030505
+2020-06-19T11:23:52.215 I command_executor.cc:116 Executing SQL: SELECT strftime('Julian day: %J', 1491341842, 'unixepoch')
+2020-06-19T11:23:52.215 D view_helpers.cc:368 example: SELECT strftime('Julian day: %J', 1491341842, 'unixepoch')
+2020-06-19T11:23:52.215 D view_helpers.cc:370 example result: Julian day: 2457848.400949074
+2020-06-19T11:23:52.215 I command_executor.cc:116 Executing SQL: SELECT substr('abc', 2)
+2020-06-19T11:23:52.215 D view_helpers.cc:368 example: SELECT substr('abc', 2)
+2020-06-19T11:23:52.215 D view_helpers.cc:370 example result: bc
+2020-06-19T11:23:52.215 I command_executor.cc:116 Executing SQL: SELECT substr('abc', 2, 1)
+2020-06-19T11:23:52.215 D view_helpers.cc:368 example: SELECT substr('abc', 2, 1)
+2020-06-19T11:23:52.215 D view_helpers.cc:370 example result: b
+2020-06-19T11:23:52.215 I command_executor.cc:116 Executing SQL: SELECT substr('abc', -1)
+2020-06-19T11:23:52.215 D view_helpers.cc:368 example: SELECT substr('abc', -1)
+2020-06-19T11:23:52.215 D view_helpers.cc:370 example result: c
+2020-06-19T11:23:52.215 I command_executor.cc:116 Executing SQL: SELECT substr('abc', -1, -1)
+2020-06-19T11:23:52.215 D view_helpers.cc:368 example: SELECT substr('abc', -1, -1)
+2020-06-19T11:23:52.215 D view_helpers.cc:370 example result: b
+2020-06-19T11:23:52.215 I command_executor.cc:116 Executing SQL: SELECT sum(ex_duration) FROM lnav_example_log
+2020-06-19T11:23:52.216 D view_helpers.cc:368 example: SELECT sum(ex_duration) FROM lnav_example_log
+2020-06-19T11:23:52.216 D view_helpers.cc:370 example result: 17
+2020-06-19T11:23:52.216 I command_executor.cc:116 Executing SQL: SELECT time('2017-01-02T03:04:05')
+2020-06-19T11:23:52.216 D view_helpers.cc:368 example: SELECT time('2017-01-02T03:04:05')
+2020-06-19T11:23:52.216 D view_helpers.cc:370 example result: 03:04:05
+2020-06-19T11:23:52.216 I command_executor.cc:116 Executing SQL: SELECT time('2017-01-02T03:04:05', '+1 minute')
+2020-06-19T11:23:52.216 D view_helpers.cc:368 example: SELECT time('2017-01-02T03:04:05', '+1 minute')
+2020-06-19T11:23:52.216 D view_helpers.cc:370 example result: 03:05:05
+2020-06-19T11:23:52.216 I command_executor.cc:116 Executing SQL: SELECT time(1491341842, 'unixepoch')
+2020-06-19T11:23:52.216 D view_helpers.cc:368 example: SELECT time(1491341842, 'unixepoch')
+2020-06-19T11:23:52.216 D view_helpers.cc:370 example result: 21:37:22
+2020-06-19T11:23:52.216 I command_executor.cc:116 Executing SQL: SELECT timediff('2017-02-03T04:05:06', '2017-02-03T04:05:00')
+2020-06-19T11:23:52.216 D view_helpers.cc:368 example: SELECT timediff('2017-02-03T04:05:06', '2017-02-03T04:05:00')
+2020-06-19T11:23:52.216 D view_helpers.cc:370 example result: 6.0
+2020-06-19T11:23:52.216 I command_executor.cc:116 Executing SQL: SELECT timediff('today', 'yesterday')
+2020-06-19T11:23:52.216 D view_helpers.cc:368 example: SELECT timediff('today', 'yesterday')
+2020-06-19T11:23:52.216 D view_helpers.cc:370 example result: 86400.0
+2020-06-19T11:23:52.216 I command_executor.cc:116 Executing SQL: SELECT timeslice('2017-01-01T05:05:00', '10m')
+2020-06-19T11:23:52.216 D view_helpers.cc:368 example: SELECT timeslice('2017-01-01T05:05:00', '10m')
+2020-06-19T11:23:52.216 D view_helpers.cc:370 example result: 2017-01-01 05:00:00.000
+2020-06-19T11:23:52.216 I command_executor.cc:116 Executing SQL: SELECT timeslice(log_time, '5m') AS slice, count(*) FROM lnav_example_log GROUP BY slice
+2020-06-19T11:23:52.216 D view_helpers.cc:368 example: SELECT timeslice(log_time, '5m') AS slice, count(*) FROM lnav_example_log GROUP BY slice
+2020-06-19T11:23:52.216 D view_helpers.cc:370 example result:          slice          count(*) 
+2017-02-03 04:05:00.000        2 
+2017-02-03 04:25:00.000        1 
+2017-02-03 04:55:00.000        1 
+2020-06-19T11:23:52.216 I command_executor.cc:116 Executing SQL: SELECT total(ex_duration) FROM lnav_example_log
+2020-06-19T11:23:52.216 D view_helpers.cc:368 example: SELECT total(ex_duration) FROM lnav_example_log
+2020-06-19T11:23:52.216 D view_helpers.cc:370 example result: 17.0
+2020-06-19T11:23:52.216 I command_executor.cc:116 Executing SQL: SELECT trim('    abc   ')
+2020-06-19T11:23:52.216 D view_helpers.cc:368 example: SELECT trim('    abc   ')
+2020-06-19T11:23:52.216 D view_helpers.cc:370 example result: abc
+2020-06-19T11:23:52.216 I command_executor.cc:116 Executing SQL: SELECT trim('-+abc+-', '-+')
+2020-06-19T11:23:52.216 D view_helpers.cc:368 example: SELECT trim('-+abc+-', '-+')
+2020-06-19T11:23:52.216 D view_helpers.cc:370 example result: abc
+2020-06-19T11:23:52.216 I command_executor.cc:116 Executing SQL: SELECT typeof(1)
+2020-06-19T11:23:52.216 D view_helpers.cc:368 example: SELECT typeof(1)
+2020-06-19T11:23:52.216 D view_helpers.cc:370 example result: integer
+2020-06-19T11:23:52.216 I command_executor.cc:116 Executing SQL: SELECT typeof('abc')
+2020-06-19T11:23:52.216 D view_helpers.cc:368 example: SELECT typeof('abc')
+2020-06-19T11:23:52.216 D view_helpers.cc:370 example result: text
+2020-06-19T11:23:52.216 I command_executor.cc:116 Executing SQL: SELECT unicode('abc')
+2020-06-19T11:23:52.216 D view_helpers.cc:368 example: SELECT unicode('abc')
+2020-06-19T11:23:52.216 D view_helpers.cc:370 example result: 97
+2020-06-19T11:23:52.216 I command_executor.cc:116 Executing SQL: SELECT upper('aBc')
+2020-06-19T11:23:52.216 D view_helpers.cc:368 example: SELECT upper('aBc')
+2020-06-19T11:23:52.216 D view_helpers.cc:370 example result: ABC
+2020-06-19T11:23:52.216 I command_executor.cc:450 Executing file: /Users/jstegeman/.lnav/session
+2020-06-19T11:23:52.216 D log_format_loader.cc:1065 Searching for script in path: /etc/lnav/formats/*/*.lnav
+2020-06-19T11:23:52.216 D log_format_loader.cc:1065 Searching for script in path: /usr/local/Cellar/lnav/0.8.5_1/etc/lnav/formats/*/*.lnav
+2020-06-19T11:23:52.216 D log_format_loader.cc:1065 Searching for script in path: /Users/jstegeman/.lnav//formats/*/*.lnav
+2020-06-19T11:23:52.217 D log_format_loader.cc:1077   found script: /Users/jstegeman/.lnav//formats/default/dhclient-summary.lnav
+2020-06-19T11:23:52.217 D log_format_loader.cc:1077   found script: /Users/jstegeman/.lnav//formats/default/lnav-pop-view.lnav
+2020-06-19T11:23:52.217 D log_format_loader.cc:1077   found script: /Users/jstegeman/.lnav//formats/default/partition-by-boot.lnav
+2020-06-19T11:23:52.217 D log_format_loader.cc:1077   found script: /Users/jstegeman/.lnav//formats/default/search-for.lnav
+2020-06-19T11:23:52.221 E pcrepp.cc:168 pcre err -8
+2020-06-19T11:23:52.225 E pcrepp.cc:168 pcre err -8
+2020-06-19T11:23:52.226 E pcrepp.cc:168 pcre err -8
+2020-06-19T11:23:52.226 E pcrepp.cc:168 pcre err -8
+2020-06-19T11:23:52.238 E pcrepp.cc:168 pcre err -8
+2020-06-19T11:23:52.386 D log_format.cc:565 Unable to parse line at offset 3339: lexical error: invalid char in json text.
+                                       ERROR | 2020-04-02 12:05:10,355
+                     (right here) ------^
+
+2020-06-19T11:23:52.393 D log_format.cc:565 Unable to parse line at offset 17991: lexical error: invalid char in json text.
+                                       INFO  | 2020-04-02 12:05:28,384
+                     (right here) ------^
+
+2020-06-19T11:23:52.393 E pcrepp.cc:168 pcre err -8
+2020-06-19T11:23:52.395 E pcrepp.cc:168 pcre err -8
+2020-06-19T11:23:52.402 E pcrepp.cc:168 pcre err -8
+2020-06-19T11:23:52.402 E pcrepp.cc:168 pcre err -8
+2020-06-19T11:23:52.402 E pcrepp.cc:168 pcre err -8
+2020-06-19T11:23:52.402 E pcrepp.cc:168 pcre err -8
+2020-06-19T11:23:52.402 E pcrepp.cc:168 pcre err -8
+2020-06-19T11:23:52.403 E pcrepp.cc:168 pcre err -8
+2020-06-19T11:23:52.425 D log_format.cc:565 Unable to parse line at offset 162: parse error: unallowed token at this point in JSON text
+                                       }
+                     (right here) ------^
+
+2020-06-19T11:23:52.426 D log_format.cc:565 Unable to parse line at offset 515: parse error: unallowed token at this point in JSON text
+                                       }
+                     (right here) ------^
+
+2020-06-19T11:23:52.426 D log_format.cc:565 Unable to parse line at offset 1053: parse error: unallowed token at this point in JSON text
+                                       }
+                     (right here) ------^
+
+2020-06-19T11:23:52.426 D log_format.cc:565 Unable to parse line at offset 1061: parse error: unallowed token at this point in JSON text
+                                       }
+                     (right here) ------^
+
+2020-06-19T11:23:52.555 I session_data.cc:399 loading bookmark db: /Users/jstegeman/.lnav/log_metadata.db
+2020-06-19T11:23:52.556 E session_data.cc:407 unable to upgrade bookmark table -- duplicate column name: comment
+
+2020-06-19T11:23:52.556 E session_data.cc:407 unable to upgrade bookmark table -- duplicate column name: tags
+
+2020-06-19T11:23:52.556 I command_executor.cc:614 Executing initial commands
+2020-06-19T11:23:55.203 D hotkeys.cc:149 executing key sequence xe9dd67f0: :toggle-view pretty
+2020-06-19T11:23:55.203 I command_executor.cc:88 Executing: toggle-view pretty
+2020-06-19T11:23:55.225 E lnav_log.cc:325 Received signal: 11
+0   lnav                                0x0000000105ea815a _ZL7sigabrti + 108
+1   libsystem_platform.dylib            0x00007fff69bd25fd _sigtramp + 29
+2   ???                                 0x0000000106df21ae 0x0 + 4410253742
+3   lnav                                0x0000000105ead0d4 _ZNK10pcre_input10get_substrEPKN12pcre_context7captureE + 148
+4   lnav                                0x0000000105f37ea2 _ZN14pretty_printer13write_elementERKNS_7elementE + 328
+5   lnav                                0x0000000105f386ee _ZN14pretty_printer12flush_valuesEb + 124
+6   lnav                                0x0000000105f37a22 _ZN14pretty_printer9append_toER11attr_line_t + 562
+7   lnav                                0x0000000105f97fdc _Z11toggle_viewP15textview_curses + 3710
+8   lnav                                0x0000000105e860f1 _ZL18com_switch_to_viewR12exec_contextNSt3__112basic_stringIcNS1_11char_traitsIcEENS1_9allocatorIcEEEERNS1_6vectorIS7_NS5_IS7_EEEE + 268
+9   lnav                                0x0000000105e478af _Z15execute_commandR12exec_contextRKNSt3__112basic_stringIcNS1_11char_traitsIcEENS1_9allocatorIcEEEE + 216
+10  lnav                                0x0000000105e4b121 _Z11execute_anyR12exec_contextRKNSt3__112basic_stringIcNS1_11char_traitsIcEENS1_9allocatorIcEEEE + 117
+11  lnav                                0x0000000105e69623 _Z13handle_keyseqPKc + 531
+12  lnav                                0x0000000105e69d60 _Z17handle_paging_keyi + 130
+13  lnav                                0x0000000105e70957 _ZN16input_dispatcher9new_inputERK7timevali + 301
+14  lnav                                0x0000000105e32d39 _ZL6looperv + 4721
+15  lnav                                0x0000000105e30a8a main + 12277
+16  libdyld.dylib                       0x00007fff699d9cc9 start + 1
+17  ???                                 0x0000000000000002 0x0 + 2
+2020-06-19T11:23:55.227 I lnav_log.cc:173 uname:
+2020-06-19T11:23:55.227 I lnav_log.cc:174   sysname=Darwin
+2020-06-19T11:23:55.227 I lnav_log.cc:175   nodename=C02Y1068JGH5
+2020-06-19T11:23:55.227 I lnav_log.cc:176   machine=x86_64
+2020-06-19T11:23:55.227 I lnav_log.cc:177   release=19.5.0
+2020-06-19T11:23:55.227 I lnav_log.cc:178   version=Darwin Kernel Version 19.5.0: Tue May 26 20:41:44 PDT 2020; root:xnu-6153.121.2~2/RELEASE_X86_64
+2020-06-19T11:23:55.227 I lnav_log.cc:179 Environment:
+2020-06-19T11:23:55.227 I lnav_log.cc:180   HOME=/Users/jstegeman
+2020-06-19T11:23:55.227 I lnav_log.cc:181   LANG=en_US.UTF-8
+2020-06-19T11:23:55.227 I lnav_log.cc:182   PATH=/Users/jstegeman/.okta/bin:/Users/jstegeman/.jenv/shims:/Users/jstegeman/.jenv/bin:/usr/local/bin:/usr/bin:/bin:/usr/sbin:/sbin:/Applications/VMware Fusion.app/Contents/Public
+2020-06-19T11:23:55.227 I lnav_log.cc:183   TERM=xterm-256color
+2020-06-19T11:23:55.227 I lnav_log.cc:184   TZ=(null)
+2020-06-19T11:23:55.227 I lnav_log.cc:185 Process:
+2020-06-19T11:23:55.227 I lnav_log.cc:186   pid=3979
+2020-06-19T11:23:55.227 I lnav_log.cc:187   ppid=3840
+2020-06-19T11:23:55.227 I lnav_log.cc:188   pgrp=3979
+2020-06-19T11:23:55.227 I lnav_log.cc:189   uid=501
+2020-06-19T11:23:55.227 I lnav_log.cc:190   gid=20
+2020-06-19T11:23:55.227 I lnav_log.cc:191   euid=501
+2020-06-19T11:23:55.227 I lnav_log.cc:192   egid=20
+2020-06-19T11:23:55.227 I lnav_log.cc:197   cwd=/Users/jstegeman
+2020-06-19T11:23:55.227 I lnav_log.cc:199 Executable:
+2020-06-19T11:23:55.227 I lnav_log.cc:200   version=lnav 0.8.5
+2020-06-19T11:23:55.227 I lnav_log.cc:203 rusage:
+2020-06-19T11:23:55.227 I lnav_log.cc:203   utime=0.515963
+2020-06-19T11:23:55.227 I lnav_log.cc:203   stime=0.051525
+2020-06-19T11:23:55.227 I lnav_log.cc:203   maxrss=98312192
+2020-06-19T11:23:55.227 I lnav_log.cc:203   ixrss=0
+2020-06-19T11:23:55.227 I lnav_log.cc:203   idrss=0
+2020-06-19T11:23:55.227 I lnav_log.cc:203   isrss=0
+2020-06-19T11:23:55.227 I lnav_log.cc:203   minflt=24522
+2020-06-19T11:23:55.227 I lnav_log.cc:203   majflt=2
+2020-06-19T11:23:55.227 I lnav_log.cc:203   nswap=0
+2020-06-19T11:23:55.227 I lnav_log.cc:203   inblock=0
+2020-06-19T11:23:55.227 I lnav_log.cc:203   oublock=0
+2020-06-19T11:23:55.227 I lnav_log.cc:203   msgsnd=74
+2020-06-19T11:23:55.227 I lnav_log.cc:203   msgrcv=12
+2020-06-19T11:23:55.227 I lnav_log.cc:203   nsignals=9
+2020-06-19T11:23:55.227 I lnav_log.cc:203   nvcsw=41
+2020-06-19T11:23:55.227 I lnav_log.cc:203   nivcsw=161
+2020-06-19T11:23:55.227 I lnav.hh:162 recent_key_presses: index=1
+ 0x50 (P) 0x0 ( ) 0x0 ( ) 0x0 ( ) 0x0 ( ) 0x0 ( ) 0x0 ( ) 0x0 ( ) 0x0 ( ) 0x0 ( )
+2020-06-19T11:23:55.227 D listview_curses.hh:554 listview_curses=0x1060ed0f0
+2020-06-19T11:23:55.227 D listview_curses.hh:555   lv_title=SPECTRO
+2020-06-19T11:23:55.227 D listview_curses.hh:556   lv_y=1
+2020-06-19T11:23:55.227 D listview_curses.hh:557   lv_top=0
+2020-06-19T11:23:55.227 D listview_curses.hh:554 listview_curses=0x1060ecef0
+2020-06-19T11:23:55.227 D listview_curses.hh:555   lv_title=PRETTY
+2020-06-19T11:23:55.227 D listview_curses.hh:556   lv_y=1
+2020-06-19T11:23:55.227 D listview_curses.hh:557   lv_top=0
+2020-06-19T11:23:55.227 D listview_curses.hh:554 listview_curses=0x1060eccf0
+2020-06-19T11:23:55.227 D listview_curses.hh:555   lv_title=SCHEMA
+2020-06-19T11:23:55.227 D listview_curses.hh:556   lv_y=1
+2020-06-19T11:23:55.227 D listview_curses.hh:557   lv_top=0
+2020-06-19T11:23:55.227 D listview_curses.hh:554 listview_curses=0x1060ecaf0
+2020-06-19T11:23:55.227 D listview_curses.hh:555   lv_title=DB
+2020-06-19T11:23:55.227 D listview_curses.hh:556   lv_y=1
+2020-06-19T11:23:55.227 D listview_curses.hh:557   lv_top=0
+2020-06-19T11:23:55.227 D listview_curses.hh:554 listview_curses=0x1060ec8f0
+2020-06-19T11:23:55.227 D listview_curses.hh:555   lv_title=HIST
+2020-06-19T11:23:55.227 D listview_curses.hh:556   lv_y=1
+2020-06-19T11:23:55.227 D listview_curses.hh:557   lv_top=0
+2020-06-19T11:23:55.227 D listview_curses.hh:554 listview_curses=0x1060ec6f0
+2020-06-19T11:23:55.227 D listview_curses.hh:555   lv_title=HELP
+2020-06-19T11:23:55.227 D listview_curses.hh:556   lv_y=1
+2020-06-19T11:23:55.227 D listview_curses.hh:557   lv_top=0
+2020-06-19T11:23:55.227 D listview_curses.hh:554 listview_curses=0x1060ec4f0
+2020-06-19T11:23:55.227 D listview_curses.hh:555   lv_title=TEXT
+2020-06-19T11:23:55.227 D listview_curses.hh:556   lv_y=1
+2020-06-19T11:23:55.227 D listview_curses.hh:557   lv_top=0
+2020-06-19T11:23:55.227 D listview_curses.hh:554 listview_curses=0x1060ec2f0
+2020-06-19T11:23:55.227 D listview_curses.hh:555   lv_title=LOG
+2020-06-19T11:23:55.227 D listview_curses.hh:556   lv_y=1
+2020-06-19T11:23:55.227 D listview_curses.hh:557   lv_top=0
+2020-06-19T11:23:55.227 D listview_curses.hh:554 listview_curses=0x1060ec090
+2020-06-19T11:23:55.227 D listview_curses.hh:555   lv_title=
+2020-06-19T11:23:55.227 D listview_curses.hh:556   lv_y=31
+2020-06-19T11:23:55.227 D listview_curses.hh:557   lv_top=0
+2020-06-19T11:23:55.227 D listview_curses.hh:554 listview_curses=0x1060ebc70
+2020-06-19T11:23:55.227 D listview_curses.hh:555   lv_title=
+2020-06-19T11:23:55.227 D listview_curses.hh:556   lv_y=31
+2020-06-19T11:23:55.227 D listview_curses.hh:557   lv_top=0
+2020-06-19T11:23:55.227 D listview_curses.hh:554 listview_curses=0x1060eb850
+2020-06-19T11:23:55.227 D listview_curses.hh:555   lv_title=
+2020-06-19T11:23:55.227 D listview_curses.hh:556   lv_y=31
+2020-06-19T11:23:55.227 D listview_curses.hh:557   lv_top=0
+2020-06-19T11:23:55.227 D listview_curses.hh:554 listview_curses=0x1060eb430
+2020-06-19T11:23:55.227 D listview_curses.hh:555   lv_title=
+2020-06-19T11:23:55.227 D listview_curses.hh:556   lv_y=30
+2020-06-19T11:23:55.227 D listview_curses.hh:557   lv_top=0
+2020-06-19T11:23:55.227 D listview_curses.hh:554 listview_curses=0x1060eb1a0
+2020-06-19T11:23:55.227 D listview_curses.hh:555   lv_title=
+2020-06-19T11:23:55.227 D listview_curses.hh:556   lv_y=0
+2020-06-19T11:23:55.227 D listview_curses.hh:557   lv_top=0
+2020-06-19T11:23:55.227 D listview_curses.hh:554 listview_curses=0x1060eab00
+2020-06-19T11:23:55.227 D listview_curses.hh:555   lv_title=
+2020-06-19T11:23:55.227 D listview_curses.hh:556   lv_y=31
+2020-06-19T11:23:55.227 D listview_curses.hh:557   lv_top=0

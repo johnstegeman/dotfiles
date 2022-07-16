@@ -1,0 +1,5 @@
+{{- if (index . "host") }}
+export host={{ .host }}
+{{ else }}
+export host=`hostname`
+{{ end }}

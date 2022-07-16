@@ -1,0 +1,40 @@
+[".oh-my-zsh"]
+    type = "git-repo"
+    url = "https://github.com/ohmyzsh/ohmyzsh"
+    refreshPeriod = "168h"
+[".oh-my-zsh/custom/plugins/zsh-autosuggestions"]
+    type = "git-repo"
+    url = "https://github.com/zsh-users/zsh-autosuggestions"
+    refreshPeriod = "168h"
+[".oh-my-zsh/custom/plugins/zsh-history-substring-search"]
+    type = "git-repo"
+    url = "https://github.com/zsh-users/zsh-history-substring-search"
+    refreshPeriod = "168h"
+[".oh-my-zsh/custom/plugins/zsh-dircolors-solarized"]
+    type = "git-repo"
+    url = "https://github.com/joel-porquet/zsh-dircolors-solarized"
+    refreshPeriod = "168h"
+[".oh-my-zsh/custom/plugins/zsh-dircolors-solarized/dircolors-solarized"]
+    type = "git-repo"
+    url = "https://github.com/seebi/dircolors-solarized"
+    refreshPeriod = "168h"
+[".oh-my-zsh/custom/themes/powerlevel10k"]
+    type = "git-repo"
+    url = "https://github.com/romkatv/powerlevel10k"
+    refreshPeriod = "168h"
+{{ if ne .chezmoi.os "darwin" }}
+["bin/k9s"]
+    type = "file"
+    url = "https://github.com/derailed/k9s/releases/download/v0.25.18/k9s_Linux_x86_64.tar.gz"
+    executable = true
+    ["bin/k9s".filter]
+        command = "tar"
+        args = ["--extract", "--file", "/dev/stdin", "--gzip", "--to-stdout", "k9s"]
+["bin/bw"]
+    type = "file"
+    url = "https://github.com/bitwarden/cli/releases/download/v1.21.1/bw-linux-1.21.1.zip"
+    executable = true
+    ["bin/bw".filter]
+        command = "funzip"
+        args = []
+{{ end }}

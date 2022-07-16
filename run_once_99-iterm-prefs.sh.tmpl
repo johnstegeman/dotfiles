@@ -1,0 +1,5 @@
+#!/bin/bash
+{{ if eq .chezmoi.os "darwin" }}
+defaults write com.googlecode.iterm2 PrefsCustomFolder -string ~/.local/share/chezmoi/config
+defaults write com.googlecode.iterm2 LoadPrefsFromCustomFolder -bool true
+{{ end }}
