@@ -22,6 +22,10 @@
     type = "git-repo"
     url = "https://github.com/romkatv/powerlevel10k"
     refreshPeriod = "168h"
+[".vim_runtime"]
+    type = "git-repo"
+    url = "https://github.com/amix/vimrc.git"
+    refreshPeriod = "168h"
 {{ if ne .chezmoi.os "darwin" }}
 #["bin/k9s"]
 #    type = "file"
