@@ -14,7 +14,7 @@
       "webVault": null,
       "keyConnector": null
     },
-    "installedVersion": "1.21.1"
+    "installedVersion": "2022.6.2"
   },
   "authenticatedAccounts": [
     "b690cecf-620f-494d-9fcb-ace600ce2c94"
@@ -6195,5 +6195,5 @@
     "b690cecf-620f-494d-9fcb-ace600ce2c94": 1646494803693
   },
   "activeUserId": "b690cecf-620f-494d-9fcb-ace600ce2c94",
-  "__PROTECTED__b690cecf-620f-494d-9fcb-ace600ce2c94_masterkey_auto": "Ah3oZntP7KAMDx+8DPcuYQ4g03c9bym1MHi3aic0VIDVbl5Dh2RSRqGwEscEvjWiGnZJP3GkhqKuVRWv1Y8LNW325y+LyBRxDeRAurEizqDSYBtl+iyIGJdqSP30O1MIuQ=="
+  "__PROTECTED__b690cecf-620f-494d-9fcb-ace600ce2c94_masterkey_auto": "AiDFQpM7NUbGU/nB5PlZNj00rMHEU9dMA0zl0PM7B4MY19Q0Kr3Z34lLi6p5L7wnIZR8TvFnYr0Ga9khmpfTHU6zpelyj/wSb82f+CgW6EYlMTV2+8MDzv2u/M5g0u8xQQ=="
 }
