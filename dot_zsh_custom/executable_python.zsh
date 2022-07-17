@@ -10,7 +10,7 @@ if [ -x "$(command -v pyenv)" ]; then
 
 	VIRTUAL_ENV_DISABLE_PROMPT=1
 
-	~/.pyenv/versions/3.9.4/bin/virtualenvwrapper.sh
+	~/.pyenv/versions/3.10.5/bin/virtualenvwrapper.sh
 	export PYENV_VIRTUALENVWRAPPER_PREFER_PYVENV="true"
 	export WORKON_HOME=$HOME/.virtualenvs
 	mkdir -p $WORKON_HOME
