@@ -1,0 +1,4 @@
+[user]
+	email = john.stegeman@gmail.com
+[core]
+	excludesfile = /Users/jstegeman/.gitignore
