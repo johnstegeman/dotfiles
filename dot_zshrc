@@ -16,6 +16,8 @@ if [ -d "$1" ]; then
 fi
 }
 
+# I edit this
+
 export TERM=xterm-256color
 
 # Path to your oh-my-zsh installation.
