@@ -62,3 +62,4 @@ source_directory ~/.zsh_custom
 [[ ! -f ~/.p10k.zsh ]] || source ~/.p10k.zsh
 
 eval "$(zoxide init zsh)"
+alias cd=z
