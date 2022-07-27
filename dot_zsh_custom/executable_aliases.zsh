@@ -32,6 +32,6 @@ safe_alias vi vim
 safe_alias cm chezmoi
 if [ -x "$(command -v chezmoi)" ]; then
 cmcd() {
-    cd $(chezmoi source-path)
+    z $(chezmoi source-path)
 }
 fi
