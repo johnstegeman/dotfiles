@@ -15,7 +15,6 @@ brew "htop"
 brew "httpie"
 brew "jenv"
 brew "lnav"
-brew "mas"
 brew "ncdu"
 brew "nmap"
 brew "nvm"
@@ -27,6 +26,7 @@ brew "virtualenv"
 brew "virtualenvwrapper"
 brew "wget"
 brew "zlib"
+brew "zoxide"
 brew "zsh"
 brew "zsh-history-substring-search"
 brew "zsh-syntax-highlighting"
@@ -45,11 +45,3 @@ cask "neo4j"
 cask "slack"
 cask "visual-studio-code"
 cask "zoom"
-mas "GarageBand", id: 682658836
-mas "GoodNotes", id: 1444383602
-mas "iMovie", id: 408981434
-mas "Keynote", id: 409183694
-mas "Monosnap", id: 540348655
-mas "Numbers", id: 409203825
-mas "Pages", id: 409201541
-mas "Spark", id: 1176895641
