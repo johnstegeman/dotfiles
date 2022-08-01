@@ -4,5 +4,8 @@
     "security.workspace.trust.untrustedFiles": "open",
     "redhat.telemetry.enabled": false,
     "window.autoDetectHighContrast": false,
-    "extensions.ignoreRecommendations": true
+    "extensions.ignoreRecommendations": true,
+    "[javascript]": {
+        "editor.defaultFormatter": "esbenp.prettier-vscode"
+    }
 }
