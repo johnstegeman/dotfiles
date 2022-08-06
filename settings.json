@@ -8,5 +8,6 @@
     "[javascript]": {
         "editor.defaultFormatter": "esbenp.prettier-vscode"
     },
-    "editor.fontFamily": "MesloLGM Nerd Font Mono, Menlo, Monaco, 'Courier New', monospace"
+    "editor.fontFamily": "MesloLGM Nerd Font Mono, Menlo, Monaco, 'Courier New', monospace",
+    "editor.experimental.stickyScroll.enabled": true
 }
