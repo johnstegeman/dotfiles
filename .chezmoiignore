@@ -15,6 +15,7 @@ config/Brewfile
 .desktop_backgrounds/**/*
 {{ else }}
 .config/Bitwarden\ CLI/data.json
+.config/gtk-2.0/gtkfilechooser.ini
 {{ end }}
 .oh-my-zsh/cache
 .oh-my-zsh/cache/*
