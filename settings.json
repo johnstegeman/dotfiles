@@ -9,5 +9,6 @@
         "editor.defaultFormatter": "esbenp.prettier-vscode"
     },
     "editor.fontFamily": "MesloLGM Nerd Font Mono, Menlo, Monaco, 'Courier New', monospace",
-    "editor.stickyScroll.enabled": true
+    "editor.stickyScroll.enabled": true,
+    "window.zoomLevel": 1
 }
