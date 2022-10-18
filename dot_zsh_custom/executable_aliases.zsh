@@ -24,7 +24,7 @@ ln -s ~/dotfiles/"$1" ~/."$1"
 
 safe_suffix_alias log lnav
 
-safe_alias du ncdu "--color off"
+safe_alias du ncdu
 safe_alias df duf
 safe_alias cat bat
 safe_alias pcat bat "-pp"
