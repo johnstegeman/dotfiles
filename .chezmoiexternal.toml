@@ -34,11 +34,4 @@
 #    ["bin/k9s".filter]
 #        command = "tar"
 #        args = ["--extract", "--file", "/dev/stdin", "--gzip", "--to-stdout", "k9s"]
-["bin/bw"]
-    type = "file"
-    url = "https://github.com/bitwarden/cli/releases/download/v1.21.1/bw-linux-1.21.1.zip"
-    executable = true
-    ["bin/bw".filter]
-        command = "funzip"
-        args = []
 {{ end }}
