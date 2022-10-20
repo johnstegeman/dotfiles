@@ -27,8 +27,7 @@ COMPLETION_WAITING_DOTS="true"
 
 #/bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)"
 
-export PATH=/opt/homebrew/bin:~/bin:$PATH
-alias dircolors='gdircolors'
+export PATH=/opt/homebrew/bin:~/bin:~/.local/bin:$PATH
 
 plugins=(
 #  autoupdate

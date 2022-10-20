@@ -31,6 +31,7 @@ safe_alias pcat bat "-pp"
 safe_alias vi vim
 safe_alias cm chezmoi
 safe_alias mp multipass
+safe_alias gdircolors dircolors
 
 if [ -x "$(command -v chezmoi)" ]; then
 cmcd() {
