@@ -31,7 +31,10 @@ safe_alias pcat bat "-pp"
 safe_alias vi vim
 safe_alias cm chezmoi
 safe_alias mp multipass
-safe_alias gdircolors dircolors
+
+if [ -e /opt/homebrew/bin/gdircolors ]; then
+    alias dircolors=gdircolors
+fi
 
 if [ -x "$(command -v chezmoi)" ]; then
 cmcd() {

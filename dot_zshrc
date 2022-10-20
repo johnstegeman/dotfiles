@@ -29,6 +29,8 @@ COMPLETION_WAITING_DOTS="true"
 
 export PATH=/opt/homebrew/bin:~/bin:~/.local/bin:$PATH
 
+source_directory ~/.zsh_custom
+
 plugins=(
 #  autoupdate
   zsh-autosuggestions
@@ -56,7 +58,6 @@ source_if_exists /usr/local/share/zsh-syntax-highlighting/zsh-syntax-highlightin
 
 source_if_exists /usr/local/share/zsh-history-substring-search/zsh-history-substring-search.zsh
 
-source_directory ~/.zsh_custom
 # To customize prompt, run `p10k configure` or edit ~/.p10k.zsh.
 [[ ! -f ~/.p10k.zsh ]] || source ~/.p10k.zsh
 
