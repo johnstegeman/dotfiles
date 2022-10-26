@@ -35,7 +35,7 @@ plugins=(
 #  autoupdate
   zsh-autosuggestions
   history-substring-search
-
+  copybuffer
   direnv
   zsh-dircolors-solarized
 
