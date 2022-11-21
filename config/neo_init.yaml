@@ -1,0 +1,13 @@
+users:
+  - name: jstegeman
+    groups: sudo
+    shell: /usr/bin/zsh
+    sudo: ['ALL=(ALL) NOPASSWD:ALL']
+    ssh_authorized_keys:
+      - ssh-rsa AAAAB3NzaC1yc2EAAAADAQABAAABgQDlyHYDMf7aLuKhaeChcVfeIjKMMpEHJq1pOxgO7y0i7ubd+V9yNbNz2aiLEnawc9HBY/jeSlNnpb6+Ev/3iXQXNybDVC1OH/YGmzW9wWaw1zjgZOwQuGb+mxveEZH37+pbVKUA4L632U7zdotv8kXOtKs5lAN/MitBB5kF7+bRQrbGPKmTHMn3/6051K1sIVVigy1+squ4yMqrhYTtSWBijM+cEk3/d7LkB/lXoLE/rncHxPqgMgWNc180qPmVGhtJ14uImO+PF48z5ot4Ys1w2rf6NVDzJ1Oavogf/2b+AgiLINS6w6QriqysyquU/VJyqVQpSiClvGfWcCKwV0a5fYFPoArFfy8iDxfe/cDDb5df7Y9cl9E+2hmLcTkvCaeDj5J8V/l23GDjZhgkCck9vFQbHnXhBoqieLjfyh6L3BC5JRvtZ+xcjxNRrzevWfdx7XRkjSQgEX3QrvkKR/7Wn3y58ON+tMX5Xcou8g+XcMkaihxd+f9WKZfjeQy2Oe8= jstegeman@jstegeman-mac
+package_update: true
+package_upgrade: true
+packages:
+  - zsh
+  - openjdk-17-jdk
+  - openjdk-17-jre
