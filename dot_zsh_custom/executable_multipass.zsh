@@ -1,5 +1,5 @@
 mssh() {
-ssh  `multipass info $1 --format json | jq -r  ".info.fabric.ipv4[0]"`
+ssh  `multipass info $1 --format json | jq -r  ".info.$1.ipv4[0]"`
  }
 
 mcreate() {
