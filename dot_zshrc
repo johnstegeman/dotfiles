@@ -29,8 +29,6 @@ COMPLETION_WAITING_DOTS="true"
 
 export PATH=/opt/homebrew/bin:~/bin:~/.local/bin:$PATH
 
-source_directory ~/.zsh_custom
-
 plugins=(
 #  autoupdate
   zsh-autosuggestions
@@ -42,7 +40,14 @@ plugins=(
   colored-man-pages
   history
 )
+
+if [ -e /opt/homebrew/bin/gdircolors ]; then
+    alias dircolors=gdircolors
+fi
+
 source_if_exists $ZSH/oh-my-zsh.sh
+
+source_directory ~/.zsh_custom
 
 #ZSH_CUSTOM_AUTOUPDATE_QUIET=true
 DISABLE_AUTO_UPDATE="true"
