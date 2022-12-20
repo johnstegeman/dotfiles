@@ -28,7 +28,12 @@ safe_alias du ncdu
 safe_alias df duf
 safe_alias cat bat
 safe_alias pcat bat "-pp"
-safe_alias vi vim
+safe_alias vi nvim
+
+if ! alias vi >/dev/null 2>&1; then
+    safe_alias vi vim
+fi
+
 safe_alias cm chezmoi
 safe_alias mp multipass
 
