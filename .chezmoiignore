@@ -39,3 +39,5 @@ config/com.googlecode.iterm2.plist
 .config/configstore/*
 .config/configstore/**/*
 .lnav/*.json
+.lnav/**/*.sample
+.lnav/log_medatadata.db
