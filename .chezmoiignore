@@ -41,3 +41,4 @@ config/com.googlecode.iterm2.plist
 .lnav/*.json
 .lnav/**/*.sample
 .lnav/log_medatadata.db
+.lnav/*.history
