@@ -4,6 +4,13 @@ safe_alias() { if [ -x "$(command -v $2)" ]; then
 fi
 }
 
+safe_alias_2() { if [ -x "$(command -v $2)" ]; then
+	alias "$1"="$2 $3"
+elif [ -x "$(command -v $4)" ]; then
+    alias "$1"="$4 $5"
+fi
+}
+
 safe_suffix_alias() { if [ -x "$(command -v $2)" ]; then
         alias -s "$1"="$2 $3"
 fi
@@ -24,7 +31,7 @@ ln -s ~/dotfiles/"$1" ~/."$1"
 
 safe_suffix_alias log lnav
 
-safe_alias du ncdu
+safe_alias_2 du dua i ncdu
 safe_alias df duf
 safe_alias cat bat
 safe_alias pcat bat "-pp"
