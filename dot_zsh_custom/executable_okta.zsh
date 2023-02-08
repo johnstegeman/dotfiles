@@ -1,1 +1,1 @@
-alias gimme='gimme-aws-creds'
+# alias gimme='gimme-aws-creds'
