@@ -33,7 +33,7 @@ safe_suffix_alias log lnav
 
 safe_alias_2 du dua i ncdu
 safe_alias df duf
-safe_alias cat bat
+safe_alias cat bat "-p"
 safe_alias pcat bat "-pp"
 safe_alias vi nvim
 safe_alias less moar
