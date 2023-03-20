@@ -9,6 +9,8 @@
     navigate = true
     light = false
     syntax-theme = Solarized (dark)
+    hyperlinks = true
+    side-by-side = true
 [merge]
     conflictstyle = diff3
 [diff]
