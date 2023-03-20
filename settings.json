@@ -14,5 +14,8 @@
     "vsicons.dontShowNewVersionMessage": true,
     "[python]": {
         "editor.formatOnType": true
+    },
+    "[json]": {
+        "editor.defaultFormatter": "esbenp.prettier-vscode"
     }
 }
