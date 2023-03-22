@@ -36,7 +36,8 @@ plugins=(
   copybuffer
   direnv
   zsh-dircolors-solarized
-
+  H-S-MW
+  F-Sy-H
   colored-man-pages
   history
 )
@@ -57,7 +58,7 @@ source_if_exists ~/.fzf.zsh
 
 # syntax highlighting plugin
 
-source_if_exists /usr/local/share/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
+# source_if_exists /usr/local/share/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
 
 # history substring search plugin
 
