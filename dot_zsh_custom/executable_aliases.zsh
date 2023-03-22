@@ -16,11 +16,6 @@ safe_suffix_alias() { if [ -x "$(command -v $2)" ]; then
 fi
 }
 
-safe_alias ls exa
-safe_alias la exa "--long --all"
-safe_alias l exa
-safe_alias lh exa "-h --long"
-
 safe_alias docker ~/.rd/bin/docker
 
 ### function to move .dot files to dotfiles
