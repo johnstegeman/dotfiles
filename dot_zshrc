@@ -27,15 +27,15 @@ export PATH=/opt/homebrew/bin:~/bin:~/.local/bin:$PATH
 
 source_directory ~/.zsh_custom
 
-zi light zsh-users/zsh-autosuggestions
 zi light zsh-users/zsh-history-substring-search
 zi snippet OMZP::copybuffer
 zi snippet OMZP::direnv
 zi light joel-porquet/zsh-dircolors-solarized
 zi light z-shell/H-S-MW
-zi light z-shell/F-Sy-H
 zi snippet OMZP::colored-man-pages
 zi snippet OMZP::history
+zi light z-shell/z-a-meta-plugins
+zi light @zsh-users+fast
 
 zi ice lucid from"gh-r" as"program" mv"bin/exa* ->exa"
 zi light ogham/exa
