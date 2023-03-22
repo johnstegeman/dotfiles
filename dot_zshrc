@@ -48,18 +48,26 @@ zi snippet OMZP::colored-man-pages
 zi snippet OMZP::history
 zi light z-shell/z-a-meta-plugins
 zi light zsh-users/zsh-history-substring-search
-zi light @zsh-users+fast
+
+#install meta-plugins
+#
+zi light-mode for @annexes \
+  skip'tig' skip'vivid' skip'hexyl' @console-tools \
+  @zsh-users+fast \
+  @romkatv
+
 fast-theme -q default  # This is the theme for fast syntax highlighting
 
-# Attempt to install exa
+# Needed for omzsh theme support
 #
-zi ice lucid from"gh-r" as"program" mv"bin/exa* ->exa"
-zi light ogham/exa
+zi snippet OMZL::git.zsh
+zi snippet OMZP::git
 
-# Only install the zsh-exa plugin if exa is available
+# only install the zsh-exa plugin once exa is available.
+# Otherwise, this will exit the shell!
 #
 zi ice has'exa'
-zi light zplugin/zsh-exa
+zi load zplugin/zsh-exa
 export exa_params=('--time-style=long-iso' '--group-directories-first')
 
 # fzf
@@ -71,14 +79,11 @@ source_if_exists ~/.fzf.zsh
 ##### The following are the z-shell commands to load the theme
 
 ZSH_THEME="powerlevel10k/powerlevel10k"
-
-zi snippet OMZL::git.zsh
-zi snippet OMZP::git
 zi cdclear -q
 setopt prompt_subst
-zi light @romkatv
 
 ### End of theme code
+#
 
 # Initialize zoxide if it's installed
 # use the letter "j" instead of "z"
