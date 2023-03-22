@@ -5,6 +5,7 @@ if [[ -r "${XDG_CACHE_HOME:-$HOME/.cache}/p10k-instant-prompt-${(%):-%n}.zsh" ]]
   source "${XDG_CACHE_HOME:-$HOME/.cache}/p10k-instant-prompt-${(%):-%n}.zsh"
 fi
 
+# Install z-shell (zi plugin manager)
 source <(curl -sL init.zshell.dev); zzinit
 
 ####### Utility functions
@@ -17,34 +18,46 @@ if [ -d "$1" ]; then
   done
 fi
 }
+######## End of utility functions
+
+# Some configuration variables 
 
 export TERM=xterm-256color
-
 ENABLE_CORRECTION="false"
 COMPLETION_WAITING_DOTS="true"
 
+# Add homebrew's bin and local bin directories to the path
+#
 export PATH=/opt/homebrew/bin:~/bin:~/.local/bin:$PATH
 
+# Run any custom scripts in .zsh_custom
+#
 source_directory ~/.zsh_custom
 
+# ZSH plugins
+#
 zi light MichaelAquilina/zsh-you-should-use
 
 DIRCOLORS_SOLARIZED_ZSH_THEME="256dark"
 zi light pinelibg/dircolors-solarized-zsh
 
-zi light zsh-users/zsh-history-substring-search
 zi snippet OMZP::copybuffer
 zi snippet OMZP::direnv
 zi light z-shell/H-S-MW
 zi snippet OMZP::colored-man-pages
 zi snippet OMZP::history
 zi light z-shell/z-a-meta-plugins
+zi light zsh-users/zsh-history-substring-search
 zi light @zsh-users+fast
-fast-theme -q default
+fast-theme -q default  # This is the theme for fast syntax highlighting
 
+# Attempt to install exa
+#
 zi ice lucid from"gh-r" as"program" mv"bin/exa* ->exa"
 zi light ogham/exa
 
+# Only install the zsh-exa plugin if exa is available
+#
 zi ice has'exa'
 zi light zplugin/zsh-exa
 export exa_params=('--time-style=long-iso' '--group-directories-first')
@@ -52,12 +65,10 @@ export exa_params=('--time-style=long-iso' '--group-directories-first')
 # fzf
 source_if_exists ~/.fzf.zsh
 
-
-# history substring search plugin
-source_if_exists /usr/local/share/zsh-history-substring-search/zsh-history-substring-search.zsh
-
 # To customize prompt, run `p10k configure` or edit ~/.p10k.zsh.
 [[ ! -f ~/.p10k.zsh ]] || source ~/.p10k.zsh
+
+##### The following are the z-shell commands to load the theme
 
 ZSH_THEME="powerlevel10k/powerlevel10k"
 
@@ -65,7 +76,13 @@ zi snippet OMZL::git.zsh
 zi snippet OMZP::git
 zi cdclear -q
 setopt prompt_subst
-zi light romkatv/powerlevel10k
+zi light @romkatv
+
+### End of theme code
+
+# Initialize zoxide if it's installed
+# use the letter "j" instead of "z"
+# to avoid conflict with z-shell's "zi" command
 
 if (( $+commands[zoxide] )); then
   eval "$(zoxide init --cmd j zsh)"
