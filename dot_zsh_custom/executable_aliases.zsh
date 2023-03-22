@@ -42,10 +42,6 @@ safe_alias mp multipass
 
 alias zup="zi self-update;zi update"
 
-if [ -e /opt/homebrew/bin/gdircolors ]; then
-    alias dircolors=gdircolors
-fi
-
 if [ -x "$(command -v chezmoi)" ]; then
 cmcd() {
     cd $(chezmoi source-path)

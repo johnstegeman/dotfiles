@@ -28,10 +28,13 @@ export PATH=/opt/homebrew/bin:~/bin:~/.local/bin:$PATH
 source_directory ~/.zsh_custom
 
 zi light MichaelAquilina/zsh-you-should-use
+
+DIRCOLORS_SOLARIZED_ZSH_THEME="256dark"
+zi light pinelibg/dircolors-solarized-zsh
+
 zi light zsh-users/zsh-history-substring-search
 zi snippet OMZP::copybuffer
 zi snippet OMZP::direnv
-zi light joel-porquet/zsh-dircolors-solarized
 zi light z-shell/H-S-MW
 zi snippet OMZP::colored-man-pages
 zi snippet OMZP::history
