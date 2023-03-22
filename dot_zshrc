@@ -52,9 +52,17 @@ zi light zsh-users/zsh-history-substring-search
 #install meta-plugins
 #
 zi light-mode for @annexes \
-  skip'tig' skip'vivid' skip'hexyl' @console-tools \
   @zsh-users+fast \
   @romkatv
+
+# Avoid installing exa if it already exists (on Ubuntu, for example)
+# to avoid getting an exa binary with the wrong architecture
+#
+if [ -x "exa" ]; then
+    zi light-mode for skip'tig vivid hexyl exa' @console-tools
+else
+    zi light-mode for skip'tig vivid hexyl' @console-tools
+fi
 
 fast-theme -q default  # This is the theme for fast syntax highlighting
 
