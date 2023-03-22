@@ -58,7 +58,7 @@ zi light-mode for @annexes \
 # Avoid installing exa if it already exists (on Ubuntu, for example)
 # to avoid getting an exa binary with the wrong architecture
 #
-if [ -x "exa" ]; then
+if (( $+commands[exa] )); then
     zi light-mode for skip'tig vivid hexyl exa' @console-tools
 else
     zi light-mode for skip'tig vivid hexyl' @console-tools
