@@ -27,6 +27,7 @@ export PATH=/opt/homebrew/bin:~/bin:~/.local/bin:$PATH
 
 source_directory ~/.zsh_custom
 
+zi light MichaelAquilina/zsh-you-should-use
 zi light zsh-users/zsh-history-substring-search
 zi snippet OMZP::copybuffer
 zi snippet OMZP::direnv
@@ -36,6 +37,7 @@ zi snippet OMZP::colored-man-pages
 zi snippet OMZP::history
 zi light z-shell/z-a-meta-plugins
 zi light @zsh-users+fast
+fast-theme -q default
 
 zi ice lucid from"gh-r" as"program" mv"bin/exa* ->exa"
 zi light ogham/exa
@@ -62,5 +64,7 @@ zi cdclear -q
 setopt prompt_subst
 zi light romkatv/powerlevel10k
 
-eval "$(zoxide init --cmd j zsh)"
-alias cd=j
+if (( $+commands[zoxide] )); then
+  eval "$(zoxide init --cmd j zsh)"
+  alias cd=j
+fi
