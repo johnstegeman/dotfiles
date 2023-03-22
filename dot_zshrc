@@ -37,6 +37,9 @@ zi light z-shell/F-Sy-H
 zi snippet OMZP::colored-man-pages
 zi snippet OMZP::history
 
+zi ice lucid from"gh-r" as"program" mv"bin/exa* ->exa"
+zi light ogham/exa
+
 zi ice has'exa'
 zi light zplugin/zsh-exa
 export exa_params=('--time-style=long-iso', '--group-directories-first')
