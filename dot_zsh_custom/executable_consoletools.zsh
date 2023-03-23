@@ -8,6 +8,7 @@ else
 fi
 
 zi has'exa' light-mode for zplugin/zsh-exa
+zi has'bat' light-mode for fdellwing/zsh-bat
 
 # Set default parameters for exa aliases
 export exa_params=('--time-style=long-iso' '--group-directories-first')
