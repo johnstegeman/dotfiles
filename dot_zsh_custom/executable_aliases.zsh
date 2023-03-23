@@ -30,7 +30,6 @@ fi
 
 safe_suffix_alias log lnav
 
-safe_alias_2 du dua i ncdu
 safe_alias df duf
 safe_alias vi nvim
 safe_alias less moar
