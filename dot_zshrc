@@ -1,6 +1,7 @@
 # Enable Powerlevel10k instant prompt. Should stay close to the top of ~/.zshrc.
 # Initialization code that may require console input (password prompts, [y/n]
 # confirmations, etc.) must go above this block; everything else may go below.
+
 if [[ -r "${XDG_CACHE_HOME:-$HOME/.cache}/p10k-instant-prompt-${(%):-%n}.zsh" ]]; then
   source "${XDG_CACHE_HOME:-$HOME/.cache}/p10k-instant-prompt-${(%):-%n}.zsh"
 fi
@@ -41,11 +42,19 @@ zi light MichaelAquilina/zsh-you-should-use
 DIRCOLORS_SOLARIZED_ZSH_THEME="256dark"
 zi light pinelibg/dircolors-solarized-zsh
 
+# omyzsh plugins and libraries (some are needed for themes)
+
 zi snippet OMZP::copybuffer
 zi snippet OMZP::direnv
-zi light z-shell/H-S-MW
+zi snippet OMZL::git.zsh
+zi snippet OMZP::git
 zi snippet OMZP::colored-man-pages
 zi snippet OMZP::history
+
+zi ice has'multipass'
+zi snippet OMZP::multipass
+
+zi light z-shell/H-S-MW
 zi light z-shell/z-a-meta-plugins
 zi light zsh-users/zsh-history-substring-search
 
@@ -55,6 +64,8 @@ zi light-mode for @annexes \
   @zsh-users+fast \
   @romkatv \
   skip'skim' @fuzzy
+
+# Install some utlities and replacements for common cli
 
 zi for as"null" lucid from"gh-r" \
 mv'moar* moar' sbin'**/moar(.exe|) -> moar' walles/moar
@@ -68,19 +79,6 @@ mv'duf* duf' sbin'**/duf(.exe|) -> duf' muesli/duf
 zi ice as"null" from"gh-r" sbin
 zi light ajeetdsouza/zoxide
 
-zi has'zoxide' light-mode for \
-z-shell/zsh-zoxide
-
-zi has'dua' light-mode for \
-johnstegeman/zsh-dua
-
-zi has'chezmoi' light-mode for \
-johnstegeman/zsh-chezmoi
-
-zi snippet OMZP::multipass
-
-zi light fdellwing/zsh-bat
-
 # Avoid installing exa if it already exists (on Ubuntu, for example)
 # to avoid getting an exa binary with the wrong architecture
 #
@@ -90,31 +88,27 @@ else
     zi light-mode for skip'tig vivid hexyl' @console-tools
 fi
 
-fast-theme -q default  # This is the theme for fast syntax highlighting
+# Plugins for the cli replacements
 
-# Needed for omzsh theme support
-#
-zi snippet OMZL::git.zsh
-zi snippet OMZP::git
+zi has'zoxide' light-mode for z-shell/zsh-zoxide
+zi has'dua' light-mode for johnstegeman/zsh-dua
+zi has'chezmoi' light-mode for johnstegeman/zsh-chezmoi
+zi has'bat' light-mode for fdellwing/zsh-bat
+zi has'exa' light-mode for zplugin/zsh-exa
 
-# only install the zsh-exa plugin once exa is available.
-# Otherwise, this will exit the shell!
-#
-#zi ice has'exa'
-#zi load zplugin/zsh-exa
-zi has'exa' light-mode for \
-zplugin/zsh-exa
+# Set the default theme for fast syntax highlighting
+fast-theme -q default  
 
+# Set default parameters for exa aliases
 export exa_params=('--time-style=long-iso' '--group-directories-first')
+
+### Powerlevel10k theme setup
 
 # To customize prompt, run `p10k configure` or edit ~/.p10k.zsh.
 [[ ! -f ~/.p10k.zsh ]] || source ~/.p10k.zsh
-
-##### The following are the z-shell commands to load the theme
 
 ZSH_THEME="powerlevel10k/powerlevel10k"
 zi cdclear -q
 setopt prompt_subst
 
 ### End of theme code
-#
