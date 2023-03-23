@@ -59,6 +59,9 @@ zi light-mode for @annexes \
 zi for as"null" lucid from"gh-r" \
 mv'moar* moar' sbin'**/moar(.exe|) -> moar' walles/moar
 
+zi for as"null" lucid from"gh-r" \
+mv'dua* dua' sbin'**/dua(.exe|) -> dua' Byron/dua-cli
+
 # Avoid installing exa if it already exists (on Ubuntu, for example)
 # to avoid getting an exa binary with the wrong architecture
 #
