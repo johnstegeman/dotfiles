@@ -65,6 +65,12 @@ mv'dua* dua' sbin'**/dua(.exe|) -> dua' Byron/dua-cli
 zi for as"null" lucid from"gh-r" \
 mv'duf* duf' sbin'**/duf(.exe|) -> duf' muesli/duf
 
+zi ice as"null" from"gh-r" sbin
+zi light ajeetdsouza/zoxide
+
+zi has'zoxide' light-mode for \
+z-shell/zsh-zoxide
+
 # Avoid installing exa if it already exists (on Ubuntu, for example)
 # to avoid getting an exa binary with the wrong architecture
 #
@@ -84,8 +90,11 @@ zi snippet OMZP::git
 # only install the zsh-exa plugin once exa is available.
 # Otherwise, this will exit the shell!
 #
-zi ice has'exa'
-zi load zplugin/zsh-exa
+#zi ice has'exa'
+#zi load zplugin/zsh-exa
+zi has'exa' wait lucid for \
+zplugin/zsh-exa
+
 export exa_params=('--time-style=long-iso' '--group-directories-first')
 
 # To customize prompt, run `p10k configure` or edit ~/.p10k.zsh.
@@ -99,12 +108,3 @@ setopt prompt_subst
 
 ### End of theme code
 #
-
-# Initialize zoxide if it's installed
-# use the letter "j" instead of "z"
-# to avoid conflict with z-shell's "zi" command
-
-if (( $+commands[zoxide] )); then
-  eval "$(zoxide init --cmd j zsh)"
-  alias cd=j
-fi

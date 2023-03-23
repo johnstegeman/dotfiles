@@ -32,6 +32,7 @@ safe_alias cat bat
 safe_alias pcat bat "-pp"
 safe_alias vi nvim
 safe_alias less moar
+safe_alias cd zoxide
 
 if ! alias vi >/dev/null 2>&1; then
     safe_alias vi vim
