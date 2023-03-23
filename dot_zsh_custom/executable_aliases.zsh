@@ -24,6 +24,10 @@ mv ~/."$1" ~/dotfiles/"$1"
 ln -s ~/dotfiles/"$1" ~/."$1"
 }
 
+if [ -x "$(command -v zoxide)" ]; then
+    alias cd=x
+fi
+
 safe_suffix_alias log lnav
 
 safe_alias_2 du dua i ncdu
@@ -32,7 +36,6 @@ safe_alias cat bat
 safe_alias pcat bat "-pp"
 safe_alias vi nvim
 safe_alias less moar
-safe_alias cd zoxide
 
 if ! alias vi >/dev/null 2>&1; then
     safe_alias vi vim
