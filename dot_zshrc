@@ -7,13 +7,12 @@ if [[ -r "${XDG_CACHE_HOME:-$HOME/.cache}/p10k-instant-prompt-${(%):-%n}.zsh" ]]
 fi
 
 # Some configuration variables 
-
 export TERM=xterm-256color
 ENABLE_CORRECTION="false"
 COMPLETION_WAITING_DOTS="true"
 
-# Add .local/bin to the path
-export PATH=~/.local/bin:$PATH
+# Add homebrew and local bin to path
+export PATH=/opt/homebrew/sbin:/opt/homebrew/bin:~/bin:~/.local/bin:$PATH
 
 # Some utility functions
 source ~/.zfuncs.zsh
@@ -26,12 +25,11 @@ zi light-mode for @annexes \
   @romkatv \
   skip'skim' @fuzzy
 
-
 # Run all custom scripts in .zsh_custom
 source_directory ~/.zsh_custom
 
 # ZSH plugins
-#
+
 zi light MichaelAquilina/zsh-you-should-use
 
 # omyzsh plugins and libraries (some are needed for themes)
