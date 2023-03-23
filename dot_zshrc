@@ -97,6 +97,7 @@ zi has'zoxide' light-mode for z-shell/zsh-zoxide
 zi has'dua' light-mode for johnstegeman/zsh-dua
 zi has'chezmoi' light-mode for johnstegeman/zsh-chezmoi
 zi has'lnav' light-mode for johnstegeman/zsh-lnav
+zi has'duf' light-mode for johnstegeman/zsh-duf
 zi has'bat' light-mode for fdellwing/zsh-bat
 zi has'exa' light-mode for zplugin/zsh-exa
 
