@@ -1,0 +1,1 @@
+zi has'chezmoi' light-mode for johnstegeman/zsh-chezmoi

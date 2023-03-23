@@ -7,4 +7,7 @@ mcreate() {
     multipass launch -c 8 -m 16G -d 15G -n $1 --cloud-init ~/config/neo_init.yaml --mount ~/mounts:/mnt/software
     ssh  `multipass info $1 --format json | jq -r  ".info.$1.ipv4[0]"` 'sh -c "$(curl -fsLS get.chezmoi.io)" -- init --branch zi --apply https://john.stegeman%40gmail.com:{{ onepasswordRead "op://Private/githubkey/notesPlain" }}@github.com/johnstegeman/dotfiles'
 }
+
+zi ice has'multipass'
+zi snippet OMZP::multipass
 {{ end }}
