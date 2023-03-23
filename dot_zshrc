@@ -74,6 +74,11 @@ z-shell/zsh-zoxide
 zi has'dua' light-mode for \
 johnstegeman/zsh-dua
 
+zi has'chezmoi' light-mode for \
+johnstegeman/zsh-chezmoi
+
+zi snippet OMZP::multipass
+
 zi light fdellwing/zsh-bat
 
 # Avoid installing exa if it already exists (on Ubuntu, for example)
