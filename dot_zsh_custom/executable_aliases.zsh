@@ -31,5 +31,5 @@ fi
 safe_alias_2 "vi" "nvim" "" "vim"
 
 # Alias to update zi and all plugins
-alias zup="zi self-update;zi update"
+alias zup="zi self-update;zi update -p 40"
 
