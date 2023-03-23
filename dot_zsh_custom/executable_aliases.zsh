@@ -22,8 +22,6 @@ if [ -x "$(command -v zoxide)" ]; then
     alias cd=x
 fi
 
-safe_suffix_alias log lnav
-
 safe_alias df duf
 safe_alias vi nvim
 
