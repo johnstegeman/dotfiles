@@ -58,3 +58,6 @@ zi cdclear -q
 setopt prompt_subst
 
 ### End of theme code
+
+zicompinit_fast
+zi cdreplay -q
