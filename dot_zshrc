@@ -71,6 +71,8 @@ zi light ajeetdsouza/zoxide
 zi has'zoxide' light-mode for \
 z-shell/zsh-zoxide
 
+zi light fdellwing/zsh-bat
+
 # Avoid installing exa if it already exists (on Ubuntu, for example)
 # to avoid getting an exa binary with the wrong architecture
 #
