@@ -76,6 +76,9 @@ mv'dua* dua' sbin'**/dua(.exe|) -> dua' Byron/dua-cli
 zi for as"null" lucid from"gh-r" \
 mv'duf* duf' sbin'**/duf(.exe|) -> duf' muesli/duf
 
+zi for as"null" lucid from"gh-r" \
+mv'lnav* lnav' sbin'**/lnav(.exe|) -> lnav' tstack/lnav
+
 zi ice as"null" from"gh-r" sbin
 zi light ajeetdsouza/zoxide
 
