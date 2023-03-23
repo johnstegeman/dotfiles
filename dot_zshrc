@@ -94,7 +94,7 @@ zi snippet OMZP::git
 #
 #zi ice has'exa'
 #zi load zplugin/zsh-exa
-zi has'exa' wait lucid for \
+zi has'exa' light-mode for \
 zplugin/zsh-exa
 
 export exa_params=('--time-style=long-iso' '--group-directories-first')
