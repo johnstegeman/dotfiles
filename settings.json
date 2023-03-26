@@ -17,7 +17,7 @@
     "[json]": {
         "editor.defaultFormatter": "esbenp.prettier-vscode"
     },
-    "workbench.colorTheme": "Solarized Light",
+    "workbench.colorTheme": "Better Solarized Light",
     "workbench.iconTheme": "material-icon-theme",
     "workbench.productIconTheme": "icons-kamekazi-dark"
 }
