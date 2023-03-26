@@ -59,5 +59,7 @@ setopt prompt_subst
 
 ### End of theme code
 
+# Recompile the shell completions
+
 zicompinit_fast
 zi cdreplay -q

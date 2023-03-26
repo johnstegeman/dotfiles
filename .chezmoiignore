@@ -13,6 +13,7 @@ config/Brewfile
 .desktop_backgrounds
 .desktop_backgrounds/*
 .desktop_backgrounds/**/*
+.ssh/config
 {{ else }}
 .config/Bitwarden\ CLI/data.json
 .config/gtk-2.0/gtkfilechooser.ini
