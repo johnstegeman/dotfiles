@@ -11,8 +11,10 @@ export TERM=xterm-256color
 ENABLE_CORRECTION="false"
 COMPLETION_WAITING_DOTS="true"
 
-# Add homebrew and local bin to path
-export PATH=/opt/homebrew/sbin:/opt/homebrew/bin:~/bin:~/.local/bin:$PATH
+# set Homebrew environment and path if installed
+if [ -x "$(command -v /opt/homebrew/bin/brew)" ]; then
+  eval $(/opt/homebrew/bin/brew shellenv)
+fi
 
 # Some utility functions
 source ~/.zfuncs.zsh
