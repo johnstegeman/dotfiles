@@ -43,4 +43,5 @@ set si
 
 set wrap
 
-au BufReadPost * if line("'\"") > 1 && line("'\"") <= line("$") | exe "normal! g'\"" | endif
+" I don't really like this. It makes the file open on the last line you were editing
+"au BufReadPost * if line("'\"") > 1 && line("'\"") <= line("$") | exe "normal! g'\"" | endif
