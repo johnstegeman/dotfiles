@@ -97,8 +97,7 @@ atload:'_zsh_autosuggest_start' \
 OMZP::history \
 z-shell/fzy \
 peco/peco \
-zsh-users/zsh-completions \
-z-shell/zsh-fancy-completions
+zsh-users/zsh-completions 
 
 zt 0b light-mode for \
 compile:'{hsmw-*}' \
