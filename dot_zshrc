@@ -143,7 +143,7 @@ mv:'lnav* lnav' sbin:'**/lnav(.exe|) -> lnav' atload:'alias -s "log"="lnav"'\
   tstack/lnav \
 mv:'moar* moar' sbin:'**/moar(.exe|) -> moar' atload:'export MOAR="-style solarized-dark"' from:"gh-r"\
   walles/moar \
-mv:'agg* agg' sbin:'**/agg(.exe|) -> agg' from:"gh-r" \
+has:'asciinema' mv:'agg* agg' sbin:'**/agg(.exe|) -> agg' from:"gh-r" \
   @asciinema/agg
 
 zt 0c light-mode null for \
