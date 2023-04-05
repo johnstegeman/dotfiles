@@ -10,9 +10,9 @@ autoload -Uz $fpath[1]/*(.:t)
 #       Variables       #
 #########################
 
-pchf="${0:h}/patches"
-thmf="${0:h}/themes"
-GENCOMPL_FPATH="${0:h}/completions"
+pchf="${0:h}/../patches"
+thmf="${0:h}/../themes"
+GENCOMPL_FPATH="${0:h}/../completions"
 
 ZSH_AUTOSUGGEST_USE_ASYNC=true
 ZSH_AUTOSUGGEST_BUFFER_MAX_SIZE=20
