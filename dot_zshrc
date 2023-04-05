@@ -1,6 +1,3 @@
-0="${${ZERO:-${0:#$ZSH_ARGZERO}}:-${(%):-%N}}"
-0="${${(M)0:#/*}:-$PWD/$0}"
-
 # Enable Powerlevel10k instant prompt. Should stay close to the top of ~/.zshrc.
 # Initialization code that may require console input (password prompts, [y/n]
 # confirmations, etc.) must go above this block; everything else may go below.
@@ -15,13 +12,6 @@ export TERM=xterm-256color
 ENABLE_CORRECTION="false"
 COMPLETION_WAITING_DOTS="true"
 
-setopt INC_APPEND_HISTORY
-export HISTTIMEFORMAT="[%F %T]"
-setopt EXTENDED_HISTORY
-export HISTFILESIZE=1000000000
-export HISTSIZE=1000000000
-export SAVEHIST=1000000000
-
 export DIRCOLORS_SOLARIZED_ZSH_THEME="256dark"
 
 # set Homebrew environment and path if installed
@@ -29,11 +19,6 @@ export DIRCOLORS_SOLARIZED_ZSH_THEME="256dark"
 if [ -x "$(command -v /opt/homebrew/bin/brew)" ]; then
   eval $(/opt/homebrew/bin/brew shellenv)
 fi
-
-# auto-load personal functions
-
-fpath=("${0:h}/.zsh_custom/functions" "${fpath[@]}")
-autoload -Uz $fpath[1]/*(.:t)
 
 # Shamelessly stolen from https://github.com/z-shell/playground/blob/main/profiles/NICHOLAS85/.zshrc
 zt()  { zi depth'3' lucid ${1/#[0-9][a-c]/wait"$1"} "${@:2}"; }
@@ -61,12 +46,22 @@ autoload -Uz _zi
 ### End of ZI installer's chunk
 #####################################################################################################
 
+# install local config-file plugin
+
+if [[ ! -d "${ZI[PLUGINS_DIR]}/_local---config-file" ]]; then
+  ln -s ~/.zsh_custom/config_plugin ${ZI[PLUGINS_DIR]}/_local---config-file
+fi
+
+zt light-mode blockf for \
+_local/config-file
+
 zt light-mode for romkatv/powerlevel10k
+source_if_exists ~/.p10k.zsh
 
 zi light-mode for z-shell/z-a-meta-plugins @annexes
 
 # Run all custom scripts in .zsh_custom
-source_directory ~/.zsh_custom
+source_directory ~/.zsh_custom/autoload
 
 # omyzsh plugins and libraries
 
@@ -74,8 +69,6 @@ zi snippet OMZP::copybuffer
 zi snippet OMZP::direnv
 zi snippet OMZL::git.zsh
 zi snippet OMZP::git
-
-
 
 zt light-mode for \
 trigger-load:'!man' \
@@ -96,7 +89,7 @@ fi
 
 #####################################################################################################
 # The following use turbo mode to load after the shell prompt is ready
-# They are grouped using a, b, c, etc to enforce a load order
+# They are grouped using a, b, c to enforce a load order
 
 zt 0a light-mode for \
 atload:'_zsh_autosuggest_start' \
@@ -154,5 +147,3 @@ id-as'Cleanup' nocd atinit'unset -f zt; _zsh_autosuggest_bind_widgets' \
 
 # end of turbo loading section
 #####################################################################################################
-
-source_if_exists ~/.p10k.zsh
