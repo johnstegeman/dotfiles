@@ -10,20 +10,22 @@ if [[ -r "${XDG_CACHE_HOME:-$HOME/.cache}/p10k-instant-prompt-${(%):-%n}.zsh" ]]
 fi
 
 # Some configuration variables 
+
 export TERM=xterm-256color
 ENABLE_CORRECTION="false"
 COMPLETION_WAITING_DOTS="true"
+
 setopt INC_APPEND_HISTORY
 export HISTTIMEFORMAT="[%F %T]"
 setopt EXTENDED_HISTORY
-
 export HISTFILESIZE=1000000000
 export HISTSIZE=1000000000
 export SAVEHIST=1000000000
 
-DIRCOLORS_SOLARIZED_ZSH_THEME="256dark"
+export DIRCOLORS_SOLARIZED_ZSH_THEME="256dark"
 
 # set Homebrew environment and path if installed
+
 if [ -x "$(command -v /opt/homebrew/bin/brew)" ]; then
   eval $(/opt/homebrew/bin/brew shellenv)
 fi
@@ -36,12 +38,14 @@ autoload -Uz $fpath[1]/*(.:t)
 # Shamelessly stolen from https://github.com/z-shell/playground/blob/main/profiles/NICHOLAS85/.zshrc
 zt()  { zi depth'3' lucid ${1/#[0-9][a-c]/wait"$1"} "${@:2}"; }
 
+#####################################################################################################
 # ZI installer. Could use source <(curl -sL init.zshell.dev); zzinit
 # except that it won't work if there is no Internet connection
+# and then everything falls apart. This at least will work if zi is already installed
 
 ZI_HOME="${ZI_HOME:-${ZPLG_HOME:-${ZDOTDIR:-$HOME}/.zi}}"
 ZI_BIN_DIR_NAME="${${ZI_BIN_DIR_NAME:-$ZPLG_BIN_DIR_NAME}:-bin}"
-### Added by ZI's installer
+
 if [[ ! -f $ZI_HOME/$ZI_BIN_DIR_NAME/zi.zsh ]]; then
   print -P "%F{33}▓▒░ %F{220}Installing ZI Initiative Plugin Manager (z-shell/zi)…%f"
   command mkdir -p "$ZI_HOME" && command chmod g-rwX "$ZI_HOME"
@@ -49,40 +53,50 @@ if [[ ! -f $ZI_HOME/$ZI_BIN_DIR_NAME/zi.zsh ]]; then
     print -P "%F{33}▓▒░ %F{34}Installation successful.%f" || \
     print -P "%F{160}▓▒░ The clone has failed.%f"
 fi
+
 source "$ZI_HOME/$ZI_BIN_DIR_NAME/zi.zsh"
 autoload -Uz _zi
 (( ${+_comps} )) && _comps[zi]=_zi
 
 ### End of ZI installer's chunk
+#####################################################################################################
 
-zt light-mode for \
-  romkatv/powerlevel10k
+zt light-mode for romkatv/powerlevel10k
 
-zi light z-shell/z-a-meta-plugins
-zi light-mode for @annexes
+zi light-mode for z-shell/z-a-meta-plugins @annexes
 
 # Run all custom scripts in .zsh_custom
 source_directory ~/.zsh_custom
 
-
-# omyzsh plugins and libraries (some are needed for themes)
+# omyzsh plugins and libraries
 
 zi snippet OMZP::copybuffer
 zi snippet OMZP::direnv
 zi snippet OMZL::git.zsh
 zi snippet OMZP::git
-zi snippet OMZP::colored-man-pages
 
-zi ice as"null" from"gh-r" sbin
+
+
+zt light-mode for \
+trigger-load:'!man' \
+  ael-code/zsh-colored-man-pages
+
+zi ice as:"null" from:"gh-r" sbin
 zi light ajeetdsouza/zoxide
 
-zi has:'zoxide' atload:'alias cd=x' light-mode for z-shell/zsh-zoxide
+## Workaround for exa: on multipass on an M1 mac, the exa release on github won't work, so
+## if it's installed by the OS, then don't replace it
 
 if (( $+commands[exa] )); then
-    zi ice light-mode for skip:'tig vivid hexyl exa fd' @console-tools
+    zi light-mode for skip:'tig vivid hexyl exa fd' @console-tools
 else
-    zi ice light-mode for skip:'tig vivid hexyl fd' @console-tools
+    zi light-mode for skip:'tig vivid hexyl fd' @console-tools
 fi
+
+
+#####################################################################################################
+# The following use turbo mode to load after the shell prompt is ready
+# They are grouped using a, b, c, etc to enforce a load order
 
 zt 0a light-mode for \
 atload:'_zsh_autosuggest_start' \
@@ -94,10 +108,9 @@ zsh-users/zsh-completions \
 z-shell/zsh-fancy-completions
 
 zt 0b light-mode for \
-compile:'{hsmw-*,test/*}' \
+compile:'{hsmw-*}' \
   z-shell/H-S-MW \
-atload:'bindkey "^[[A" history-substring-search-up;
-bindkey "^[[B" history-substring-search-down' \
+atload:'bindkey "^[[A" history-substring-search-up; bindkey "^[[B" history-substring-search-down' \
   zsh-users/zsh-history-substring-search \
 pick:'autopair.zsh' nocompletions atload'bindkey "^H" backward-kill-word; ZSH_AUTOSUGGEST_CLEAR_WIDGETS+=(autopair-insert)' \
   hlissner/zsh-autopair \
@@ -111,12 +124,13 @@ has:'bat' fdellwing/zsh-bat \
 has:'aws' OMZP::aws \
 has:'chezmoi' johnstegeman/zsh-chezmoi \
 pinelibg/dircolors-solarized-zsh \
-has:'multipass' OMZP::multipass
+has:'multipass' OMZP::multipass \
+has:'zoxide' atload:'alias cd=x' z-shell/zsh-zoxide
 
 
 zt 0c light-mode for \
 pack:'bgn-binary' \
-  junegunn/fzf \
+  junegunn/fzf 
 
 zt 0c light-mode binary for \
 sbin'fd*/fd;fd*/fd -> fdfind' from:"gh-r" \
@@ -128,8 +142,9 @@ mv:'duf* duf' sbin:'**/duf(.exe|) -> duf' atload:'alias df=$(which duf)' from:"g
 mv:'lnav* lnav' sbin:'**/lnav(.exe|) -> lnav' atload:'alias -s "log"="lnav"'\
   tstack/lnav \
 mv:'moar* moar' sbin:'**/moar(.exe|) -> moar' atload:'export MOAR="-style solarized-dark"' from:"gh-r"\
-  walles/moar
-
+  walles/moar \
+mv:'agg* agg' sbin:'**/agg(.exe|) -> agg' from:"gh-r" \
+  @asciinema/agg
 
 zt 0c light-mode null for \
 sbin \
@@ -137,7 +152,7 @@ sbin \
 id-as'Cleanup' nocd atinit'unset -f zt; _zsh_autosuggest_bind_widgets' \
   z-shell/null
 
+# end of turbo loading section
+#####################################################################################################
 
-# To customize prompt, run `p10k configure` or edit ~/.p10k.zsh.
-[[ ! -f ~/.p10k.zsh ]] || source ~/.p10k.zsh
-
+source_if_exists ~/.p10k.zsh
