@@ -54,15 +54,18 @@ fi
 zt light-mode blockf for \
 _local/config-file
 
-zt light-mode for romkatv/powerlevel10k
-source_if_exists ~/.p10k.zsh
+# Powerlevel10k theme
+
+zt light-mode for \
+depth:'1' atload:"[[ ! -f ~/.p10k.zsh ]] || source ~/.p10k.zsh" nocd \
+  romkatv/powerlevel10k
 
 zi light-mode for z-shell/z-a-meta-plugins @annexes
 
 # Source all custom scripts
 source_directory ~/.zsh_custom/autoload
 
-## Workaround for exa: on multipass on an M1 mac, the exa release on github won't work, so
+## Workaround for exa: on multipass (ubuntu VM) on an M1 mac, the exa release on github won't work, so
 ## if it's installed by the OS, then skip it in the consoletools
 
 consoleskip='tig vivid hexyl fd'
@@ -115,7 +118,6 @@ has:'chezmoi' johnstegeman/zsh-chezmoi \
 pinelibg/dircolors-solarized-zsh \
 has:'multipass' OMZP::multipass \
 has:'zoxide' atload:'alias cd=x' z-shell/zsh-zoxide
-
 
 zt 0c light-mode for \
 pack:'bgn-binary' \
