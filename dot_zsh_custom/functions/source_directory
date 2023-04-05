@@ -1,0 +1,5 @@
+if [ -d "$1" ]; then
+  for file in "$1"/*.zsh; do
+     source "$file"
+  done
+fi

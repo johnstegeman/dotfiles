@@ -1,3 +1,6 @@
+0="${${ZERO:-${0:#$ZSH_ARGZERO}}:-${(%):-%N}}"
+0="${${(M)0:#/*}:-$PWD/$0}"
+
 # Enable Powerlevel10k instant prompt. Should stay close to the top of ~/.zshrc.
 # Initialization code that may require console input (password prompts, [y/n]
 # confirmations, etc.) must go above this block; everything else may go below.
@@ -10,29 +13,57 @@ fi
 export TERM=xterm-256color
 ENABLE_CORRECTION="false"
 COMPLETION_WAITING_DOTS="true"
+setopt INC_APPEND_HISTORY
+export HISTTIMEFORMAT="[%F %T]"
+setopt EXTENDED_HISTORY
+
+export HISTFILESIZE=1000000000
+export HISTSIZE=1000000000
+export SAVEHIST=1000000000
+
+DIRCOLORS_SOLARIZED_ZSH_THEME="256dark"
 
 # set Homebrew environment and path if installed
 if [ -x "$(command -v /opt/homebrew/bin/brew)" ]; then
   eval $(/opt/homebrew/bin/brew shellenv)
 fi
 
-# Some utility functions
-source ~/.zfuncs.zsh
+# auto-load personal functions
 
-# Install z-shell (zi plugin manager) and some meta plugins
-source <(curl -sL init.zshell.dev); zzinit
+fpath=("${0:h}/.zsh_custom/functions" "${fpath[@]}")
+autoload -Uz $fpath[1]/*(.:t)
+
+# Shamelessly stolen from https://github.com/z-shell/playground/blob/main/profiles/NICHOLAS85/.zshrc
+zt()  { zi depth'3' lucid ${1/#[0-9][a-c]/wait"$1"} "${@:2}"; }
+
+# ZI installer. Could use source <(curl -sL init.zshell.dev); zzinit
+# except that it won't work if there is no Internet connection
+
+ZI_HOME="${ZI_HOME:-${ZPLG_HOME:-${ZDOTDIR:-$HOME}/.zi}}"
+ZI_BIN_DIR_NAME="${${ZI_BIN_DIR_NAME:-$ZPLG_BIN_DIR_NAME}:-bin}"
+### Added by ZI's installer
+if [[ ! -f $ZI_HOME/$ZI_BIN_DIR_NAME/zi.zsh ]]; then
+  print -P "%F{33}▓▒░ %F{220}Installing ZI Initiative Plugin Manager (z-shell/zi)…%f"
+  command mkdir -p "$ZI_HOME" && command chmod g-rwX "$ZI_HOME"
+  command git clone https://github.com/z-shell/zi "$ZI_HOME/$ZI_BIN_DIR_NAME" && \
+    print -P "%F{33}▓▒░ %F{34}Installation successful.%f" || \
+    print -P "%F{160}▓▒░ The clone has failed.%f"
+fi
+source "$ZI_HOME/$ZI_BIN_DIR_NAME/zi.zsh"
+autoload -Uz _zi
+(( ${+_comps} )) && _comps[zi]=_zi
+
+### End of ZI installer's chunk
+
+zt light-mode for \
+  romkatv/powerlevel10k
+
 zi light z-shell/z-a-meta-plugins
-zi light-mode for @annexes \
-  @zsh-users+fast \
-  @romkatv \
-  skip'skim' @fuzzy
+zi light-mode for @annexes
 
 # Run all custom scripts in .zsh_custom
 source_directory ~/.zsh_custom
 
-# ZSH plugins
-
-zi light MichaelAquilina/zsh-you-should-use
 
 # omyzsh plugins and libraries (some are needed for themes)
 
@@ -41,27 +72,72 @@ zi snippet OMZP::direnv
 zi snippet OMZL::git.zsh
 zi snippet OMZP::git
 zi snippet OMZP::colored-man-pages
-zi snippet OMZP::history
 
-zi light z-shell/H-S-MW
+zi ice as"null" from"gh-r" sbin
+zi light ajeetdsouza/zoxide
 
-zi light zsh-users/zsh-history-substring-search
+zi has:'zoxide' atload:'alias cd=x' light-mode for z-shell/zsh-zoxide
 
-# Set the default theme for fast syntax highlighting
-fast-theme -q default  
+if (( $+commands[exa] )); then
+    zi ice light-mode for skip:'tig vivid hexyl exa fd' @console-tools
+else
+    zi ice light-mode for skip:'tig vivid hexyl fd' @console-tools
+fi
 
-### Powerlevel10k theme setup
+zt 0a light-mode for \
+atload:'_zsh_autosuggest_start' \
+  zsh-users/zsh-autosuggestions \
+OMZP::history \
+z-shell/fzy \
+peco/peco \
+zsh-users/zsh-completions \
+z-shell/zsh-fancy-completions
+
+zt 0b light-mode for \
+compile:'{hsmw-*,test/*}' \
+  z-shell/H-S-MW \
+atload:'bindkey "^[[A" history-substring-search-up;
+bindkey "^[[B" history-substring-search-down' \
+  zsh-users/zsh-history-substring-search \
+pick:'autopair.zsh' nocompletions atload'bindkey "^H" backward-kill-word; ZSH_AUTOSUGGEST_CLEAR_WIDGETS+=(autopair-insert)' \
+  hlissner/zsh-autopair \
+autoload:'#manydots-magic' \
+  knu/zsh-manydots-magic \
+atinit:'zicompinit_fast; zicdreplay' atload:'FAST_HIGHLIGHT[chroma-man]=; fast-theme -q default' \
+  z-shell/F-Sy-H \
+MichaelAquilina/zsh-you-should-use \
+has:'exa' atload:'export exa_params=('--time-style=long-iso' '--group-directories-first')' zplugin/zsh-exa \
+has:'bat' fdellwing/zsh-bat \
+has:'aws' OMZP::aws \
+has:'chezmoi' johnstegeman/zsh-chezmoi \
+pinelibg/dircolors-solarized-zsh \
+has:'multipass' OMZP::multipass
+
+
+zt 0c light-mode for \
+pack:'bgn-binary' \
+  junegunn/fzf \
+
+zt 0c light-mode binary for \
+sbin'fd*/fd;fd*/fd -> fdfind' from:"gh-r" \
+  @sharkdp/fd \
+mv:'dua* dua' sbin:'**/dua(.exe|) -> dua' atload:'alias du="dua i"' from:"gh-r"\
+  Byron/dua-cli \
+mv:'duf* duf' sbin:'**/duf(.exe|) -> duf' atload:'alias df=$(which duf)' from:"gh-r"\
+  muesli/duf \
+mv:'lnav* lnav' sbin:'**/lnav(.exe|) -> lnav' atload:'alias -s "log"="lnav"'\
+  tstack/lnav \
+mv:'moar* moar' sbin:'**/moar(.exe|) -> moar' atload:'export MOAR="-style solarized-dark"' from:"gh-r"\
+  walles/moar
+
+
+zt 0c light-mode null for \
+sbin \
+  paulirish/git-open \
+id-as'Cleanup' nocd atinit'unset -f zt; _zsh_autosuggest_bind_widgets' \
+  z-shell/null
+
 
 # To customize prompt, run `p10k configure` or edit ~/.p10k.zsh.
 [[ ! -f ~/.p10k.zsh ]] || source ~/.p10k.zsh
 
-ZSH_THEME="powerlevel10k/powerlevel10k"
-zi cdclear -q
-setopt prompt_subst
-
-### End of theme code
-
-# Recompile the shell completions
-
-zicompinit_fast
-zi cdreplay -q

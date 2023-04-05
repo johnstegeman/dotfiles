@@ -1,0 +1,6 @@
+{{ if eq .chezmoi.os "darwin" }}
+
+ssh  `multipass info $1 --format json | jq -r  ".info.$1.ipv4[0]"`
+
+
+{{ end }}
