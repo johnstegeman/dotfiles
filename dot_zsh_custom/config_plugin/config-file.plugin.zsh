@@ -61,7 +61,7 @@ setopt append_history       # Allow multiple terminal sessions to all append to 
 setopt no_beep              # don't beep on error
 setopt auto_cd              # If you type foo, and it isn't a command, and it is a directory in your cdpath, go there
 setopt prompt_subst         # enable parameter expansion, command substitution, and arithmetic expansion in the prompt
-setopt interactive_comments # Allow comments even in interactive shells (especially for Muness)
+setopt interactive_comments # Allow comments even in interactive shells
 setopt extended_history     # Save start time and duration of each command
 
 # Fuzzy matching of completions for when you mistype them:
