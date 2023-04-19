@@ -21,5 +21,6 @@
     "workbench.iconTheme": "material-icon-theme",
     "workbench.productIconTheme": "icons-kamekazi-dark",
     "editor.tabSize": 3,
-    "prettier.tabWidth": 3
+    "prettier.tabWidth": 3,
+    "editor.accessibilitySupport": "off"
 }
