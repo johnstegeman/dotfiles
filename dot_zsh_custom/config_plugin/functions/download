@@ -1,0 +1,4 @@
+tar_ball=neo4j-enterprise-$1-unix.tar.gz
+if [[ ! -f "./${tar_ball}" ]]; then
+   curl -O -C - "http://dist.neo4j.org/${tar_ball}"
+fi
