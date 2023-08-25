@@ -54,14 +54,7 @@ zi light-mode for z-shell/z-a-meta-plugins @annexes
 # Source all custom scripts
 source_directory ~/.zsh_custom/autoload
 
-## Workaround for exa: on multipass (ubuntu VM) on an M1 mac, the exa release on github won't work, so
-## if it's installed by the OS, then skip it in the consoletools
-
-consoleskip='tig vivid hexyl fd'
-
-if (( $+commands[exa] )); then
-    consoleskip=$consoleskip\ exa
-fi
+consoleskip='tig vivid hexyl fd exa'
 
 zi light-mode for \
 OMZP::copybuffer \
