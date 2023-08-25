@@ -1,0 +1,5 @@
+#!/bin/bash
+{{ if eq .chezmoi.os "darwin" }}
+sudo cp -rf {{ .chezmoi.sourceDir }}/config/Colemak\ DH.bundle /Library/Keyboard\ Layouts
+{{ end }}
+
