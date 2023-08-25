@@ -106,8 +106,7 @@ has:'bat' fdellwing/zsh-bat \
 has:'aws' OMZP::aws \
 has:'chezmoi' johnstegeman/zsh-chezmoi \
 pinelibg/dircolors-solarized-zsh \
-has:'multipass' OMZP::multipass \
-has:'zoxide' atload:'alias cd=x' z-shell/zsh-zoxide
+has:'multipass' OMZP::multipass 
 
 zt 0c light-mode for \
 pack:'bgn-binary' \
