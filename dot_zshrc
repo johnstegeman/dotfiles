@@ -94,7 +94,7 @@ autoload:'#manydots-magic' \
 atinit:'zicompinit_fast; zicdreplay' atload:'FAST_HIGHLIGHT[chroma-man]=; fast-theme -q default' \
   z-shell/F-Sy-H \
 MichaelAquilina/zsh-you-should-use \
-has:'exa' atload:'export exa_params=('--time-style=long-iso' '--group-directories-first')' zplugin/zsh-exa \
+has:'eza' atload:'export eza_params=('--time-style=long-iso' '--group-directories-first')' johnstegeman/zsh-eza \
 has:'bat' fdellwing/zsh-bat \
 has:'aws' OMZP::aws \
 has:'chezmoi' johnstegeman/zsh-chezmoi \
