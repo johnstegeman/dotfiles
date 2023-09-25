@@ -80,7 +80,8 @@ OMZP::history \
 z-shell/fzy \
 peco/peco \
 zsh-users/zsh-completions \
-hcgraf/zsh-sudo
+hcgraf/zsh-sudo \
+z-shell/zsh-navigation-tools
 
 zt 0b light-mode for \
 compile:'{hsmw-*}' \
