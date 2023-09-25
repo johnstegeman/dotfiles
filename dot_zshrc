@@ -101,7 +101,7 @@ has:'aws' OMZP::aws \
 has:'chezmoi' johnstegeman/zsh-chezmoi \
 pinelibg/dircolors-solarized-zsh \
 has:'multipass' OMZP::multipass \
-has:'zoxide' atinit:'_ZO_CMD_PREFIX=z' z-shell/zsh-zoxide
+has:'zoxide' atinit:'_ZO_CMD_PREFIX=x' z-shell/zsh-zoxide
 
 zt 0c light-mode for \
 pack:'bgn-binary' \
