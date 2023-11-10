@@ -1,1 +1,0 @@
-workon "$1"; cdproject
