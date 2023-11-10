@@ -19,8 +19,8 @@
     },
     "workbench.colorTheme": "Better Solarized Light",
     "workbench.iconTheme": "material-icon-theme",
-    "workbench.productIconTheme": "icons-kamekazi-dark",
     "editor.tabSize": 3,
     "prettier.tabWidth": 3,
-    "editor.accessibilitySupport": "off"
+    "editor.accessibilitySupport": "off",
+    "python.defaultInterpreterPath": "/Users/jstegeman/.virtualenvs/genai"
 }
