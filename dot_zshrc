@@ -27,6 +27,9 @@ export DIRCOLORS_SOLARIZED_ZSH_THEME="256dark"
 
 if [ -x "$(command -v /opt/homebrew/bin/brew)" ]; then
   eval $(/opt/homebrew/bin/brew shellenv)
+  FPATH="$(brew --prefix)/share/zsh/site-functions:${FPATH}"
+  autoload -Uz compinit
+  compinit
 fi
 
 # Shamelessly stolen from https://github.com/z-shell/playground/blob/main/profiles/NICHOLAS85/.zshrc
