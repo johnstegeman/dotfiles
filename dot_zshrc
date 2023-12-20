@@ -41,7 +41,7 @@ bindkey '^X' push-input
 # install local config-file plugin
 
 if [[ ! -d "${ZI[PLUGINS_DIR]}/_local---config-file" ]]; then
-  ln -s ~/.zsh_custom/config_plugin ${ZI[PLUGINS_DIR]}/_local---config-file
+  ln -s ~/.zsh_custom/config-file ${ZI[PLUGINS_DIR]}/_local---config-file
 fi
 
 zt light-mode blockf for \
