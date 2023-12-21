@@ -65,8 +65,7 @@ OMZP::copybuffer \
 OMZP::direnv \
 OMZL::git.zsh \
 OMZP::git \
-from:"gh-r" sbin \
-  ajeetdsouza/zoxide \
+romkatv/zsh-defer \
 ael-code/zsh-colored-man-pages \
 skip:$consoleskip \
   @console-tools
@@ -81,35 +80,26 @@ zt 0a light-mode for \
 atload:'_zsh_autosuggest_start' \
   zsh-users/zsh-autosuggestions \
 OMZP::history \
-z-shell/fzy \
-peco/peco \
 zsh-users/zsh-completions \
 hcgraf/zsh-sudo \
-z-shell/zsh-navigation-tools
+zdharma-continuum/zsh-navigation-tools \
+zdharma-continuum/zui \
+zdharma-continuum/zbrowse
 
 zt 0b light-mode for \
-compile:'{hsmw-*}' \
-  z-shell/H-S-MW \
-atload:'bindkey "^[[A" history-substring-search-up; bindkey "^[[B" history-substring-search-down' \
-  zsh-users/zsh-history-substring-search \
 pick:'autopair.zsh' nocompletions atload:'bindkey "^H" backward-kill-word; ZSH_AUTOSUGGEST_CLEAR_WIDGETS+=(autopair-insert)' \
   hlissner/zsh-autopair \
 autoload:'#manydots-magic' \
   knu/zsh-manydots-magic \
 atinit:'zicompinit_fast; zicdreplay' atload:'FAST_HIGHLIGHT[chroma-man]=; fast-theme -q default' \
-  z-shell/F-Sy-H \
+  zdharma-continuum/fast-syntax-highlighting \
 MichaelAquilina/zsh-you-should-use \
 has:'eza' atload:'export eza_params=('--time-style=long-iso' '--group-directories-first')' johnstegeman/zsh-eza \
 has:'bat' fdellwing/zsh-bat \
 has:'aws' OMZP::aws \
 has:'chezmoi' johnstegeman/zsh-chezmoi \
 pinelibg/dircolors-solarized-zsh \
-has:'multipass' OMZP::multipass \
-has:'zoxide' atinit:'_ZO_CMD_PREFIX=x' z-shell/zsh-zoxide
-
-zt 0c light-mode for \
-pack:'bgn-binary' \
-  junegunn/fzf 
+has:'multipass' OMZP::multipass
 
 zt 0c light-mode binary for \
 sbin:'fd*/fd;fd*/fd -> fdfind' from:"gh-r" \
@@ -129,7 +119,11 @@ zt 0c light-mode null for \
 sbin \
   paulirish/git-open \
 id-as:'Cleanup' nocd atinit:'unset -f zt; _zsh_autosuggest_bind_widgets' \
-  z-shell/null
+  zdharma-continuum/null \
+pack:'bgn-binary+keys' \
+  fzf \
+pack:'bgn' \
+  fzy \
 
 # end of turbo loading section
 #####################################################################################################
