@@ -89,7 +89,7 @@ autoload:'#manydots-magic' \
   knu/zsh-manydots-magic \
 atinit:'zicompinit; zicdreplay' atload:'FAST_HIGHLIGHT[chroma-man]=; fast-theme -q default' \
   zdharma-continuum/fast-syntax-highlighting \
-zinit light Aloxaf/fzf-tab \
+Aloxaf/fzf-tab \
 MichaelAquilina/zsh-you-should-use \
 has:'eza' atload:'export eza_params=('--time-style=long-iso' '--group-directories-first')' johnstegeman/zsh-eza \
 has:'bat' fdellwing/zsh-bat \
