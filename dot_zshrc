@@ -78,22 +78,23 @@ unset sharkdp
 # They are grouped using a, b, c to enforce a load order
 
 zt 0a light-mode for \
-atload:'_zsh_autosuggest_start' \
+atinit:'ZINIT[COMPINIT_OPTS]=-C; zicompinit; zicdreplay' atload:'FAST_HIGHLIGHT[chroma-man]=; fast-theme -q default' \
+  zdharma-continuum/fast-syntax-highlighting \
+compile'{src/*.zsh,src/strategies/*}' atinit"ZSH_AUTOSUGGEST_USE_ASYNC=1" atload"_zsh_autosuggest_start" \
   zsh-users/zsh-autosuggestions \
 OMZP::history \
 zsh-users/zsh-completions \
 hcgraf/zsh-sudo \
 zdharma-continuum/zsh-navigation-tools \
 zdharma-continuum/zui \
-zdharma-continuum/zbrowse
+zdharma-continuum/zbrowse \
+agkozak/zsh-z
 
 zt 0b light-mode for \
 pick:'autopair.zsh' nocompletions atload:'bindkey "^H" backward-kill-word; ZSH_AUTOSUGGEST_CLEAR_WIDGETS+=(autopair-insert)' \
   hlissner/zsh-autopair \
 autoload:'#manydots-magic' \
   knu/zsh-manydots-magic \
-atinit:'zicompinit; zicdreplay' atload:'FAST_HIGHLIGHT[chroma-man]=; fast-theme -q default' \
-  zdharma-continuum/fast-syntax-highlighting \
 Aloxaf/fzf-tab \
 MichaelAquilina/zsh-you-should-use \
 has:'eza' atload:'export eza_params=('--time-style=long-iso' '--group-directories-first')' johnstegeman/zsh-eza \
