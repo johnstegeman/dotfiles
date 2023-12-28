@@ -118,7 +118,8 @@ mv:'duf* duf' sbin:'**/duf(.exe|) -> duf' atload:'alias df=$(which duf)' from:"g
 from"gh-r"  sbin"**/lnav" atload:'alias -s "log"="lnav"'\
   tstack/lnav \
 has:'asciinema' mv:'agg* agg' sbin:'**/agg(.exe|) -> agg' from:"gh-r" \
-  @asciinema/agg
+  @asciinema/agg \
+
 
 zt 0c light-mode null for \
 sbin \
@@ -128,7 +129,27 @@ id-as:'Cleanup' nocd atinit:'unset -f zt; _zsh_autosuggest_bind_widgets' \
 pack:'bgn-binary+keys' \
   fzf \
 pack:'bgn' \
-  fzy 
+  fzy
+
+zinit light-mode for SleepyBag/zle-fzf
 
 # end of turbo loading section
 #####################################################################################################
+
+## FZF options
+export FZF_DEFAULT_COMMAND='fd --type file --follow --hidden --exclude .git --color=always'
+export FZF_CTRL_T_COMMAND="$FZF_DEFAULT_COMMAND"
+export FZF_CTRL_R_OPTS="
+  --preview 'echo {}' --preview-window hidden:wrap
+  --bind 'ctrl-/:toggle-preview'
+  --bind 'ctrl-y:execute-silent(echo -n {2..} | pbcopy)+abort'
+  --color header:italic
+  --header 'Press CTRL-Y to copy command into clipboard'"
+
+_fzf_compgen_path() {
+  fd --hidden --follow --exclude ".git" . "$1"
+}
+
+_fzf_compgen_dir() {
+  fd --type d --hidden --follow --exclude ".git" . "$1"
+}
