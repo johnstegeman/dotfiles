@@ -83,6 +83,7 @@ atinit:'ZINIT[COMPINIT_OPTS]=-C; zicompinit; zicdreplay' atload:'FAST_HIGHLIGHT[
 compile'{src/*.zsh,src/strategies/*}' atinit"ZSH_AUTOSUGGEST_USE_ASYNC=1" atload"_zsh_autosuggest_start" \
   zsh-users/zsh-autosuggestions \
 OMZP::history \
+OMZL::history.zsh \
 zsh-users/zsh-completions \
 hcgraf/zsh-sudo \
 zdharma-continuum/zsh-navigation-tools \
@@ -153,8 +154,3 @@ _fzf_compgen_path() {
 _fzf_compgen_dir() {
   fd --type d --hidden --follow --exclude ".git" . "$1"
 }
-
-# history options
-setopt hist_verify
-setopt hist_ignore_dups
-setopt share_history
