@@ -106,8 +106,7 @@ pinelibg/dircolors-solarized-zsh \
 has:'multipass' OMZP::multipass \
 zdharma-continuum/zinit-console \
 atload:'bindkey "^[[A" history-substring-search-up; bindkey "^[[B" history-substring-search-down' \
-  zsh-users/zsh-history-substring-search \
-zsh-users/zsh-history-substring-search
+  zsh-users/zsh-history-substring-search
 
 zt 0c light-mode binary for \
 sbin:'fd*/fd;fd*/fd -> fdfind' from:"gh-r" \
