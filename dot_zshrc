@@ -112,7 +112,7 @@ sbin:'fd*/fd;fd*/fd -> fdfind' from:"gh-r" \
   @sharkdp/fd \
 mv:'dua* dua' sbin:'**/dua(.exe|) -> dua' atload:'alias du="dua i"' from:"gh-r"\
   Byron/dua-cli \
-mv:'duf* duf' sbin:'**/duf(.exe|) -> duf' atload:'alias df=$(which duf)' from:"gh-r"\
+sbin:'**/duf(.exe|) -> duf' atload:'alias df=$(which duf)' from:"gh-r"\
   muesli/duf \
 from"gh-r"  sbin"**/lnav" atload:'alias -s "log"="lnav"'\
   tstack/lnav \
