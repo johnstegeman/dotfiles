@@ -88,8 +88,7 @@ zsh-users/zsh-completions \
 hcgraf/zsh-sudo \
 zdharma-continuum/zsh-navigation-tools \
 zdharma-continuum/zui \
-zdharma-continuum/zbrowse \
-agkozak/zsh-z
+zdharma-continuum/zbrowse
 
 zt 0b light-mode for \
 pick:'autopair.zsh' nocompletions atload:'bindkey "^H" backward-kill-word; ZSH_AUTOSUGGEST_CLEAR_WIDGETS+=(autopair-insert)' \
@@ -119,6 +118,7 @@ from"gh-r"  sbin"**/lnav" atload:'alias -s "log"="lnav"'\
   tstack/lnav \
 has:'asciinema' mv:'agg* agg' sbin:'**/agg(.exe|) -> agg' from:"gh-r" \
   @asciinema/agg \
+sbin"**/fasd" from"gh-r" atload:'eval "$(fasd --init auto)"' whjvenyl/fasd
 
 
 zt 0c light-mode null for \
