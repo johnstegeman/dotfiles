@@ -18,3 +18,5 @@ packages:
   - gcc
   - make
   - exa
+  - lua5.4
+  - jq
