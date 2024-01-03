@@ -22,5 +22,6 @@
     "editor.tabSize": 3,
     "prettier.tabWidth": 3,
     "editor.accessibilitySupport": "off",
-    "python.defaultInterpreterPath": "/Users/jstegeman/.virtualenvs/genai"
+    "python.defaultInterpreterPath": "/Users/jstegeman/.virtualenvs/genai",
+    "editor.lineNumbers": "relative"
 }
