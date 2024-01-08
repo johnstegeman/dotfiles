@@ -53,6 +53,8 @@ alias -- -='cd -'
 alias md='mkdir -p'
 alias rd=rmdir
 
+alias vi=nvim
+
 #########################
 #         Other         #
 #########################
