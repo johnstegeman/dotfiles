@@ -17,11 +17,12 @@
     "[json]": {
         "editor.defaultFormatter": "esbenp.prettier-vscode"
     },
-    "workbench.colorTheme": "Better Solarized Light",
+    "workbench.colorTheme": "Better Solarized Dark",
     "workbench.iconTheme": "material-icon-theme",
     "editor.tabSize": 3,
     "prettier.tabWidth": 3,
     "editor.accessibilitySupport": "off",
     "python.defaultInterpreterPath": "/Users/jstegeman/.virtualenvs/genai",
-    "editor.lineNumbers": "relative"
+    "editor.lineNumbers": "relative",
+    "git.openRepositoryInParentFolders": "always"
 }
