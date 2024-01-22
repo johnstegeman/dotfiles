@@ -24,5 +24,6 @@
     "editor.accessibilitySupport": "off",
     "python.defaultInterpreterPath": "/Users/jstegeman/.virtualenvs/genai",
     "editor.lineNumbers": "relative",
-    "git.openRepositoryInParentFolders": "always"
+    "git.openRepositoryInParentFolders": "always",
+    "editor.minimap.enabled": false
 }
