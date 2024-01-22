@@ -38,7 +38,7 @@ if [ -x "$(command -v /opt/homebrew/bin/brew)" ]; then
   compinit
 fi
 
-export PATH=~/bin:$PATH
+export PATH=$PATH:~/bin
 
 # Shamelessly stolen from https://github.com/z-shell/playground/blob/main/profiles/NICHOLAS85/.zshrc
 zt()  { zinit depth'3' lucid ${1/#[0-9][a-c]/wait"$1"} "${@:2}"; }
