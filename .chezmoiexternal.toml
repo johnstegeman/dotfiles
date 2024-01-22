@@ -1,0 +1,8 @@
+[".config/nvim"]
+    type = "git-repo"
+    url = "https://github.com/AstroNvim/AstroNvim"
+
+[".config/nvim/lua/user"]
+    type = "git-repo"
+    url = "https://github.com/johnstegeman/astro_user"
+    refreshPeriod = "168h"
