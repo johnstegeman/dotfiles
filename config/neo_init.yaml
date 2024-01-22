@@ -20,3 +20,4 @@ packages:
   - exa
   - lua5.4
   - jq
+  - neovim
