@@ -133,8 +133,15 @@ id-as:'Cleanup' nocd atinit:'unset -f zt; _zsh_autosuggest_bind_widgets' \
   zdharma-continuum/null \
 pack:'bgn-binary+keys' \
   fzf \
-pack:'bgn' \
-  fzy
+as'null' \
+  atclone'cp -vf fzy.1 $ZPFX/man/man1' \
+  atpull'%atclone' \
+  id-as'jhawthorn/fzy' \
+  lucid \
+  make \
+  nocompile \
+  sbin'fzy;contrib/fzy-*' \
+  jhawthorn/fzy
 
 zinit light-mode for SleepyBag/zle-fzf
 
