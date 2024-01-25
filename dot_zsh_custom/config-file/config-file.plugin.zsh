@@ -55,6 +55,8 @@ alias rd=rmdir
 
 alias vi=nvim
 
+alias lg=lazygit
+
 #########################
 #         Other         #
 #########################
