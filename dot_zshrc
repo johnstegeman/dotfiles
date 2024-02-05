@@ -76,7 +76,7 @@ skip:$consoleskip @console-tools \
 skip:$sharkskip @sharkdp
 
 unset consoleskip
-unset sharkdp
+unset sharkskip
 
 #####################################################################################################
 # The following use turbo mode to load after the shell prompt is ready
