@@ -17,7 +17,7 @@
     "[json]": {
         "editor.defaultFormatter": "esbenp.prettier-vscode"
     },
-    "workbench.colorTheme": "Better Solarized Dark",
+    "workbench.colorTheme": "Solarized Osaka",
     "workbench.iconTheme": "material-icon-theme",
     "editor.tabSize": 3,
     "prettier.tabWidth": 3,
