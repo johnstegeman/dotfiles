@@ -6,3 +6,8 @@
     type = "git-repo"
     url = "https://github.com/johnstegeman/astro_user"
     refreshPeriod = "168h"
+
+[".tmux"]
+    type = "git-repo"
+    url = "https://github.com/gpakosz/.tmux.git"
+    refreshPeriod = "168h"
