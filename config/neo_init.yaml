@@ -21,3 +21,5 @@ packages:
   - lua5.4
   - jq
   - npm
+  - gettext
+  - cmake
