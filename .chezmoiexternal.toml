@@ -7,7 +7,7 @@
     url = "https://github.com/johnstegeman/astro_user"
     refreshPeriod = "168h"
 
-[".tmux"]
+[".tmux/plugins/tpm"]
     type = "git-repo"
-    url = "https://github.com/gpakosz/.tmux.git"
+    url = "https://github.com/tmux-plugins/tpm.git"
     refreshPeriod = "168h"
