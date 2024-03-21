@@ -9,13 +9,9 @@ if [ -x "$(command -v pyenv)" ]; then
 	eval "$(pyenv init -)"
 
 	VIRTUAL_ENV_DISABLE_PROMPT=1
+   eval "$(pyenv virtualenv-init -)"
+#	~/.pyenv/versions/3.12.2/bin/virtualenvwrapper.sh
 
-	~/.pyenv/versions/3.12.0/bin/virtualenvwrapper.sh
-	export PYENV_VIRTUALENVWRAPPER_PREFER_PYVENV="true"
-	export WORKON_HOME=$HOME/.virtualenvs
-	mkdir -p $WORKON_HOME
-	pyenv virtualenvwrapper_lazy
-	#export PIP_REQUIRE_VIRTUALENV=true
 
 	alias plo="pip list --outdated"
 
