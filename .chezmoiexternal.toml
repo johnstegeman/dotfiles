@@ -1,11 +1,7 @@
 [".config/nvim"]
     type = "git-repo"
-    url = "https://github.com/AstroNvim/AstroNvim"
+    url = "https://github.com/johnstegeman/nvim_astrov4"
 
-[".config/nvim/lua/user"]
-    type = "git-repo"
-    url = "https://github.com/johnstegeman/astro_user"
-    refreshPeriod = "168h"
 
 [".tmux/plugins/tpm"]
     type = "git-repo"
