@@ -70,6 +70,7 @@ OMZP::copybuffer \
 OMZP::direnv \
 OMZL::git.zsh \
 OMZP::git \
+OMZP::gcloud \
 romkatv/zsh-defer \
 ael-code/zsh-colored-man-pages \
 skip:$consoleskip @console-tools \
