@@ -1,4 +1,5 @@
 if [ -x "$(command -v brew)" ]; then
+    #
     #if [ -x "$(command -v pyenv)" ]; then
     #    alias brew='env PATH="${PATH//$(pyenv root)\/shims:/}" brew'
     #fi
