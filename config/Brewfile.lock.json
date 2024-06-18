@@ -11,7 +11,7 @@
         "revision": "4882b6c492f314eb2b88d9cc6406f0e4bd84b0b3"
       },
       "homebrew/command-not-found": {
-        "revision": "51be56c79de4540761a6fba239dc1fc92c0b558e"
+        "revision": "a7b85d28c8e64f005f47d08590e57693ebdf88e5"
       },
       "homebrew/services": {
         "revision": "fac8674531292d66b82486d842f5111c0a5fa7c0"
@@ -1820,6 +1820,18 @@
         "version": "6.0.11.35001",
         "options": {
           "full_name": "zoom"
+        }
+      },
+      "font-commit-mono-nerd-font": {
+        "version": "3.2.1",
+        "options": {
+          "full_name": "font-commit-mono-nerd-font"
+        }
+      },
+      "readdle-spark": {
+        "version": "3.16.2.75440",
+        "options": {
+          "full_name": "readdle-spark"
         }
       }
     },
