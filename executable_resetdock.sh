@@ -12,8 +12,8 @@ defaults write com.apple.dock persistent-apps -array \
     "$(dock_item /Applications/Arc.app)" \
     "$(dock_item /Applications/Email.app)" \
     '{"tile-type"="small-spacer-tile";}' \
-    "$(dock_item /Applications/Cron.app)" \
     "$(dock_item /Applications/Asana.app)" \
+    "$(dock_item /Applications/Notion\ Calendar.app)" \
     "$(dock_item /Applications/Notability.app)" \
     '{"tile-type"="small-spacer-tile";}' \
     "$(dock_item /Applications/iTerm.app)" \
