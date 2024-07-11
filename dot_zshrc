@@ -63,7 +63,7 @@ zt light-mode for zdharma-continuum/zinit-annex-meta-plugins @annexes
 source_directory ~/.zsh_custom/autoload
 
 consoleskip='dircolors-material ogham/exa jonas/tig sharkdp'
-sharkskip='sharkdp/hexyl sharkdp/vivid'
+sharkskip='sharkdp/hexyl sharkdp/vivid sharkdp/bat'
 
 zi light-mode for \
 OMZP::copybuffer \
