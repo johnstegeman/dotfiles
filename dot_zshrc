@@ -107,6 +107,7 @@ has:'eza' atload:'export eza_params=('--time-style=long-iso' '--group-directorie
 has:'bat' fdellwing/zsh-bat \
 has:'aws' OMZP::aws \
 has:'chezmoi' johnstegeman/zsh-chezmoi \
+has:'dua' johnstegeman/zsh-dua \
 pinelibg/dircolors-solarized-zsh \
 has:'multipass' OMZP::multipass \
 zdharma-continuum/zinit-console \
@@ -116,8 +117,6 @@ atload:'bindkey "^[[A" history-substring-search-up; bindkey "^[[B" history-subst
 zt 0c light-mode binary for \
 sbin:'fd*/fd;fd*/fd -> fdfind' from:"gh-r" \
   @sharkdp/fd \
-mv:'dua* dua' sbin:'**/dua(.exe|) -> dua' atload:'alias du="dua i"' from:"gh-r"\
-  Byron/dua-cli \
 sbin:'**/duf(.exe|) -> duf' atload:'alias df=$(which duf)' from:"gh-r"\
   muesli/duf \
 from"gh-r"  sbin"**/lnav" atload:'alias -s "log"="lnav"'\
