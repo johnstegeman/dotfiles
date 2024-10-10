@@ -1,3 +1,4 @@
+cd $HOME
 sudo apt remove neovim
 sudo apt -y install npm
 sudo apt -y update
