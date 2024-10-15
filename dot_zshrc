@@ -28,6 +28,7 @@ export TERM=xterm-256color
 ENABLE_CORRECTION="false"
 COMPLETION_WAITING_DOTS="true"
 export DIRCOLORS_SOLARIZED_ZSH_THEME="256dark"
+export FZFZ_RECENT_DIRS_TOOL=fasd
 
 # set Homebrew environment and path if installed
 
@@ -141,9 +142,10 @@ as'null' \
   make \
   nocompile \
   sbin'fzy;contrib/fzy-*' \
-  jhawthorn/fzy
+  jhawthorn/fzy 
 
 zinit light-mode for SleepyBag/zle-fzf
+zinit light-mode for johnstegeman/fzf-z
 
 # end of turbo loading section
 #####################################################################################################
