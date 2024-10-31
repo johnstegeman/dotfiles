@@ -147,8 +147,7 @@ as'null' \
 zinit light-mode for SleepyBag/zle-fzf
 zinit light-mode for johnstegeman/fzf-z
 
-# zinit ice lucid nocompile
-# zinit load MenkeTechnologies/zsh-expand
+zi light-mode trackbinds bindmap'!" "->zpwrExpandTerminateSpace; !"^@"->zpwrExpandSupernaturalSpace' for MenkeTechnologies/zsh-expand
 
 # end of turbo loading section
 #####################################################################################################
