@@ -128,7 +128,7 @@ sbin"**/fasd" from"gh-r" atload:'eval "$(fasd --init auto)"' whjvenyl/fasd
 
 
 zt 0c light-mode null for \
-fbin paulirish/git-open \
+sbin:'git-open' paulirish/git-open \
 id-as:'Cleanup' nocd atinit:'unset -f zt; _zsh_autosuggest_bind_widgets' \
   zdharma-continuum/null \
 pack:'bgn-binary+keys' \
