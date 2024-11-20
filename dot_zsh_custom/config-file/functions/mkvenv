@@ -1,0 +1,7 @@
+if [ -v 1 ]; then
+   uv venv --python $1
+else
+   uv venv 
+fi
+echo ". .venv/bin/activate" >.envrc
+direnv allow
