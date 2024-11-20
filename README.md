@@ -22,3 +22,8 @@ John Stegeman's aka "Steggy" dotfiles
 - [neovim](https://neovim.io/) configuration with Astronvim (using [external repository](https://github.com/johnstegeman/nvim_astrov4))
 - [lnav](https://lnav.org/) setup for viewing logfiles
 
+
+## Installation
+
+
+## Rationales and Other Documentation

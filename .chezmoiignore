@@ -31,6 +31,8 @@ config/Brewfile
 .oh-my-zsh/custom/themes/powerlevel10k/internal/p10k.zsh.zwc
 .oh-my-zsh/custom/themes/powerlevel10k/internal/parser.zsh.zwc
 .oh-my-zsh/custom/themes/powerlevel10k/internal/worker.zsh.zwc
+docs/*
+docs/**/*
 settings.json
 .k9s/config.yml
 config/Brewfile
