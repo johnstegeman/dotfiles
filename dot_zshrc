@@ -68,7 +68,6 @@ sharkskip='sharkdp/hexyl sharkdp/vivid sharkdp/bat'
 
 zi light-mode for \
 OMZP::copybuffer \
-OMZP::direnv \
 OMZL::git.zsh \
 OMZP::git \
 OMZP::gcloud \
