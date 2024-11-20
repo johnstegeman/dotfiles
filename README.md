@@ -27,3 +27,8 @@ John Stegeman's aka "Steggy" dotfiles
 
 
 ## Rationales and Other Documentation
+
+- [zinit](docs/zinit.md)
+- [utilities](docs/utilities.md)
+- [python](docs/python.md)
+- [java](docs/java.md)
