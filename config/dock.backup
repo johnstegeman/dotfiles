@@ -1,0 +1,248 @@
+(
+        {
+        GUID = 1537512581;
+        "tile-data" =         {
+            book = {length = 584, bytes = 0x626f6f6b 48020000 00000410 30000000 ... 04000000 00000000 };
+            "bundle-identifier" = "com.apple.launchpad.launcher";
+            "dock-extra" = 0;
+            "file-data" =             {
+                "_CFURLString" = "file:///System/Applications/Launchpad.app/";
+                "_CFURLStringType" = 15;
+            };
+            "file-label" = Launchpad;
+            "file-mod-date" = 3742536247;
+            "file-type" = 169;
+            "is-beta" = 0;
+            "parent-mod-date" = 3742536247;
+        };
+        "tile-type" = "file-tile";
+    },
+        {
+        "tile-data" =         {
+            "file-label" = "";
+        };
+        "tile-type" = "small-spacer-tile";
+    },
+        {
+        GUID = 1478998416;
+        "tile-data" =         {
+            book = {length = 552, bytes = 0x626f6f6b 28020000 00000410 30000000 ... 04000000 00000000 };
+            "bundle-identifier" = "company.thebrowser.Browser";
+            "dock-extra" = 0;
+            "file-data" =             {
+                "_CFURLString" = "file:///Applications/Arc.app/";
+                "_CFURLStringType" = 15;
+            };
+            "file-label" = Arc;
+            "file-mod-date" = 261507154534345;
+            "file-type" = 41;
+            "is-beta" = 0;
+            "parent-mod-date" = 47742337306624;
+        };
+        "tile-type" = "file-tile";
+    },
+        {
+        GUID = 1478998417;
+        "tile-data" =         {
+            book = {length = 556, bytes = 0x626f6f6b 2c020000 00000410 30000000 ... 04000000 00000000 };
+            "bundle-identifier" = "com.edisonmail.edisonmail";
+            "dock-extra" = 0;
+            "file-data" =             {
+                "_CFURLString" = "file:///Applications/Email.app/";
+                "_CFURLStringType" = 15;
+            };
+            "file-label" = Email;
+            "file-mod-date" = 244207024041181;
+            "file-type" = 41;
+            "is-beta" = 0;
+            "parent-mod-date" = 47742337306624;
+        };
+        "tile-type" = "file-tile";
+    },
+        {
+        "tile-data" =         {
+            "file-label" = "";
+        };
+        "tile-type" = "small-spacer-tile";
+    },
+        {
+        GUID = 1478998419;
+        "tile-data" =         {
+            book = {length = 552, bytes = 0x626f6f6b 28020000 00000410 30000000 ... 04000000 00000000 };
+            "bundle-identifier" = "com.cron.electron";
+            "dock-extra" = 0;
+            "file-data" =             {
+                "_CFURLString" = "file:///Applications/Cron.app/";
+                "_CFURLStringType" = 15;
+            };
+            "file-label" = Cron;
+            "file-mod-date" = 3774302828;
+            "file-type" = 41;
+            "is-beta" = 0;
+            "parent-mod-date" = 83631083885804;
+        };
+        "tile-type" = "file-tile";
+    },
+        {
+        GUID = 1436089241;
+        "tile-data" =         {
+            book = {length = 556, bytes = 0x626f6f6b 2c020000 00000410 30000000 ... 04000000 00000000 };
+            "bundle-identifier" = "com.electron.asana";
+            "dock-extra" = 0;
+            "file-data" =             {
+                "_CFURLString" = "file:///Applications/Asana.app/";
+                "_CFURLStringType" = 15;
+            };
+            "file-label" = Asana;
+            "file-mod-date" = 3770304647;
+            "file-type" = 41;
+            "is-beta" = 0;
+            "parent-mod-date" = 47742337306624;
+        };
+        "tile-type" = "file-tile";
+    },
+        {
+        GUID = 1005351522;
+        "tile-data" =         {
+            book = {length = 560, bytes = 0x626f6f6b 30020000 00000410 30000000 ... 04000000 00000000 };
+            "bundle-identifier" = "com.gingerlabs.Notability";
+            "dock-extra" = 0;
+            "file-data" =             {
+                "_CFURLString" = "file:///Applications/Notability.app/";
+                "_CFURLStringType" = 15;
+            };
+            "file-label" = Notability;
+            "file-mod-date" = 61129750368256;
+            "file-type" = 41;
+            "is-beta" = 0;
+            "parent-mod-date" = 47742337306624;
+        };
+        "tile-type" = "file-tile";
+    },
+        {
+        "tile-data" =         {
+            "file-label" = "";
+        };
+        "tile-type" = "small-spacer-tile";
+    },
+        {
+        GUID = 1508824032;
+        "tile-data" =         {
+            book = {length = 556, bytes = 0x626f6f6b 2c020000 00000410 30000000 ... 04000000 00000000 };
+            "bundle-identifier" = "com.googlecode.iterm2";
+            "dock-extra" = 0;
+            "file-data" =             {
+                "_CFURLString" = "file:///Applications/iTerm.app/";
+                "_CFURLStringType" = 15;
+            };
+            "file-label" = iTerm;
+            "file-mod-date" = 79344705457476;
+            "file-type" = 41;
+            "is-beta" = 0;
+            "parent-mod-date" = 47742337306624;
+        };
+        "tile-type" = "file-tile";
+    },
+        {
+        GUID = 765817084;
+        "tile-data" =         {
+            book = {length = 556, bytes = 0x626f6f6b 2c020000 00000410 30000000 ... 04000000 00000000 };
+            "bundle-identifier" = "com.tinyspeck.slackmacgap";
+            "dock-extra" = 0;
+            "file-data" =             {
+                "_CFURLString" = "file:///Applications/Slack.app/";
+                "_CFURLStringType" = 15;
+            };
+            "file-label" = Slack;
+            "file-mod-date" = 114962869588939;
+            "file-type" = 41;
+            "is-beta" = 0;
+            "parent-mod-date" = 47742337306624;
+        };
+        "tile-type" = "file-tile";
+    },
+        {
+        GUID = 2806483928;
+        "tile-data" =         {
+            book = {length = 580, bytes = 0x626f6f6b 44020000 00000410 30000000 ... 04000000 00000000 };
+            "bundle-identifier" = "com.apple.MobileSMS";
+            "dock-extra" = 0;
+            "file-data" =             {
+                "_CFURLString" = "file:///System/Applications/Messages.app/";
+                "_CFURLStringType" = 15;
+            };
+            "file-label" = Messages;
+            "file-mod-date" = 3773814286;
+            "file-type" = 41;
+            "is-beta" = 0;
+            "parent-mod-date" = 3773814286;
+        };
+        "tile-type" = "file-tile";
+    },
+        {
+        "tile-data" =         {
+            "file-label" = "";
+        };
+        "tile-type" = "small-spacer-tile";
+    },
+        {
+        GUID = 3739652437;
+        "tile-data" =         {
+            book = {length = 568, bytes = 0x626f6f6b 38020000 00000410 30000000 ... 04000000 00000000 };
+            "bundle-identifier" = "com.microsoft.VSCode";
+            "dock-extra" = 0;
+            "file-data" =             {
+                "_CFURLString" = "file:///Applications/Visual%20Studio%20Code.app/";
+                "_CFURLStringType" = 15;
+            };
+            "file-label" = "Visual Studio Code";
+            "file-mod-date" = 29690588492508;
+            "file-type" = 41;
+            "is-beta" = 0;
+            "parent-mod-date" = 270526585577488;
+        };
+        "tile-type" = "file-tile";
+    },
+        {
+        GUID = 3706070982;
+        "tile-data" =         {
+            book = {length = 564, bytes = 0x626f6f6b 34020000 00000410 30000000 ... 04000000 00000000 };
+            "bundle-identifier" = "com.neo4j.neo4j-desktop";
+            "dock-extra" = 0;
+            "file-data" =             {
+                "_CFURLString" = "file:///Applications/Neo4j%20Desktop.app/";
+                "_CFURLStringType" = 15;
+            };
+            "file-label" = "Neo4j Desktop";
+            "file-mod-date" = 3764568742;
+            "file-type" = 41;
+            "is-beta" = 0;
+            "parent-mod-date" = 270526585577488;
+        };
+        "tile-type" = "file-tile";
+    },
+        {
+        "tile-data" =         {
+            "file-label" = "";
+        };
+        "tile-type" = "small-spacer-tile";
+    },
+        {
+        GUID = 1598152277;
+        "tile-data" =         {
+            book = {length = 588, bytes = 0x626f6f6b 4c020000 00000410 30000000 ... 04000000 00000000 };
+            "bundle-identifier" = "com.apple.systempreferences";
+            "dock-extra" = 1;
+            "file-data" =             {
+                "_CFURLString" = "file:///System/Applications/System%20Settings.app/";
+                "_CFURLStringType" = 15;
+            };
+            "file-label" = "System Settings";
+            "file-mod-date" = 3773814286;
+            "file-type" = 41;
+            "is-beta" = 0;
+            "parent-mod-date" = 3773814286;
+        };
+        "tile-type" = "file-tile";
+    }
+)

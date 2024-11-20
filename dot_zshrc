@@ -1,71 +1,173 @@
 # Enable Powerlevel10k instant prompt. Should stay close to the top of ~/.zshrc.
 # Initialization code that may require console input (password prompts, [y/n]
 # confirmations, etc.) must go above this block; everything else may go below.
+
 if [[ -r "${XDG_CACHE_HOME:-$HOME/.cache}/p10k-instant-prompt-${(%):-%n}.zsh" ]]; then
   source "${XDG_CACHE_HOME:-$HOME/.cache}/p10k-instant-prompt-${(%):-%n}.zsh"
 fi
 
-####### Utility functions
-source_if_exists() { [ -f "$1" ] && source "$1" }
 
-source_directory() {
-if [ -d "$1" ]; then
-  for file in "$1"/*.zsh; do
-     source "$file"
-  done
+ZINIT_HOME="${ZINIT_HOME:-${ZPLG_HOME:-${ZDOTDIR:-${HOME}}/.zinit}}"
+ZINIT_BIN_DIR_NAME="${${ZINIT_BIN_DIR_NAME:-${ZPLG_BIN_DIR_NAME}}:-bin}"
+### Added by Zinit's installer
+if [[ ! -f "${ZINIT_HOME}/${ZINIT_BIN_DIR_NAME}/zinit.zsh" ]]; then
+    print -P "%F{33}▓▒░ %F{220}Installing DHARMA Initiative Plugin Manager (zdharma/zinit)…%f"
+    command mkdir -p "${ZINIT_HOME}" && command chmod g-rwX "${ZINIT_HOME}"
+    command git clone https://github.com/zdharma-continuum/zinit "${ZINIT_HOME}/${ZINIT_BIN_DIR_NAME}" && \
+        print -P "%F{33}▓▒░ %F{34}Installation successful.%f" || \
+        print -P "%F{160}▓▒░ The clone has failed.%f"
 fi
-}
+source "${ZINIT_HOME}/${ZINIT_BIN_DIR_NAME}/zinit.zsh"
+autoload -Uz _zinit
+(( ${+_comps} )) && _comps[zinit]=_zinit
+### End of Zinit installer's chunk
+
+# Some configuration variables 
 
 export TERM=xterm-256color
-
-# Path to your oh-my-zsh installation.
-export ZSH=~/.oh-my-zsh
-ZSH_THEME="powerlevel10k/powerlevel10k"
-
 ENABLE_CORRECTION="false"
 COMPLETION_WAITING_DOTS="true"
+export DIRCOLORS_SOLARIZED_ZSH_THEME="256dark"
+export FZFZ_RECENT_DIRS_TOOL=fasd
 
-#/bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)"
+# set Homebrew environment and path if installed
 
-export PATH=/opt/homebrew/bin:~/bin:~/.local/bin:$PATH
-
-plugins=(
-#  autoupdate
-  zsh-autosuggestions
-  history-substring-search
-  copybuffer
-  direnv
-  zsh-dircolors-solarized
-  H-S-MW
-  F-Sy-H
-  colored-man-pages
-  history
-)
-
-if [ -e /opt/homebrew/bin/gdircolors ]; then
-    alias dircolors=gdircolors
+if [ -x "$(command -v /opt/homebrew/bin/brew)" ]; then
+  eval $(/opt/homebrew/bin/brew shellenv)
+  FPATH="$(brew --prefix)/share/zsh/site-functions:${FPATH}"
+  autoload -Uz compinit
+  compinit
 fi
 
-source_if_exists $ZSH/oh-my-zsh.sh
+export PATH=$PATH:~/bin
 
-source_directory ~/.zsh_custom
+# fix dircolors for Selenized
+export LS_COLORS="$LS_COLORS:ow=1;7;34:st=30;44:su=30;41"
 
-#ZSH_CUSTOM_AUTOUPDATE_QUIET=true
-DISABLE_AUTO_UPDATE="true"
+# Shamelessly stolen from https://github.com/z-shell/playground/blob/main/profiles/NICHOLAS85/.zshrc
+zt()  { zinit depth'3' lucid ${1/#[0-9][a-c]/wait"$1"} "${@:2}"; }
 
-# fzf
-source_if_exists ~/.fzf.zsh
+autoload -U zmv
+bindkey '^X' push-input
 
-# syntax highlighting plugin
+zt light-mode blockf for ~/.zsh_custom/config-file
 
-# source_if_exists /usr/local/share/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
+# Powerlevel10k theme
 
-# history substring search plugin
+zt light-mode for \
+depth:'1' atload:"[[ ! -f ~/.p10k.zsh ]] || source ~/.p10k.zsh" nocd \
+  romkatv/powerlevel10k
 
-source_if_exists /usr/local/share/zsh-history-substring-search/zsh-history-substring-search.zsh
+zt light-mode for zdharma-continuum/zinit-annex-meta-plugins @annexes
 
-# To customize prompt, run `p10k configure` or edit ~/.p10k.zsh.
-[[ ! -f ~/.p10k.zsh ]] || source ~/.p10k.zsh
+# Source all custom scripts
+source_directory ~/.zsh_custom/autoload
 
-eval "$(zoxide init zsh)"
-alias cd=z
+consoleskip='dircolors-material ogham/exa jonas/tig sharkdp'
+sharkskip='sharkdp/hexyl sharkdp/vivid sharkdp/bat'
+
+zi light-mode for \
+OMZP::copybuffer \
+OMZL::git.zsh \
+OMZP::git \
+OMZP::gcloud \
+romkatv/zsh-defer \
+ael-code/zsh-colored-man-pages \
+skip:$consoleskip @console-tools \
+skip:$sharkskip @sharkdp
+
+unset consoleskip
+unset sharkskip
+
+#####################################################################################################
+# The following use turbo mode to load after the shell prompt is ready
+# They are grouped using a, b, c to enforce a load order
+
+zt 0a light-mode for \
+atinit:'ZINIT[COMPINIT_OPTS]=-C; zicompinit; zicdreplay' atload:'FAST_HIGHLIGHT[chroma-man]=; fast-theme -q default' \
+  zdharma-continuum/fast-syntax-highlighting \
+compile'{src/*.zsh,src/strategies/*}' atinit"ZSH_AUTOSUGGEST_USE_ASYNC=1" atload"_zsh_autosuggest_start" \
+  zsh-users/zsh-autosuggestions \
+OMZP::history \
+OMZL::history.zsh \
+zsh-users/zsh-completions \
+hcgraf/zsh-sudo \
+zdharma-continuum/zsh-navigation-tools \
+zdharma-continuum/zui \
+zdharma-continuum/zbrowse
+
+zt 0b light-mode for \
+pick:'autopair.zsh' nocompletions atload:'bindkey "^H" backward-kill-word; ZSH_AUTOSUGGEST_CLEAR_WIDGETS+=(autopair-insert)' \
+  hlissner/zsh-autopair \
+autoload:'#manydots-magic' \
+  knu/zsh-manydots-magic \
+Aloxaf/fzf-tab \
+MichaelAquilina/zsh-you-should-use \
+has:'eza' atload:'export eza_params=('--time-style=long-iso' '--group-directories-first')' johnstegeman/zsh-eza \
+has:'bat' fdellwing/zsh-bat \
+has:'aws' OMZP::aws \
+has:'chezmoi' johnstegeman/zsh-chezmoi \
+has:'dua' johnstegeman/zsh-dua \
+pinelibg/dircolors-solarized-zsh \
+has:'multipass' OMZP::multipass \
+zdharma-continuum/zinit-console \
+atload:'bindkey "^[[A" history-substring-search-up; bindkey "^[[B" history-substring-search-down' \
+  zsh-users/zsh-history-substring-search
+
+zt 0c light-mode binary for \
+sbin:'fd*/fd;fd*/fd -> fdfind' from:"gh-r" \
+  @sharkdp/fd \
+sbin:'**/duf(.exe|) -> duf' atload:'alias df=$(which duf)' from:"gh-r"\
+  muesli/duf \
+from"gh-r"  sbin"**/lnav" atload:'alias -s "log"="lnav"'\
+  tstack/lnav \
+has:'asciinema' mv:'agg* agg' sbin:'**/agg(.exe|) -> agg' from:"gh-r" \
+  @asciinema/agg \
+sbin"**/fasd" from"gh-r" atload:'eval "$(fasd --init auto)"' whjvenyl/fasd \
+sbin:"**/uv*" from:"gh-r" @astral-sh/uv \
+from"gh-r" as"program" mv"direnv* -> direnv" \
+  atclone'./direnv hook zsh > zhook.zsh' atpull'%atclone' \
+  pick"direnv" src="zhook.zsh" @direnv/direnv
+
+
+zt 0c light-mode null for \
+sbin:'git-open' paulirish/git-open \
+id-as:'Cleanup' nocd atinit:'unset -f zt; _zsh_autosuggest_bind_widgets' \
+  zdharma-continuum/null \
+pack:'bgn-binary+keys' \
+  fzf \
+as'null' \
+  atclone'cp -vf fzy.1 $ZPFX/man/man1' \
+  atpull'%atclone' \
+  id-as'jhawthorn/fzy' \
+  lucid \
+  make \
+  nocompile \
+  sbin'fzy;contrib/fzy-*' \
+  jhawthorn/fzy 
+
+zinit light-mode for SleepyBag/zle-fzf
+zinit light-mode for johnstegeman/fzf-z
+
+zi light-mode trackbinds bindmap'" "->"^@"; "^@"->" "' for MenkeTechnologies/zsh-expand
+
+# end of turbo loading section
+#####################################################################################################
+
+## FZF options
+export FZF_DEFAULT_COMMAND='fd --type file --follow --hidden --exclude .git --color=always'
+export FZF_CTRL_T_COMMAND="$FZF_DEFAULT_COMMAND"
+export FZF_CTRL_R_OPTS="
+  --preview 'echo {}' --preview-window hidden:wrap
+  --bind 'ctrl-/:toggle-preview'
+  --bind 'ctrl-y:execute-silent(echo -n {2..} | pbcopy)+abort'
+  --color header:italic
+  --header 'Press CTRL-Y to copy command into clipboard'"
+
+_fzf_compgen_path() {
+  fd --hidden --follow --exclude ".git" . "$1"
+}
+
+_fzf_compgen_dir() {
+  fd --type d --hidden --follow --exclude ".git" . "$1"
+}

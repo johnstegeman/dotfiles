@@ -1,0 +1,3 @@
+if [ -x "$(command -v $2)" ]; then
+	alias "$1"="$2 $3"
+fi

@@ -1,5 +1,4 @@
 {
-    "workbench.colorTheme": "Solarized Light",
     "security.workspace.trust.banner": "never",
     "security.workspace.trust.untrustedFiles": "open",
     "redhat.telemetry.enabled": false,
@@ -17,5 +16,14 @@
     },
     "[json]": {
         "editor.defaultFormatter": "esbenp.prettier-vscode"
-    }
+    },
+    "workbench.colorTheme": "Solarized Osaka",
+    "workbench.iconTheme": "material-icon-theme",
+    "editor.tabSize": 3,
+    "prettier.tabWidth": 3,
+    "editor.accessibilitySupport": "off",
+    "python.defaultInterpreterPath": "/Users/jstegeman/.virtualenvs/genai",
+    "editor.lineNumbers": "relative",
+    "git.openRepositoryInParentFolders": "always",
+    "editor.minimap.enabled": false
 }
