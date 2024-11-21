@@ -1,3 +1,7 @@
+# zsh Plugins
+
+These are zsh plugins installed as part of the configuration. Note that binary/command/sbin type plugins (ones that aren't really a plugin but install some utility or other program) are documented [separately](utilities.md)
+
 |Plugin |Purpose |
 |-------|--------|
 |romkatv/powerlevel10k|Extensively customizable zsh prompt|
