@@ -1,6 +1,6 @@
 # zsh Plugins
 
-These are zsh plugins installed as part of the configuration. Note that binary/command/sbin type plugins (ones that aren't really a plugin but install some utility or other program) are documented [separately](utilities.md)
+These are zsh plugins installed as part of the configuration. Note that binary/command/sbin type plugins (that is, ones that aren't really a zsk plugin but install some utility or other program) are documented [separately](utilities.md)
 
 |Plugin |Purpose |
 |-------|--------|
