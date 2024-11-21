@@ -67,7 +67,6 @@ consoleskip='dircolors-material ogham/exa jonas/tig sharkdp'
 sharkskip='sharkdp/hexyl sharkdp/vivid sharkdp/bat'
 
 zi light-mode for \
-OMZP::copybuffer \
 OMZL::git.zsh \
 OMZP::git \
 OMZP::gcloud \
