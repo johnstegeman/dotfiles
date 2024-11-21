@@ -30,7 +30,9 @@ An opinionated set of dotfiles and other configurations from John "Steggy" Stege
 ## Rationale and Other Documentation
 
 - [zinit plugins](docs/zinit.md)
+- [custom functions and aliases](docs/functions.md)
 - [utilities](docs/utilities.md)
 - [python](docs/python.md)
 - [java](docs/java.md)
+- [MacOS apps via Homebrew casks](docs/apps.md)
 - [customizing](docs/customizing.md)
