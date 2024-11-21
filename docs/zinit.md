@@ -11,8 +11,6 @@ These are zsh plugins installed as part of the configuration. Note that binary/c
 |OMZP::gcloud|command completion for Google cloud|
 |romkatv/zsh-defer|Defers execution of a zsh command|
 |ael-code/zsh-colored-man-pages|Automatically colorize man pages|
-|skip:$consoleskip @console-tools (dircolors-material ogham/exa jonas/tig sharkdp)
-|skip:$sharkskip @sharkdp (sharkdp/hexyl sharkdp/vivid sharkdp/bat)
 |zdharma-continuum/fast-syntax-highlighting|Syntax highlighting on the command line|
 |zsh-users/zsh-autosuggestions|Suggests commands as you type using history and completions|
 |OMZP::history|useful history-related aliases|
@@ -34,12 +32,6 @@ These are zsh plugins installed as part of the configuration. Note that binary/c
 |pinelibg/dircolors-solarized-zsh
 |zdharma-continuum/zinit-console 
 |zsh-users/zsh-history-substring-search|Makes up/down arrow for history search based on what is already typed|
-|@sharkdp/fd
-|muesli/duf
-|@asciinema/agg
-|tstack/lnav
-|whjvenyl/fasd
-|paulirish/git-open
 |jhawthorn/fzy
 |SleepyBag/zle-fzf
 |johnstegeman/fzf-z
