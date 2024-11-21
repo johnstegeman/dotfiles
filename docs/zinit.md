@@ -29,10 +29,9 @@ These are zsh plugins installed as part of the configuration. Note that binary/c
 |OMZP::aws|Command completion for aws CLI plus some commands to manage profile/region settings| 
 |johnstegeman/zsh-chezmoi|Aliases for chezmoi (if installed) - cmcd, cmap, cmedit|
 |johnstegeman/zsh-dua|Replaces (alias) du with dua (if installed)|
-|pinelibg/dircolors-solarized-zsh
-|zdharma-continuum/zinit-console 
+|pinelibg/dircolors-solarized-zsh|Solarized color scheme for color ls|
+|zdharma-continuum/zinit-console|Character-based console for zinit|
 |zsh-users/zsh-history-substring-search|Makes up/down arrow for history search based on what is already typed|
-|jhawthorn/fzy
-|SleepyBag/zle-fzf
-|johnstegeman/fzf-z
+|SleepyBag/zle-fzf|Insert commands, file names and variable names fuzzily through fzf|
+|johnstegeman/fzf-z|(forked from andrewferrier/fzf-z) frecency directory browser/picker| 
 |MenkeTechnologies/zsh-expand|Automatically expand aliases (bound to control-space instead of space)|

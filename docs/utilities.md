@@ -13,6 +13,8 @@
 |whjvenyl/fasd|recent file/directory navigator|
 |paulirish/git-open|Opens the browser pointing at the remote of the git repo in the current directory|
 |jhawthorn/fzy|Fuzzy text selector/matcher|
+|direnv/direnv|Automatically set up directory-specific environment upon changing to the directory|
+|astral-sh/uv|Python package and project manager|
 
 ## Installed with Homebrew (MacOS only - Linux versions installed some other way if needed)
 

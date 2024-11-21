@@ -19,3 +19,4 @@
 |source_directory|Sources each file (as long as the name ends in .zsh) in the given directory|
 |source_if_exists|Source the given file if it exists|
 |take|Creates the specified directory and changes to that directory|
+|z|(alias to fasd -d) fuzzy switch to a "frecent" directory supplied as an argument|

@@ -33,6 +33,8 @@ You can install chezmoi and apply this configuration in a single step:
 sh -c "$(curl -fsLS get.chezmoi.io)" -- init --apply https://github.com/johnstegeman/dotfiles
 ```
 
+This will connect your local chezmoi configuration with my GH repository. If this is what you want, no problem. However, most people will want to fork the repository and substitute the URL for their forked repo.
+
 If you have already installed chezmoi, you can clone this repository into the chezmoi source state directory - by default, in `~/.local/share/chezmoi` (if you already ran `chezmoi init` you might need to wipe out the source state directory first - I haven't tested this scenario).
 
 Installation will:
