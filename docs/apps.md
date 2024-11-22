@@ -27,3 +27,12 @@
 |webex|Conferencing app|
 |zappy|Another screenshot app, but also can capture animated GIFs|
 |zoom|Conferencing app|
+
+# (For reference only) Apps I installed from the App Store
+
+## These are installed from App Store only because there is no Homebrew cask for them 
+
+|Program|Description|
+|-------|-----------|
+|Okta Verify|2FA app for Okta|
+|Edison Mail|Email client - I use the free version|
