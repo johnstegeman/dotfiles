@@ -8,7 +8,7 @@ This configuration uses [uv](https://docs.astral.sh/uv/) to manage Python instal
 
 ## Installing a Python version
 
-To install a specific version of Python, you can use `uv python install <version>' uv can also install other distributions as well as constraint-driven versions. Rather than list all of the scenarios here, I'll just suggest you read [the documentation](https://docs.astral.sh/uv/concepts/python-versions/#installing-a-python-version)
+To install a specific version of Python, you can use `uv python install <version>` uv can also install other distributions as well as constraint-driven versions. Rather than list all of the scenarios here, I'll just suggest you read [the documentation](https://docs.astral.sh/uv/concepts/python-versions/#installing-a-python-version)
 
 ## Creating and using virtual environments
 

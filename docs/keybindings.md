@@ -4,6 +4,8 @@ These are some interesting key bindings (mostly set by plugins)
 
 Meta = Option on Mac, ALT on PC
 
+|Key|Action|
+|---|------|
 |Meta-v|fuzzy find and insert variable|
 |Meta-x|fuzzy find and insert command|
 |Meta-f|fuzzy find and insert filename|
