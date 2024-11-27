@@ -18,9 +18,9 @@ An opinionated set of dotfiles and other configurations from John "Steggy" Stege
 - 🖥️ [iTerm2](https://iterm2.com) preferences synched to the repository
 - ⌨️ installs [Colemak DH](https://colemakmods.github.io/mod-dh/) keyboard layout on MacOS
 - 💡 (where possible), prefers zinit to Homebrew for installing cli utilities to make MacOS/Linux config as close to the same as possible
-- 😎 use solarized-osaka dark color scheme for iterm and tmux
-- [neovim](https://neovim.io/) configuration with Astronvim (using [external repository](https://github.com/johnstegeman/nvim_astrov4))
-- 📑 [lnav](https://lnav.org/) setup for viewing logfiles
+- 😎 use solarized-osaka dark color scheme for iterm, tmux, vs code, etc.
+- [neovim](https://neovim.io/) configuration with Astronvim (using [external repository](https://github.com/johnstegeman/nvim_astrov4)) plus steggy customizations including setting up the keymap for the Colemak DH layout
+- 📑 [lnav](https://lnav.org/) for viewing logfiles
 - installs [multipass](https://multipass.run) on MacOS for creating Ubuntu VMs
 - enables [zmv](https://blog.smittytone.net/2021/04/03/how-to-use-zmv-z-shell-super-smart-file-renamer/) (a powerful command-line remname utility)
 
