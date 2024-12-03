@@ -3,5 +3,5 @@ if [ -v 1 ]; then
 else
    uv venv 
 fi
-echo ". .venv/bin/activate" >.envrc
+echo ". .venv/bin/activate\n" >>.envrc
 direnv allow
