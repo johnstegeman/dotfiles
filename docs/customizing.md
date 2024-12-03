@@ -22,7 +22,7 @@ The directory `dot_zsh_custom/config_file` (in the chezmoi local store) is set u
 
 ## Adding / changing zsh plugins
 
-.zshrc
+The easiest way to add zsh plugins is to edit .zshrc (dot_zshrc in the chezmoi local store). That file defines a local function `zt` that can be used to load plugins asnchronously when the interactive shell is started. You can simply add your plugin to one of the existing `zt` invocations, add your own, or directly call `zi`/`zinit` to load the plugin as appropriate for your use case.
 
 ## Configuring neovim
 
@@ -30,4 +30,4 @@ nvim
 
 ## Configuring multipass virtual machines
 
-customize mcreate and config/neo_init.yaml
+See [multipass.md](multipass.md) for information
