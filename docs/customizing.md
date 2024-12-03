@@ -2,7 +2,7 @@
 
 ## Making configuration changes and updating the chezmoi repository
 
-Generally, you can either edit dotfiles using `chezmoi edit` against the real dotfile or go to the chezmoi local store (there is a function `cmcd` that will take you to that directory) and edit the local store. There's also a `cmedit` function that will open visual studio code anchored in the local store directory. If you edit the local store, you will need to use `chezmoi apply` (or fhe alias `cmap`) to get the changes applied to the real files. You can use normal git functions to commit changes, push to/pull from the remote, etc. If you like a character-based GUI, this configuration includes lazygit (accessible from the alias `lg`).
+Generally, you can either edit dotfiles using `chezmoi edit` against the real dotfile or go to the chezmoi local store (there is a function `cmcd` that will take you to that directory) and edit the local store. There's also a `cmedit` function that will open visual studio code anchored in the local store directory. If you edit the local store, you will need to use `chezmoi apply` (or the alias `cmap`) to get the changes applied to the real files. You can use normal git functions to commit changes, push to/pull from the remote, etc. If you like a character-based GUI, this configuration includes lazygit (accessible from the alias `lg`).
 
 ## Installing additional Homebrew formulae/casks
 
@@ -14,7 +14,7 @@ I chose not to use the Linux version of Homebrew - maybe a project for another d
 
 To avoid putting a lot of clutter in .zshrc (which you, of course can do), I split out things like setting aliases, environment variables, etc into files that are organized by "function." For example, all of the python-related things can go into a one file, java into another, etc. I find it easier to manage this way.
 
-If you want to do this as well, you can put these files into dot_zsh_custom/autoload (that's the directory in the chezmoi local store). They will get instantiated into .zsh_custom/autoload. There is a line in .zshrc `source_directory ~/.zsh_custom/autoload` that will source each file ending in .zsh in this directory. The `source_directory` function is defined in dot_zsh_custom/config-file/functions (see next section of this documentation on how to define your own functions in this way).
+If you want to do this as well, you can put these files into [dot_zsh_custom/autoload](../dot_zsh_custom/autoload) (that's the directory in the chezmoi local store). They will get instantiated into .zsh_custom/autoload. There is a line in .zshrc `source_directory ~/.zsh_custom/autoload` that will source each file ending in .zsh in this directory. The `source_directory` function is defined in dot_zsh_custom/config-file/functions (see next section of this documentation on how to define your own functions in this way).
 
 ## Defining functions accessible from the shell
 

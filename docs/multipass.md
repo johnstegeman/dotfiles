@@ -14,8 +14,8 @@ My "requirements" (such as they are) include:
 
 |Function/Alias|Usage|
 |--------------|-----|
-|mp|Alias for the `multipass` command'|
-|mcreate|Function that creates a new named virtual machine, set up the user, and configure it like my MacOS configuration (see information on customizing this in the next section)|
+|mp|Alias for the `multipass` command|
+|mcreate|Function that creates a new named virtual machine, sets up the desired local user, and configures it like my MacOS configuration (see information on customizing this in the next section)|
 |mssh|Function that uses ssh to connect to the named multipass vm|
 
 ## Customizing
