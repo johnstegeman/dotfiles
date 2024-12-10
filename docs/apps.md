@@ -8,7 +8,7 @@
 |asana|Project management software|
 |Bartender|(Paid software) - used to hide menu bar items - nice for MacBooks with the camera notch|
 |disk-inventory-x|Visually display disk usage|
-|figma|(Paid software) visual design}
+|figma|(Paid software) visual design|
 |gimp|Open source image editor|
 |google cloud sdk|Libraries and tools for working with GCP|
 |google drive|Sync Google Drive onto local machine|
