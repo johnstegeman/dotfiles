@@ -128,6 +128,10 @@ from"gh-r" as"program" mv"direnv* -> direnv" \
   atclone'./direnv hook zsh > zhook.zsh' atpull'%atclone' \
   pick"direnv" src="zhook.zsh" @direnv/direnv
 
+# Note: The "CLeanup" plugin in the following section is a hack simply to run
+# the code in the atinit tag when the "plugin" is installed. I put the code
+# into a "plugin" so that it runs asnchronously when all of the other
+# plugin stages are done (the "0c" ensures it's in the third and final set)
 
 zt 0c light-mode null for \
 sbin:'git-open' paulirish/git-open \
