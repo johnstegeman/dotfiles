@@ -81,6 +81,9 @@
       "tmux": {
         "pkg-path": "tmux"
       },
+      "uv": {
+        "pkg-path": "uv"
+      },
       "virtualenv": {
         "pkg-path": "virtualenv"
       },
@@ -3223,6 +3226,126 @@
       "outputs": {
         "man": "/nix/store/5mnr4nsv0ybasc3asvs7zvc28yjmksz5-tmux-3.5a-man",
         "out": "/nix/store/d8hzzxpnn22h6081a95r4889bc4zpb0y-tmux-3.5a"
+      },
+      "system": "x86_64-linux",
+      "group": "toplevel",
+      "priority": 5
+    },
+    {
+      "attr_path": "uv",
+      "broken": false,
+      "derivation": "/nix/store/1cjv4k8zsw2hjxnzpy1ijv5dlmba8yfz-uv-0.4.30.drv",
+      "description": "Extremely fast Python package installer and resolver, written in Rust",
+      "install_id": "uv",
+      "license": "[ Apache-2.0, MIT ]",
+      "locked_url": "https://github.com/flox/nixpkgs?rev=3566ab7246670a43abd2ffa913cc62dad9cdf7d5",
+      "name": "uv-0.4.30",
+      "pname": "uv",
+      "rev": "3566ab7246670a43abd2ffa913cc62dad9cdf7d5",
+      "rev_count": 721821,
+      "rev_date": "2024-12-13T19:53:07Z",
+      "scrape_date": "2024-12-16T03:51:20Z",
+      "stabilities": [
+        "unstable"
+      ],
+      "unfree": false,
+      "version": "0.4.30",
+      "outputs_to_install": [
+        "out"
+      ],
+      "outputs": {
+        "dist": "/nix/store/5yg78vahciiraipg9xbmq3gmncyw4wig-uv-0.4.30-dist",
+        "out": "/nix/store/kcam2c7p2n7k6kazx8ipy9v93mmp2acd-uv-0.4.30"
+      },
+      "system": "aarch64-darwin",
+      "group": "toplevel",
+      "priority": 5
+    },
+    {
+      "attr_path": "uv",
+      "broken": false,
+      "derivation": "/nix/store/zf6y2lcvfqzp85lwq2j56kw8rjxx3rd9-uv-0.4.30.drv",
+      "description": "Extremely fast Python package installer and resolver, written in Rust",
+      "install_id": "uv",
+      "license": "[ Apache-2.0, MIT ]",
+      "locked_url": "https://github.com/flox/nixpkgs?rev=3566ab7246670a43abd2ffa913cc62dad9cdf7d5",
+      "name": "uv-0.4.30",
+      "pname": "uv",
+      "rev": "3566ab7246670a43abd2ffa913cc62dad9cdf7d5",
+      "rev_count": 721821,
+      "rev_date": "2024-12-13T19:53:07Z",
+      "scrape_date": "2024-12-16T03:51:20Z",
+      "stabilities": [
+        "unstable"
+      ],
+      "unfree": false,
+      "version": "0.4.30",
+      "outputs_to_install": [
+        "out"
+      ],
+      "outputs": {
+        "dist": "/nix/store/i1rvg12ibvdmbnfjdfzi02n273sz659k-uv-0.4.30-dist",
+        "out": "/nix/store/xwmpvkhkxvbibbkfpphijw85l4dxrd6m-uv-0.4.30"
+      },
+      "system": "aarch64-linux",
+      "group": "toplevel",
+      "priority": 5
+    },
+    {
+      "attr_path": "uv",
+      "broken": false,
+      "derivation": "/nix/store/gxy0ycqya13dbispl5rgdrysmb539j4b-uv-0.4.30.drv",
+      "description": "Extremely fast Python package installer and resolver, written in Rust",
+      "install_id": "uv",
+      "license": "[ Apache-2.0, MIT ]",
+      "locked_url": "https://github.com/flox/nixpkgs?rev=3566ab7246670a43abd2ffa913cc62dad9cdf7d5",
+      "name": "uv-0.4.30",
+      "pname": "uv",
+      "rev": "3566ab7246670a43abd2ffa913cc62dad9cdf7d5",
+      "rev_count": 721821,
+      "rev_date": "2024-12-13T19:53:07Z",
+      "scrape_date": "2024-12-16T03:51:20Z",
+      "stabilities": [
+        "unstable"
+      ],
+      "unfree": false,
+      "version": "0.4.30",
+      "outputs_to_install": [
+        "out"
+      ],
+      "outputs": {
+        "dist": "/nix/store/s042m2w3hk82hg4a1a4m7vzzkw7rdwbi-uv-0.4.30-dist",
+        "out": "/nix/store/wwnghahh84p3b3f859vsq0l1lcjy2cqj-uv-0.4.30"
+      },
+      "system": "x86_64-darwin",
+      "group": "toplevel",
+      "priority": 5
+    },
+    {
+      "attr_path": "uv",
+      "broken": false,
+      "derivation": "/nix/store/scpnnq96dk7wpl4bygaprb100blwz82f-uv-0.4.30.drv",
+      "description": "Extremely fast Python package installer and resolver, written in Rust",
+      "install_id": "uv",
+      "license": "[ Apache-2.0, MIT ]",
+      "locked_url": "https://github.com/flox/nixpkgs?rev=3566ab7246670a43abd2ffa913cc62dad9cdf7d5",
+      "name": "uv-0.4.30",
+      "pname": "uv",
+      "rev": "3566ab7246670a43abd2ffa913cc62dad9cdf7d5",
+      "rev_count": 721821,
+      "rev_date": "2024-12-13T19:53:07Z",
+      "scrape_date": "2024-12-16T03:51:20Z",
+      "stabilities": [
+        "unstable"
+      ],
+      "unfree": false,
+      "version": "0.4.30",
+      "outputs_to_install": [
+        "out"
+      ],
+      "outputs": {
+        "dist": "/nix/store/93m90v0vlxwmz04pia4hj7ni791x65rv-uv-0.4.30-dist",
+        "out": "/nix/store/w7cs06nn9vvk8a59nv48y4biv9zzv43x-uv-0.4.30"
       },
       "system": "x86_64-linux",
       "group": "toplevel",

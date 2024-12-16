@@ -127,7 +127,6 @@ from"gh-r"  sbin"**/lnav" atload:'alias -s "log"="lnav"'\
 has:'asciinema' mv:'agg* agg' sbin:'**/agg(.exe|) -> agg' from:"gh-r" \
   @asciinema/agg \
 sbin"**/fasd" from"gh-r" atload:'eval "$(fasd --init auto)"' whjvenyl/fasd \
-sbin:"**/uv*" from:"gh-r" @astral-sh/uv \
 from"gh-r" as"program" mv"direnv* -> direnv" \
   atclone'./direnv hook zsh > zhook.zsh' atpull'%atclone' \
   pick"direnv" src="zhook.zsh" @direnv/direnv

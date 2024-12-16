@@ -47,6 +47,7 @@ yarn.pkg-path = "yarn"
 zellij.pkg-path = "zellij"
 zlib.pkg-path = "zlib"
 zsh.pkg-path = "zsh"
+uv.pkg-path = "uv"
 # gum.pkg-path = "gum"
 # gum.version = "^0.14.5"
 
