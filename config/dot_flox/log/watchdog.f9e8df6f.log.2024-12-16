@@ -1,8 +1,0 @@
-2024-12-16T19:09:59.435266Z DEBUG flox_watchdog::sentry: Initializing Sentry with DSN: https://85c9526795f5047c99a5247aab616295:@o4506548203094016.ingest.us.sentry.io/4506548241825792
-2024-12-16T19:09:59.435573Z DEBUG sentry: enabled sentry client for DSN https://85c9526795f5047c99a5247aab616295:@o4506548203094016.ingest.us.sentry.io/4506548241825792    
-2024-12-16T19:09:59.435611Z DEBUG watchdog{socket="/Users/jstegeman/.cache/flox/run/flox.395eb523.sock" log_dir="/Users/jstegeman/.local/share/chezmoi/config/dot_flox/log"}: flox_watchdog: starting
-2024-12-16T19:09:59.435640Z DEBUG watchdog{socket="/Users/jstegeman/.cache/flox/run/flox.395eb523.sock" log_dir="/Users/jstegeman/.local/share/chezmoi/config/dot_flox/log"}: flox_watchdog: checked socket path="/Users/jstegeman/.cache/flox/run/flox.395eb523.sock" exists=false
-2024-12-16T19:09:59.435648Z  INFO watchdog{socket="/Users/jstegeman/.cache/flox/run/flox.395eb523.sock" log_dir="/Users/jstegeman/.local/share/chezmoi/config/dot_flox/log"}: flox_watchdog: watchdog is on duty this_pid=80611 target_activation_id="f9e8df6f"
-2024-12-16T19:09:59.435693Z DEBUG watchdog{socket="/Users/jstegeman/.cache/flox/run/flox.395eb523.sock" log_dir="/Users/jstegeman/.local/share/chezmoi/config/dot_flox/log"}: flox_watchdog: waiting for termination
-2024-12-16T19:09:59.435703Z DEBUG flox_watchdog::logger: still watching, woof woof
-2024-12-16T19:09:59.557783Z DEBUG watchdog{socket="/Users/jstegeman/.cache/flox/run/flox.395eb523.sock" log_dir="/Users/jstegeman/.local/share/chezmoi/config/dot_flox/log"}: flox_core::proc_status: no output from /bin/ps, treating as not running pid=80596
