@@ -37,6 +37,7 @@ docs/**/*
 settings.json
 .k9s/config.yml
 config/Brewfile
+config/dot_flox
 config/com.googlecode.iterm2.plist
 .ssh/known_hosts
 .config/configstore
