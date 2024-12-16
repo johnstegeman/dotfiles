@@ -39,6 +39,10 @@ if [ -x "$(command -v /opt/homebrew/bin/brew)" ]; then
   compinit
 fi
 
+if [ -x "$(command -v flox)" ]; then
+  eval "$(flox activate -m run)"
+fi
+
 export PATH=$PATH:~/bin
 
 # fix dircolors for Selenized
