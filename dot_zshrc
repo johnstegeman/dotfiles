@@ -68,7 +68,7 @@ zt light-mode for zdharma-continuum/zinit-annex-meta-plugins @annexes
 source_directory ~/.zsh_custom/autoload
 
 consoleskip='dircolors-material ogham/exa jonas/tig sharkdp'
-sharkskip='sharkdp/hexyl sharkdp/vivid sharkdp/bat'
+sharkskip='sharkdp/hexyl sharkdp/vivid'
 
 zi light-mode for \
 OMZL::git.zsh \
@@ -126,6 +126,8 @@ from"gh-r"  sbin"**/lnav" atload:'alias -s "log"="lnav"'\
   tstack/lnav \
 has:'asciinema' mv:'agg* agg' sbin:'**/agg(.exe|) -> agg' from:"gh-r" \
   @asciinema/agg \
+from"gh-r"  sbin"**/btm" ClementTsang/bottom \
+from"gh-r"  sbin"**/dua" Byron/dua-cli \
 sbin"**/fasd" from"gh-r" atload:'eval "$(fasd --init auto)"' whjvenyl/fasd \
 from"gh-r" as"program" mv"direnv* -> direnv" \
   atclone'./direnv hook zsh > zhook.zsh' atpull'%atclone' \
