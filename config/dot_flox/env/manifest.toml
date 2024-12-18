@@ -48,6 +48,8 @@ zellij.pkg-path = "zellij"
 zlib.pkg-path = "zlib"
 zsh.pkg-path = "zsh"
 uv.pkg-path = "uv"
+google-cloud-sdk.pkg-path = "google-cloud-sdk"
+temurin-bin-17.pkg-path = "temurin-bin-17"
 # gum.pkg-path = "gum"
 # gum.version = "^0.14.5"
 

@@ -36,6 +36,9 @@
       "git": {
         "pkg-path": "git"
       },
+      "google-cloud-sdk": {
+        "pkg-path": "google-cloud-sdk"
+      },
       "gtypist": {
         "pkg-path": "gtypist"
       },
@@ -77,6 +80,9 @@
       },
       "subversion": {
         "pkg-path": "subversion"
+      },
+      "temurin-bin-17": {
+        "pkg-path": "temurin-bin-17"
       },
       "tmux": {
         "pkg-path": "tmux"
@@ -1418,6 +1424,122 @@
         "debug": "/nix/store/i48viyk4j244008yxb5snhiffhwkgh00-git-2.47.0-debug",
         "doc": "/nix/store/g4qfyzlr8gfink7g62kwh7cyan9zv91d-git-2.47.0-doc",
         "out": "/nix/store/1zgzrsbq3b0f06k76pha0r8hmfwvjvc0-git-2.47.0"
+      },
+      "system": "x86_64-linux",
+      "group": "toplevel",
+      "priority": 5
+    },
+    {
+      "attr_path": "google-cloud-sdk",
+      "broken": false,
+      "derivation": "/nix/store/p3qxkin1m4j1nar1i2g2yasf39pp8427-google-cloud-sdk-501.0.0.drv",
+      "description": "Tools for the google cloud platform",
+      "install_id": "google-cloud-sdk",
+      "license": "Unspecified free software license",
+      "locked_url": "https://github.com/flox/nixpkgs?rev=3566ab7246670a43abd2ffa913cc62dad9cdf7d5",
+      "name": "google-cloud-sdk-501.0.0",
+      "pname": "google-cloud-sdk",
+      "rev": "3566ab7246670a43abd2ffa913cc62dad9cdf7d5",
+      "rev_count": 721821,
+      "rev_date": "2024-12-13T19:53:07Z",
+      "scrape_date": "2024-12-16T03:51:20Z",
+      "stabilities": [
+        "unstable"
+      ],
+      "unfree": false,
+      "version": "501.0.0",
+      "outputs_to_install": [
+        "out"
+      ],
+      "outputs": {
+        "out": "/nix/store/p37n97g2npnjkxsppnjy737992ngfjjb-google-cloud-sdk-501.0.0"
+      },
+      "system": "aarch64-darwin",
+      "group": "toplevel",
+      "priority": 5
+    },
+    {
+      "attr_path": "google-cloud-sdk",
+      "broken": false,
+      "derivation": "/nix/store/629z0dgp0cxnbzkdwhr2ja9x0fkyd6l9-google-cloud-sdk-501.0.0.drv",
+      "description": "Tools for the google cloud platform",
+      "install_id": "google-cloud-sdk",
+      "license": "Unspecified free software license",
+      "locked_url": "https://github.com/flox/nixpkgs?rev=3566ab7246670a43abd2ffa913cc62dad9cdf7d5",
+      "name": "google-cloud-sdk-501.0.0",
+      "pname": "google-cloud-sdk",
+      "rev": "3566ab7246670a43abd2ffa913cc62dad9cdf7d5",
+      "rev_count": 721821,
+      "rev_date": "2024-12-13T19:53:07Z",
+      "scrape_date": "2024-12-16T03:51:20Z",
+      "stabilities": [
+        "unstable"
+      ],
+      "unfree": false,
+      "version": "501.0.0",
+      "outputs_to_install": [
+        "out"
+      ],
+      "outputs": {
+        "out": "/nix/store/y6zchx64rijccdz7abwxf36r91g7izfm-google-cloud-sdk-501.0.0"
+      },
+      "system": "aarch64-linux",
+      "group": "toplevel",
+      "priority": 5
+    },
+    {
+      "attr_path": "google-cloud-sdk",
+      "broken": false,
+      "derivation": "/nix/store/slfvg1ynx19xmzkvg55qx0wa19lzj1d1-google-cloud-sdk-501.0.0.drv",
+      "description": "Tools for the google cloud platform",
+      "install_id": "google-cloud-sdk",
+      "license": "Unspecified free software license",
+      "locked_url": "https://github.com/flox/nixpkgs?rev=3566ab7246670a43abd2ffa913cc62dad9cdf7d5",
+      "name": "google-cloud-sdk-501.0.0",
+      "pname": "google-cloud-sdk",
+      "rev": "3566ab7246670a43abd2ffa913cc62dad9cdf7d5",
+      "rev_count": 721821,
+      "rev_date": "2024-12-13T19:53:07Z",
+      "scrape_date": "2024-12-16T03:51:20Z",
+      "stabilities": [
+        "unstable"
+      ],
+      "unfree": false,
+      "version": "501.0.0",
+      "outputs_to_install": [
+        "out"
+      ],
+      "outputs": {
+        "out": "/nix/store/cwk46q9kv9685bbxclrc4qrvr8cidmn5-google-cloud-sdk-501.0.0"
+      },
+      "system": "x86_64-darwin",
+      "group": "toplevel",
+      "priority": 5
+    },
+    {
+      "attr_path": "google-cloud-sdk",
+      "broken": false,
+      "derivation": "/nix/store/ldc13lyh2lmwydpn9hxgg7i3l4vhq9f1-google-cloud-sdk-501.0.0.drv",
+      "description": "Tools for the google cloud platform",
+      "install_id": "google-cloud-sdk",
+      "license": "Unspecified free software license",
+      "locked_url": "https://github.com/flox/nixpkgs?rev=3566ab7246670a43abd2ffa913cc62dad9cdf7d5",
+      "name": "google-cloud-sdk-501.0.0",
+      "pname": "google-cloud-sdk",
+      "rev": "3566ab7246670a43abd2ffa913cc62dad9cdf7d5",
+      "rev_count": 721821,
+      "rev_date": "2024-12-13T19:53:07Z",
+      "scrape_date": "2024-12-16T03:51:20Z",
+      "stabilities": [
+        "unstable"
+      ],
+      "unfree": false,
+      "version": "501.0.0",
+      "outputs_to_install": [
+        "out"
+      ],
+      "outputs": {
+        "out": "/nix/store/1svz5jd3d8h807gh18rsn0azljp6nad7-google-cloud-sdk-501.0.0"
       },
       "system": "x86_64-linux",
       "group": "toplevel",
@@ -3102,6 +3224,122 @@
         "dev": "/nix/store/07dhlpjy2jaj9krxkrzg2h71jc0n8ds1-subversion-1.14.5-dev",
         "man": "/nix/store/7p777884rbl9vqr7yw6y5f88v2an4gf2-subversion-1.14.5-man",
         "out": "/nix/store/cb6q4r2i3svbddsbdjf3v180pln7891g-subversion-1.14.5"
+      },
+      "system": "x86_64-linux",
+      "group": "toplevel",
+      "priority": 5
+    },
+    {
+      "attr_path": "temurin-bin-17",
+      "broken": false,
+      "derivation": "/nix/store/10rs2vkjmvlc0hkkdaab3rbz3ql4f6w4-temurin-bin-17.0.12.drv",
+      "description": "Eclipse Temurin, prebuilt OpenJDK binary",
+      "install_id": "temurin-bin-17",
+      "license": "GPL-2.0-with-classpath-exception",
+      "locked_url": "https://github.com/flox/nixpkgs?rev=3566ab7246670a43abd2ffa913cc62dad9cdf7d5",
+      "name": "temurin-bin-17.0.12",
+      "pname": "temurin-bin-17",
+      "rev": "3566ab7246670a43abd2ffa913cc62dad9cdf7d5",
+      "rev_count": 721821,
+      "rev_date": "2024-12-13T19:53:07Z",
+      "scrape_date": "2024-12-16T03:51:20Z",
+      "stabilities": [
+        "unstable"
+      ],
+      "unfree": false,
+      "version": "temurin-bin-17.0.12",
+      "outputs_to_install": [
+        "out"
+      ],
+      "outputs": {
+        "out": "/nix/store/w5pvqv4p66g6a24rqxzzzc81ca0ga2dp-temurin-bin-17.0.12"
+      },
+      "system": "aarch64-darwin",
+      "group": "toplevel",
+      "priority": 5
+    },
+    {
+      "attr_path": "temurin-bin-17",
+      "broken": false,
+      "derivation": "/nix/store/v5jgiqcw8w380jzbmkrcs4f5k6f3gp5c-temurin-bin-17.0.12.drv",
+      "description": "Eclipse Temurin, prebuilt OpenJDK binary",
+      "install_id": "temurin-bin-17",
+      "license": "GPL-2.0-with-classpath-exception",
+      "locked_url": "https://github.com/flox/nixpkgs?rev=3566ab7246670a43abd2ffa913cc62dad9cdf7d5",
+      "name": "temurin-bin-17.0.12",
+      "pname": "temurin-bin-17",
+      "rev": "3566ab7246670a43abd2ffa913cc62dad9cdf7d5",
+      "rev_count": 721821,
+      "rev_date": "2024-12-13T19:53:07Z",
+      "scrape_date": "2024-12-16T03:51:20Z",
+      "stabilities": [
+        "unstable"
+      ],
+      "unfree": false,
+      "version": "temurin-bin-17.0.12",
+      "outputs_to_install": [
+        "out"
+      ],
+      "outputs": {
+        "out": "/nix/store/vyp634n61g6z6c1aqmd2vy6wzn9jxbrd-temurin-bin-17.0.12"
+      },
+      "system": "aarch64-linux",
+      "group": "toplevel",
+      "priority": 5
+    },
+    {
+      "attr_path": "temurin-bin-17",
+      "broken": false,
+      "derivation": "/nix/store/pvcp83vx0agqzvv140qy354abq1jbi59-temurin-bin-17.0.12.drv",
+      "description": "Eclipse Temurin, prebuilt OpenJDK binary",
+      "install_id": "temurin-bin-17",
+      "license": "GPL-2.0-with-classpath-exception",
+      "locked_url": "https://github.com/flox/nixpkgs?rev=3566ab7246670a43abd2ffa913cc62dad9cdf7d5",
+      "name": "temurin-bin-17.0.12",
+      "pname": "temurin-bin-17",
+      "rev": "3566ab7246670a43abd2ffa913cc62dad9cdf7d5",
+      "rev_count": 721821,
+      "rev_date": "2024-12-13T19:53:07Z",
+      "scrape_date": "2024-12-16T03:51:20Z",
+      "stabilities": [
+        "unstable"
+      ],
+      "unfree": false,
+      "version": "temurin-bin-17.0.12",
+      "outputs_to_install": [
+        "out"
+      ],
+      "outputs": {
+        "out": "/nix/store/h4bjhrcbd6dyjqh2kqig3yvvzhpswc9v-temurin-bin-17.0.12"
+      },
+      "system": "x86_64-darwin",
+      "group": "toplevel",
+      "priority": 5
+    },
+    {
+      "attr_path": "temurin-bin-17",
+      "broken": false,
+      "derivation": "/nix/store/n275x7p97d6q7bdf7pr163xhdr02vrx7-temurin-bin-17.0.12.drv",
+      "description": "Eclipse Temurin, prebuilt OpenJDK binary",
+      "install_id": "temurin-bin-17",
+      "license": "GPL-2.0-with-classpath-exception",
+      "locked_url": "https://github.com/flox/nixpkgs?rev=3566ab7246670a43abd2ffa913cc62dad9cdf7d5",
+      "name": "temurin-bin-17.0.12",
+      "pname": "temurin-bin-17",
+      "rev": "3566ab7246670a43abd2ffa913cc62dad9cdf7d5",
+      "rev_count": 721821,
+      "rev_date": "2024-12-13T19:53:07Z",
+      "scrape_date": "2024-12-16T03:51:20Z",
+      "stabilities": [
+        "unstable"
+      ],
+      "unfree": false,
+      "version": "temurin-bin-17.0.12",
+      "outputs_to_install": [
+        "out"
+      ],
+      "outputs": {
+        "out": "/nix/store/k0ijjvgjvh5yc4d5ihjypzjsn0m4rknx-temurin-bin-17.0.12"
       },
       "system": "x86_64-linux",
       "group": "toplevel",
