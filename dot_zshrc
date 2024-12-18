@@ -129,6 +129,11 @@ has:'asciinema' mv:'agg* agg' sbin:'**/agg(.exe|) -> agg' from:"gh-r" \
 from"gh-r"  sbin"**/btm" ClementTsang/bottom \
 from"gh-r"  sbin"**/dua" Byron/dua-cli \
 sbin"**/fasd" from"gh-r" atload:'eval "$(fasd --init auto)"' whjvenyl/fasd \
+from"gh-r"  mv"jq* -> jq" sbin"**/jq" jqlang/jq \
+from"gh-r"  sbin"**/lazygit" jesseduffield/lazygit \
+from"gh-r"  sbin"**/uv" sbin"**/uvx"  @astral-sh/uv \
+from"gh-r"  sbin"**/zellij" zellij-org/zellij \
+from"gh-r"  sbin"**/fish" fish-shell/fish-shell \
 from"gh-r" as"program" mv"direnv* -> direnv" \
   atclone'./direnv hook zsh > zhook.zsh' atpull'%atclone' \
   pick"direnv" src="zhook.zsh" @direnv/direnv
