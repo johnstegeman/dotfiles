@@ -19,7 +19,6 @@ packages:
   - make
   - exa
   - lua5.4
-  - jq
   - npm
   - gettext
   - cmake
