@@ -35,7 +35,6 @@ brew "qt@5", link: true
 brew "subversion"
 brew "tmux"
 brew "wget"
-brew "yarn"
 brew "zlib"
 brew "zsh"
 cask "1password"
