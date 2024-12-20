@@ -2,8 +2,12 @@
     type = "git-repo"
     url = "https://github.com/johnstegeman/nvim_astrov4"
 
-
 [".tmux/plugins/tpm"]
     type = "git-repo"
     url = "https://github.com/tmux-plugins/tpm.git"
+    refreshPeriod = "168h"
+
+[".jenv"]
+    type = "git-repo"
+    url = "https://github.com/jenv/jenv.git"
     refreshPeriod = "168h"

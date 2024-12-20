@@ -1,4 +1,4 @@
-if [ -x "$(command -v jenv)" ]; then
+if [ -e ~/.jenv/bin ]; then
 	export PATH="$HOME/.jenv/bin:$PATH"
 	eval "$(jenv init -)"
 fi
