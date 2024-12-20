@@ -134,6 +134,7 @@ from"gh-r"  sbin"**/lazygit" jesseduffield/lazygit \
 from"gh-r"  sbin"**/uv" sbin"**/uvx"  @astral-sh/uv \
 from"gh-r"  sbin"**/zellij" zellij-org/zellij \
 from"gh-r"  sbin"**/fish" fish-shell/fish-shell \
+from"gh-r"  sbin"**/jbang" jbangdev/jbang \
 from"gh-r" as"program" mv"direnv* -> direnv" \
   atclone'./direnv hook zsh > zhook.zsh' atpull'%atclone' \
   pick"direnv" src="zhook.zsh" @direnv/direnv
