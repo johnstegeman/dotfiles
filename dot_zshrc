@@ -130,7 +130,7 @@ from"gh-r"  sbin"**/btm" ClementTsang/bottom \
 from"gh-r"  sbin"**/dua" Byron/dua-cli \
 sbin"**/fasd" from"gh-r" atload:'eval "$(fasd --init auto)"' whjvenyl/fasd \
 from"gh-r"  mv"jq* -> jq" sbin"**/jq" jqlang/jq \
-from"gh-r"  mv"kompose* -> kompose" sbin"**/kompose" kubernetes/kompose
+from"gh-r"  mv"kompose* -> kompose" sbin"**/kompose" kubernetes/kompose \
 from"gh-r"  sbin"**/lazygit" jesseduffield/lazygit \
 from"gh-r"  sbin"**/uv" sbin"**/uvx"  @astral-sh/uv \
 from"gh-r"  sbin"**/zellij" zellij-org/zellij \
