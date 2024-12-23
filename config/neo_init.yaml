@@ -20,7 +20,7 @@ packages:
   - npm
   - gettext
 runcmd:
-  - sudo -H -u jstegeman -- /home/jstegeman/config/install_flox.sh
-  - sudo -H -u jstegeman -- /home/jstegeman/config/makeneovim.sh
   - sudo -H -u jstegeman -- sh -c "$(curl -fsLS get.chezmoi.io)" -- -b /home/jstegeman/bin
   - sudo -H -u jstegeman -- /home/jstegeman/bin/chezmoi init --apply https://github.com/johnstegeman/dotfiles
+  - sudo -H -u jstegeman -- /home/jstegeman/config/install_flox.sh
+  - sudo -H -u jstegeman -- /home/jstegeman/config/makeneovim.sh
