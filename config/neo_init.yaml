@@ -23,3 +23,5 @@ packages:
 runcmd:
   - sudo -H -u jstegeman -- sh -c "$(curl -fsLS get.chezmoi.io)" -- -b /home/jstegeman/bin
   - sudo -H -u jstegeman -- /home/jstegeman/bin/chezmoi init --apply https://github.com/johnstegeman/dotfiles
+  - sudo -H -u jstegeman -- wget https://downloads.flox.dev/by-env/stable/deb/flox-1.3.8.aarch64-linux.deb -o /home/jstegeman flox.deb
+  - sudo -H dpkg -i /home/jstegeman/flox.deb
