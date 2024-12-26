@@ -1,3 +1,60 @@
+apt:
+  sources:
+    flox:
+      source: deb https://downloads.flox.dev/by-env/stable/deb stable/
+      key: |
+        -----BEGIN PGP PUBLIC KEY BLOCK-----
+        
+        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
+        =b566
+        -----END PGP PUBLIC KEY BLOCK-----
 users:
   - name: jstegeman
     groups: sudo
@@ -19,8 +76,8 @@ packages:
   - lua5.4
   - npm
   - gettext
+  - flox
 runcmd:
   - sudo -H -u jstegeman -- sh -c "$(curl -fsLS get.chezmoi.io)" -- -b /home/jstegeman/bin
   - sudo -H -u jstegeman -- /home/jstegeman/bin/chezmoi init --apply https://github.com/johnstegeman/dotfiles
-  - sudo -H -u jstegeman -- /home/jstegeman/config/install_flox.sh
   - sudo -H -u jstegeman -- /home/jstegeman/config/makeneovim.sh
