@@ -80,4 +80,3 @@ packages:
 runcmd:
   - sudo -H -u jstegeman -- sh -c "$(curl -fsLS get.chezmoi.io)" -- -b /home/jstegeman/bin
   - sudo -H -u jstegeman -- /home/jstegeman/bin/chezmoi init --apply https://github.com/johnstegeman/dotfiles
-  - sudo -H -u jstegeman -- /home/jstegeman/config/makeneovim.sh
