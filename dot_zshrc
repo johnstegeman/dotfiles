@@ -6,10 +6,11 @@ if [[ -r "${XDG_CACHE_HOME:-$HOME/.cache}/p10k-instant-prompt-${(%):-%n}.zsh" ]]
   source "${XDG_CACHE_HOME:-$HOME/.cache}/p10k-instant-prompt-${(%):-%n}.zsh"
 fi
 
+### Added by Zinit's installer
 
 ZINIT_HOME="${ZINIT_HOME:-${ZPLG_HOME:-${ZDOTDIR:-${HOME}}/.zinit}}"
 ZINIT_BIN_DIR_NAME="${${ZINIT_BIN_DIR_NAME:-${ZPLG_BIN_DIR_NAME}}:-bin}"
-### Added by Zinit's installer
+
 if [[ ! -f "${ZINIT_HOME}/${ZINIT_BIN_DIR_NAME}/zinit.zsh" ]]; then
     print -P "%F{33}▓▒░ %F{220}Installing DHARMA Initiative Plugin Manager (zdharma/zinit)…%f"
     command mkdir -p "${ZINIT_HOME}" && command chmod g-rwX "${ZINIT_HOME}"
@@ -20,6 +21,7 @@ fi
 source "${ZINIT_HOME}/${ZINIT_BIN_DIR_NAME}/zinit.zsh"
 autoload -Uz _zinit
 (( ${+_comps} )) && _comps[zinit]=_zinit
+
 ### End of Zinit installer's chunk
 
 # Some configuration variables 
@@ -30,19 +32,6 @@ COMPLETION_WAITING_DOTS="true"
 export DIRCOLORS_SOLARIZED_ZSH_THEME="256dark"
 export FZFZ_RECENT_DIRS_TOOL=fasd
 
-# set Homebrew environment and path if installed
-
-if [ -x "$(command -v /opt/homebrew/bin/brew)" ]; then
-  eval $(/opt/homebrew/bin/brew shellenv)
-  FPATH="$(brew --prefix)/share/zsh/site-functions:${FPATH}"
-  autoload -Uz compinit
-  compinit
-fi
-
-if [ -x "$(command -v flox)" ]; then
-  eval "$(flox activate -m run)"
-fi
-
 export PATH=$PATH:~/bin
 
 # fix dircolors for Selenized
@@ -52,12 +41,23 @@ export LS_COLORS="$LS_COLORS:ow=1;7;34:st=30;44:su=30;41"
 zt()  { zinit depth'3' lucid ${1/#[0-9][a-c]/wait"$1"} "${@:2}"; }
 
 autoload -U zmv
-bindkey '^X' push-input
+bindkey '^X' push-input # ^X will clear the command line, and after the next command, return what was cleared back to the CL
 
 zt light-mode blockf for ~/.zsh_custom/config-file
 
-# Powerlevel10k theme
+# "doifcmd" is a function that will execute the second arg if the command in the first arg exists
 
+doifcmd brew "
+  eval $(/opt/homebrew/bin/brew shellenv)
+  FPATH=\"$(brew --prefix)/share/zsh/site-functions:${FPATH}\"
+  autoload -Uz compinit
+  compinit"
+
+doifcmd flox "$(flox activate -m run)"
+
+doifcmd nvim "export EDITOR=nvim"
+
+# Powerlevel10k theme
 zt light-mode for \
 depth:'1' atload:"[[ ! -f ~/.p10k.zsh ]] || source ~/.p10k.zsh" nocd \
   romkatv/powerlevel10k
@@ -67,6 +67,7 @@ zt light-mode for zdharma-continuum/zinit-annex-meta-plugins @annexes
 # Source all custom scripts
 source_directory ~/.zsh_custom/autoload
 
+# Set some variables to skip certain programs when installing zinit "console-tools" and "sharkdp" annexes
 consoleskip='dircolors-material ogham/exa jonas/tig sharkdp'
 sharkskip='sharkdp/hexyl sharkdp/vivid'
 
@@ -110,7 +111,6 @@ has:'eza' atload:'export eza_params=('--time-style=long-iso' '--group-directorie
 has:'bat' fdellwing/zsh-bat \
 has:'aws' OMZP::aws \
 has:'chezmoi' johnstegeman/zsh-chezmoi \
-has:'dua' johnstegeman/zsh-dua \
 pinelibg/dircolors-solarized-zsh \
 has:'multipass' OMZP::multipass \
 zdharma-continuum/zinit-console \
@@ -127,7 +127,7 @@ from"gh-r"  sbin"**/lnav" atload:'alias -s "log"="lnav"'\
 has:'asciinema' mv:'agg* agg' sbin:'**/agg(.exe|) -> agg' from:"gh-r" \
   @asciinema/agg \
 from"gh-r"  sbin"**/btm" ClementTsang/bottom \
-from"gh-r"  sbin"**/dua" Byron/dua-cli \
+from"gh-r"  sbin"**/dua" atload:'alias du="dua i"' Byron/dua-cli \
 sbin"**/fasd" from"gh-r" atload:'eval "$(fasd --init auto)"' whjvenyl/fasd \
 from"gh-r"  mv"jq* -> jq" sbin"**/jq" jqlang/jq \
 from"gh-r"  mv"kompose* -> kompose" sbin"**/kompose" kubernetes/kompose \

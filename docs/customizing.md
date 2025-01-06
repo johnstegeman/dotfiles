@@ -4,15 +4,15 @@
 
 Generally, you can either edit dotfiles using `chezmoi edit` against the real dotfile or go to the chezmoi local store (there is a function `cmcd` that will take you to that directory) and edit the local store. There's also a `cmedit` function that will open visual studio code anchored in the local store directory. If you edit the local store, you will need to use `chezmoi apply` (or the alias `cmap`) to get the changes applied to the real files. You can use normal git functions to commit changes, push to/pull from the remote, etc. If you like a character-based GUI, this configuration includes lazygit (accessible from the alias `lg`).
 
-## Chosing among zinit, Flox, and Homebrew for additional items
+## Chosing among zinit, Flox, and Homebrew
 
 zinit, flox, and homebrew (on MacOS) all provide ways to install command-line tools and utilities. Often, a given utility is available to install using all three. When deciding how to install a given utility, I generally follow this approach:
 
   - If the utility has a release artifact on github for both Linux-arm and MacOS-arm, I will favor zinit. This is because zinit works on both MacOS and Linux, and is generally more space efficient than flox. This is generally done by adding an appropriate line in ~/.zshrc
 
-  - If the utility is installable with flox, and the space requirements for the flox-installed version is not "too much," then I will install with flox into the default flox environment, which is managed in ~/.flox - which gets committed back to this dotfiles repository - this is important so that it gets picked up on linux/multipass VM installs. Flox lets you specify if you want the utility on only one OS (if desired).
+  - If the utility is installable with flox, and the space requirements for the flox-installed version is not "too much," then I will install with flox into the default flox environment, which is managed in ~/.flox - this will get committed back to this dotfiles repository - this is important so that it gets picked up on linux/multipass VM installs. Flox lets you specify if you want the utility on only one OS (if desired).
 
-  - Finally, if zinit and flox are both not options, I will use Homebrew/apt/scripts/or other methods. An example of this is flox itself - it gets installed via Homebrew on MacOS and via apt (with a cloud-init supplied apt repository) on Linux. 
+  - Finally, if zinit and flox are both not options, I will use Homebrew/apt/scripts/or other methods. An example of this is flox itself - it gets installed via Homebrew on MacOS and via apt (with a cloud-init supplied apt repository) on Linux. Neovim is another example (homebrew on Mac, flox on Linux)
 
 ## Installing additional Homebrew formulae/casks
 
