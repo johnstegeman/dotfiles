@@ -28,6 +28,7 @@ These are zsh plugins installed as part of the configuration. Note that binary/c
 |fdellwing/zsh-bat|Replace cat with bat (if installed). Regular "cat" is available via rcat|
 |OMZP::aws|Command completion for aws CLI plus some commands to manage profile/region settings| 
 |johnstegeman/zsh-chezmoi|Aliases for chezmoi (if installed) - cmcd, cmap, cmedit|
+|Byron/dua-cli|Better version of du|
 |johnstegeman/zsh-dua|Replaces (alias) du with dua (if installed)|
 |pinelibg/dircolors-solarized-zsh|Solarized color scheme for color ls|
 |zdharma-continuum/zinit-console|Character-based console for zinit|

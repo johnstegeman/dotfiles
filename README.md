@@ -6,7 +6,8 @@ An opinionated set of dotfiles and other configurations from John "Steggy" Stege
 
 - 🚀 Uses [chezmoi](https://github.com/twpayne/chezmoi) to manage and apply the configuration
 - 💻 works on both MacOS and Linux
-- uses [zinit](https://github.com/zdharma-continuum/zinit) as zsh plugin manager
+- 🛠️ uses [zinit](https://github.com/zdharma-continuum/zinit) as zsh plugin manager
+- 🤹🏽‍♀️ uses [flox](https://flox.dev/) to do some cross-platform (MacOS/Linux) installations
 - [1Password](https://1password.com) (MacOS only) integration to manage secrets (private information that doesn't belong in the public repository) - this via [chezmoi's 1password capabilties](https://www.chezmoi.io/user-guide/password-managers/1password/)
 - 🕵🏽‍♀️ [SSH agent](https://developer.1password.com/docs/ssh/) integration with 1Password (store SSH private keys in 1Password)
 - 🍺 installs homebrew on macos. Brewfile in the repository so that the installed formulae and casks are managed
@@ -49,10 +50,12 @@ Installation will:
    - Install jbang (on Linux - jbang is installed via Homebrew on MacOS)
    - Install the Colemak DH keyboard layout (on MacOS)
    - Apply a prefered desktop background (on MacOS)
+   - Apply a default [Flox](https://flox.dev/) environment
 
 ## Documentation Topics
 
 - [zinit plugins](docs/zinit.md)
+- [flox](docs/flox.md)
 - [custom functions and aliases](docs/functions.md)
 - [utilities](docs/utilities.md)
 - [python](docs/python.md)

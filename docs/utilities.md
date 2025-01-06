@@ -15,18 +15,22 @@
 |jhawthorn/fzy|Fuzzy text selector/matcher|
 |direnv/direnv|Automatically set up directory-specific environment upon changing to the directory|
 |astral-sh/uv|Python package and project manager|
+|asciinema|Creates recordings of a terminal session|
+|dandavison/delta|diff-viewer for git|
+|fish-shell/fish-shell|fish shell|
+|jbangdev/jbang|run java files self-contained|
+|jqlang/jq|cli json processor|
+|kubernetes/kompose|tool to help migrating from docker-compose to k8s|
+|tstack/lnav|log file viewer/searcher|
+|zellij-org/zellij|tmux-like utility|
 
 ## Installed with Homebrew (MacOS only - Linux versions installed some other way if needed)
 
 |Program|Description|
 |-------|-----------|
-|asciinema|Creates recordings of a terminal session|
-|bat|a better "cat"|
-|btm|a better "top"|
-|eza|a better "ls"|
-|htop|a better "top"|
-|httpie|HTTP-based API testing from the CLI|
-|lazygit|character based "GUI" for git|
+|git|you know what it is|
 |neovim|vi->vim->neovim|
 |tmux|terminal multiplexer|
-|wget|HTTP(S)/FTP(S) file retriever|
+|helm|helm charts|
+|kubernetes-cli|what it says|
+|node|nodejs|
