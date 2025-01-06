@@ -16,8 +16,6 @@ version = 1
 ## -------------------------------------------------------------------
 [install]
 asciinema.pkg-path = "asciinema"
-awscli2.pkg-path = "awscli2"
-cmake.pkg-path = "cmake"
 coreutils.pkg-path = "coreutils"
 eza.pkg-path = "eza"
 htop.pkg-path = "htop"
@@ -29,6 +27,7 @@ nmap.pkg-path = "nmap"
 subversion.pkg-path = "subversion"
 wget.pkg-path = "wget"
 zsh.pkg-path = "zsh"
+awscli2.pkg-path = "awscli2"
 # gum.pkg-path = "gum"
 # gum.version = "^0.14.5"
 
