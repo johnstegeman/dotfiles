@@ -22,7 +22,7 @@ My "requirements" (such as they are) include:
 
 There are two places that you may need to make changes so that `mcreate` works for you. The first is the function definition itself, which is in the chezmoi local store as [mcreate.tmpl](../dot_zsh_custom/config-file/functions/mcreate.tmpl) - located in `dot_zsh_custom/cnfig-file/functions/mcreate.tmpl` It is stored as a template so that we can make the function only applicable on MacOS and not in the Ubuntu VM itself.
 
-This function defines the characteristics of the VM, including memory/CPU, mounts (where directories of the host OS are made available in the VM), and a cloud-init file that specifies local users and their public SSH keys, packages to install, and also uses `runcmd` to install chezmoi, apply (my) chezmoi configuration, and build neovim from source. 
+This function defines the characteristics of the VM, including memory/CPU, mounts (where directories of the host OS are made available in the VM), and a cloud-init file that specifies local users and their public SSH keys, packages to install, and also uses `runcmd` to install chezmoi, apply (my) chezmoi configuration. 
 
 You should review the mcreate function to ensure the memory/cpu configuration and mounts are configured to your liking (please note the `mssh` invocation is commented out, as it's purpose was to do the chezmoi configuration which is now done in the cloud init configuration)
 
