@@ -46,6 +46,7 @@ bindkey '^X' push-input # ^X will clear the command line, and after the next com
 zt light-mode blockf for ~/.zsh_custom/config-file
 
 # "doifcmd" is a function that will execute the second arg if the command in the first arg exists
+# it is defined in the .zsh_custom/config-file plugin
 
 doifcmd brew "
   eval $(/opt/homebrew/bin/brew shellenv)
