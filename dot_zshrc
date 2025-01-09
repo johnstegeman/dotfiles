@@ -108,7 +108,7 @@ autoload:'#manydots-magic' \
   knu/zsh-manydots-magic \
 Aloxaf/fzf-tab \
 MichaelAquilina/zsh-you-should-use \
-has:'eza' atload:'export eza_params=('--time-style=long-iso' '--group-directories-first')' johnstegeman/zsh-eza \
+has:'eza' atload:'export eza_params=('--time-style=long-iso' '--group-directories-first' '-F')' johnstegeman/zsh-eza \
 has:'bat' fdellwing/zsh-bat \
 has:'aws' OMZP::aws \
 has:'chezmoi' johnstegeman/zsh-chezmoi \
