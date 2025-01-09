@@ -23,11 +23,16 @@
          pkgs.tmux
          pkgs.pkgconf
          pkgs.nodejs
+         #pkgs.ripgrep
+         #pkgs.fd
+         #pkgs.curl
+         #pkgs.less
+         #pkgs.bat
     ];
-    # systemPath = [ "/opt/homebrew/bin" ];
-    # pathsToLink = [ "/Applications" ];
+    systemPath = [ "/opt/homebrew/bin" ];
+    pathsToLink = [ "/Applications" ];
   };
-  users.users.jstegeman.shell = pkgs.zsh;
+  # users.users.jstegeman.shell = pkgs.zsh;
   nix.extraOptions = ''
     experimental-features = nix-command flakes
   '';
