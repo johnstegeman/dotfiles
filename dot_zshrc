@@ -54,8 +54,6 @@ doifcmd brew "
   autoload -Uz compinit
   compinit"
 
-doifcmd flox "$(flox activate -m run)"
-
 doifcmd nvim "export EDITOR=nvim"
 
 # Powerlevel10k theme
