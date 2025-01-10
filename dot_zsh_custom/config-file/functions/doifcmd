@@ -1,6 +1,0 @@
-cmd=$1
-script=$2
-
-if [ -x "$(command -v $cmd)" ]; then
-   eval $script
-fi

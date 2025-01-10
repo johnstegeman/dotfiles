@@ -19,7 +19,7 @@ autoload -Uz _zinit
 # Shamelessly stolen from https://github.com/z-shell/playground/blob/main/profiles/NICHOLAS85/.zshrc
 zt()  { zinit depth'3' lucid ${1/#[0-9][a-c]/wait"$1"} "${@:2}"; }
 
-zt light-mode blockf for ~/.zsh_custom/config-file
+zt light-mode blockf for johnstegeman/zsh-steggy
 
 # Powerlevel10k theme
 zt light-mode for \

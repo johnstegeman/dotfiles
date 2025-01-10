@@ -1,5 +1,0 @@
-if [ -x "$(command -v $2)" ]; then
-	alias "$1"="$2 $3"
-elif [ -x "$(command -v $4)" ]; then
-    alias "$1"="$4 $5"
-fi
