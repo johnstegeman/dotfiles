@@ -60,6 +60,7 @@
          FZFZ_RECENT_DIRS_TOOL="fasd";
 
          PATH="$PATH:~/bin";
+         EDITOR="nvim";
 
       };
   };
