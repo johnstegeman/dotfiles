@@ -28,9 +28,38 @@
     CLICLOLOR = 1;
     EDITOR = "nvim";
   };
-  #programs.zsh.enable = true;
-  programs.zsh.shellAliases = {
-      du = "dua -i";
+  programs.zsh = {
+      enable = true;
+      autocd = true;
+
+      initExtraFirst = ''
+         source ~/.instant_prompt.zsh
+      '';
+
+      initExtra = ''
+         source ~/.p10k.zsh
+         source ~/.zinit.zsh
+         eval "$(fasd --init auto)"
+         autoload -U zmv
+         bindkey '^X' push-input
+
+         # fix dircolors for Selenized
+         export LS_COLORS="$LS_COLORS:ow=1;7;34:st=30;44:su=30;41;"
+
+      '';
+      shellAliases = {
+         du = "dua -i"; 
+      };
+      sessionVariables = {
+         TERM="xterm-256color";
+         ENABLE_CORRECTION="false";
+         COMPLETION_WAITING_DOTS="true";
+         DIRCOLORS_SOLARIZED_ZSH_THEME="256dark";
+         FZFZ_RECENT_DIRS_TOOL="fasd";
+
+         PATH="$PATH:~/bin";
+
+      };
   };
   programs.bat.enable = true;
   programs.bat.config.theme = "Solarized (dark)";

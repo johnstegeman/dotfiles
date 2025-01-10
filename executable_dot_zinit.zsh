@@ -1,11 +1,3 @@
-# Enable Powerlevel10k instant prompt. Should stay close to the top of ~/.zshrc.
-# Initialization code that may require console input (password prompts, [y/n]
-# confirmations, etc.) must go above this block; everything else may go below.
-
-if [[ -r "${XDG_CACHE_HOME:-$HOME/.cache}/p10k-instant-prompt-${(%):-%n}.zsh" ]]; then
-  source "${XDG_CACHE_HOME:-$HOME/.cache}/p10k-instant-prompt-${(%):-%n}.zsh"
-fi
-
 ### Added by Zinit's installer
 
 ZINIT_HOME="${ZINIT_HOME:-${ZPLG_HOME:-${ZDOTDIR:-${HOME}}/.zinit}}"
@@ -24,44 +16,15 @@ autoload -Uz _zinit
 
 ### End of Zinit installer's chunk
 
-# Some configuration variables 
-
-export TERM=xterm-256color
-ENABLE_CORRECTION="false"
-COMPLETION_WAITING_DOTS="true"
-export DIRCOLORS_SOLARIZED_ZSH_THEME="256dark"
-export FZFZ_RECENT_DIRS_TOOL=fasd
-
-export PATH=$PATH:~/bin
-
-# fix dircolors for Selenized
-export LS_COLORS="$LS_COLORS:ow=1;7;34:st=30;44:su=30;41"
-
 # Shamelessly stolen from https://github.com/z-shell/playground/blob/main/profiles/NICHOLAS85/.zshrc
 zt()  { zinit depth'3' lucid ${1/#[0-9][a-c]/wait"$1"} "${@:2}"; }
 
-autoload -U zmv
-bindkey '^X' push-input # ^X will clear the command line, and after the next command, return what was cleared back to the CL
-
 zt light-mode blockf for ~/.zsh_custom/config-file
-
-# "doifcmd" is a function that will execute the second arg if the command in the first arg exists
-# it is defined in the .zsh_custom/config-file plugin
-
-doifcmd brew "
-  eval $(/opt/homebrew/bin/brew shellenv)
-  FPATH=\"$(brew --prefix)/share/zsh/site-functions:${FPATH}\"
-  autoload -Uz compinit
-  compinit"
-
-doifcmd nvim "export EDITOR=nvim"
 
 # Powerlevel10k theme
 zt light-mode for \
 depth:'1' atload:"[[ ! -f ~/.p10k.zsh ]] || source ~/.p10k.zsh" nocd \
   romkatv/powerlevel10k
-
-zt light-mode for zdharma-continuum/zinit-annex-meta-plugins @annexes
 
 # Source all custom scripts
 source_directory ~/.zsh_custom/autoload
@@ -71,7 +34,7 @@ OMZL::git.zsh \
 OMZP::git \
 OMZP::gcloud \
 romkatv/zsh-defer \
-ael-code/zsh-colored-man-pages 
+ael-code/zsh-colored-man-pages
 
 #####################################################################################################
 # The following use turbo mode to load after the shell prompt is ready
@@ -107,26 +70,19 @@ zdharma-continuum/zinit-console \
 atload:'bindkey "^[[A" history-substring-search-up; bindkey "^[[B" history-substring-search-down' \
   zsh-users/zsh-history-substring-search
 
-zt 0c light-mode binary for \
-from"gh-r"  sbin"**/fish" fish-shell/fish-shell 
-
 # Note: The "CLeanup" plugin in the following section is a hack simply to run
 # the code in the atinit tag when the "plugin" is installed. I put the code
 # into a "plugin" so that it runs asnchronously when all of the other
 # plugin stages are done (the "0c" ensures it's in the third and final set)
 
 zt 0c light-mode null for \
-sbin:'git-open' paulirish/git-open \
 id-as:'Cleanup' nocd atinit:'unset -f zt; _zsh_autosuggest_bind_widgets' \
-  zdharma-continuum/null 
+  zdharma-continuum/null
 
 zinit light-mode for SleepyBag/zle-fzf
 zinit light-mode for johnstegeman/fzf-z
 
 zi light-mode trackbinds bindmap'" "->"^@"; "^@"->" "' for MenkeTechnologies/zsh-expand
-
-# end of turbo loading section
-#####################################################################################################
 
 ## FZF options
 export FZF_DEFAULT_COMMAND='fd --type file --follow --hidden --exclude .git --color=always'
