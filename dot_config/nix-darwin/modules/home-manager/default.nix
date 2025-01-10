@@ -48,6 +48,7 @@
             "johnstegeman/zsh-eza" 
             "johnstegeman/zsh-chezmoi"
             "fdellwing/zsh-bat"  
+            "pinelibg/dircolors-solarized-zsh"
 
             #"romkatv/zsh-defer"
             #"ael-code/zsh-colored-man-pages"
@@ -59,7 +60,7 @@
             "ohmyzsh/ohmyzsh path:lib/history.zsh kind:defer"
 
             "zsh-users/zsh-completions kind:defer" 
-            #"hcgraf/zsh-sudo kind:defer" 
+            "hcgraf/zsh-sudo kind:defer" 
             #"zdharma-continuum/zsh-navigation-tools kind:defer" 
             #"zdharma-continuum/zui kind:defer" 
             #"zdharma-continuum/zbrowse kind:defer"
@@ -69,7 +70,7 @@
 
             "ohmyzsh/ohmyzsh path:plugins/aws kind:defer"
             "ohmyzsh/ohmyzsh path:plugins/multipass kind:defer"
-            "pinelibg/dircolors-solarized-zsh kind:defer"
+            
             #"zdharma-continuum/zinit-console kind:defer"
 
             "SleepyBag/zle-fzf kind:defer"
@@ -97,6 +98,9 @@
 
          #autoload -Uz manydots-magic
          #manydots-magic
+
+         # Source all custom scripts
+         source_directory ~/.zsh_custom/autoload
       '';
       shellAliases = {
          du = "dua i"; 
