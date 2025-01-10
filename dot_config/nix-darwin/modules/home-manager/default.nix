@@ -49,8 +49,8 @@
             "johnstegeman/zsh-chezmoi"
             "fdellwing/zsh-bat"  
 
-            "romkatv/zsh-defer"
-            "ael-code/zsh-colored-man-pages"
+            #"romkatv/zsh-defer"
+            #"ael-code/zsh-colored-man-pages"
 
             #"zdharma-continuum/fast-syntax-highlighting kind:defer" 
             #"zsh-users/zsh-autosuggestions kind:defer" 
@@ -59,10 +59,10 @@
             "ohmyzsh/ohmyzsh path:lib/history.zsh kind:defer"
 
             "zsh-users/zsh-completions kind:defer" 
-            "hcgraf/zsh-sudo kind:defer" 
-            "zdharma-continuum/zsh-navigation-tools kind:defer" 
-            "zdharma-continuum/zui kind:defer" 
-            "zdharma-continuum/zbrowse kind:defer"
+            #"hcgraf/zsh-sudo kind:defer" 
+            #"zdharma-continuum/zsh-navigation-tools kind:defer" 
+            #"zdharma-continuum/zui kind:defer" 
+            #"zdharma-continuum/zbrowse kind:defer"
 
             "Aloxaf/fzf-tab kind:defer" 
             "MichaelAquilina/zsh-you-should-use kind:defer" 
@@ -70,12 +70,12 @@
             "ohmyzsh/ohmyzsh path:plugins/aws kind:defer"
             "ohmyzsh/ohmyzsh path:plugins/multipass kind:defer"
             "pinelibg/dircolors-solarized-zsh kind:defer"
-            "zdharma-continuum/zinit-console kind:defer"
+            #"zdharma-continuum/zinit-console kind:defer"
 
             "SleepyBag/zle-fzf kind:defer"
             "johnstegeman/fzf-z kind:defer"
 
-            "hlissner/zsh-autopair kind:defer"
+            #"hlissner/zsh-autopair kind:defer"
             #"knu/zsh-manydots-magic"
          ];
       };
