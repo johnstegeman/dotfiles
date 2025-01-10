@@ -13,6 +13,15 @@
     pkgs.jq
     pkgs.lazygit
     pkgs.uv
+    pkgs.zellij
+    pkgs.kompose
+    pkgs.direnv
+    pkgs.asciinema-agg
+    pkgs.duf
+    pkgs.lnav
+    pkgs.fasd
+    pkgs.fzf
+    pkgs.fzy
   ];
   home.sessionVariables = {
     PAGER = "less";
@@ -26,6 +35,10 @@
   programs.bat.enable = true;
   programs.bat.config.theme = "Solarized (dark)";
   programs.eza.enable = true;
+  programs.direnv = {
+      enable = true;
+      enableZshIntegration = true;
+  };
   programs.git = {
    enable = true;
    userEmail = "john.stegeman@gmail.com";

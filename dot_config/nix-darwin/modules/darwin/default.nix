@@ -23,11 +23,6 @@
          pkgs.tmux
          pkgs.pkgconf
          pkgs.nodejs
-         #pkgs.ripgrep
-         #pkgs.fd
-         #pkgs.curl
-         #pkgs.less
-         #pkgs.bat
     ];
     systemPath = [ "/opt/homebrew/bin" ];
     pathsToLink = [ "/Applications" ];

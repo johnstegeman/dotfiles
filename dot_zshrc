@@ -108,19 +108,7 @@ atload:'bindkey "^[[A" history-substring-search-up; bindkey "^[[B" history-subst
   zsh-users/zsh-history-substring-search
 
 zt 0c light-mode binary for \
-sbin:'**/duf(.exe|) -> duf' atload:'alias df=$(which duf)' from:"gh-r"\
-  muesli/duf \
-from"gh-r"  sbin"**/lnav" atload:'alias -s "log"="lnav"'\
-  tstack/lnav \
-has:'asciinema' mv:'agg* agg' sbin:'**/agg(.exe|) -> agg' from:"gh-r" \
-  @asciinema/agg \
-sbin"**/fasd" from"gh-r" atload:'eval "$(fasd --init auto)"' whjvenyl/fasd \
-from"gh-r"  mv"kompose* -> kompose" sbin"**/kompose" kubernetes/kompose \
-from"gh-r"  sbin"**/zellij" zellij-org/zellij \
-from"gh-r"  sbin"**/fish" fish-shell/fish-shell \
-from"gh-r" as"program" mv"direnv* -> direnv" \
-  atclone'./direnv hook zsh > zhook.zsh' atpull'%atclone' \
-  pick"direnv" src="zhook.zsh" @direnv/direnv
+from"gh-r"  sbin"**/fish" fish-shell/fish-shell 
 
 # Note: The "CLeanup" plugin in the following section is a hack simply to run
 # the code in the atinit tag when the "plugin" is installed. I put the code
@@ -130,18 +118,7 @@ from"gh-r" as"program" mv"direnv* -> direnv" \
 zt 0c light-mode null for \
 sbin:'git-open' paulirish/git-open \
 id-as:'Cleanup' nocd atinit:'unset -f zt; _zsh_autosuggest_bind_widgets' \
-  zdharma-continuum/null \
-pack:'bgn-binary+keys' \
-  fzf \
-as'null' \
-  atclone'cp -vf fzy.1 $ZPFX/man/man1' \
-  atpull'%atclone' \
-  id-as'jhawthorn/fzy' \
-  lucid \
-  make \
-  nocompile \
-  sbin'fzy;contrib/fzy-*' \
-  jhawthorn/fzy 
+  zdharma-continuum/null 
 
 zinit light-mode for SleepyBag/zle-fzf
 zinit light-mode for johnstegeman/fzf-z
