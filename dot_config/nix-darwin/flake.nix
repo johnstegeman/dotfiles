@@ -17,7 +17,7 @@
   outputs = inputs@{ nixpkgs, home-manager, darwin, ... }: {
     darwinConfigurations.macosSystem = darwin.lib.darwinSystem {
       system = "aarch64-darwin";
-      pkgs = import nixpkgs { system = "aarch64-darwin";  config = { allowUnfree = true; allowUnsupportedSystem = true;}; };
+      pkgs = import nixpkgs { system = "aarch64-darwin";  config = { allowUnfree = true; }; };
       modules = [
         ./modules/darwin
         home-manager.darwinModules.home-manager
