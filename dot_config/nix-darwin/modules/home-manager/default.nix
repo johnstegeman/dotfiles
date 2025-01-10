@@ -81,7 +81,7 @@
       };
 
       initExtraFirst = ''
-         source ~/.instant_prompt.zsh
+         # source ~/.instant_prompt.zsh
          source ~/.brewinit.zsh
       '';
 
