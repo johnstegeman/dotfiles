@@ -17,15 +17,17 @@
     pkgs.bottom
     pkgs.jq
     pkgs.uv
-    pkgs.zellij
     pkgs.kompose
-    pkgs.direnv
     pkgs.asciinema-agg
     pkgs.duf
     pkgs.lnav
-    pkgs.fasd
+    #pkgs.fasd
     pkgs.fzy
-    #pkgs.atuin
+    pkgs.tmux
+    pkgs.httpie
+    pkgs.asciinema
+    pkgs.wget
+    pkgs.chezmoi
   ];
   programs.atuin = {
       enable = true;
@@ -35,12 +37,31 @@
       enable = true;
       config.theme = "Solarized (dark)";
   };
+  programs.neovim = {
+      enable = true;
+      defaultEditor = true;
+      vimAlias = true;
+      viAlias = true;
+  };
   programs.fd.enable = true;
   programs.htop.enable = true;
   programs.lazygit.enable = true;
   programs.less.enable = true;
+  programs.zellij.enable = true;
   programs.direnv = {
       enable = true;
       enableZshIntegration = true;
+  };
+  programs.pazi = {
+      enable = true;
+      enableZshIntegration = true;
+  };
+  programs.awscli = {
+      enable = true;
+      settings = {
+         "default" = {
+            region = "us-east-1";
+         };
+      };
   };
 }

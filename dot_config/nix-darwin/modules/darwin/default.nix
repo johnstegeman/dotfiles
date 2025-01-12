@@ -5,20 +5,11 @@
     shells = [ pkgs.bash pkgs.zsh ];
     systemPackages = [
          pkgs.coreutils
-         pkgs.eza
-         pkgs.wget
-         pkgs.asciinema
-         pkgs.awscli2
-         pkgs.httpie
          pkgs.luarocks
          pkgs.nmap
          pkgs.subversion
          pkgs.kubectl
          pkgs.kubernetes-helm
-         pkgs.chezmoi
-         pkgs.git
-         pkgs.neovim
-         pkgs.tmux
          pkgs.pkgconf
          pkgs.nodejs
          pkgs.slack

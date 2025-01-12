@@ -46,8 +46,6 @@
       '';
 
       initExtra = ''
-
-         eval "$(fasd --init auto)"
          autoload -U zmv
          bindkey '^X' push-input
 
@@ -73,8 +71,6 @@
          FZFZ_RECENT_DIRS_TOOL="fasd";
 
          PATH="$PATH:~/bin";
-         EDITOR="nvim";
-
       };
   };
 }
