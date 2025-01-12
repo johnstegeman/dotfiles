@@ -9,7 +9,6 @@
          pkgs.wget
          pkgs.asciinema
          pkgs.awscli2
-         pkgs.htop
          pkgs.httpie
          pkgs.luarocks
          pkgs.nmap
