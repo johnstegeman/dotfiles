@@ -32,7 +32,7 @@
             "MichaelAquilina/zsh-you-should-use kind:defer" 
 
             "ohmyzsh/ohmyzsh path:plugins/aws kind:defer"
-            "ohmyzsh/ohmyzsh path:plugins/multipass kind:defer"
+            "ohmyzsh/ohmyzsh path:plugins/multipass"
 
             "SleepyBag/zle-fzf kind:defer"
             "johnstegeman/fzf-z kind:defer"
