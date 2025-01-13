@@ -4,14 +4,6 @@
   environment = {
     shells = [ pkgs.bash pkgs.zsh ];
     systemPackages = [
-         pkgs.coreutils
-         pkgs.luarocks
-         pkgs.nmap
-         pkgs.subversion
-         pkgs.kubectl
-         pkgs.kubernetes-helm
-         pkgs.pkgconf
-         pkgs.nodejs
          pkgs.slack
          pkgs.iterm2
          pkgs.gimp
@@ -24,7 +16,6 @@
          # pkgs._1password-gui
          pkgs._1password-cli
          pkgs.arc-browser
-
     ];
     systemPath = [ "/opt/homebrew/bin" ];
     pathsToLink = [ "/Applications" ];
