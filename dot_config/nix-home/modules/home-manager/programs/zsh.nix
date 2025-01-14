@@ -64,7 +64,7 @@
       shellAliases = {
          du = "dua i"; 
          df = "duf";
-         dup = "darwin-rebuild switch --flake ~/.config/nix-darwin\"#macosSystem\"";
+         dup = "darwin-rebuild switch --flake ~/.config/nix-home\"#macosSystem\"";
       };
       sessionVariables = {
          TERM="xterm-256color";
