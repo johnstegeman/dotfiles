@@ -2,7 +2,7 @@
   # Don't change this when you change package input. Leave it alone.
   home.stateVersion = "22.11";
   imports = [
-    (import ./programs/starship.nix{inherit pkgs;})
+    #(import ./programs/starship.nix{inherit pkgs;})
     (import ./programs/zsh.nix{inherit pkgs;})
     (import ./programs/git.nix{inherit pkgs;})
     (import ./programs/fzf.nix{inherit pkgs;})
@@ -25,7 +25,7 @@
       pkgs.asciinema-agg
       pkgs.duf
       pkgs.lnav
-      #pkgs.fasd
+      #pkgs.fasd - remmoved and replaced with pazi
       pkgs.fzy
       pkgs.tmux
       pkgs.httpie

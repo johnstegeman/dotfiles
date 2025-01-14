@@ -18,6 +18,7 @@
             "johnstegeman/zsh-chezmoi"
             "fdellwing/zsh-bat"  
             "pinelibg/dircolors-solarized-zsh"
+            "romkatv/powerlevel10k"
 
             #"romkatv/zsh-defer"
             #"ael-code/zsh-colored-man-pages"
@@ -43,6 +44,8 @@
       };
 
       initExtraFirst = ''
+         source ~/.instant_prompt.zsh
+         source ~/.p10k.zsh
       '';
 
       initExtra = ''
