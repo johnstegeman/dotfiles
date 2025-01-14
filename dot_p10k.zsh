@@ -33,10 +33,6 @@
     # os_icon               # os identifier
     dir                     # current directory
     vcs                     # git status
-    virtualenv
-    pyenv
-    jenv
-    direnv
     prompt_char             # prompt symbol
   )
 
