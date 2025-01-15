@@ -1,6 +1,6 @@
 { pkgs, ... }: {
   # Don't change this when you change package input. Leave it alone.
-  home.stateVersion = "22.11";
+  home.stateVersion = "25.05";
   imports = [
     #(import ./programs/starship.nix{inherit pkgs;})
     (import ./programs/zsh.nix{inherit pkgs;})

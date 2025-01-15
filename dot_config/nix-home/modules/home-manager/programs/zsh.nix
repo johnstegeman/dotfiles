@@ -5,7 +5,7 @@
       autocd = true;
       # historySubstringSearch.enable = true;
       autosuggestion.enable = true;
-      syntaxHighlighting.enable = true;
+      # syntaxHighlighting.enable = true;
 
       antidote = {
          enable = true;
@@ -28,6 +28,7 @@
 
             "zsh-users/zsh-completions kind:defer" 
             "hcgraf/zsh-sudo kind:defer" 
+            "zdharma-continuum/fast-syntax-highlighting"
 
             "Aloxaf/fzf-tab kind:defer" 
             "MichaelAquilina/zsh-you-should-use kind:defer" 
@@ -54,6 +55,9 @@
 
          # fix dircolors for Selenized
          export LS_COLORS="$LS_COLORS:ow=1;7;34:st=30;44:su=30;41;"
+
+         # Fast syntax highlighting theme setup
+         FAST_HIGHLIGHT[chroma-man]=; fast-theme -q default
 
          #autoload -Uz manydots-magic
          #manydots-magic
