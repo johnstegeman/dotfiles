@@ -2,7 +2,7 @@
   # Don't change this when you change package input. Leave it alone.
   home.stateVersion = "25.05";
   imports = [
-    #(import ./programs/starship.nix{inherit pkgs;})
+    (import ./programs/starship.nix{inherit pkgs;})
     (import ./programs/zsh.nix{inherit pkgs;})
     (import ./programs/git.nix{inherit pkgs;})
     (import ./programs/fzf.nix{inherit pkgs;})
@@ -55,4 +55,9 @@
       enable = true;
       enableZshIntegration = true;
   };
+  #programs.oh-my-posh = {
+  #    enable = true;
+  #    useTheme = "space";
+  #    enableZshIntegration = true;
+  #};
 }

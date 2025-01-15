@@ -16,7 +16,7 @@
         Ubuntu = " ";
       };
       format = ''
-      $os $hostname$directory$git_branch$git_status$python $status$character
+      $os $directory$git_branch$git_status$python $status$character
       '';
       #character.success_symbol = "[➜](bold darkgreen)";
       #character.error_symbol = "[➜](bold burgundy)";
