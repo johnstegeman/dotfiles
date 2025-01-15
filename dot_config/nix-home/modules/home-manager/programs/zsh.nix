@@ -18,30 +18,24 @@
             "johnstegeman/zsh-chezmoi"
             "fdellwing/zsh-bat"  
             "pinelibg/dircolors-solarized-zsh"
-            #"romkatv/powerlevel10k"
 
-            #"romkatv/zsh-defer"
-            #"ael-code/zsh-colored-man-pages"
+            "ohmyzsh/ohmyzsh path:plugins/history"
+            "ohmyzsh/ohmyzsh path:lib/history.zsh"
 
-            "ohmyzsh/ohmyzsh path:plugins/history kind:defer"
-            "ohmyzsh/ohmyzsh path:lib/history.zsh kind:defer"
-
-            "zsh-users/zsh-completions kind:defer" 
+            "zsh-users/zsh-completions" 
             "hcgraf/zsh-sudo kind:defer" 
+            "hlissner/zsh-autopair"
             "zdharma-continuum/fast-syntax-highlighting"
-            "momo-lab/zsh-replace-multiple-dots kind:defer"
+            "momo-lab/zsh-replace-multiple-dots"
 
-            "Aloxaf/fzf-tab kind:defer" 
-            "MichaelAquilina/zsh-you-should-use kind:defer" 
+            "Aloxaf/fzf-tab" 
+            "MichaelAquilina/zsh-you-should-use" 
 
-            "ohmyzsh/ohmyzsh path:plugins/aws kind:defer"
+            "ohmyzsh/ohmyzsh path:plugins/aws"
             "ohmyzsh/ohmyzsh path:plugins/multipass"
 
-            "SleepyBag/zle-fzf kind:defer"
-            "johnstegeman/fzf-z kind:defer"
-
-            #"hlissner/zsh-autopair kind:defer"
-            #"knu/zsh-manydots-magic"
+            "SleepyBag/zle-fzf"
+            "johnstegeman/fzf-z"
          ];
       };
 

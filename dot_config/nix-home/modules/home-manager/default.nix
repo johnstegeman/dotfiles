@@ -25,7 +25,6 @@
       pkgs.asciinema-agg
       pkgs.duf
       pkgs.lnav
-      #pkgs.fasd - remmoved and replaced with pazi
       pkgs.fzy
       pkgs.tmux
       pkgs.httpie
@@ -55,9 +54,4 @@
       enable = true;
       enableZshIntegration = true;
   };
-  #programs.oh-my-posh = {
-  #    enable = true;
-  #    useTheme = "space";
-  #    enableZshIntegration = true;
-  #};
 }
