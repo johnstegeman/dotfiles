@@ -123,5 +123,3 @@ function instant-zsh-post() {
     precmd_functions=(${(@)precmd_functions:#_clear-loading-prompt} _clear-loading-prompt)
   fi
 }
-
-instant-zsh-pre "%{%}~%{%} %{%}❯%{%}"

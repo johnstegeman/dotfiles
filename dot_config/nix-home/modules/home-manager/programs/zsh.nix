@@ -48,7 +48,8 @@
       initExtraFirst = ''
          #source ~/.instant_prompt.zsh
          #source ~/.p10k.zsh
-         source ~/instant-zsh.zsh
+         source ~/.instant-zsh.zsh
+         source ~/.instant-format-zsh.zsh
          
       '';
 
