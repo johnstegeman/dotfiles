@@ -40,6 +40,7 @@
       pkgs.kubernetes-helm
       pkgs.pkgconf
       pkgs.nodejs
+      pkgs.home-manager
   ];
   programs.bat = {
       enable = true;
