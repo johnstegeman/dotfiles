@@ -29,6 +29,7 @@
             "zsh-users/zsh-completions kind:defer" 
             "hcgraf/zsh-sudo kind:defer" 
             "zdharma-continuum/fast-syntax-highlighting"
+            "momo-lab/zsh-replace-multiple-dots kind:defer"
 
             "Aloxaf/fzf-tab kind:defer" 
             "MichaelAquilina/zsh-you-should-use kind:defer" 
