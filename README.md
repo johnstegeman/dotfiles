@@ -6,19 +6,17 @@ An opinionated set of dotfiles and other configurations from John "Steggy" Stege
 
 - 🚀 Uses [chezmoi](https://github.com/twpayne/chezmoi) to manage and apply the configuration
 - 💻 works on both MacOS and Linux
-- 🛠️ uses [zinit](https://github.com/zdharma-continuum/zinit) as zsh plugin manager
-- 🤹🏽‍♀️ uses [flox](https://flox.dev/) to do some cross-platform (MacOS/Linux) installations
+- 🛠️ Uses nix to declaratively set up environments. Home-manager configuration shared between MacOS and Linux
 - [1Password](https://1password.com) (MacOS only) integration to manage secrets (private information that doesn't belong in the public repository) - this via [chezmoi's 1password capabilties](https://www.chezmoi.io/user-guide/password-managers/1password/)
 - 🕵🏽‍♀️ [SSH agent](https://developer.1password.com/docs/ssh/) integration with 1Password (store SSH private keys in 1Password)
-- 🍺 installs homebrew on macos. Brewfile in the repository so that the installed formulae and casks are managed
+- 🍺 Homebrew on MacOS is installed via nix-darwin, and casks/formulae/taps managed by nix as well
 - ☕️ manage Java versions with [jenv](https://github.com/jenv/jenv)
 - ❗️ [jbang](https://www.jbang.dev/) for simple "run java programs from self-contained source file"
 - 🐍 [uv](https://docs.astral.sh/uv/) to manage python versions, dependencies, and virtual environments
 - 👍🏽 installs "better than" versions (with aliases) of common utils such as ls->eza, du->dua, df->duf, cat->bat, etc
-- 🕺🏽 custom zsh prompt using [powerlevel10k](https://github.com/romkatv/powerlevel10k)
+- 🕺🏽 custom zsh prompt using [Starship](https://starship.rs) - with "instant prompt" hack
 - 🖥️ [iTerm2](https://iterm2.com) preferences synched to the repository
 - ⌨️ installs [Colemak DH](https://colemakmods.github.io/mod-dh/) keyboard layout on MacOS
-- 💡 (where possible), prefers zinit to Homebrew for installing cli utilities to make MacOS/Linux config as close to the same as possible
 - 😎 use solarized-osaka dark color scheme for iterm, tmux, vs code, etc.
 - [neovim](https://neovim.io/) configuration with Astronvim (using [external repository](https://github.com/johnstegeman/nvim_astrov4)) plus steggy customizations including setting up the keymap for the Colemak DH layout
 - 📑 [lnav](https://lnav.org/) for viewing logfiles
@@ -31,7 +29,7 @@ An opinionated set of dotfiles and other configurations from John "Steggy" Stege
 You can install chezmoi and apply this configuration in a single step:
 
 ```
-sh -c "$(curl -fsLS get.chezmoi.io)" -- init --apply https://github.com/johnstegeman/dotfiles
+sh -c "$(curl -fsLS get.chezmoi.io)" -- init --apply https://github.com/johnstegeman/dotfiles --branch nix
 ```
 
 This will connect your local chezmoi configuration with my GH repository. If this is what you want, no problem. However, most people will want to fork the repository and substitute the URL for their forked repo.
@@ -43,19 +41,11 @@ Installation will:
 - install chezmoi
 - clone this repository to chezmoi's local state directory
 - apply the chezmoi local state
-- run scripts that:
-   - Install homebrew (on MacOS)
-   - Apply the homebrew bundle (in other words, install everything in the Brewfile)
-   - Set up iTerm2 to read/store its preferences in the chezmoi local state directore - this so that the preferences will sync back to the repo
-   - Install jbang (on Linux - jbang is installed via Homebrew on MacOS)
-   - Install the Colemak DH keyboard layout (on MacOS)
-   - Apply a prefered desktop background (on MacOS)
-   - Apply a default [Flox](https://flox.dev/) environment
+
+After that, you can run installMacOs.sh and setupMacOs.sh from ~/bin to install nix and switch to that configuration
 
 ## Documentation Topics
 
-- [zinit plugins](docs/zinit.md)
-- [flox](docs/flox.md)
 - [custom functions and aliases](docs/functions.md)
 - [utilities](docs/utilities.md)
 - [python](docs/python.md)
