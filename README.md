@@ -6,10 +6,10 @@ An opinionated set of dotfiles and other configurations from John "Steggy" Stege
 
 - 🚀 Uses [chezmoi](https://github.com/twpayne/chezmoi) to manage and apply the configuration
 - 💻 works on both MacOS and Linux
-- 🛠️ Uses nix to declaratively set up environments. Home-manager configuration shared between MacOS and Linux
+- 🛠️ Uses nix to declaratively set up environments. [Home-manager](https://github.com/nix-community/home-manager) configuration shared between MacOS and Linux
 - [1Password](https://1password.com) (MacOS only) integration to manage secrets (private information that doesn't belong in the public repository) - this via [chezmoi's 1password capabilties](https://www.chezmoi.io/user-guide/password-managers/1password/)
 - 🕵🏽‍♀️ [SSH agent](https://developer.1password.com/docs/ssh/) integration with 1Password (store SSH private keys in 1Password)
-- 🍺 Homebrew on MacOS is installed via nix-darwin, and casks/formulae/taps managed by nix as well
+- 🍺 Homebrew on MacOS is installed via [nix-darwin](https://github.com/lnl7/nix-darwin), and casks/formulae/taps managed by nix as well
 - ☕️ manage Java versions with [jenv](https://github.com/jenv/jenv)
 - ❗️ [jbang](https://www.jbang.dev/) for simple "run java programs from self-contained source file"
 - 🐍 [uv](https://docs.astral.sh/uv/) to manage python versions, dependencies, and virtual environments
