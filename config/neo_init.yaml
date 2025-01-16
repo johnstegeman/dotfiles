@@ -20,4 +20,4 @@ packages:
 runcmd:
   - sudo -H -u jstegeman -- sh -c "$(curl -fsLS get.chezmoi.io)" -- -b /home/jstegeman/bin
   - sudo -H -u jstegeman -- /home/jstegeman/bin/chezmoi init --apply https://github.com/johnstegeman/dotfiles --branch nix
-  - sudo -H -u jstegeman -- sh -c /home/jstegeman/bin/installNixLinux.sh
+  - sudo -H -u jstegeman -- sh -c /home/jstegeman/bin/installNix.sh
