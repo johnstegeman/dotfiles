@@ -53,9 +53,6 @@
          autoload -U zmv
          bindkey '^X' push-input
 
-         # fix dircolors for Selenized
-         export LS_COLORS="$LS_COLORS:ow=1;7;34:st=30;44:su=30;41;"
-
          # Fast syntax highlighting theme setup
          FAST_HIGHLIGHT[chroma-man]=; fast-theme -q default
 
@@ -78,6 +75,10 @@
          ENABLE_CORRECTION="false";
          COMPLETION_WAITING_DOTS="true";
          DIRCOLORS_SOLARIZED_ZSH_THEME="256dark";
+          
+         # fix dircolors for Selenized
+         export LS_COLORS="$LS_COLORS:ow=1;7;34:st=30;44:su=30;41;"
+         
          FZFZ_RECENT_DIRS_TOOL="fasd";
 
          PATH="$PATH:~/bin";

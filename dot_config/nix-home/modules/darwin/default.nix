@@ -39,7 +39,7 @@
         "notion-calendar"
         "rancher"
         "shottr"
-        "temurin@17"
+        "temurin@21"
         "webex"
         "zappy"
       ];

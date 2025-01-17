@@ -8,6 +8,7 @@
     (import ./programs/fzf.nix{inherit pkgs;})
     (import ./programs/eza.nix{inherit pkgs;})
     (import ./programs/atuin.nix{inherit pkgs;})
+    #(import ./programs/mcfly.nix{inherit pkgs;})
     (import ./programs/neovim.nix{inherit pkgs;})
     (import ./programs/awscli.nix{inherit pkgs;})
     (import ./programs/direnv.nix{inherit pkgs;})
