@@ -77,8 +77,8 @@
          DIRCOLORS_SOLARIZED_ZSH_THEME="256dark";
           
          # fix dircolors for Selenized
-         export LS_COLORS="$LS_COLORS:ow=1;7;34:st=30;44:su=30;41;"
-         
+         LS_COLORS="$LS_COLORS:ow=1;7;34:st=30;44:su=30;41;"
+
          FZFZ_RECENT_DIRS_TOOL="fasd";
 
          PATH="$PATH:~/bin";
