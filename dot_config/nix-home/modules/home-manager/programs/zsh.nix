@@ -12,6 +12,8 @@
          plugins = [
             "johnstegeman/zsh-steggy"
 
+            "romkatv/powerlevel10k"
+
             "ohmyzsh/ohmyzsh path:plugins/git"
             "ohmyzsh/ohmyzsh path:lib/git.zsh"
             "ohmyzsh/ohmyzsh path:plugins/gcloud"
@@ -40,10 +42,10 @@
       };
 
       initExtraFirst = ''
-         #source ~/.instant_prompt.zsh
-         #source ~/.p10k.zsh
-         source ~/.instant-zsh.zsh
-         source ~/.instant-format-zsh.zsh
+         source ~/.instant_prompt.zsh
+         source ~/.p10k.zsh
+         #source ~/.instant-zsh.zsh
+         #source ~/.instant-format-zsh.zsh
          
       '';
 
@@ -63,7 +65,7 @@
          # Source all custom scripts
          source_directory ~/.zsh_custom/autoload
 
-         instant-zsh-post
+         #instant-zsh-post
       '';
       shellAliases = {
          du = "dua i"; 
