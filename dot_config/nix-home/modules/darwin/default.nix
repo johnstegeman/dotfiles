@@ -15,7 +15,7 @@
          pkgs.zoom-us
          # pkgs._1password-gui
          pkgs._1password-cli
-         pkgs.arc-browser
+         # pkgs.arc-browser
     ];
     systemPath = [ "/opt/homebrew/bin" ];
     pathsToLink = [ "/Applications" ];
@@ -27,6 +27,7 @@
       taps = [];
       brews = [];
       casks = [
+        "arc"
         "1password" 
         "asana"
         "disk-inventory-x"
