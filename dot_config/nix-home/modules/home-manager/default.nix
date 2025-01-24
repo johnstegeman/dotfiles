@@ -14,33 +14,33 @@
     (import ./programs/direnv.nix{inherit pkgs;})
   ];
   # specify my home-manager configs
-  home.packages = [
-      pkgs.ripgrep
-      pkgs.curl
-      pkgs.jbang
-      pkgs.dua
-      pkgs.bottom
-      pkgs.jq
-      pkgs.uv
-      pkgs.kompose
-      pkgs.asciinema-agg
-      pkgs.duf
-      pkgs.lnav
-      pkgs.fzy
-      pkgs.tmux
-      pkgs.httpie
-      pkgs.asciinema
-      pkgs.wget
-      pkgs.chezmoi
-      pkgs.luarocks
-      pkgs.nmap
-      pkgs.subversion
-      pkgs.coreutils
-      pkgs.kubectl
-      pkgs.kubernetes-helm
-      pkgs.pkgconf
-      pkgs.nodejs
-      pkgs.home-manager
+  home.packages = with pkgs; [
+      ripgrep
+      curl
+      jbang
+      dua
+      bottom
+      jq
+      uv
+      kompose
+      asciinema-agg
+      duf
+      lnav
+      fzy
+      tmux
+      httpie
+      asciinema
+      wget
+      chezmoi
+      luarocks
+      nmap
+      subversion
+      coreutils
+      kubectl
+      kubernetes-helm
+      pkgconf
+      nodejs
+      home-manager
   ];
   programs.bat = {
       enable = true;
