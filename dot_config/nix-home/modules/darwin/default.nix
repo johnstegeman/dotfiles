@@ -4,28 +4,19 @@
   environment = {
     shells = [ pkgs.bash pkgs.zsh ];
     systemPackages = [
-         pkgs.slack
-         pkgs.iterm2
-         pkgs.gimp
-         pkgs.google-cloud-sdk
-         pkgs.bartender
-         pkgs.maccy
-         pkgs.raycast
-         pkgs.vscode
-         pkgs.zoom-us
-         # pkgs._1password-gui
-         pkgs._1password-cli
-         # pkgs.arc-browser
     ];
     systemPath = [ "/opt/homebrew/bin" ];
     pathsToLink = [ "/Applications" ];
   };
   homebrew = {
       enable = true;
-      # onActivation.cleanup = "uninstall";
+      onActivation.cleanup = "zap";
 
       taps = [];
       brews = [];
+      caskArgs = {
+        no_quarantine = true;
+      };
       casks = [
         "arc"
         "1password" 
@@ -43,6 +34,17 @@
         "temurin@21"
         "webex"
         "zappy"
+        "minecraft"
+        "slack"
+        "iterm2"
+        "visual-studio-code"
+        "bartender"
+        "maccy"
+        "raycast"
+        "zoom"
+        "gimp"
+        "1password-cli"
+        "google-cloud-sdk"
       ];
   };
   fonts.packages = [ pkgs.nerd-fonts.meslo-lg ];
