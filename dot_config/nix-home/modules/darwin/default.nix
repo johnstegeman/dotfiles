@@ -45,6 +45,7 @@
         "gimp"
         "1password-cli"
         "google-cloud-sdk"
+        "ghostty"
       ];
   };
   fonts.packages = [ pkgs.nerd-fonts.meslo-lg ];
