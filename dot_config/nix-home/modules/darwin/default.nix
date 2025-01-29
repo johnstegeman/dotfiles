@@ -46,6 +46,7 @@
         "1password-cli"
         "google-cloud-sdk"
         "ghostty"
+        "font-maple-mono-nf"
       ];
   };
   fonts.packages = [ pkgs.nerd-fonts.meslo-lg ];
