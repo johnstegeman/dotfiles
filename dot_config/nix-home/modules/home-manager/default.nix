@@ -41,6 +41,7 @@
       pkgconf
       nodejs
       home-manager
+      google-cloud-sdk
   ];
   programs.bat = {
       enable = true;

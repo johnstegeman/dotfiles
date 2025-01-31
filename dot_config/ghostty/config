@@ -1,4 +1,4 @@
-font-family = "Maple Mono NF Regular"
+font-family = "Maple Mono NF"
 font-style = "Regular"
 font-size = "15"
 
@@ -6,6 +6,10 @@ font-thicken = "true"
 
 window-height = "40"
 window-width = "156"
+
+confirm-close-surface = "false"
+
+# Solarized Osaka Dark color scheme
 
 palette = 0=#15161d
 palette = 1=#e77d8f
@@ -27,5 +31,5 @@ background = #1a1b25
 foreground = #c2caf1
 cursor-color = #c2caf1
 cursor-text = #1a1b25
-selection-background = #626880
-selection-foreground = #2a3454
+selection-background = #2a3454
+selection-foreground = #c2caf1
