@@ -69,6 +69,7 @@
          df = "duf";
          dup = "darwin-rebuild switch --flake ~/.config/nix-home\"#macosSystem\"";
          hmup = "home-manager switch --flake ~/.config/nix-home\"#linuxSystem\" --extra-experimental-features \"nix-command flakes\"";
+         rm = "trash";
       };
       sessionVariables = {
          TERM="xterm-256color";

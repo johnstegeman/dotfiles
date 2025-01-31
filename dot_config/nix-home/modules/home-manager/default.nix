@@ -42,6 +42,7 @@
       nodejs
       home-manager
       google-cloud-sdk
+      trash-cli
   ];
   programs.bat = {
       enable = true;

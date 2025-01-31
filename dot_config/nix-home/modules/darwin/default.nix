@@ -44,7 +44,7 @@
         "zoom"
         "gimp"
         "1password-cli"
-        "google-cloud-sdk"
+        #"google-cloud-sdk"
         "ghostty"
         "font-maple-mono-nf"
       ];
