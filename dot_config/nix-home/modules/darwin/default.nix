@@ -36,7 +36,7 @@
         "zappy"
         "minecraft"
         "slack"
-        "iterm2"
+        #"iterm2"
         "visual-studio-code"
         "bartender"
         "maccy"

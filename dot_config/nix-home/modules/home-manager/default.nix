@@ -43,6 +43,7 @@
       home-manager
       google-cloud-sdk
       trash-cli
+      hub
   ];
   programs.bat = {
       enable = true;
