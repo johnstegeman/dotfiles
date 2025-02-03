@@ -9,7 +9,7 @@ alias -- lla='eza -la'
 alias -- ls=eza
 alias -- lt='eza --tree'
 alias -- rm=trash
-
+alias clear=z4h-clear-screen-soft-bottom
 
 ## git
 

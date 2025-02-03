@@ -21,7 +21,7 @@ zstyle ':z4h:' term-shell-integration 'yes'
 
 # Right-arrow key accepts one character ('partial-accept') from
 # command autosuggestions or the whole thing ('accept')?
-zstyle ':z4h:autosuggestions' forward-char 'accept'
+zstyle ':z4h:autosuggestions' forward-char partial-accept
 
 # Recursively traverse directories when TAB-completing files.
 zstyle ':z4h:fzf-complete' recurse-dirs 'no'
@@ -103,6 +103,8 @@ z4h bindkey z4h-cd-down    Shift+Down   # cd into a child directory
 
 # Autoload functions.
 autoload -Uz zmv
+
+POSTEDIT=$'\n\n\e[2A'
 
 command -v atuin     &> /dev/null    && eval "$(atuin init zsh --disable-ctrl-r)"
 command -v pazi      &> /dev/null    && eval "$(pazi init zsh)"
