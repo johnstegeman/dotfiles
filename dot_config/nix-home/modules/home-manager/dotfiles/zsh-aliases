@@ -1,0 +1,24 @@
+alias -- df=duf
+alias -- du='dua i'
+alias -- dup='darwin-rebuild switch --flake ~/.config/nix-home"#macosSystem"'
+alias -- eza='eza '\''--time-style=long-iso'\'' -F --group-directories-first'
+alias -- hmup='home-manager switch --flake ~/.config/nix-home"#linuxSystem" --extra-experimental-features "nix-command flakes"'
+alias -- la='eza -a'
+alias -- ll='eza -l'
+alias -- lla='eza -la'
+alias -- ls=eza
+alias -- lt='eza --tree'
+alias -- rm=trash
+
+
+## git
+
+alias g='git'
+alias ga='g add'
+alias gaa='ga --all'
+alias gb='g branch'
+alias gba='g branch --all'
+alias gc='g commit -v'
+alias gl='g pull'
+alias gp='g push'
+alias gst='g status'

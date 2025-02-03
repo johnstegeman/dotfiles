@@ -4,7 +4,7 @@
    programs.fzf = {
       enable = true;
       defaultCommand = "fd --type file --follow --hidden --exclude .git --color=always";
-      enableZshIntegration = true;
+#      enableZshIntegration = true;
       fileWidgetCommand = "fd --type file --follow --hidden --exclude .git --color=always";
       historyWidgetOptions = [
             "--preview 'echo {}'"
