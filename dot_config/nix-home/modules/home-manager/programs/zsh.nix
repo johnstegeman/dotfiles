@@ -73,5 +73,6 @@
       ".zsh-aliases".source = ../dotfiles/zsh-aliases;
       ".zshenv".source = ../dotfiles/zshenv;
       ".zshrc".source = ../dotfiles/zshrc;
+      ".zprofile".source = ../dotfiles/zprofile;
    };
 }
