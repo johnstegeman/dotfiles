@@ -57,7 +57,7 @@ export SAVEHIST=1000000000
 # example. If you don't plan to use Oh My Zsh, delete this line.
 # z4h install ohmyzsh/ohmyzsh || return
 
-z4h install johnstegeman/zsh-steggy || return
+# z4h install johnstegeman/zsh-steggy || return
 z4h install johnstegeman/zsh-chezmoi || return
 z4h install fdellwing/zsh-bat || return
 z4h install johnstegeman/dircolors-solarized-zsh || return
@@ -89,7 +89,6 @@ z4h source ~/.env.zsh
 
 #z4h load johnstegeman/zsh-steggy
 z4h load johnstegeman/zsh-chezmoi
-z4h load z4h load ohmyzsh/ohmyzsh/plugins/sudo
 z4h load fdellwing/zsh-bat
 z4h load johnstegeman/dircolors-solarized-zsh
 z4h load hlissner/zsh-autopair
@@ -110,6 +109,8 @@ z4h bindkey z4h-cd-down    Shift+Down   # cd into a child directory
 autoload -Uz zmv
 
 POSTEDIT=$'\n\n\e[2A'
+
+# initialize zsh integrations
 
 command -v atuin     &> /dev/null    && eval "$(atuin init zsh --disable-ctrl-r)"
 command -v pazi      &> /dev/null    && eval "$(pazi init zsh)"
