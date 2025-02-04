@@ -45,6 +45,11 @@ zstyle ':z4h:ssh:*' send-extra-files '~/.nanorc' '~/.env.zsh'
 # Move prompt to the bottom when zsh starts and on Ctrl+L.
 zstyle ':z4h:' prompt-at-bottom 'yes'
 
+export HISTTIMEFORMAT="[%F %T]"
+export HISTFILESIZE=1000000000
+export HISTSIZE=1000000000
+export SAVEHIST=1000000000
+
 # Clone additional Git repositories from GitHub.
 #
 # This doesn't do anything apart from cloning the repository and keeping it
@@ -120,9 +125,16 @@ compdef _directories md
 alias tree='tree -a -I .git'
 z4h source -- $ZDOTDIR/.zsh-aliases
 
+source_directory ~/.zsh_custom/autoload
+
 # Set shell options: http://zsh.sourceforge.net/Doc/Release/Options.html.
 setopt glob_dots     # no special treatment for file names with a leading dot
 setopt no_auto_menu  # require an extra TAB press to open the completion menu
+setopt extended_history 
+setopt interactive_comments
+setopt prompt_subst 
+setopt no_beep 
+setopt append_history
 
 # Disable homebrew-not-found
 
