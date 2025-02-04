@@ -12,6 +12,7 @@
     (import ./programs/neovim.nix{inherit pkgs;})
     (import ./programs/awscli.nix{inherit pkgs;})
     (import ./programs/direnv.nix{inherit pkgs;})
+    (import ./programs/tmux.nix{inherit pkgs;})
   ];
   # specify my home-manager configs
   home.packages = with pkgs; [
@@ -27,7 +28,6 @@
       duf
       lnav
       fzy
-      tmux
       httpie
       asciinema
       wget
