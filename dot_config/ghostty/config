@@ -9,6 +9,8 @@ window-width = "156"
 
 confirm-close-surface = "false"
 
+macos-option-as-alt = "true"
+
 # Solarized Osaka Dark color scheme
 
 palette = 0=#15161d
