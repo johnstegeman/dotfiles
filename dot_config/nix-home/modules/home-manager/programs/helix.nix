@@ -3,6 +3,9 @@
       enable = true;
       settings = {
          theme = "Solarized_Osaka";
+         editor = {
+            true-color = true;
+         };
 
          keys = {
             normal = {
