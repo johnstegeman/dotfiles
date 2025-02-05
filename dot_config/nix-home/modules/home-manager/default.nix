@@ -13,6 +13,7 @@
     (import ./programs/awscli.nix{inherit pkgs;})
     (import ./programs/direnv.nix{inherit pkgs;})
     (import ./programs/tmux.nix{inherit pkgs;})
+    (import ./programs/helix.nix{inherit pkgs;})
   ];
   # specify my home-manager configs
   home.packages = with pkgs; [
