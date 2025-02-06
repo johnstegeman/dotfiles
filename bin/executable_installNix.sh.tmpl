@@ -1,6 +1,16 @@
 #!/bin/zsh
+
+{{ if eq .chezmoi.os "darwin" }}
+
 curl --proto '=https' --tlsv1.2 -sSf -L https://install.determinate.systems/nix | sh -s -- install
 
 . /nix/var/nix/profiles/default/etc/profile.d/nix-daemon.sh
+
+{{ else }}
+
+curl -L https://nixos.org/nix/install | sh
+ . /home/jstegeman/.nix-profile/etc/profile.d/nix.sh
+
+ {{ end }}
 
 . ~/bin/setupNix.sh
