@@ -1,10 +1,30 @@
 { pkgs, ...}: {
   programs.helix = {
       enable = true;
+      defaultEditor = true;
       settings = {
          theme = "Solarized_Osaka";
          editor = {
             true-color = true;
+            indent-guides = {
+               character = "┊";
+               render = true;
+               skip-levels = 1;
+            };
+
+            statusline = {
+               left = [ "mode" "file-name" "spinner" "read-only-indicator" "file-modification-indicator" ];
+               right = [ "diagnostics" "selections" "register" "file-type" "file-line-ending" "position" ];
+               mode.normal = "NOR";
+               mode.insert = "INS";
+               mode.select = "SEL";
+            };
+
+            cursor-shape = {
+               insert = "bar";
+               normal = "block";
+               select = "underline";
+            };
          };
 
          keys = {
