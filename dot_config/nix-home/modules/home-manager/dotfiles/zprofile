@@ -1,3 +1,0 @@
-#!/usr/bin/env zsh
-
-z4h source -- /nix/var/nix/profiles/default/etc/profile.d/nix-daemon.sh
