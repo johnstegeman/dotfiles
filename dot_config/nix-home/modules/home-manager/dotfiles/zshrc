@@ -14,7 +14,7 @@ zstyle ':z4h:' auto-update-days '28'
 zstyle ':z4h:bindkey' keyboard  'mac'
 
 # Don't start tmux.
-# zstyle ':z4h:' start-tmux       no
+zstyle ':z4h:' start-tmux integrated
 
 # Mark up shell's output with semantic information.
 zstyle ':z4h:' term-shell-integration 'yes'
@@ -44,6 +44,11 @@ zstyle ':z4h:ssh:*' send-extra-files '~/.nanorc' '~/.env.zsh'
 
 # Move prompt to the bottom when zsh starts and on Ctrl+L.
 zstyle ':z4h:' prompt-at-bottom 'yes'
+
+# Recursively traverse directories when TAB-completing files.
+zstyle ':z4h:fzf-complete' recurse-dirs yes
+zstyle ':z4h:fzf-complete' fzf-bindings tab:repeat
+
 
 export HISTTIMEFORMAT="[%F %T]"
 export HISTFILESIZE=1000000000
