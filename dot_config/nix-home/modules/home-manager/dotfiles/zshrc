@@ -63,7 +63,7 @@ export SAVEHIST=1000000000
 # z4h install ohmyzsh/ohmyzsh || return
 
 # z4h install johnstegeman/zsh-steggy || return
-z4h install johnstegeman/zsh-chezmoi || return
+# z4h install johnstegeman/zsh-chezmoi || return
 z4h install fdellwing/zsh-bat || return
 z4h install johnstegeman/dircolors-solarized-zsh || return
 z4h install hcgraf/zsh-sudo || return
@@ -92,8 +92,8 @@ z4h source ~/.env.zsh
 #z4h source ohmyzsh/ohmyzsh/lib/diagnostics.zsh  # source an individual file
 #z4h load   ohmyzsh/ohmyzsh/plugins/emoji-clock  # load a plugin
 
-#z4h load johnstegeman/zsh-steggy
-z4h load johnstegeman/zsh-chezmoi
+# z4h load johnstegeman/zsh-steggy
+# z4h load johnstegeman/zsh-chezmoi
 z4h load fdellwing/zsh-bat
 z4h load johnstegeman/dircolors-solarized-zsh
 z4h load hlissner/zsh-autopair
