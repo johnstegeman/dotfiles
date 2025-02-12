@@ -11,7 +11,7 @@
   homebrew = {
       enable = true;
       onActivation.cleanup = "zap";
-
+      onActivation.upgrade = true;
       taps = [];
       brews = [];
       caskArgs = {
@@ -54,7 +54,8 @@
   nix.extraOptions = ''
     experimental-features = nix-command flakes
   '';
-  services.nix-daemon.enable = true;
+  # services.nix-daemon.enable = true;
+  ids.gids.nixbld = 350;
   # backwards compat; don't change
   system.stateVersion = 4;
 }
