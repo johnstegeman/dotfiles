@@ -4,6 +4,7 @@
    programs.git = {
    enable = true;
    userEmail = "john.stegeman@gmail.com";
+   signing.format = "ssh";
    delta.enable = true;
    delta.options = {
       navigate = true;
