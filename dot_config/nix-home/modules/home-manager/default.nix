@@ -45,6 +45,7 @@
       google-cloud-sdk
       trash-cli
       hub
+      gh
   ];
   programs.bat = {
       enable = true;

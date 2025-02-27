@@ -47,6 +47,8 @@
         #"google-cloud-sdk"
         "ghostty"
         "font-maple-mono-nf"
+        "keymapp"
+        "karabiner-elements"
       ];
   };
   fonts.packages = [ pkgs.nerd-fonts.meslo-lg ];
