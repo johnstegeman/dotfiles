@@ -4,6 +4,7 @@
   environment = {
     shells = [ pkgs.bash pkgs.zsh ];
     systemPackages = [
+      pkgs.kanata
     ];
     systemPath = [ "/opt/homebrew/bin" ];
     pathsToLink = [ "/Applications" ];
