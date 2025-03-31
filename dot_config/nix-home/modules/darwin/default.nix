@@ -50,6 +50,7 @@
         "font-maple-mono-nf"
         "keymapp"
         "karabiner-elements"
+        "intellij-idea-ce"
       ];
   };
   fonts.packages = [ pkgs.nerd-fonts.meslo-lg ];
