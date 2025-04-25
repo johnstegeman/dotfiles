@@ -51,6 +51,7 @@
         "keymapp"
         "karabiner-elements"
         "intellij-idea-ce"
+        "pycharm-ce"
       ];
   };
   fonts.packages = [ pkgs.nerd-fonts.meslo-lg ];
