@@ -30,7 +30,7 @@
         "multipass"
         "neo4j"
         "notion-calendar"
-        "rancher"
+        #"rancher"
         "shottr"
         "temurin@21"
         "webex"
