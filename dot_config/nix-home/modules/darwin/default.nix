@@ -52,6 +52,7 @@
         "karabiner-elements"
         "intellij-idea-ce"
         "pycharm-ce"
+        "orbstack"
       ];
   };
   fonts.packages = [ pkgs.nerd-fonts.meslo-lg ];
