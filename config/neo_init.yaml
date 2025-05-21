@@ -17,6 +17,9 @@ packages:
   - lua5.4
   - npm
   - gettext
+  - xz-utils
+  - openssh-server
+  - git
 runcmd:
   - sudo -H -u jstegeman -- sh -c "$(curl -fsLS get.chezmoi.io)" -- -b /home/jstegeman/bin
   - sudo -H -u jstegeman -- /home/jstegeman/bin/chezmoi init --apply https://github.com/johnstegeman/dotfiles --branch nix

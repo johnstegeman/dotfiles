@@ -1,6 +1,6 @@
 command -v duf     &> /dev/null    && alias -- df=duf
 command -v dua     &> /dev/null    && alias -- du='dua i'
-command -v darwin-rebuild     &> /dev/null    && alias -- dup='darwin-rebuild switch --flake ~/.config/nix-home"#macosSystem"'
+command -v darwin-rebuild     &> /dev/null    && alias -- dup='sudo darwin-rebuild switch --flake ~/.config/nix-home"#macosSystem"'
 command -v eza     &> /dev/null    && alias -- eza='eza '\''--time-style=long-iso'\'' -F --group-directories-first'
 command -v home-manager     &> /dev/null    && alias -- hmup='home-manager switch --flake ~/.config/nix-home"#linuxSystem" --extra-experimental-features "nix-command flakes"'
 command -v eza     &> /dev/null    && alias -- la='eza -a'

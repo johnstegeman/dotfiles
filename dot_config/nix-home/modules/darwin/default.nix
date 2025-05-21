@@ -1,6 +1,7 @@
 { pkgs, ... }: {
   # here go the darwin preferences and config items
   # programs.zsh.enable = true;
+  system.primaryUser = "jstegeman";
   environment = {
     shells = [ pkgs.bash pkgs.zsh ];
     systemPackages = [
