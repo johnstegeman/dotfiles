@@ -1,6 +1,9 @@
 { pkgs, ... }: {
   # here go the darwin preferences and config items
   # programs.zsh.enable = true;
+
+  nix.enable = false;
+  
   system.primaryUser = "jstegeman";
   security.pam.services.sudo_local.touchIdAuth = true;
 
