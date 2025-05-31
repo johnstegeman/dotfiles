@@ -84,6 +84,7 @@
     shells = [ pkgs.bash pkgs.zsh ];
     systemPackages = [
       pkgs.kanata
+      pkgs.disk-inventory-x
     ];
     systemPath = [ "/opt/homebrew/bin" ];
     pathsToLink = [ "/Applications" ];
@@ -92,48 +93,50 @@
       enable = true;
       onActivation.cleanup = "zap";
       onActivation.upgrade = true;
+      onActivation.autoUpdate = true;
       taps = [];
       brews = [];
       caskArgs = {
         no_quarantine = true;
       };
       casks = [
-        "arc"
-        "1password" 
+        "arc" #arc-browser
+        "1password" #_1password-gui
         "asana"
-        "disk-inventory-x"
+        #"disk-inventory-x" #same
         "figma"
         "google-drive"
         "grammarly-desktop"
         "microsoft-auto-update"
-        "multipass"
-        "neo4j"
+        "multipass" #same
+        "neo4j" #neo4j-desktop
         "notion-calendar"
         #"rancher"
         "shottr"
-        "temurin@21"
-        "webex"
+        "temurin@21" #temurin-bin-23 or 24
+        "webex" #same
         "zappy"
-        "minecraft"
-        "slack"
+        "minecraft" #same
+        "slack" #same
         #"iterm2"
-        "visual-studio-code"
-        "bartender"
-        "maccy"
-        "raycast"
-        "zoom"
-        "gimp"
-        "1password-cli"
+        "visual-studio-code" #vscode
+        "bartender" #same
+        "maccy" #same
+        "raycast" #same 
+        "zoom" #zoom-us
+        "gimp" #gimp3
+        "1password-cli" #_1password-cli
         #"google-cloud-sdk"
-        "ghostty"
-        "font-maple-mono-nf"
-        "keymapp"
-        "karabiner-elements"
-        "intellij-idea-ce"
-        "pycharm-ce"
+        "ghostty" #same
+        "font-maple-mono-nf" #maple-mono.NF
+        "keymapp" #same
+        "karabiner-elements" #same
+        "intellij-idea-ce" #jetbrains.idea-community
+        "pycharm-ce" #jetbrains.pycharm-community
         "orbstack"
       ];
   };
+  
   fonts.packages = [ pkgs.nerd-fonts.meslo-lg ];
   # users.users.jstegeman.shell = pkgs.zsh;
   nix.extraOptions = ''
