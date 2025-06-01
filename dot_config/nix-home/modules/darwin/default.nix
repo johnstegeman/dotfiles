@@ -73,9 +73,10 @@
         {spacer = {small = true;};}
         {app = "/System/Applications/System Settings.app";}
       ];
-      persistent-others = [
-        "/Users/jstegeman/Downloads"
-      ];
+      # Commented this out for now - until persistent-others supports sorting
+      #persistent-others = [
+      #  "/Users/jstegeman/Downloads"
+      #];
       show-process-indicators = true;
       show-recents = false;
       tilesize = 55;
