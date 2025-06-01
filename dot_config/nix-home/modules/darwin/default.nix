@@ -148,6 +148,9 @@
         # "pycharm-ce" #jetbrains.pycharm-community
         "orbstack"
       ];
+      masApps = {
+        "Edison Mail" = 1489591003;
+      };
   };
   
   fonts.packages = [ pkgs.nerd-fonts.meslo-lg ];
