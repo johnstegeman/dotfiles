@@ -61,12 +61,12 @@
         {spacer = {small = true;};}
         {app = "/Applications/Ghostty.app";}
         {app = "/Applications/Notion Calendar.app";}
-        {app = "${pkgs.slack}/Applications/Slack.app";}
+        {app = "/Applications/Nix Apps/Slack.app";}
         {spacer = {small = true;};}
         {app = "/System/Applications/Messages.app";}
         {app = "/Applications/Asana.app";}
         {spacer = {small = true;};}
-        {app = "${pkgs.vscode}/Applications/Visual Studio Code.app";}
+        {app = "/Applications/Nix Apps/Visual Studio Code.app";}
         {app = "/Applications/Neo4j Desktop 2.app";}
         {app = "/Applications/Neo4j Desktop.app";}
         {spacer = {small = true;};}

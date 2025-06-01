@@ -10,7 +10,7 @@
     home-manager.inputs.nixpkgs.follows = "nixpkgs";
 
     # Controls system level software and settings including fonts
-    darwin.url = "github:lnl7/nix-darwin";
+    darwin.url = "github:dwt/nix-darwin/application-linking-done-right";
     darwin.inputs.nixpkgs.follows = "nixpkgs";
 
     # Homebrew installer 
