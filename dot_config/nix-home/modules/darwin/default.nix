@@ -10,6 +10,28 @@
   networking.computerName = "jstegeman-mac4";
   networking.hostName = "jstegeman-mac4";
 
+  environment = {
+    shells = [ pkgs.bash pkgs.zsh ];
+    systemPackages = [
+      pkgs.kanata
+      pkgs.disk-inventory-x
+      # pkgs.gimp3
+      # pkgs.multipass
+      pkgs.jetbrains.idea-community
+      pkgs.jetbrains.pycharm-community
+      pkgs.keymapp
+      pkgs.maccy
+      # pkgs.maple-mono.NF
+      # pkgs.minecraft
+      pkgs.slack
+      pkgs.vscode
+      # pkgs.webex
+      pkgs.zoom-us
+    ];
+    systemPath = [ "/opt/homebrew/bin" ];
+    pathsToLink = [ "/Applications" ];
+  };
+
   system.defaults = {
 
     NSGlobalDomain = {
@@ -39,12 +61,12 @@
         {spacer = {small = true;};}
         {app = "/Applications/Ghostty.app";}
         {app = "/Applications/Notion Calendar.app";}
-        {app = "/Applications/Slack.app";}
+        {app = "${pkgs.slack}/Applications/Slack.app";}
         {spacer = {small = true;};}
         {app = "/System/Applications/Messages.app";}
         {app = "/Applications/Asana.app";}
         {spacer = {small = true;};}
-        {app = "/Applications/Visual Studio Code.app";}
+        {app = "${pkgs.vscode}/Applications/Visual Studio Code.app";}
         {app = "/Applications/Neo4j Desktop 2.app";}
         {app = "/Applications/Neo4j Desktop.app";}
         {spacer = {small = true;};}
@@ -80,15 +102,6 @@
     remapCapsLockToEscape = true;
   };
 
-   environment = {
-    shells = [ pkgs.bash pkgs.zsh ];
-    systemPackages = [
-      pkgs.kanata
-      pkgs.disk-inventory-x
-    ];
-    systemPath = [ "/opt/homebrew/bin" ];
-    pathsToLink = [ "/Applications" ];
-  };
   homebrew = {
       enable = true;
       onActivation.cleanup = "zap";
@@ -108,7 +121,7 @@
         "google-drive"
         "grammarly-desktop"
         "microsoft-auto-update"
-        "multipass" #same
+        "multipass"
         "neo4j" #neo4j-desktop
         "notion-calendar"
         #"rancher"
@@ -117,22 +130,22 @@
         "webex" #same
         "zappy"
         "minecraft" #same
-        "slack" #same
+        #"slack" #same
         #"iterm2"
-        "visual-studio-code" #vscode
+        #"visual-studio-code" #vscode
         "bartender" #same
-        "maccy" #same
+        # "maccy" #same
         "raycast" #same 
-        "zoom" #zoom-us
+        #"zoom" #zoom-us
         "gimp" #gimp3
         "1password-cli" #_1password-cli
         #"google-cloud-sdk"
         "ghostty" #same
         "font-maple-mono-nf" #maple-mono.NF
-        "keymapp" #same
+        # "keymapp" #same
         "karabiner-elements" #same
-        "intellij-idea-ce" #jetbrains.idea-community
-        "pycharm-ce" #jetbrains.pycharm-community
+        # "intellij-idea-ce" #jetbrains.idea-community
+        # "pycharm-ce" #jetbrains.pycharm-community
         "orbstack"
       ];
   };

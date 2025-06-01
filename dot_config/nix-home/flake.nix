@@ -16,16 +16,16 @@
     # Homebrew installer 
     nix-homebrew.url = "github:zhaofengli-wip/nix-homebrew";
 
-    mac-app-util.url = "github:hraban/mac-app-util";
+    #mac-app-util.url = "github:hraban/mac-app-util";
 
   };
-  outputs = inputs@{ nixpkgs, home-manager, nix-homebrew, mac-app-util, darwin, ... }: {
+  outputs = inputs@{ nixpkgs, home-manager, nix-homebrew, darwin, ... }: {
     darwinConfigurations.macosSystem = darwin.lib.darwinSystem {
       system = "aarch64-darwin";
       pkgs = import nixpkgs { system = "aarch64-darwin";  config = { allowUnfree = true; allowBroken = true; allowUnsupportedSystem = true;}; };
       modules = [
         ./modules/darwin
-        mac-app-util.darwinModules.default
+        #mac-app-util.darwinModules.default
         nix-homebrew.darwinModules.nix-homebrew
         {
           nix-homebrew = {
