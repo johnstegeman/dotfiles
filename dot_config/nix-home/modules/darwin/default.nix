@@ -24,6 +24,7 @@
       # pkgs.maple-mono.NF
       # pkgs.minecraft
       pkgs.slack
+      pkgs.temurin-bin
       pkgs.vscode
       # pkgs.webex
       pkgs.zoom-us
@@ -126,7 +127,7 @@
         "notion-calendar"
         #"rancher"
         "shottr"
-        "temurin@21" #temurin-bin-23 or 24
+        # "temurin@21" #temurin-bin-23 or 24
         "webex" #same
         "zappy"
         "minecraft" #same
