@@ -18,9 +18,9 @@ _:
     "webex" #same
     "zappy"
     "minecraft" #same
-    #"slack" #same
+    "slack" #same
     #"iterm2"
-    #"visual-studio-code" #vscode
+    "visual-studio-code" #vscode
     "bartender" #same
     # "maccy" #same
     "raycast" #same 

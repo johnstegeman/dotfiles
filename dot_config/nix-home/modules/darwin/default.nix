@@ -23,9 +23,9 @@
       pkgs.maccy
       # pkgs.maple-mono.NF
       # pkgs.minecraft
-      pkgs.slack
+      #pkgs.slack
       pkgs.temurin-bin
-      pkgs.vscode
+      #pkgs.vscode
       # pkgs.webex
       pkgs.zoom-us
     ];
@@ -62,12 +62,12 @@
         {spacer = {small = true;};}
         {app = "/Applications/Ghostty.app";}
         {app = "/Applications/Notion Calendar.app";}
-        {app = "/Applications/Nix Apps/Slack.app";}
+        {app = "/Applications/Slack.app";}
         {spacer = {small = true;};}
         {app = "/System/Applications/Messages.app";}
         {app = "/Applications/Asana.app";}
         {spacer = {small = true;};}
-        {app = "/Applications/Nix Apps/Visual Studio Code.app";}
+        {app = "/Applications/Visual Studio Code.app";}
         {app = "/Applications/Neo4j Desktop 2.app";}
         {app = "/Applications/Neo4j Desktop.app";}
         {spacer = {small = true;};}
