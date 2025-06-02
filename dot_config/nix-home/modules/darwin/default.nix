@@ -64,7 +64,9 @@
       onActivation.upgrade = true;
       onActivation.autoUpdate = true;
       taps = [];
-      brews = [];
+      brews = [
+        "mas"
+      ];
       caskArgs = {
         no_quarantine = true;
       };
