@@ -19,7 +19,7 @@
         {spacer = {small = true;};}
         {app = "/Applications/Visual Studio Code.app";}
         {app = "/Applications/Neo4j Desktop 2.app";}
-        {app = "/Applications/Neo4j Desktop.app";}
+        # {app = "/Applications/Neo4j Desktop.app";}
         {spacer = {small = true;};}
         {app = "/System/Applications/System Settings.app";}
       ];
