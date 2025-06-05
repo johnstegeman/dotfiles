@@ -66,6 +66,7 @@
       taps = [];
       brews = [
         "mas"
+        "kanata"
       ];
       caskArgs = {
         no_quarantine = true;

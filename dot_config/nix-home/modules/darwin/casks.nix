@@ -1,7 +1,7 @@
 _:
 
   [
-    "arc" #arc-browser
+    "arc"#arc-browser
     "1password" #_1password-gui
     "asana"
     #"disk-inventory-x" #same

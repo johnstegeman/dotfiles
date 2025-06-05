@@ -3,7 +3,7 @@
 with pkgs;
 
  [
-    kanata
+    # kanata
     disk-inventory-x
     # gimp3
     # multipass
