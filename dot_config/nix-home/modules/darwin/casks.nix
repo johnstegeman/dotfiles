@@ -35,4 +35,5 @@ _:
     # "intellij-idea-ce" #jetbrains.idea-community
     # "pycharm-ce" #jetbrains.pycharm-community
     "orbstack"
+    "sizeup"
   ]
