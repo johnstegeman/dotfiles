@@ -10,7 +10,7 @@ _:
     "grammarly-desktop"
     "microsoft-auto-update"
     "multipass"
-    "neo4j" #neo4j-desktop
+    "neo4j-desktop" #neo4j-desktop
     "notion-calendar"
     #"rancher"
     "shottr"

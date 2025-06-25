@@ -1,4 +1,5 @@
 {
+    "update.mode": "none",
     "security.workspace.trust.banner": "never",
     "security.workspace.trust.untrustedFiles": "open",
     "redhat.telemetry.enabled": false,
