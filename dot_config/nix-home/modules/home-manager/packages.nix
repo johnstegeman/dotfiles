@@ -3,33 +3,33 @@
 with pkgs;
 
 [
-  ripgrep
-  curl
-  jbang
-  dua
-  bottom
-  jq
-  uv
-  kompose
-  asciinema-agg
-  duf
-  lnav
-  fzy
-  httpie
   asciinema
-  wget
+  asciinema-agg
+  bottom
   chezmoi
-  luarocks
-  nmap
-  subversion
   coreutils
+  curl
+  dua
+  duf
+  fzy
+  gh
+  google-cloud-sdk
+  home-manager
+  httpie
+  hub
+  jbang
+  jq
+  kompose
   kubectl
   kubernetes-helm
-  pkgconf
+  lnav
+  luarocks
+  nmap
   nodejs
-  home-manager
-  google-cloud-sdk
+  pkgconf
+  ripgrep
+  subversion
   trash-cli
-  hub
-  gh
+  uv
+  wget
 ]
