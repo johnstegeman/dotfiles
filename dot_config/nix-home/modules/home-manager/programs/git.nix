@@ -3,6 +3,7 @@
 
    programs.git = {
    enable = true;
+   lfs.enable = true;
    userEmail = "john.stegeman@gmail.com";
    signing.format = "ssh";
    delta.enable = true;

@@ -13,6 +13,7 @@ with pkgs;
   duf
   fzy
   gh
+  git-lfs
   google-cloud-sdk
   home-manager
   httpie
