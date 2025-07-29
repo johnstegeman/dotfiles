@@ -66,13 +66,16 @@
 #         #instant-zsh-post
 #      '';
 
+      initContent = (builtins.readFile ../dotfiles/zshrc);
+      envExtra = (builtins.readFile ../dotfiles/zshenv);
+
   };
 
   home.file = {
       ".p10k.zsh".source = ../dotfiles/p10k.zsh;
       ".zsh-aliases".source = ../dotfiles/zsh-aliases;
-      ".zshenv".source = ../dotfiles/zshenv;
-      ".zshrc".source = ../dotfiles/zshrc;
+      #".zshenv".source = ../dotfiles/zshenv;
+      #".zshrc".source = ../dotfiles/zshrc;
       ".zprofile".source = ../dotfiles/zprofile;
    };
 }
