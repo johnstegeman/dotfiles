@@ -4,18 +4,18 @@ with pkgs;
 
  [
     # kanata
-    disk-inventory-x
+    # disk-inventory-x
     # gimp3
     # multipass
-    jetbrains.idea-community
-    jetbrains.pycharm-community
-    keymapp
-    maccy
+    # jetbrains.idea-community # intellij-idea-ce
+    # jetbrains.pycharm-community # pycharm-ce
+    # keymapp
+    # maccy
     # maple-mono.NF
     # minecraft
     #slack
-    temurin-bin
+    # temurin-bin
     #vscode
     # webex
-    zoom-us
+    # zoom-us # zoom
   ]
