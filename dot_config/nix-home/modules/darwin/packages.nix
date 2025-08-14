@@ -13,9 +13,10 @@ with pkgs;
     # maccy
     # maple-mono.NF
     # minecraft
-    #slack
+    # slack
     # temurin-bin
     #vscode
     # webex
     # zoom-us # zoom
+    qmk
   ]

@@ -14,8 +14,8 @@ An opinionated set of dotfiles and other configurations from John "Steggy" Stege
 - ❗️ [jbang](https://www.jbang.dev/) for simple "run java programs from self-contained source file"
 - 🐍 [uv](https://docs.astral.sh/uv/) to manage python versions, dependencies, and virtual environments
 - 👍🏽 installs "better than" versions (with aliases) of common utils such as ls->eza, du->dua, df->duf, cat->bat, etc
-- 🕺🏽 custom zsh prompt using [Starship](https://starship.rs) - with "instant prompt" hack
-- 🖥️ [iTerm2](https://iterm2.com) preferences synched to the repository
+- 🕺🏽 custom zsh prompt Powerlevel10k and zsh4humans
+- 🖥️ Ghostty terminal
 - ⌨️ installs [Colemak DH](https://colemakmods.github.io/mod-dh/) keyboard layout on MacOS
 - 😎 use solarized-osaka dark color scheme for iterm, tmux, vs code, etc.
 - [neovim](https://neovim.io/) configuration with Astronvim (using [external repository](https://github.com/johnstegeman/nvim_astrov4)) plus steggy customizations including setting up the keymap for the Colemak DH layout
@@ -42,7 +42,7 @@ Installation will:
 - clone this repository to chezmoi's local state directory
 - apply the chezmoi local state
 
-After that, you can run installMacOs.sh and setupMacOs.sh from ~/bin to install nix and switch to that configuration
+After that, you can run installNix.sh and setupNix.sh from ~/bin to install nix and switch to that configuration
 
 ## Documentation Topics
 
