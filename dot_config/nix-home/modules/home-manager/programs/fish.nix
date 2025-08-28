@@ -10,7 +10,8 @@
        { name = "sudope"; src = pkgs.fishPlugins.plugin-sudope.src; }
        { name = "fish-bd"; src = pkgs.fishPlugins.fish-bd.src; }
        { name = "fzf-fish"; src = pkgs.fishPlugins.fzf-fish.src; }
-       
+       { name = "gitnow"; src = pkgs.fetchFromGitHub {owner = "joseluisq"; repo = "gitnow"; tag= "2.13.0"; sha256 = "sha256-F0dTu/4XNvmDfxLRJ+dbkmhB3a8aLmbHuI3Yq2XmxoI=";}; }
+
        ];
        
        loginShellInit = "
