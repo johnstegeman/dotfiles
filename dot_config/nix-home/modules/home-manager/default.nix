@@ -4,6 +4,7 @@
   imports = [
     #(import ./programs/starship.nix{inherit pkgs;})
     (import ./programs/zsh.nix{inherit pkgs;})
+    (import ./programs/fish.nix{inherit pkgs;})
     (import ./programs/git.nix{inherit pkgs;})
     (import ./programs/fzf.nix{inherit pkgs;})
     (import ./programs/eza.nix{inherit pkgs;})
@@ -30,5 +31,6 @@
   programs.pazi = {
       enable = true;
       enableZshIntegration = true;
+      enableFishIntegration = true;
   };
 }

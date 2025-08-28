@@ -6,7 +6,7 @@
     "window.autoDetectHighContrast": false,
     "extensions.ignoreRecommendations": true,
     "[javascript]": {
-        "editor.defaultFormatter": "esbenp.prettier-vscode"
+        "editor.defaultFormatter": "vscode.typescript-language-features"
     },
     "editor.fontFamily": "MesloLGM Nerd Font Mono, Menlo, Monaco, 'Courier New', monospace",
     "editor.stickyScroll.enabled": true,

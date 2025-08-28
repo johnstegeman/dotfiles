@@ -83,7 +83,7 @@ function mkvenv {
    else
       uv venv 
    fi
-   echo ". .venv/bin/activate\n" >>.envrc
+   echo "layout python3\n" >>.envrc
    direnv allow
 }
 

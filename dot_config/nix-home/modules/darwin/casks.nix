@@ -6,7 +6,7 @@ _:
     "arc"#arc-browser
     "asana"
     "bartender" #same
-    "disk-inventory-x" #same
+    # "disk-inventory-x" #same
     "figma"
     "font-maple-mono-nf" #maple-mono.NF
     "ghostty" #same

@@ -1,11 +1,12 @@
 { pkgs, ...}: {
    programs.atuin = {
       enable = true;
+      enableFishIntegration = true;
 #      enableZshIntegration = true;
-#      # Leave control-R for fzf to handle
-#      flags = [
-#         "--disable-ctrl-r"
-#      ];
+      # Leave control-R for fzf to handle
+      flags = [
+         "--disable-ctrl-r"
+      ];
       settings = {
          enter_accept = true;
          style = "full";
