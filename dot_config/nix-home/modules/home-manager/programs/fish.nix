@@ -11,6 +11,7 @@
        { name = "fish-bd"; src = pkgs.fishPlugins.fish-bd.src; }
        { name = "fzf-fish"; src = pkgs.fishPlugins.fzf-fish.src; }
        { name = "gitnow"; src = pkgs.fetchFromGitHub {owner = "joseluisq"; repo = "gitnow"; tag= "2.13.0"; sha256 = "sha256-F0dTu/4XNvmDfxLRJ+dbkmhB3a8aLmbHuI3Yq2XmxoI=";}; }
+       { name = "dirvenv.fish"; src = pkgs.fetchFromGitHub {owner = "cuducos"; repo = "dirvenv.fish"; rev="04871a656bf06b790d1468800bc0923e81bc0e8b"; sha256 = "sha256-GGGByBi40i7/akjgWfuEx76T4CzfjHXgBsn1ZdIyUII=";}; }
 
        ];
        
@@ -23,6 +24,7 @@
                          fish_config theme choose solarized_osaka_dark
                          
                          set -x DIRENV_LOG_FORMAT ''
+                         set -xg VIRTUAL_ENV_DISABLE_PROMPT 'yes'
                          
                          abbr -a -- - 'cd -'
                          
@@ -46,6 +48,14 @@
                            alias uvu 'uv lock --upgrade; uv sync'
                            alias plo 'uv pip list --outdated'
                         end
+
+                        functions --erase __direnv_export_eval
+                        functions --erase __direnv_export_eval_2
+                         ";
+
+      shellInitLast = "
+                        functions --erase __direnv_export_eval
+                        functions --erase __direnv_export_eval_2
                          ";
 
       shellAliases= {
