@@ -53,7 +53,7 @@ set -U tide_git_color_staged bryellow
 set -U tide_git_color_stash brgreen
 set -U tide_git_color_untracked brblue
 set -U tide_git_color_upstream brgreen
-set -U tide_git_icon \uf1d3
+set -U tide_git_icon 
 set -U tide_git_truncation_length 24
 set -U tide_git_truncation_strategy \x1d
 set -U tide_go_bg_color normal
@@ -70,7 +70,7 @@ set -U tide_kubectl_bg_color normal
 set -U tide_kubectl_color blue
 set -U tide_kubectl_icon \U000f10fe
 set -U tide_left_prompt_frame_enabled false
-set -U tide_left_prompt_items os\x1epwd\x1egit\x1enewline\x1echaracter
+set -U tide_left_prompt_items os\x1epwd\x1egit\x1epython\x1edirenv\x1enewline\x1echaracter
 set -U tide_left_prompt_prefix 
 set -U tide_left_prompt_separator_diff_color \x20
 set -U tide_left_prompt_separator_same_color \x20
@@ -112,7 +112,7 @@ set -U tide_python_bg_color normal
 set -U tide_python_color cyan
 set -U tide_python_icon \U000f0320
 set -U tide_right_prompt_frame_enabled false
-set -U tide_right_prompt_items status\x1ecmd_duration\x1econtext\x1ejobs\x1edirenv\x1ebun\x1enode\x1epython\x1erustc\x1ejava\x1ephp\x1epulumi\x1eruby\x1ego\x1egcloud\x1ekubectl\x1edistrobox\x1etoolbox\x1eterraform\x1eaws\x1enix_shell\x1ecrystal\x1eelixir\x1ezig
+set -U tide_right_prompt_items status\x1ecmd_duration\x1econtext\x1ejobs\x1ebun\x1enode\x1erustc\x1ejava\x1ephp\x1epulumi\x1eruby\x1ego\x1egcloud\x1ekubectl\x1edistrobox\x1etoolbox\x1eterraform\x1eaws\x1enix_shell\x1ecrystal\x1eelixir\x1ezig
 set -U tide_right_prompt_prefix \x20
 set -U tide_right_prompt_separator_diff_color \x20
 set -U tide_right_prompt_separator_same_color \x20

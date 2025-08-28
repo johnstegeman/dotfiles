@@ -25,6 +25,7 @@
                          if using brew; alias bup 'brew update; brew upgrade --no-quarantine --greedy-auto-updates; brew cleanup; brew doctor'; end
                         
                          if using bat; alias cat bat; end
+                         
                          if test -e ~/.jenv/bin
                            fish_add_path ~/.jenv/bin
                            jenv init - | source
@@ -50,6 +51,7 @@
          cmap = "chezmoi apply -v --no-pager -R=always";
          cmedit = "code $(chezmoi source-path)";
          cmcd = "cd $(chezmoi source-path)";
+         cleanup = "nix-collect-garbage -d; nix-store --optimize";
          ".." = "cd ..";
         #"-" = "cd -";
       };
@@ -79,12 +81,9 @@
          take = ''
             mkdir -p $argv[1] && cd $argv[1]
          '';
+
+         fish_greeting = ''
+         '';
       };
   };
-
-  #home.file = {
-  #     ".p10k.zsh".source = ../dotfiles/p10k.zsh;
-  #    ".zsh-aliases".source = ../dotfiles/zsh-aliases;
-  #    ".zprofile".source = ../dotfiles/zprofile;
-  # };
 }
