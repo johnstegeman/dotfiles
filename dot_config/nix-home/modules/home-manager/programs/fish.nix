@@ -8,23 +8,32 @@
        { name = "autopair"; src = pkgs.fishPlugins.autopair.src; }
        { name = "puffer"; src = pkgs.fishPlugins.puffer.src; }
        { name = "sudope"; src = pkgs.fishPlugins.plugin-sudope.src; }
+       { name = "fish-bd"; src = pkgs.fishPlugins.fish-bd.src; }
+       { name = "fzf-fish"; src = pkgs.fishPlugins.fzf-fish.src; }
        
        ];
        
-       loginShellInit = "source /nix/var/nix/profiles/default/etc/profile.d/nix-daemon.fish
+       loginShellInit = "
+                         source /nix/var/nix/profiles/default/etc/profile.d/nix-daemon.fish
                          fish_add_path /etc/profiles/per-user/jstegeman/bin
                          fish_add_path /run/current-system/sw/bin
                          fish_add_path /opt/homebrew/bin
+                         
                          fish_config theme choose solarized_osaka_dark
+                         
                          set -x DIRENV_LOG_FORMAT ''
+                         
                          abbr -a -- - 'cd -'
+                         
+                         # better-than aliases
+
                          if using duf; alias df duf; end
                          if using dua; alias du 'dua i'; end
                          if using eza; alias ls eza; end
                          if using trash; alias rm trash; end
-                         if using brew; alias bup 'brew update; brew upgrade --no-quarantine --greedy-auto-updates; brew cleanup; brew doctor'; end
-                        
                          if using bat; alias cat bat; end
+
+                         if using brew; alias bup 'brew update; brew upgrade --no-quarantine --greedy-auto-updates; brew cleanup; brew doctor'; end
                          
                          if test -e ~/.jenv/bin
                            fish_add_path ~/.jenv/bin
@@ -46,6 +55,7 @@
          gc = "git commit";
          gl = "git pull";
          gp = "git push"; 
+         lg = "lazygit";
          dup = "sudo darwin-rebuild switch --flake ~/.config/nix-home\"#macosSystem\"";
          hmup = "home-manager switch --flake ~/.config/nix-home\"#linuxSystem\" --extra-experimental-features \"nix-command flakes\"";
          cmap = "chezmoi apply -v --no-pager -R=always";
