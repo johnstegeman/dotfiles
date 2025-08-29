@@ -11,7 +11,7 @@
        { name = "fish-bd"; src = pkgs.fishPlugins.fish-bd.src; }
        { name = "fzf-fish"; src = pkgs.fishPlugins.fzf-fish.src; }
        { name = "gitnow"; src = pkgs.fetchFromGitHub {owner = "joseluisq"; repo = "gitnow"; tag= "2.13.0"; sha256 = "sha256-F0dTu/4XNvmDfxLRJ+dbkmhB3a8aLmbHuI3Yq2XmxoI=";}; }
-       { name = "dirvenv.fish"; src = pkgs.fetchFromGitHub {owner = "cuducos"; repo = "dirvenv.fish"; rev="04871a656bf06b790d1468800bc0923e81bc0e8b"; sha256 = "sha256-GGGByBi40i7/akjgWfuEx76T4CzfjHXgBsn1ZdIyUII=";}; }
+      #{ name = "dirvenv.fish"; src = pkgs.fetchFromGitHub {owner = "cuducos"; repo = "dirvenv.fish"; rev="04871a656bf06b790d1468800bc0923e81bc0e8b"; sha256 = "sha256-GGGByBi40i7/akjgWfuEx76T4CzfjHXgBsn1ZdIyUII=";}; }
 
        ];
        
@@ -53,10 +53,11 @@
                         functions --erase __direnv_export_eval_2
                          ";
 
-      shellInitLast = "
-                        functions --erase __direnv_export_eval
-                        functions --erase __direnv_export_eval_2
-                         ";
+#      shellInitLast = "
+#                        # undo direnv shell integration
+#                        functions --erase __direnv_export_eval
+#                        functions --erase __direnv_export_eval_2
+#                         ";
 
       shellAliases= {
          g = "git";
@@ -84,7 +85,7 @@
          else
             uv venv
          end
-         echo ".venv/bin/activate" >>.envrc
+         echo "layout uv" >>.envrc
          direnv allow
          '';
 

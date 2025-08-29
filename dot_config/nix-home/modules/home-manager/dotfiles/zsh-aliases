@@ -83,7 +83,7 @@ function mkvenv {
    else
       uv venv 
    fi
-   echo "layout python3\n" >>.envrc
+   echo "layout uv" >>.envrc
    direnv allow
 }
 
@@ -134,3 +134,13 @@ function cmcd {
 function cmedit() {
       code $(chezmoi source-path)
    }
+
+#function auto_activate_venv() {
+#    if [ -f ".venv/bin/activate" ]; then
+#        source .venv/bin/activate
+#    fi 
+#}
+
+# Trigger auto_activate_venv function on directory change
+#autoload -U add-zsh-hook
+#add-zsh-hook chpwd auto_activate_venv
