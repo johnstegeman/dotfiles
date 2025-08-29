@@ -23,12 +23,12 @@
                          
                          fish_config theme choose solarized_osaka_dark
                          
-                         set -x DIRENV_LOG_FORMAT ''
+                         set -xg DIRENV_LOG_FORMAT ''
                          set -xg VIRTUAL_ENV_DISABLE_PROMPT 'yes'
                          
                          abbr -a -- - 'cd -'
                          
-                         # better-than aliases
+                         # \"better-than\" aliases
 
                          if using duf; alias df duf; end
                          if using dua; alias du 'dua i'; end
@@ -49,8 +49,6 @@
                            alias plo 'uv pip list --outdated'
                         end
 
-                        functions --erase __direnv_export_eval
-                        functions --erase __direnv_export_eval_2
                          ";
 
 #      shellInitLast = "
@@ -85,7 +83,7 @@
          else
             uv venv
          end
-         echo "layout uv" >>.envrc
+         echo "layout uv" >.envrc
          direnv allow
          '';
 

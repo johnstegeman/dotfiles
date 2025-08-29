@@ -83,7 +83,7 @@ function mkvenv {
    else
       uv venv 
    fi
-   echo "layout uv" >>.envrc
+   echo "layout uv" >.envrc
    direnv allow
 }
 

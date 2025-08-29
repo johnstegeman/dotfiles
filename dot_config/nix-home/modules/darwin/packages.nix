@@ -19,4 +19,5 @@ with pkgs;
     # webex
     # zoom-us # zoom
     qmk
+    fish
   ]

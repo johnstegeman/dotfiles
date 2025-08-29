@@ -11,7 +11,7 @@
   networking.hostName = "jstegeman-mac4";
 
   environment = {
-    shells = [ pkgs.bash pkgs.zsh ];
+    shells = [ pkgs.bash pkgs.zsh pkgs.fish];
     systemPackages = pkgs.callPackage ./packages.nix {};
     systemPath = [ "/opt/homebrew/bin" ];
     pathsToLink = [ "/Applications" ];
