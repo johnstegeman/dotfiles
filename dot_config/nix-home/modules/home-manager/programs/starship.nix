@@ -8,37 +8,34 @@
    settings = {
       palette = "osaka";
       add_newline = true;
-      os.disabled = false;
-      direnv.disabled = false;
-      direnv.symbol = "▼";
-      direnv.format = "[ $symbol]($style)";
-      os.style = "bg:bg01 fg:base06";
-      os.format = "[$symbol ]($style)";
       hostname.ssh_only = false;
-      python.format = "[$symbol$pyenv_prefix($version)(\\($virtualenv\\))]($style)";
-      os.symbols = {
-        Macos = "";
-        Ubuntu = "";
-      };
 
-    python = {
-      symbol = "";
-      style = "bg:bg01 fg:base02";
-      #format = "[ $symbol$pyenv_prefix($version)(\\$virtualenv\\)) ]($style)";
-    };
-      
       format = ''
       $os $directory$git_branch$git_status$python$direnv $status$line_break$character
       '';
-      #character.success_symbol = "[➜](bold darkgreen)";
-      #character.error_symbol = "[➜](bold burgundy)";
+
+      os = {
+        disabled = false;
+        symbols = {
+          Macos = "";
+          Ubuntu = "";
+        };
+        style = "bg:bg01 fg:base06";
+        format = "[$symbol ]($style)";
+      };
+
+      python = {
+        symbol = "";
+        style = "bg:bg01 fg:base02";
+        format = "[$symbol$pyenv_prefix($version)(\\($virtualenv\\))]($style)";
+      };
+
 
       directory = {
-        style = "fg:base06n bg:bg01";
+        style = "fg:base06 bg:bg01";
         format = "[$path]($style)";
         truncation_length = 5;
         truncate_to_repo = false;
-        #truncation_symbol = "…/";
       }; 
 
       git_status = {
@@ -53,8 +50,8 @@
 
       git_branch = {
         symbol = "";
-        style = "bg:bg01 fg:base04";
-        format = "[[ $symbol $branch](fg:base04 bg:bg01)]($style)";
+        style = "bg:bg01 fg:palette2";
+        format = "[[ $symbol $branch](fg:palette2 bg:bg01)]($style)";
       };
 
       palettes.osaka =
