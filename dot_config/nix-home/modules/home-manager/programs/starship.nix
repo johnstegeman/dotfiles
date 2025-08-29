@@ -2,7 +2,7 @@
 
    programs.starship = {
    enable = true;
-   enableZshIntegration = true;
+   # enableZshIntegration = true;
    enableFishIntegration = true;
    
    settings = {

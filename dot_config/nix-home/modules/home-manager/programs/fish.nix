@@ -53,10 +53,8 @@
 
       shellInitLast = "
                         if using starship; enable_transience; end
-#                        # undo direnv shell integration
-#                        functions --erase __direnv_export_eval
-#                        functions --erase __direnv_export_eval_2
-#                         ";
+
+                     ";
 
       shellAliases= {
          g = "git";
