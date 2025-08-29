@@ -43,11 +43,9 @@
 
       git_status = {
         ahead = " ⇡\${count}";
-        diverged = " ⇕⇡\${ahead_count}⇣\${behind_count}";
         behind = " ⇣\${count}";
         untracked = "[ ?\${count}](fg:base06 bg:bg01)";
         modified = "[ !\${count}](fg:palette3 bg:bg01)";
-        #modified = " !\${count}";
         format = "$ahead$behind$untracked$modified$staged$deleted";
         staged = "[ +\${count}](fg:palette2 bg:bg01)";
         deleted = "[ x\${count}](fg:palette2 bg:bg01)";
