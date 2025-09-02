@@ -27,7 +27,7 @@
       python = {
         symbol = "";
         style = "bg:bg01 fg:base02";
-        format = "[$symbol$pyenv_prefix($version)(\\($virtualenv\\))]($style)";
+        format = "[ $symbol$pyenv_prefix($version)(\\($virtualenv\\))]($style)";
       };
 
 
@@ -49,7 +49,7 @@
       }; 
 
       git_branch = {
-        symbol = "";
+        symbol = "";
         style = "bg:bg01 fg:palette2";
         format = "[[ $symbol $branch](fg:palette2 bg:bg01)]($style)";
       };

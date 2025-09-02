@@ -1,0 +1,87 @@
+# MacOS-only stuff
+tap "qmk/qmk" if OS.mac?
+cask "1password-cli"  if OS.mac?
+cask "1password" if OS.mac?
+cask "arc" if OS.mac?
+cask "asana" if OS.mac?
+cask "bartender" if OS.mac?
+cask "figma" if OS.mac?
+cask "font-maple-mono-nf" if OS.mac?
+cask "font-meslo-lg-nerd-font" if OS.mac?
+cask "ghostty" if OS.mac?
+cask "gimp" if OS.mac?
+cask "google-drive" if OS.mac?
+cask "grammarly-desktop" if OS.mac?
+cask "intellij-idea-ce" if OS.mac?
+cask "karabiner-elements"  if OS.mac?
+cask "keymapp"  if OS.mac?
+cask "maccy"  if OS.mac?
+cask "microsoft-auto-update" if OS.mac?
+cask "minecraft"  if OS.mac?
+cask "neo4j-desktop"  if OS.mac?
+cask "notion-calendar" if OS.mac?
+cask "orbstack" if OS.mac?
+cask "pycharm-ce"  if OS.mac?
+cask "raycast"  if OS.mac?
+cask "shottr" if OS.mac?
+cask "sizeup" if OS.mac?
+cask "slack"  if OS.mac?
+cask "temurin@21"  if OS.mac?
+cask "visual-studio-code" if OS.mac?
+cask "webex"  if OS.mac?
+cask "zappy" if OS.mac?
+brew "qmk/qmk/qmk" if OS.mac?
+brew "kanata" if OS.mac?
+brew "mas" if OS.mac?
+mas "Email", id: 1489591003 if OS.mac?
+
+#shell stuff
+
+brew "fish"
+brew "fisher"
+brew "zsh"
+brew "starship"
+brew "tmux"
+
+# global programs and utilities
+
+brew "asciinema"
+brew "atuin"
+brew "awscli"
+brew "bat"
+brew "bottom"
+brew "chezmoi"
+brew "coreutils"
+brew "curl"
+brew "dua-cli"
+brew "duf"
+brew "eza"
+brew "fd"
+brew "fzf"
+brew "git"
+brew "helix"
+brew "htop"
+brew "fzy"
+brew "gh"
+brew "git-lfs"
+# brew "google-cloud-sdk"
+brew "httpie"
+brew "hub"
+brew "jbang"
+brew "jq"
+brew "kompose"
+brew "kubectl"
+brew "kubernetes-helm"
+brew "lazygit"
+brew "less"
+brew "lnav"
+brew "mise"
+brew "nmap"
+brew "pkgconf"
+brew "ripgrep"
+brew "subversion"
+brew "trash-cli"
+brew "uv"
+brew "wget"
+brew "zellij"
+brew "zoxide"

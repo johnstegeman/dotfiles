@@ -1,0 +1,67 @@
+add_newline = true
+format = "$os $directory $git_branch$git_status $python$direnv $status$line_break$character\n"
+palette = "osaka"
+
+[directory]
+format = "[$path]($style)"
+style = "fg:base06 bg:bg01"
+truncate_to_repo = false
+truncation_length = 5
+
+[git_branch]
+format = "[[$symbol $branch](fg:palette2 bg:bg01)]($style)"
+style = "bg:bg01 fg:palette2"
+symbol = ""
+
+[git_status]
+ahead = " ⇡${count}"
+behind = " ⇣${count}"
+deleted = "[x${count}](fg:palette2 bg:bg01)"
+format = "$ahead$behind $untracked $modified $staged $deleted"
+modified = "[!${count}](fg:palette3 bg:bg01)"
+staged = "[+${count}](fg:palette2 bg:bg01)"
+untracked = "[?${count}](fg:base06 bg:bg01)"
+
+[hostname]
+ssh_only = false
+
+[os]
+disabled = false
+format = "[$symbol ]($style)"
+style = "bg:bg01 fg:base06"
+
+[os.symbols]
+Macos = ""
+Ubuntu = ""
+
+[palettes.osaka]
+base0 = "#839395"
+base01 = "#002c38"
+base02 = "#268bd3"
+base03 = "#001419"
+base04 = "#849900"
+base05 = "#db302d"
+base06 = "#6d71c4"
+base07 = "#d23681"
+bg01 = "#1a1b25"
+palette0 = "#15161d"
+palette1 = "#e77d8f"
+palette10 = "#a8cd76"
+palette11 = "#d8b172"
+palette12 = "#82a1f1"
+palette13 = "#b69bf1"
+palette14 = "#90cdfa"
+palette15 = "#c2caf1"
+palette2 = "#a8cd76"
+palette3 = "#d8b172"
+palette4 = "#82a1f1"
+palette5 = "#b69bf1"
+palette6 = "#90cdfa"
+palette7 = "#aab1d3"
+palette8 = "#424866"
+palette9 = "#e77d8f"
+
+[python]
+format = "[$symbol$pyenv_prefix($version)(\\($virtualenv\\))]($style)"
+style = "bg:bg01 fg:base02"
+symbol = ""
