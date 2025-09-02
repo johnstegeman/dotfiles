@@ -26,5 +26,6 @@
     "editor.lineNumbers": "relative",
     "git.openRepositoryInParentFolders": "always",
     "editor.minimap.enabled": false,
-    "workbench.colorTheme": "Solarized Osaka"
+    "workbench.colorTheme": "Solarized Osaka",
+    "terminal.integrated.shellIntegration.enabled": false
 }

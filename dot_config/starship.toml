@@ -1,5 +1,5 @@
 add_newline = true
-format = "$os $directory $git_branch$git_status $python$direnv $status$line_break$character\n"
+format = "$os $directory$git_branch$git_status$python$direnv$status$line_break$character\n"
 palette = "osaka"
 
 [directory]
@@ -9,18 +9,18 @@ truncate_to_repo = false
 truncation_length = 5
 
 [git_branch]
-format = "[[$symbol $branch](fg:palette2 bg:bg01)]($style)"
+format = "[[ $symbol $branch](fg:palette2 bg:bg01)]($style)"
 style = "bg:bg01 fg:palette2"
 symbol = ""
 
 [git_status]
 ahead = " ⇡${count}"
 behind = " ⇣${count}"
-deleted = "[x${count}](fg:palette2 bg:bg01)"
-format = "$ahead$behind $untracked $modified $staged $deleted"
-modified = "[!${count}](fg:palette3 bg:bg01)"
-staged = "[+${count}](fg:palette2 bg:bg01)"
-untracked = "[?${count}](fg:base06 bg:bg01)"
+deleted = "[ x${count}](fg:palette2 bg:bg01)"
+format = " $ahead$behind$untracked$modified$staged$deleted"
+modified = "[ !${count}](fg:palette3 bg:bg01)"
+staged = "[ +${count}](fg:palette2 bg:bg01)"
+untracked = "[ ?${count}](fg:base06 bg:bg01)"
 
 [hostname]
 ssh_only = false
@@ -62,6 +62,6 @@ palette8 = "#424866"
 palette9 = "#e77d8f"
 
 [python]
-format = "[$symbol$pyenv_prefix($version)(\\($virtualenv\\))]($style)"
+format = "[ $symbol$pyenv_prefix($version)(\\($virtualenv\\))]($style)"
 style = "bg:bg01 fg:base02"
 symbol = ""
