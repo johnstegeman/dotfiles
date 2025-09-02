@@ -27,7 +27,7 @@ zstyle ':z4h:autosuggestions' forward-char accept
 zstyle ':z4h:fzf-complete' recurse-dirs 'no'
 
 # Enable direnv to automatically source .envrc files.
-zstyle ':z4h:direnv'         enable 'true'
+zstyle ':z4h:direnv'         enable 'false'
 # Show "loading" and "unloading" notifications from direnv.
 zstyle ':z4h:direnv:success' notify 'no'
 
@@ -118,7 +118,8 @@ POSTEDIT=$'\n\n\e[2A'
 # initialize zsh integrations
 
 command -v atuin     &> /dev/null    && eval "$(atuin init zsh --disable-ctrl-r)"
-command -v pazi      &> /dev/null    && eval "$(pazi init zsh)"
+command -v zoxide    &> /dev/null    && eval "$(zoxide init zsh)"; alias cd=z
+command -v mise      &> /dev/null    && eval "$(mise activate zsh)"
 
 # Define functions and completions.
 function md() { [[ $# == 1 ]] && mkdir -p -- "$1" && cd -- "$1" }
