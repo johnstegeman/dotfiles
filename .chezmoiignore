@@ -5,8 +5,6 @@ Library
 Library/*
 Library/**/*
 .config/k9s/config.yml
-Brewfile
-config/Brewfile
 .iterm2_prefs
 .iterm2_prefs/*
 .iterm2_prefs/**/*
@@ -36,7 +34,6 @@ docs/*
 docs/**/*
 settings.json
 .k9s/config.yml
-config/Brewfile
 config/dot_flox
 config/dot_flox/*
 config/dot_flox/**/*

@@ -11,6 +11,7 @@ end
 status is-login; and begin
 
     fish_add_path /opt/homebrew/bin # need different one for linux
+    fish_add_path /opt/homebrew/opt/trash-cli/bin
 
     fish_config theme choose solarized_osaka_dark
 
@@ -34,6 +35,10 @@ status is-interactive; and begin
 
     if using fzf
         fzf --fish | source
+    end
+
+    if using zoxide
+        zoxide init fish | source
     end
 
     if test "$TERM" != dumb
