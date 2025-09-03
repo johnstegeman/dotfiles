@@ -129,7 +129,7 @@ compdef _directories md
 [[ -z $z4h_win_home ]] || hash -d w=$z4h_win_home
 
 # Define aliases.
-alias tree='tree -a -I .git'
+# alias tree='tree -a -I .git'
 z4h source -- $ZDOTDIR/.zsh-aliases
 
 source_directory ~/.zsh_custom/autoload
