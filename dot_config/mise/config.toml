@@ -1,3 +1,6 @@
 [settings]
 python.uv_venv_auto = true
 experimental = true
+
+[tools]
+java = "temurin-24"
