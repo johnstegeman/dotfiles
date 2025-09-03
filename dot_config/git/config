@@ -1,5 +1,5 @@
 [core]
-	pager = "/nix/store/hib2p8by1z2z1kmqp8x20daznlzwq8w8-delta-0.18.2/bin/delta"
+	pager = delta
 
 [delta]
 	hyperlinks = true

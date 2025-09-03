@@ -46,4 +46,8 @@ status is-interactive; and begin
         atuin init fish --disable-ctrl-r | source
     end
 
+    if using hx
+        set -gx EDITOR hx
+    end
+
 end
