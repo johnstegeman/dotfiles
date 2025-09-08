@@ -17,11 +17,6 @@ status is-interactive; and begin
 
     abbr -a -- - 'cd -'
 
-    if test -e ~/.jenv/bin
-        fish_add_path ~/.jenv/bin
-        jenv init - | source
-    end
-
     if using uv
         uv generate-shell-completion fish | source
     end
