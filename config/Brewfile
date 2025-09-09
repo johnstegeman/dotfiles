@@ -29,6 +29,7 @@ cask "slack"  if OS.mac?
 #cask "temurin@21"  if OS.mac?
 cask "visual-studio-code" if OS.mac?
 cask "webex"  if OS.mac?
+cask "wezterm"  if OS.mac?
 cask "zappy" if OS.mac?
 brew "qmk/qmk/qmk" if OS.mac?
 brew "kanata" if OS.mac?
