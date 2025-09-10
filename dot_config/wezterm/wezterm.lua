@@ -19,6 +19,7 @@ config.font = wezterm.font 'Maple Mono NF'
 config.quit_when_all_windows_are_closed = false
 config.enable_scroll_bar = true
 config.window_close_confirmation = 'NeverPrompt'
+--config.quick_select_remove_styling = true
 
 -- Finally, return the configuration to wezterm:
 return config

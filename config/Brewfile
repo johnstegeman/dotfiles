@@ -8,7 +8,7 @@ cask "bartender" if OS.mac?
 cask "figma" if OS.mac?
 cask "font-maple-mono-nf" if OS.mac?
 cask "font-meslo-lg-nerd-font" if OS.mac?
-cask "ghostty" if OS.mac?
+# cask "ghostty" if OS.mac?
 cask "gimp" if OS.mac?
 cask "google-drive" if OS.mac?
 cask "grammarly-desktop" if OS.mac?
