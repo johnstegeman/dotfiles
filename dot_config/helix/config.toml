@@ -1,0 +1,103 @@
+theme = "Solarized_Osaka"
+
+[editor]
+true-color = true
+
+[editor.cursor-shape]
+insert = "bar"
+normal = "block"
+select = "underline"
+
+[editor.indent-guides]
+character = "┊"
+render = true
+skip-levels = 1
+
+[editor.statusline]
+left = ["mode", "file-name", "spinner", "read-only-indicator", "file-modification-indicator"]
+right = [
+    "diagnostics",
+    "selections",
+    "register",
+    "file-type",
+    "file-line-ending",
+    "position",
+]
+
+[editor.statusline.mode]
+insert = "INS"
+normal = "NOR"
+select = "SEL"
+
+[keys.normal]
+A = "join_selections"
+"A-." = "repeat_last_motion"
+A-A = "join_selections_space"
+A-E = "remove_selections"
+B = "move_prev_long_word_start"
+C-a = "page_cursor_half_down"
+C-o = "page_cursor_half_up"
+E = "keep_selections"
+F = "find_prev_char"
+G = "goto_line"
+I = "insert_at_line_start"
+J = "search_prev"
+K = "move_next_long_word_end"
+N = "insert_at_line_end"
+O = "open_above"
+Q = "move_next_long_word_end"
+S = "till_prev_char"
+W = "move_next_long_word_start"
+a = "move_visual_line_down"
+b = "move_prev_word_start"
+e = "move_char_right"
+f = "find_next_char"
+h = "move_char_left"
+i = "insert_mode"
+j = "search_next"
+k = "move_next_word_end"
+n = "append_mode"
+o = "move_visual_line_up"
+q = "move_next_word_end"
+s = "find_till_char"
+u = "open_below"
+w = "move_next_word_start"
+
+[keys.normal.Z]
+a = "scroll_down"
+o = "scroll_up"
+
+[keys.normal.g]
+e = "goto_line_end"
+h = "goto_line_start"
+
+[keys.normal.space.w]
+a = "jump_view_down"
+e = "jump_view_right"
+h = "jump_view_left"
+o = "jump_view_up"
+
+[keys.normal.z]
+a = "scroll_down"
+o = "scroll_up"
+
+[keys.select]
+A = "join_selections"
+A-A = "join_selections_space"
+A-E = "remove_selections"
+C-O = "page_cursor_half_up"
+C-a = "page_cursor_half_down"
+E = "keep_selections"
+I = "insert_at_line_start"
+J = "search_prev"
+K = "move_next_long_word_end"
+U = "open_above"
+a = "move_line_down"
+e = "move_char_right"
+h = "move_char_left"
+i = "insert_mode"
+j = "search_next"
+k = "move_next_word_end"
+o = "move_line_up"
+u = "open_below"
+

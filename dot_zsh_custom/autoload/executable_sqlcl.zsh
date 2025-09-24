@@ -1,1 +1,0 @@
-# export PATH=/opt/homebrew/Caskroom/sqlcl/23.1.0.089.0929/sqlcl/bin:$PATH

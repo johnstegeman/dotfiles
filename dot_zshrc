@@ -1,190 +1,150 @@
-# Enable Powerlevel10k instant prompt. Should stay close to the top of ~/.zshrc.
-# Initialization code that may require console input (password prompts, [y/n]
-# confirmations, etc.) must go above this block; everything else may go below.
+# Personal Zsh configuration file. It is strongly recommended to keep all
+# shell customization and configuration (including exported environment
+# variables such as PATH) in this file or in files sourced from it.
+#
+# Documentation: https://github.com/romkatv/zsh4humans/blob/v5/README.md.
 
-if [[ -r "${XDG_CACHE_HOME:-$HOME/.cache}/p10k-instant-prompt-${(%):-%n}.zsh" ]]; then
-  source "${XDG_CACHE_HOME:-$HOME/.cache}/p10k-instant-prompt-${(%):-%n}.zsh"
-fi
+# Periodic auto-update on Zsh startup: 'ask' or 'no'.
+# You can manually run `z4h update` to update everything.
+zstyle ':z4h:' auto-update      'no'
+# Ask whether to auto-update this often; has no effect if auto-update is 'no'.
+zstyle ':z4h:' auto-update-days '28'
 
-### Added by Zinit's installer
+# Keyboard type: 'mac' or 'pc'.
+zstyle ':z4h:bindkey' keyboard  'mac'
 
-ZINIT_HOME="${ZINIT_HOME:-${ZPLG_HOME:-${ZDOTDIR:-${HOME}}/.zinit}}"
-ZINIT_BIN_DIR_NAME="${${ZINIT_BIN_DIR_NAME:-${ZPLG_BIN_DIR_NAME}}:-bin}"
+# Don't start tmux.
+zstyle ':z4h:' start-tmux integrated
 
-if [[ ! -f "${ZINIT_HOME}/${ZINIT_BIN_DIR_NAME}/zinit.zsh" ]]; then
-    print -P "%F{33}▓▒░ %F{220}Installing DHARMA Initiative Plugin Manager (zdharma/zinit)…%f"
-    command mkdir -p "${ZINIT_HOME}" && command chmod g-rwX "${ZINIT_HOME}"
-    command git clone https://github.com/zdharma-continuum/zinit "${ZINIT_HOME}/${ZINIT_BIN_DIR_NAME}" && \
-        print -P "%F{33}▓▒░ %F{34}Installation successful.%f" || \
-        print -P "%F{160}▓▒░ The clone has failed.%f"
-fi
-source "${ZINIT_HOME}/${ZINIT_BIN_DIR_NAME}/zinit.zsh"
-autoload -Uz _zinit
-(( ${+_comps} )) && _comps[zinit]=_zinit
+# Mark up shell's output with semantic information.
+zstyle ':z4h:' term-shell-integration 'yes'
 
-### End of Zinit installer's chunk
+# Right-arrow key accepts one character ('partial-accept') from
+# command autosuggestions or the whole thing ('accept')?
+zstyle ':z4h:autosuggestions' forward-char accept
 
-# Some configuration variables 
+# Recursively traverse directories when TAB-completing files.
+zstyle ':z4h:fzf-complete' recurse-dirs 'no'
 
-export TERM=xterm-256color
-ENABLE_CORRECTION="false"
-COMPLETION_WAITING_DOTS="true"
-export DIRCOLORS_SOLARIZED_ZSH_THEME="256dark"
-export FZFZ_RECENT_DIRS_TOOL=fasd
+# Enable direnv to automatically source .envrc files.
+zstyle ':z4h:direnv'         enable 'false'
+# Show "loading" and "unloading" notifications from direnv.
+zstyle ':z4h:direnv:success' notify 'no'
 
-export PATH=$PATH:~/bin
+# Enable ('yes') or disable ('no') automatic teleportation of z4h over
+# SSH when connecting to these hosts.
+zstyle ':z4h:ssh:example-hostname1'   enable 'yes'
+zstyle ':z4h:ssh:*.example-hostname2' enable 'no'
+# The default value if none of the overrides above match the hostname.
+zstyle ':z4h:ssh:*'                   enable 'no'
 
-# fix dircolors for Selenized
-export LS_COLORS="$LS_COLORS:ow=1;7;34:st=30;44:su=30;41"
+# Send these files over to the remote host when connecting over SSH to the
+# enabled hosts.
+zstyle ':z4h:ssh:*' send-extra-files '~/.nanorc' '~/.env.zsh'
 
-# Shamelessly stolen from https://github.com/z-shell/playground/blob/main/profiles/NICHOLAS85/.zshrc
-zt()  { zinit depth'3' lucid ${1/#[0-9][a-c]/wait"$1"} "${@:2}"; }
+# Move prompt to the bottom when zsh starts and on Ctrl+L.
+zstyle ':z4h:' prompt-at-bottom 'yes'
 
-autoload -U zmv
-bindkey '^X' push-input # ^X will clear the command line, and after the next command, return what was cleared back to the CL
+# Recursively traverse directories when TAB-completing files.
+zstyle ':z4h:fzf-complete' recurse-dirs yes
+zstyle ':z4h:fzf-complete' fzf-bindings tab:repeat
 
-zt light-mode blockf for ~/.zsh_custom/config-file
 
-# "doifcmd" is a function that will execute the second arg if the command in the first arg exists
-# it is defined in the .zsh_custom/config-file plugin
+export HISTTIMEFORMAT="[%F %T]"
+export HISTFILESIZE=1000000000
+export HISTSIZE=1000000000
+export SAVEHIST=1000000000
 
-doifcmd brew "
-  eval $(/opt/homebrew/bin/brew shellenv)
-  FPATH=\"$(brew --prefix)/share/zsh/site-functions:${FPATH}\"
-  autoload -Uz compinit
-  compinit"
+# Clone additional Git repositories from GitHub.
+#
+# This doesn't do anything apart from cloning the repository and keeping it
+# up-to-date. Cloned files can be used after `z4h init`. This is just an
+# example. If you don't plan to use Oh My Zsh, delete this line.
+# z4h install ohmyzsh/ohmyzsh || return
 
-doifcmd flox "$(flox activate -m run)"
+# z4h install johnstegeman/zsh-steggy || return
+# z4h install johnstegeman/zsh-chezmoi || return
+z4h install fdellwing/zsh-bat || return
+z4h install johnstegeman/dircolors-solarized-zsh || return
+z4h install hcgraf/zsh-sudo || return
+z4h install hlissner/zsh-autopair || return
+z4h install MichaelAquilina/zsh-you-should-use || return
+z4h install momo-lab/zsh-replace-multiple-dots || return
 
-doifcmd nvim "export EDITOR=nvim"
+# Install or update core components (fzf, zsh-autosuggestions, etc.) and
+# initialize Zsh. After this point console I/O is unavailable until Zsh
+# is fully initialized. Everything that requires user interaction or can
+# perform network I/O must be done above. Everything else is best done below.
+z4h init || return
 
-# Powerlevel10k theme
-zt light-mode for \
-depth:'1' atload:"[[ ! -f ~/.p10k.zsh ]] || source ~/.p10k.zsh" nocd \
-  romkatv/powerlevel10k
+# Extend PATH.
+path=(~/bin $path)
 
-zt light-mode for zdharma-continuum/zinit-annex-meta-plugins @annexes
+# Export environment variables.
+export GPG_TTY=$TTY
 
-# Source all custom scripts
+# Source additional local files if they exist.
+z4h source ~/.env.zsh
+
+# Use additional Git repositories pulled in with `z4h install`.
+#
+# This is just an example that you should delete. It does nothing useful.
+#z4h source ohmyzsh/ohmyzsh/lib/diagnostics.zsh  # source an individual file
+#z4h load   ohmyzsh/ohmyzsh/plugins/emoji-clock  # load a plugin
+
+# z4h load johnstegeman/zsh-steggy
+# z4h load johnstegeman/zsh-chezmoi
+z4h load fdellwing/zsh-bat
+z4h load johnstegeman/dircolors-solarized-zsh
+z4h load hlissner/zsh-autopair
+z4h load MichaelAquilina/zsh-you-should-use
+z4h source momo-lab/zsh-replace-multiple-dots/replace-multiple-dots.plugin.zsh
+z4h source hcgraf/zsh-sudo/sudo.plugin.zsh
+
+# Define key bindings.
+z4h bindkey undo Ctrl+/   Shift+Tab  # undo the last command line change
+z4h bindkey redo Option+/            # redo the last undone command line change
+
+z4h bindkey z4h-cd-back    Shift+Left   # cd into the previous directory
+z4h bindkey z4h-cd-forward Shift+Right  # cd into the next directory
+z4h bindkey z4h-cd-up      Shift+Up     # cd into the parent directory
+z4h bindkey z4h-cd-down    Shift+Down   # cd into a child directory
+
+# Autoload functions.
+autoload -Uz zmv
+
+POSTEDIT=$'\n\n\e[2A'
+
+# initialize zsh integrations
+
+command -v atuin     &> /dev/null    && eval "$(atuin init zsh --disable-ctrl-r)"
+command -v zoxide    &> /dev/null    && eval "$(zoxide init zsh)"; alias cd=z
+command -v mise      &> /dev/null    && eval "$(mise activate zsh)"
+
+# Define functions and completions.
+function md() { [[ $# == 1 ]] && mkdir -p -- "$1" && cd -- "$1" }
+compdef _directories md
+
+# Define named directories: ~w <=> Windows home directory on WSL.
+[[ -z $z4h_win_home ]] || hash -d w=$z4h_win_home
+
+# Define aliases.
+# alias tree='tree -a -I .git'
+z4h source -- $ZDOTDIR/.zsh-aliases
+
 source_directory ~/.zsh_custom/autoload
 
-# Set some variables to skip certain programs when installing zinit "console-tools" and "sharkdp" annexes
-consoleskip='dircolors-material ogham/exa jonas/tig sharkdp'
-sharkskip='sharkdp/hexyl sharkdp/vivid'
+command -v hx     &> /dev/null    && export EDITOR=hx
 
-zi light-mode for \
-OMZL::git.zsh \
-OMZP::git \
-OMZP::gcloud \
-romkatv/zsh-defer \
-ael-code/zsh-colored-man-pages \
-skip:$consoleskip @console-tools \
-skip:$sharkskip @sharkdp
+# Set shell options: http://zsh.sourceforge.net/Doc/Release/Options.html.
+setopt glob_dots     # no special treatment for file names with a leading dot
+setopt no_auto_menu  # require an extra TAB press to open the completion menu
+setopt extended_history 
+setopt interactive_comments
+setopt prompt_subst 
+setopt no_beep 
+setopt append_history
 
-unset consoleskip
-unset sharkskip
+# Disable homebrew-not-found
 
-#####################################################################################################
-# The following use turbo mode to load after the shell prompt is ready
-# They are grouped using a, b, c to enforce a load order
-
-zt 0a light-mode for \
-atinit:'ZINIT[COMPINIT_OPTS]=-C; zicompinit; zicdreplay' atload:'FAST_HIGHLIGHT[chroma-man]=; fast-theme -q default' \
-  zdharma-continuum/fast-syntax-highlighting \
-compile'{src/*.zsh,src/strategies/*}' atinit"ZSH_AUTOSUGGEST_USE_ASYNC=1" atload"_zsh_autosuggest_start" \
-  zsh-users/zsh-autosuggestions \
-OMZP::history \
-OMZL::history.zsh \
-zsh-users/zsh-completions \
-hcgraf/zsh-sudo \
-zdharma-continuum/zsh-navigation-tools \
-zdharma-continuum/zui \
-zdharma-continuum/zbrowse
-
-zt 0b light-mode for \
-pick:'autopair.zsh' nocompletions atload:'bindkey "^H" backward-kill-word; ZSH_AUTOSUGGEST_CLEAR_WIDGETS+=(autopair-insert)' \
-  hlissner/zsh-autopair \
-autoload:'#manydots-magic' \
-  knu/zsh-manydots-magic \
-Aloxaf/fzf-tab \
-MichaelAquilina/zsh-you-should-use \
-has:'eza' atload:'export eza_params=('--time-style=long-iso' '--group-directories-first' '-F')' johnstegeman/zsh-eza \
-has:'bat' fdellwing/zsh-bat \
-has:'aws' OMZP::aws \
-has:'chezmoi' johnstegeman/zsh-chezmoi \
-pinelibg/dircolors-solarized-zsh \
-has:'multipass' OMZP::multipass \
-zdharma-continuum/zinit-console \
-atload:'bindkey "^[[A" history-substring-search-up; bindkey "^[[B" history-substring-search-down' \
-  zsh-users/zsh-history-substring-search
-
-zt 0c light-mode binary for \
-sbin:'fd*/fd;fd*/fd -> fdfind' from:"gh-r" \
-  @sharkdp/fd \
-sbin:'**/duf(.exe|) -> duf' atload:'alias df=$(which duf)' from:"gh-r"\
-  muesli/duf \
-from"gh-r"  sbin"**/lnav" atload:'alias -s "log"="lnav"'\
-  tstack/lnav \
-has:'asciinema' mv:'agg* agg' sbin:'**/agg(.exe|) -> agg' from:"gh-r" \
-  @asciinema/agg \
-from"gh-r"  sbin"**/btm" ClementTsang/bottom \
-from"gh-r"  sbin"**/dua" atload:'alias du="dua i"' Byron/dua-cli \
-sbin"**/fasd" from"gh-r" atload:'eval "$(fasd --init auto)"' whjvenyl/fasd \
-from"gh-r"  mv"jq* -> jq" sbin"**/jq" jqlang/jq \
-from"gh-r"  mv"kompose* -> kompose" sbin"**/kompose" kubernetes/kompose \
-from"gh-r"  sbin"**/delta" dandavison/delta \
-from"gh-r"  sbin"**/lazygit" jesseduffield/lazygit \
-from"gh-r"  sbin"**/uv" sbin"**/uvx"  @astral-sh/uv \
-from"gh-r"  sbin"**/zellij" zellij-org/zellij \
-from"gh-r"  sbin"**/fish" fish-shell/fish-shell \
-from"gh-r"  sbin"**/jbang" jbangdev/jbang \
-from"gh-r" as"program" mv"direnv* -> direnv" \
-  atclone'./direnv hook zsh > zhook.zsh' atpull'%atclone' \
-  pick"direnv" src="zhook.zsh" @direnv/direnv
-
-# Note: The "CLeanup" plugin in the following section is a hack simply to run
-# the code in the atinit tag when the "plugin" is installed. I put the code
-# into a "plugin" so that it runs asnchronously when all of the other
-# plugin stages are done (the "0c" ensures it's in the third and final set)
-
-zt 0c light-mode null for \
-sbin:'git-open' paulirish/git-open \
-id-as:'Cleanup' nocd atinit:'unset -f zt; _zsh_autosuggest_bind_widgets' \
-  zdharma-continuum/null \
-pack:'bgn-binary+keys' \
-  fzf \
-as'null' \
-  atclone'cp -vf fzy.1 $ZPFX/man/man1' \
-  atpull'%atclone' \
-  id-as'jhawthorn/fzy' \
-  lucid \
-  make \
-  nocompile \
-  sbin'fzy;contrib/fzy-*' \
-  jhawthorn/fzy 
-
-zinit light-mode for SleepyBag/zle-fzf
-zinit light-mode for johnstegeman/fzf-z
-
-zi light-mode trackbinds bindmap'" "->"^@"; "^@"->" "' for MenkeTechnologies/zsh-expand
-
-# end of turbo loading section
-#####################################################################################################
-
-## FZF options
-export FZF_DEFAULT_COMMAND='fd --type file --follow --hidden --exclude .git --color=always'
-export FZF_CTRL_T_COMMAND="$FZF_DEFAULT_COMMAND"
-export FZF_CTRL_R_OPTS="
-  --preview 'echo {}' --preview-window hidden:wrap
-  --bind 'ctrl-/:toggle-preview'
-  --bind 'ctrl-y:execute-silent(echo -n {2..} | pbcopy)+abort'
-  --color header:italic
-  --header 'Press CTRL-Y to copy command into clipboard'"
-
-_fzf_compgen_path() {
-  fd --hidden --follow --exclude ".git" . "$1"
-}
-
-_fzf_compgen_dir() {
-  fd --type d --hidden --follow --exclude ".git" . "$1"
-}
+[[ ! -v functions[command_not_found_handler] ]] || unfunction command_not_found_handler

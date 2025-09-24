@@ -1,0 +1,30 @@
+[core]
+	pager = delta
+
+[delta]
+	hyperlinks = true
+	light = false
+	navigate = true
+	side-by-side = true
+	syntax-theme = "Solarized (dark)"
+
+[filter "lfs"]
+	clean = "git-lfs clean -- %f"
+	process = "git-lfs filter-process"
+	required = true
+	smudge = "git-lfs smudge -- %f"
+
+[gpg]
+	format = "ssh"
+
+[gpg "ssh"]
+	program = "/nix/store/49psgc9m367a2zbg19xl0iyx4bplzaxx-openssh-10.0p2/bin/ssh-keygen"
+
+[interactive]
+	diffFilter = "/nix/store/hib2p8by1z2z1kmqp8x20daznlzwq8w8-delta-0.18.2/bin/delta --color-only"
+
+[merge]
+	conflictstyle = "diff3"
+
+[user]
+	email = "john.stegeman@gmail.com"

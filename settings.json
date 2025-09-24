@@ -1,11 +1,12 @@
 {
+    "update.mode": "none",
     "security.workspace.trust.banner": "never",
     "security.workspace.trust.untrustedFiles": "open",
     "redhat.telemetry.enabled": false,
     "window.autoDetectHighContrast": false,
     "extensions.ignoreRecommendations": true,
     "[javascript]": {
-        "editor.defaultFormatter": "esbenp.prettier-vscode"
+        "editor.defaultFormatter": "vscode.typescript-language-features"
     },
     "editor.fontFamily": "MesloLGM Nerd Font Mono, Menlo, Monaco, 'Courier New', monospace",
     "editor.stickyScroll.enabled": true,
@@ -17,7 +18,6 @@
     "[json]": {
         "editor.defaultFormatter": "esbenp.prettier-vscode"
     },
-    "workbench.colorTheme": "Solarized Osaka",
     "workbench.iconTheme": "material-icon-theme",
     "editor.tabSize": 3,
     "prettier.tabWidth": 3,
@@ -25,5 +25,7 @@
     "python.defaultInterpreterPath": "/Users/jstegeman/.virtualenvs/genai",
     "editor.lineNumbers": "relative",
     "git.openRepositoryInParentFolders": "always",
-    "editor.minimap.enabled": false
+    "editor.minimap.enabled": false,
+    "workbench.colorTheme": "Solarized Osaka",
+    "terminal.integrated.shellIntegration.enabled": false
 }

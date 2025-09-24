@@ -1,0 +1,7 @@
+[settings]
+python.uv_venv_auto = true
+experimental = true
+idiomatic_version_file_enable_tools = ["swift"]
+
+[tools]
+java = "temurin-24"
