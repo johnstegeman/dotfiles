@@ -1,5 +1,5 @@
 add_newline = true
-format = "$os $directory$git_branch$git_status$python$direnv$status$line_break$character\n"
+format = "$os $directory${custom.git_branch}${custom.git_status}${custom.jj}$python$direnv$status$line_break$character\n"
 palette = "osaka"
 
 [directory]
@@ -21,6 +21,21 @@ format = " $ahead$behind$untracked$modified$staged$deleted"
 modified = "[ !${count}](fg:palette3 bg:bg01)"
 staged = "[ +${count}](fg:palette2 bg:bg01)"
 untracked = "[ ?${count}](fg:base06 bg:bg01)"
+
+[custom.git_status]
+when = "! jj --ignore-working-copy root"
+command = "starship module git_status"
+description = "Only show git_status if we're not in a jj repo"
+
+[custom.git_commit]
+when = "! jj --ignore-working-copy root"
+command = "starship module git_commit"
+description = "Only show git_commit if we're not in a jj repo"
+
+[custom.git_branch]
+when = "! jj --ignore-working-copy root"
+command = "starship module git_branch"
+description = "Only show git_branch if we're not in a jj repo"
 
 [hostname]
 ssh_only = false
@@ -65,3 +80,29 @@ palette9 = "#e77d8f"
 format = "[ $symbol$pyenv_prefix($version)(\\($virtualenv\\))]($style)"
 style = "bg:bg01 fg:base02"
 symbol = ""
+
+# custom module for jj status
+[custom.jj]
+description = "The current jj status"
+when = "jj --ignore-working-copy root"
+symbol = " "
+command = '''
+jj log --revisions @ --no-graph --ignore-working-copy --color always --limit 1 --template '
+  separate(" ",
+    change_id.shortest(4),
+    bookmarks,
+    "|",
+    concat(
+      if(conflict, "💥"),
+      if(divergent, "🚧"),
+      if(hidden, "👻"),
+      if(immutable, "🔒"),
+    ),
+    raw_escape_sequence("\x1b[1;32m") ++ if(empty, "(empty)"),
+    raw_escape_sequence("\x1b[1;32m") ++ coalesce(
+      truncate_end(29, description.first_line(), "…"),
+      "(no description set)",
+    ) ++ raw_escape_sequence("\x1b[0m"),
+  )
+'
+'''
