@@ -18,7 +18,7 @@ An opinionated set of dotfiles and other configurations from John "Steggy" Stege
 - 🖥️ Wezterm terminal
 - ⌨️ Gallium keyboard layout (using kanata)
 - 😎 use solarized-osaka dark color scheme for iterm, tmux, vs code, etc.
-- [neovim](https://neovim.io/) configuration with Astronvim (using [external repository](https://github.com/johnstegeman/nvim_astrov4)) plus steggy customizations including setting up the keymap for the Colemak DH layout
+- Helix editor configuration (color scheme and gallium keymaps)
 - 📑 [lnav](https://lnav.org/) for viewing logfiles
 - installs [multipass](https://multipass.run) on MacOS for creating Ubuntu VMs
 - enables [zmv](https://blog.smittytone.net/2021/04/03/how-to-use-zmv-z-shell-super-smart-file-renamer/) (a powerful command-line remname utility)
