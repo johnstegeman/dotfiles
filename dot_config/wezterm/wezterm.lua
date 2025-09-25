@@ -21,5 +21,18 @@ config.enable_scroll_bar = true
 config.window_close_confirmation = 'NeverPrompt'
 --config.quick_select_remove_styling = true
 
+config.keys = {
+    {
+   key = 'LeftArrow',
+   mods = 'CMD',
+   action = wezterm.action { SendString = "\x1bOH" },
+ },
+ {
+   key = 'RightArrow',
+   mods = 'CMD',
+   action = wezterm.action { SendString = "\x1bOF" },
+ },
+}
+
 -- Finally, return the configuration to wezterm:
 return config

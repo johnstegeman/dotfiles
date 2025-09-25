@@ -27,5 +27,14 @@
     "git.openRepositoryInParentFolders": "always",
     "editor.minimap.enabled": false,
     "workbench.colorTheme": "Solarized Osaka",
-    "terminal.integrated.shellIntegration.enabled": false
+    "terminal.integrated.shellIntegration.enabled": false,
+    "git.enabled": false,
+    "git.autorefresh": false,
+    "git.blame.statusBarItem.enabled": false,
+    "git.decorations.enabled": false,
+    "git.showActionButton": {
+        "commit": false,
+        "sync": false,
+        "publish": false
+    }
 }

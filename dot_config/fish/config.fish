@@ -1,7 +1,3 @@
-# Only execute this file once per shell.
-set -q __fish_home_manager_config_sourced; and exit
-set -g __fish_home_manager_config_sourced 1
-
 status is-login; and begin
 
 end
@@ -46,3 +42,6 @@ status is-interactive; and begin
     end
 
 end
+
+set -Ux CARAPACE_BRIDGES 'zsh,fish,bash,inshellisense' # optional
+carapace _carapace | source

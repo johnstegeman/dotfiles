@@ -1,5 +1,5 @@
 add_newline = true
-format = "$os $directory${custom.git_branch}${custom.git_status}${custom.jj}$python$direnv$status$line_break$character\n"
+format = "$os $directory${custom.git_branch}${custom.git_status}${custom.jj}$python$direnv$status$line_break$character"
 palette = "osaka"
 
 [directory]
