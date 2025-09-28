@@ -1,5 +1,5 @@
 add_newline = true
-format = "$os $directory$python$direnv$status$fill${custom.git_branch}${git_status}${custom.jj}$line_break$character"
+format = "$os $directory$python$direnv$status$fill${custom.git_branch}${custom.git_status}${custom.starship-jj}$line_break$character"
 palette = "osaka"
 
 [fill]
@@ -109,3 +109,7 @@ jj log --revisions @ --no-graph --ignore-working-copy --color always --limit 1 -
   )
 '
 '''
+
+[custom.starship-jj]
+when = "jj --ignore-working-copy root"
+command = "/Users/jstegeman/.cargo/bin/starship-jj starship prompt"
