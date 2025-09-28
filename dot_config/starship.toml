@@ -111,5 +111,5 @@ jj log --revisions @ --no-graph --ignore-working-copy --color always --limit 1 -
 '''
 
 [custom.starship-jj]
-when = "jj --ignore-working-copy root"
+when = "true"
 command = "/Users/jstegeman/.cargo/bin/starship-jj starship prompt"
