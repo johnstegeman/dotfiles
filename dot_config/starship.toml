@@ -1,6 +1,9 @@
 add_newline = true
-format = "$os $directory${custom.git_branch}${custom.git_status}${custom.jj}$python$direnv$status$line_break$character"
+format = "$os $directory$python$direnv$status$fill${custom.git_branch}${git_status}${custom.jj}$line_break$character"
 palette = "osaka"
+
+[fill]
+symbol = " "
 
 [directory]
 format = "[$path]($style)"
@@ -17,15 +20,15 @@ symbol = ""
 ahead = " ⇡${count}"
 behind = " ⇣${count}"
 deleted = "[ x${count}](fg:palette2 bg:bg01)"
-format = " $ahead$behind$untracked$modified$staged$deleted"
+format = " $untracked$modified$staged$deleted"
 modified = "[ !${count}](fg:palette3 bg:bg01)"
 staged = "[ +${count}](fg:palette2 bg:bg01)"
 untracked = "[ ?${count}](fg:base06 bg:bg01)"
 
-[custom.git_status]
-when = "! jj --ignore-working-copy root"
-command = "starship module git_status"
-description = "Only show git_status if we're not in a jj repo"
+#[custom.git_status]
+#when = "! jj --ignore-working-copy root"
+#command = "starship module git_status"
+#description = "Only show git_status if we're not in a jj repo"
 
 [custom.git_commit]
 when = "! jj --ignore-working-copy root"
