@@ -15,13 +15,13 @@ type = "Bookmarks"
 separator = " "
 color = "Magenta"
 behind_symbol = "⇡"
-surround_with_quotes = true
+surround_with_quotes = false
 
 [[module]]
 type = "Commit"
 max_length = 24
 empty_text = "⛔︎"
-surround_with_quotes = true
+surround_with_quotes = false
 
 [[module]]
 type = "State"

@@ -6,6 +6,7 @@ status is-interactive; and begin
 
     fish_add_path /opt/homebrew/bin # need different one for linux
     fish_add_path /opt/homebrew/opt/trash-cli/bin
+    fish_add_path /Users/jstegeman/.swiftly/bin
 
     fish_config theme choose solarized_osaka_dark
 
