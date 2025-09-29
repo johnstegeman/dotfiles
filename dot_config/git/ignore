@@ -10,3 +10,8 @@ venv
 node_modules
 .sass-cache
 .jj
+.envrc
+.venv/*
+.ipynb_checkpoints/*
+uv.lock
+__marimo__

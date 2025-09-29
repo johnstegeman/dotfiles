@@ -4,6 +4,4 @@ function mkvenv
     else
         uv venv
     end
-    echo "layout uv" >.envrc
-    direnv allow
 end
