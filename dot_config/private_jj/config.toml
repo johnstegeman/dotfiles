@@ -3,3 +3,9 @@
 [user]
 name = "John Stegeman"
 email = "john.stegeman@gmail.com"
+
+[ui]
+default-command = "log"
+diff-editor = ":builtin"
+diff-formatter = ":git" # required by `delta`
+pager=["delta", "--pager", "less -FRX"] # Keeps output from the terminal after closing the pager
