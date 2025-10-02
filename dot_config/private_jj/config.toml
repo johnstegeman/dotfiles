@@ -9,3 +9,6 @@ default-command = "log"
 diff-editor = ":builtin"
 diff-formatter = ":git" # required by `delta`
 pager=["delta", "--pager", "less -FRX"] # Keeps output from the terminal after closing the pager
+
+[git]
+write-change-id-header = true
