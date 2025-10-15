@@ -12,3 +12,6 @@ pager=["delta", "--pager", "less -FRX"] # Keeps output from the terminal after c
 
 [git]
 write-change-id-header = true
+
+[aliases]
+spr = ["util", "exec", "--", "/Users/jstegeman/.cargo/bin/jj-spr"]
