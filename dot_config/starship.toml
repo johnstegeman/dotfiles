@@ -31,11 +31,13 @@ untracked = "[ ?${count}](fg:base06 bg:bg01)"
 #description = "Only show git_status if we're not in a jj repo"
 
 [custom.git_commit]
+shell = ["sh", "--norc"]
 when = "! jj --ignore-working-copy root"
 command = "starship module git_commit"
 description = "Only show git_commit if we're not in a jj repo"
 
 [custom.git_branch]
+shell = ["sh", "--norc"]
 when = "! jj --ignore-working-copy root"
 command = "starship module git_branch"
 description = "Only show git_branch if we're not in a jj repo"
@@ -86,6 +88,7 @@ symbol = ""
 
 # custom module for jj status
 [custom.jj]
+shell = ["sh", "--norc"]
 description = "The current jj status"
 when = "jj --ignore-working-copy root"
 symbol = " "
@@ -112,4 +115,5 @@ jj log --revisions @ --no-graph --ignore-working-copy --color always --limit 1 -
 
 [custom.starship-jj]
 when = "true"
+shell = ["sh", "--norc"]
 command = "/Users/jstegeman/.cargo/bin/starship-jj starship prompt"
