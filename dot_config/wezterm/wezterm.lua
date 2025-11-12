@@ -14,7 +14,8 @@ config.initial_rows = 40
 config.font_size = 15
 
 config.color_scheme = 'Solarized Osaka Dark'
-config.font = wezterm.font 'Maple Mono NF'
+--config.font = wezterm.font 'Maple Mono NF'
+config.font = wezterm.font 'Monaspace Neon NF'
 
 config.quit_when_all_windows_are_closed = false
 config.enable_scroll_bar = true
