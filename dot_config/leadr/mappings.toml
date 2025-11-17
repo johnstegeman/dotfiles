@@ -1,0 +1,15 @@
+[id]
+command = "date +%Y%m%d"
+description = "Insert current date in YYYYMMDD format"
+insert_type = "Insert"
+evaluate = true
+
+[sq]
+command = '"#COMMAND"'
+description = "Surround with quotes"
+insert_type = "Surround"
+
+[ps]
+command = "sudo "
+description = "Prepend sudo"
+insert_type = "Prepend"

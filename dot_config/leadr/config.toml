@@ -1,0 +1,29 @@
+leadr_key = "<C- >"
+redraw_prompt_line = true
+
+[panel]
+enabled = true
+delay_ms = 500
+fail_silently = true
+theme_name = "catppuccin-mocha"
+
+[panel.layout]
+border_type = "Rounded"
+height = 10
+padding = 2
+
+[panel.layout.columns]
+width = 40
+spacing = 5
+centred = false
+
+[panel.layout.symbols]
+append = "󰌒"
+arrow = "→"
+evaluate = "󰊕"
+execute = "󰌑"
+insert = ""
+prepend = "⇤"
+replace = " "
+sequence_begin = "󰄾"
+surround = "󰅪"

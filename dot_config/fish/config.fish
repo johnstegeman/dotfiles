@@ -12,6 +12,7 @@ status is-interactive; and begin
     fish_config theme choose solarized_osaka_dark
 
     set -xg VIRTUAL_ENV_DISABLE_PROMPT yes
+    set -gx LEADR_CONFIG_DIR ~/.config/leadr
 
     abbr -a -- - 'cd -'
 
@@ -25,6 +26,10 @@ status is-interactive; and begin
 
     if using zoxide
         zoxide init fish | source
+    end
+
+    if using leadr
+        leadr --fish | source
     end
 
     if test "$TERM" != dumb
