@@ -5,7 +5,8 @@ cask "1password" if OS.mac?
 cask "arc" if OS.mac?
 cask "asana" if OS.mac?
 cask "bartender" if OS.mac?
-cask "figma" if OS.mac?
+# cask "figma" if OS.mac?
+# cask "finicky" if OS.mac?
 cask "font-maple-mono-nf" if OS.mac?
 cask "font-meslo-lg-nerd-font" if OS.mac?
 # cask "ghostty" if OS.mac?
@@ -27,12 +28,12 @@ cask "raycast"  if OS.mac?
 cask "shottr" if OS.mac?
 cask "sizeup" if OS.mac?
 cask "slack"  if OS.mac?
-cask "spaceman"  if OS.mac?
 #cask "temurin@21"  if OS.mac?
 cask "visual-studio-code" if OS.mac?
 cask "webex"  if OS.mac?
 cask "wezterm"  if OS.mac?
 cask "zappy" if OS.mac?
+# cask "zen" if OS.mac?
 brew "qmk/qmk/qmk" if OS.mac?
 brew "kanata" if OS.mac?
 brew "mas" if OS.mac?
