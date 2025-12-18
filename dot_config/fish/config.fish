@@ -9,7 +9,7 @@ status is-interactive; and begin
     fish_add_path /Users/jstegeman/.swiftly/bin
     fish_add_path ~/bin
 
-    fish_config theme choose solarized_osaka_dark
+    fish_config theme choose "Rosé Pine"
 
     set -xg VIRTUAL_ENV_DISABLE_PROMPT yes
     set -gx LEADR_CONFIG_DIR ~/.config/leadr

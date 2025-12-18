@@ -20,8 +20,9 @@ cask "maccy"  if OS.mac?
 cask "microsoft-auto-update" if OS.mac?
 # cask "minecraft"  if OS.mac?
 cask "neo4j-desktop"  if OS.mac?
+cask "notion" if OS.mac?
 cask "notion-calendar" if OS.mac?
-# cask "notion-mail" if OS.mac?
+cask "notion-mail" if OS.mac?
 cask "orbstack" if OS.mac?
 cask "pycharm-ce"  if OS.mac?
 cask "raycast"  if OS.mac?

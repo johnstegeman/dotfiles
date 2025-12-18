@@ -1,19 +1,19 @@
 add_newline = true
 format = "$os $directory$python$direnv$status$fill${custom.git_branch}${custom.git_status}${custom.starship-jj}$line_break$character"
-palette = "osaka"
+palette = "rose-pine"
 
 [fill]
 symbol = " "
 
 [directory]
 format = "[$path]($style)"
-style = "fg:base06 bg:bg01"
+style = "fg:iris"
 truncate_to_repo = false
 truncation_length = 5
 
 [git_branch]
-format = "[[ $symbol $branch](fg:palette2 bg:bg01)]($style)"
-style = "bg:bg01 fg:palette2"
+format = "[[ $symbol $branch](fg:foam)]($style)"
+style = "fg:foam"
 symbol = ""
 
 [git_status]
@@ -80,6 +80,16 @@ palette6 = "#90cdfa"
 palette7 = "#aab1d3"
 palette8 = "#424866"
 palette9 = "#e77d8f"
+
+
+[palettes.rose-pine]
+overlay = '#26233a'
+love = '#eb6f92'
+gold = '#f6c177'
+rose = '#ebbcba'
+pine = '#31748f'
+foam = '#9ccfd8'
+iris = '#c4a7e7'
 
 [python]
 format = "[ $symbol$pyenv_prefix($version)(\\($virtualenv\\))]($style)"
