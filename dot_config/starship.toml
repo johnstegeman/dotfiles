@@ -48,7 +48,7 @@ ssh_only = false
 [os]
 disabled = false
 format = "[$symbol ]($style)"
-style = "fg:foam"
+style = "fg:text"
 
 [os.symbols]
 Macos = ""
@@ -90,6 +90,7 @@ rose = '#ebbcba'
 pine = '#31748f'
 foam = '#9ccfd8'
 iris = '#c4a7e7'
+text = '#e0def4'
 
 [python]
 format = "[ $symbol$pyenv_prefix($version)(\\($virtualenv\\))]($style)"
@@ -126,7 +127,7 @@ jj log --revisions @ --no-graph --ignore-working-copy --color always --limit 1 -
 [custom.starship-jj]
 when = "true"
 shell = ["sh", "--norc"]
-command = "/Users/jstegeman/.cargo/bin/starship-jj starship prompt"
+command = "/Users/jstegeman/.cargo/bin/starship-jj --ignore-working-copy starship prompt"
 
 [character]
 success_symbol = '[❯](foam) '
