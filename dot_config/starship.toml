@@ -19,16 +19,16 @@ symbol = ""
 [git_status]
 ahead = " ⇡${count}"
 behind = " ⇣${count}"
-deleted = "[ x${count}](fg:palette2 bg:bg01)"
+deleted = "[ x${count}](fg:love)"
 format = " $untracked$modified$staged$deleted"
-modified = "[ !${count}](fg:palette3 bg:bg01)"
-staged = "[ +${count}](fg:palette2 bg:bg01)"
-untracked = "[ ?${count}](fg:base06 bg:bg01)"
+modified = "[ !${count}](fg:iris)"
+staged = "[ +${count}](fg:pine)"
+untracked = "[ ?${count}](fg:gold)"
 
-#[custom.git_status]
-#when = "! jj --ignore-working-copy root"
-#command = "starship module git_status"
-#description = "Only show git_status if we're not in a jj repo"
+[custom.git_status]
+when = "! jj --ignore-working-copy root"
+command = "starship module git_status"
+description = "Only show git_status if we're not in a jj repo"
 
 [custom.git_commit]
 shell = ["sh", "--norc"]
@@ -48,7 +48,7 @@ ssh_only = false
 [os]
 disabled = false
 format = "[$symbol ]($style)"
-style = "bg:bg01 fg:base06"
+style = "fg:foam"
 
 [os.symbols]
 Macos = ""
@@ -93,7 +93,7 @@ iris = '#c4a7e7'
 
 [python]
 format = "[ $symbol$pyenv_prefix($version)(\\($virtualenv\\))]($style)"
-style = "bg:bg01 fg:base02"
+style = "pine"
 symbol = ""
 
 # custom module for jj status
@@ -127,3 +127,7 @@ jj log --revisions @ --no-graph --ignore-working-copy --color always --limit 1 -
 when = "true"
 shell = ["sh", "--norc"]
 command = "/Users/jstegeman/.cargo/bin/starship-jj starship prompt"
+
+[character]
+success_symbol = '[❯](foam) '
+error_symbol = '[❯](love) '
