@@ -5,22 +5,24 @@ reset_color = false
 search_depth = 100
 exclude = []
 
-[[module]]
-type = "Symbol"
-symbol = " "
-color = "Blue"
+#[[module]]
+#type = "Symbol"
+#symbol = " "
+# = "Blue"
+#color.TrueColor = [196, 167, 231]
 
 [[module]]
 type = "Bookmarks"
 separator = " "
-color = "Magenta"
+#color = "Magenta"
+color.TrueColor = [246, 193, 119]
 behind_symbol = "⇡"
 surround_with_quotes = false
 
 [[module]]
 type = "Commit"
 max_length = 24
-empty_text = "⛔︎"
+empty_text = ""
 surround_with_quotes = false
 
 [[module]]
@@ -60,15 +62,18 @@ color = "Magenta"
 [module.changed_files]
 prefix = ""
 suffix = ""
-color = "Cyan"
+#color = "Cyan"
+color.TrueColor = [196, 167, 231]
 
 [module.added_lines]
 prefix = "+"
 suffix = ""
-color = "Green"
+#color = "Green"
+color.TrueColor = [49, 116, 143]
 
 [module.removed_lines]
 prefix = "-"
 suffix = ""
-color = "Red"
+color.TrueColor = [235, 111, 146]
+#color = "Red"
 
