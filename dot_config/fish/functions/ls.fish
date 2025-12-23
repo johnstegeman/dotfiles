@@ -2,7 +2,6 @@ function ls --wraps=eza
   if using eza
     eza $argv
   else
-    /bin/ls $argv
+    command ls $argv
   end
-        
 end

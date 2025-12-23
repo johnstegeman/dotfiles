@@ -1,14 +1,22 @@
 function cm --description 'wrapper for chezmoi: ap or ed'
-  
-   if using chezmoi
+  if not using chezmoi
+    echo "Error: chezmoi is not installed" >&2
+    return 1
+  end
 
-      switch $argv[1]
-         case ap; chezmoi apply -v --no-pager -R=always
-         case ed; code $(chezmoi source-path)
-         case cd; cd $(chezmoi source-path)
-         case '*'; chezmoi $argv
+  switch $argv[1]
+    case ap
+      chezmoi apply -v --no-pager -R=always
+    case ed
+      if using code
+        code $(chezmoi source-path)
+      else
+        echo "Error: code command not found" >&2
+        return 1
       end
-
-   end 
-
+    case cd
+      cd $(chezmoi source-path)
+    case '*'
+      chezmoi $argv
+  end
 end

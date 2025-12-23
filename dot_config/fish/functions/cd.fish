@@ -1,7 +1,7 @@
 function cd --wraps=z --description 'alias cd=z'
-    if using z
-      z $argv
-   else
-      cd $argv
-   end
+  if using zoxide
+    z $argv
+  else
+    builtin cd $argv
+  end
 end

@@ -13,7 +13,7 @@ cask "font-meslo-lg-nerd-font" if OS.mac?
 cask "gimp" if OS.mac?
 cask "google-drive" if OS.mac?
 cask "grammarly-desktop" if OS.mac?
-cask "intellij-idea-ce" if OS.mac?
+cask "intellij-idea" if OS.mac?
 cask "karabiner-elements"  if OS.mac?
 cask "keymapp"  if OS.mac?
 cask "maccy"  if OS.mac?
@@ -24,14 +24,16 @@ cask "notion" if OS.mac?
 cask "notion-calendar" if OS.mac?
 cask "notion-mail" if OS.mac?
 cask "orbstack" if OS.mac?
-cask "pycharm-ce"  if OS.mac?
+cask "pycharm"  if OS.mac?
 cask "raycast"  if OS.mac?
+cask "rustrover"  if OS.mac?
 cask "shottr" if OS.mac?
 cask "sizeup" if OS.mac?
 cask "slack"  if OS.mac?
 #cask "temurin@21"  if OS.mac?
 cask "visual-studio-code" if OS.mac?
 cask "webex"  if OS.mac?
+cask "webstorm" if OS.mac?
 cask "wezterm"  if OS.mac?
 cask "zappy" if OS.mac?
 # cask "zen" if OS.mac?

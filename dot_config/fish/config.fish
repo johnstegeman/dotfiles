@@ -4,10 +4,11 @@ end
 
 status is-interactive; and begin
 
-    fish_add_path /opt/homebrew/bin # need different one for linux
-    fish_add_path /opt/homebrew/opt/trash-cli/bin
-    fish_add_path /Users/jstegeman/.swiftly/bin
-    fish_add_path ~/bin
+    # Add paths only if directories exist
+    test -d /opt/homebrew/bin; and fish_add_path /opt/homebrew/bin
+    test -d /opt/homebrew/opt/trash-cli/bin; and fish_add_path /opt/homebrew/opt/trash-cli/bin
+    test -d /Users/jstegeman/.swiftly/bin; and fish_add_path /Users/jstegeman/.swiftly/bin
+    test -d ~/bin; and fish_add_path ~/bin
 
     fish_config theme choose "Rosé Pine"
 
@@ -48,7 +49,9 @@ status is-interactive; and begin
         set -gx EDITOR hx
     end
 
-end
+    if using carapace
+        set -Ux CARAPACE_BRIDGES 'zsh,fish,bash,inshellisense' # optional
+        carapace _carapace | source
+    end
 
-set -Ux CARAPACE_BRIDGES 'zsh,fish,bash,inshellisense' # optional
-carapace _carapace | source
+end

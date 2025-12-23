@@ -2,6 +2,6 @@ function df --wraps=duf
   if using duf
     duf $argv
   else
-    df $argv
-  end     
+    command df $argv
+  end
 end
