@@ -6,3 +6,4 @@ idiomatic_version_file_enable_tools = ["swift"]
 [tools]
 java = "temurin-24"
 "ubi:ll-nick/leadr" = "latest"
+doggo = "latest"
