@@ -1,0 +1,115 @@
+final_space = true
+version = 2
+
+[[blocks]]
+type = "prompt"
+alignment = "left"
+
+
+  [[blocks.segments]]
+  type = "os"
+  style = "plain"
+  foreground = "p:text"
+  background = "transparent"
+  template = "{{ .Icon }} "
+  
+  [blocks.segments.properties]
+  macos = "󰀵"
+  linux = "󰌽"
+  windows = "󰍲"
+
+  [[blocks.segments]]
+  type = "path"
+  style = "plain"
+  foreground = "p:iris"
+  background = "transparent"
+  template = "{{ .Path }}"
+  
+  [blocks.segments.properties]
+  style = "full"
+  home_icon = "~"
+  folder_separator_icon = "/"
+  truncation_length = 5
+  truncate_to_repo = false
+
+  [[blocks.segments]]
+  type = "python"
+  style = "plain"
+  foreground = "p:pine"
+  background = "transparent"
+  template = "  {{ .Full }}{{ if .Venv }}({{ .Venv }}) {{ end }}"
+  
+  [blocks.segments.properties]
+  display_version = true
+  display_virtual_env = true
+  tooling = ["uv", "python", "pyenv", "python3"]
+
+[[blocks]]
+type = "prompt"
+alignment = "right"
+
+  [[blocks.segments]]
+  type = "git"
+  style = "plain"
+  foreground = "p:foam"
+  background = "transparent"
+  template = " {{ .HEAD }}{{ if .Working.Changed }} {{ .Working.String }}{{ end }}{{ if and (.Working.Changed) (.Staging.Changed) }} |{{ end }}{{ if .Staging.Changed }} {{ .Staging.String }}{{ end }}{{ if gt .StashCount 0 }}  {{ .StashCount }}{{ end }} "
+
+  
+  [blocks.segments.properties]
+  display_status = true
+  display_stash_count = false
+  display_upstream_icon = false
+  branch_icon = ""
+  untracked_icon = " ?"
+  modified_icon = " !"
+  staged_icon = " +"
+  deleted_icon = " x"
+  disable_with_jj = true
+  fetch_status = true
+  
+  [[blocks.segments]]
+  type = "jujutsu"
+  style = "plain"
+  foreground = "p:foam"
+  background = "transparent"
+  template = '{{.ChangeID}} {{.ClosestBookmarks}} {{if .Working.Modified}}<p:foam>~{{ .Working.Modified }}</>{{ end }} {{if .Working.Added}}<p:pine>+{{ .Working.Added }}</>{{ end }} {{if .Working.Deleted}}<p:love>-{{ .Working.Deleted }}</>{{ end }} {{if .Working.Moved}}<p:gold>>{{ .Working.Moved }}</>{{ end }} '
+
+  [blocks.segments.options]
+    fetch_status = true 
+    ignore_working_copy = true
+    display_ahead_counter = true
+    change_id_min_len = 4
+
+[[blocks]]
+type = 'prompt'
+alignment = 'left'
+newline = true
+
+  [[blocks.segments]]
+    type = 'text'
+    style = 'plain'
+    foreground_templates = [
+      "{{if gt .Code 0}}red{{end}}",
+      "{{if eq .Code 0}}magenta{{end}}",
+    ]
+    background = 'transparent'
+    template = '❯'
+
+[transient_prompt]
+  foreground_templates = [
+    "{{if gt .Code 0}}red{{end}}",
+    "{{if eq .Code 0}}magenta{{end}}",
+  ]
+  background = 'transparent'
+  template = '❯ '
+
+[palette]
+overlay = '#26233a'
+love = '#eb6f92'
+gold = '#f6c177'
+rose = '#ebbcba'
+pine = '#31748f'
+foam = '#9ccfd8'
+iris = '#c4a7e7'
+text = '#e0def4'
