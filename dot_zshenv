@@ -50,7 +50,7 @@ if [[ -z "$__HM_ZSH_SESS_VARS_SOURCED" ]]; then
   export ENABLE_CORRECTION="false"
   export FZFZ_RECENT_DIRS_TOOL="fasd"
   export LS_COLORS="$LS_COLORS:ow=1;7;34:st=30;44:su=30;41;"
-  export PATH="$PATH:~/bin"
+  export PATH="$PATH:$HOME/bin"
   export TERM="xterm-256color"
 fi
 

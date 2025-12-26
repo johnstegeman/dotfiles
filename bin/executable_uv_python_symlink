@@ -6,8 +6,22 @@
 
 # Creates symlinks in $HOME/.local/bin for python versions installed with uv.
 
+set -e  # Exit on error
+
+# Check if uv is installed
+if ! command -v uv >/dev/null 2>&1; then
+    echo "Error: uv is not installed or not in PATH" >&2
+    exit 1
+fi
+
 LOCALBIN="${HOME}/bin"
 UVDIR=$(uv python dir)
+
+# Check if uv python dir command succeeded
+if [ -z "$UVDIR" ] || [ ! -d "$UVDIR" ]; then
+    echo "Error: Failed to get uv python directory or directory does not exist" >&2
+    exit 1
+fi
 
 # Create symlinks for pythonX.Y to uv-managed Pythons
 for ITEM in "${UVDIR}"/*
@@ -31,12 +45,22 @@ do
     fi
 
     rm -rf "${DEST}"
-    ln -s "${UVDIR}/${BASEITEM}/bin/python${MINORVERSION}" "${DEST}"
+    if ! ln -s "${UVDIR}/${BASEITEM}/bin/python${MINORVERSION}" "${DEST}"; then
+        echo "Error: Failed to create symlink ${DEST}" >&2
+        continue
+    fi
     echo "${DEST} created."
 done
 
 # Create symlink for python to latest uv-managed Python
 LATESTPYTHON=$(uv python find)
+
+# Check if uv python find command succeeded
+if [ -z "$LATESTPYTHON" ] || [ ! -f "$LATESTPYTHON" ]; then
+    echo "Error: Failed to find latest Python or Python executable does not exist" >&2
+    exit 1
+fi
+
 DEST="${LOCALBIN}/python"
 
 if [[ -L "${DEST}" ]]
@@ -44,7 +68,7 @@ then
     if [[ -e "${DEST}" ]]
     then
         echo "${DEST} already exists and is valid. Nothing to do."
-        exit
+        exit 0
     else
         echo "${DEST} already exists but is broken. Removing."
         rm "${DEST}"
@@ -52,5 +76,8 @@ then
 fi
 
 rm -rf "${DEST}"
-ln -s "${LATESTPYTHON}" "${DEST}"
+if ! ln -s "${LATESTPYTHON}" "${DEST}"; then
+    echo "Error: Failed to create symlink ${DEST}" >&2
+    exit 1
+fi
 echo "${DEST} created."

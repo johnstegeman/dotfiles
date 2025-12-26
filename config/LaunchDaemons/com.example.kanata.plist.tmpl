@@ -7,9 +7,9 @@
 
     <key>ProgramArguments</key>
     <array>
-        <string>/opt/homebrew/bin/kanata</string>
+        <string>{{ if (index . "kanata_path") }}{{ .kanata_path }}{{ else if eq .chezmoi.os "darwin" }}/opt/homebrew/bin/kanata{{ else }}kanata{{ end }}</string>
         <string>-c</string>
-        <string>/Users/jstegeman/config/Gallium.cfg</string>
+        <string>{{ .chezmoi.homeDir }}/config/Gallium.cfg</string>
     </array>
 
     <key>RunAtLoad</key>

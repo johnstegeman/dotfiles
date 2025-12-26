@@ -9,6 +9,7 @@ status is-interactive; and begin
     test -d /opt/homebrew/opt/trash-cli/bin; and fish_add_path /opt/homebrew/opt/trash-cli/bin
     test -d /Users/jstegeman/.swiftly/bin; and fish_add_path /Users/jstegeman/.swiftly/bin
     test -d ~/bin; and fish_add_path ~/bin
+    test -d ~/.cargo/bin; and fish_add_path ~/.cargo/bin
 
     fish_config theme choose "Rosé Pine"
 

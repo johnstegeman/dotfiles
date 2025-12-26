@@ -18,10 +18,14 @@
 	format = "ssh"
 
 [gpg "ssh"]
-	program = "/nix/store/49psgc9m367a2zbg19xl0iyx4bplzaxx-openssh-10.0p2/bin/ssh-keygen"
+	# Use ssh-keygen from PATH if available, otherwise fall back to system default
+	# Nix users: ensure openssh is in your PATH or configure this path manually
+	program = "ssh-keygen"
 
 [interactive]
-	diffFilter = "/nix/store/hib2p8by1z2z1kmqp8x20daznlzwq8w8-delta-0.18.2/bin/delta --color-only"
+	# Use delta from PATH if available
+	# Nix users: ensure delta is in your PATH or configure this path manually
+	diffFilter = "delta --color-only"
 
 [merge]
 	conflictstyle = "diff3"

@@ -15,8 +15,6 @@ config.font_size = 15
 
 --config.color_scheme = 'Solarized Osaka Dark'
 
-local wezterm = require('wezterm')
-
 -- Rose Pine theme
 local theme = wezterm.plugin.require('https://github.com/neapsix/wezterm').main
 config.colors = theme.colors()

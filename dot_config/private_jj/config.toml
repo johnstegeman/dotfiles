@@ -14,4 +14,5 @@ pager=["delta", "--pager", "less -FRX"] # Keeps output from the terminal after c
 write-change-id-header = true
 
 [aliases]
-spr = ["util", "exec", "--", "/Users/jstegeman/.cargo/bin/jj-spr"]
+# Use jj-spr from PATH (typically in ~/.cargo/bin or system PATH)
+spr = ["util", "exec", "--", "jj-spr"]
