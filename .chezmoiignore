@@ -47,3 +47,4 @@ config/com.googlecode.iterm2.plist
 .lnav/log_medatadata.db
 .lnav/*.history
 README.md
+RECOMMENDATIONS.md

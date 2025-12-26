@@ -1,6 +1,6 @@
-function ll --wraps='eza -l'
-  if using eza
-    eza -l $argv
+function ll
+  if using lsd
+    lsd -l $argv
   else
     command ls -l $argv
   end
