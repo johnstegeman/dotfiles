@@ -73,7 +73,7 @@ alignment = "right"
   style = "plain"
   foreground = "p:foam"
   background = "transparent"
-  template = '{{.ChangeID}} {{.ClosestBookmarks}} {{if .Working.Modified}}<p:foam>~{{ .Working.Modified }}</>{{ end }} {{if .Working.Added}}<p:pine>+{{ .Working.Added }}</>{{ end }} {{if .Working.Deleted}}<p:love>-{{ .Working.Deleted }}</>{{ end }} {{if .Working.Moved}}<p:gold>>{{ .Working.Moved }}</>{{ end }} '
+  template = '{{.ChangeID}} {{.ClosestBookmarks}} {{if .Working.Modified}}<p:foam>~{{ .Working.Modified }} </>{{ end }}{{if .Working.Added}}<p:pine>+{{ .Working.Added }} </>{{ end }}{{if .Working.Deleted}}<p:love>-{{ .Working.Deleted }} </>{{ end }}{{if .Working.Moved}}<p:gold>>{{ .Working.Moved }} </>{{ end }} '
 
   [blocks.segments.options]
     fetch_status = true 
