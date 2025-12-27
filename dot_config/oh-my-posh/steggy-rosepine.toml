@@ -5,7 +5,6 @@ version = 3
 type = "prompt"
 alignment = "left"
 
-
   [[blocks.segments]]
   type = "os"
   style = "plain"
@@ -54,7 +53,6 @@ alignment = "right"
   foreground = "p:foam"
   background = "transparent"
   template = " {{ .HEAD }}{{ if .Working.Changed }} {{ .Working.String }}{{ end }}{{ if and (.Working.Changed) (.Staging.Changed) }} |{{ end }}{{ if .Staging.Changed }} {{ .Staging.String }}{{ end }}{{ if gt .StashCount 0 }}  {{ .StashCount }}{{ end }} "
-
   
   [blocks.segments.properties]
   display_status = true
@@ -73,13 +71,13 @@ alignment = "right"
   style = "plain"
   foreground = "p:rose"
   background = "transparent"
-  template = '{{.ChangeID}} <p:iris>{{.ClosestBookmarks}}</> {{if .Working.Modified}}<p:foam>~{{ .Working.Modified }} </>{{ end }}{{if .Working.Added}}<p:pine>+{{ .Working.Added }} </>{{ end }}{{if .Working.Deleted}}<p:love>-{{ .Working.Deleted }} </>{{ end }}{{if .Working.Moved}}<p:gold>>{{ .Working.Moved }} </>{{ end }} '
+  template = '{{.ChangeID}} <p:iris>{{.ClosestBookmarks}}</> {{if .Working.Modified}}<p:foam>~{{ .Working.Modified }} </>{{ end }}{{if .Working.Added}}<p:pine>+{{ .Working.Added }} </>{{ end }}{{if .Working.Deleted}}<p:love>-{{ .Working.Deleted }} </>{{ end }}{{if .Working.Moved}}<p:gold>>{{ .Working.Moved }} </>{{ end }} '
 
   [blocks.segments.options]
-    fetch_status = true 
-    ignore_working_copy = true
-    display_ahead_counter = true
-    change_id_min_len = 4
+  fetch_status = true 
+  ignore_working_copy = true
+  display_ahead_counter = true
+  change_id_min_len = 4
 
 [[blocks]]
 type = 'prompt'
@@ -90,16 +88,16 @@ newline = true
     type = 'text'
     style = 'plain'
     foreground_templates = [
-      "{{if gt .Code 0}}red{{end}}",
-      "{{if eq .Code 0}}magenta{{end}}",
+      "{{if gt .Code 0}}p:love{{end}}",
+      "{{if eq .Code 0}}p:pine{{end}}",
     ]
     background = 'transparent'
     template = '❯'
 
 [transient_prompt]
   foreground_templates = [
-    "{{if gt .Code 0}}red{{end}}",
-    "{{if eq .Code 0}}magenta{{end}}",
+    "{{if gt .Code 0}}p:love{{end}}",
+    "{{if eq .Code 0}}p_pine{{end}}",
   ]
   background = 'transparent'
   template = '❯ '

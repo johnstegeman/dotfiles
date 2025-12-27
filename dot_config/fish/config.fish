@@ -40,7 +40,7 @@ status is-interactive; and begin
         
         #starship init fish | source
         #enable_transience
-        $HOME/bin/oh-my-posh init fish --config $HOME/.config/oh-my-posh/oh-my-posh.toml | source
+        $HOME/bin/oh-my-posh init fish --config $HOME/.config/oh-my-posh/steggy-rosepine.toml | source
 
     end
 
