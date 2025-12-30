@@ -43,6 +43,16 @@ alignment = "left"
   display_virtual_env = true
   tooling = ["uv", "python", "pyenv", "python3"]
 
+  [[blocks.segments]]
+  type = "executiontime"
+  style = "plain"
+  foreground = "p:gold"
+  background = "transparent"
+  template = " {{ .Duration }}"
+  
+  [blocks.segments.properties]
+  min_duration = 2000
+
 [[blocks]]
 type = "prompt"
 alignment = "right"
@@ -52,12 +62,14 @@ alignment = "right"
   style = "plain"
   foreground = "p:foam"
   background = "transparent"
-  template = " {{ .HEAD }}{{ if .Working.Changed }} {{ .Working.String }}{{ end }}{{ if and (.Working.Changed) (.Staging.Changed) }} |{{ end }}{{ if .Staging.Changed }} {{ .Staging.String }}{{ end }}{{ if gt .StashCount 0 }}  {{ .StashCount }}{{ end }} "
+  template = " {{ .HEAD }}{{ if .Upstream }}{{ if .Upstream.Ahead }} ⇡{{ .Upstream.Ahead }}{{ end }}{{ if .Upstream.Behind }} ⇣{{ .Upstream.Behind }}{{ end }}{{ end }}{{ if .Working.Changed }} {{ .Working.String }}{{ end }}{{ if and (.Working.Changed) (.Staging.Changed) }} |{{ end }}{{ if .Staging.Changed }} {{ .Staging.String }}{{ end }}{{ if gt .StashCount 0 }}  {{ .StashCount }}{{ end }} "
   
   [blocks.segments.properties]
   display_status = true
   display_stash_count = false
-  display_upstream_icon = false
+  display_upstream_icon = true
+  ahead_icon = " ⇡"
+  behind_icon = " ⇣"
   branch_icon = ""
   untracked_icon = " ?"
   modified_icon = " !"
@@ -97,7 +109,7 @@ newline = true
 [transient_prompt]
   foreground_templates = [
     "{{if gt .Code 0}}p:love{{end}}",
-    "{{if eq .Code 0}}p_pine{{end}}",
+    "{{if eq .Code 0}}p:pine{{end}}",
   ]
   background = 'transparent'
   template = '❯ '
