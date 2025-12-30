@@ -6,8 +6,8 @@ An opinionated set of dotfiles and other configurations from John "Steggy" Stege
 
 - 🚀 Uses [chezmoi](https://github.com/twpayne/chezmoi) to manage and apply the configuration
 - 💻 Works on both macOS and Linux with cross-platform path handling
-- 🎨 [Rosé Pine](https://rosepinetheme.com/) color theme throughout (starship, bat, helix, atuin, fish, tmux, VS Code, wezterm)
-- 🐟 **Fish shell** as the default shell with [starship](https://starship.rs/) prompt and [fisher](https://github.com/jorgebucaran/fisher) for plugins
+- 🎨 [Rosé Pine](https://rosepinetheme.com/) color theme throughout (oh-my-posh, bat, helix, atuin, fish, tmux, VS Code, wezterm)
+- 🐟 **Fish shell** as the default shell with [oh-my-posh]([https://starship.rs/](https://ohmyposh.dev/) prompt and [fisher](https://github.com/jorgebucaran/fisher) for plugins
 - 🕺🏽 Zsh with [zsh4humans](https://github.com/romkatv/zsh4humans) and Powerlevel10k (still available, but Fish is default)
 - 🖥️ [Wezterm](https://wezfurlong.org/wezterm/) terminal emulator with Rosé Pine theme
 - ⌨️ [Gallium keyboard layout](https://github.com/galliumkb/gallium) using [kanata](https://github.com/jtroo/kanata)
