@@ -76,7 +76,7 @@ alignment = "right"
   [blocks.segments.options]
   fetch_status = true 
   ignore_working_copy = true
-  display_ahead_counter = true
+  fetch_ahead_counter = true
   change_id_min_len = 4
 
 [[blocks]]

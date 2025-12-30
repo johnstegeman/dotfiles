@@ -35,12 +35,12 @@ status is-interactive; and begin
     end
 
     if test "$TERM" != dumb
-        and using $HOME/bin/oh-my-posh
+        and using oh-my-posh
         #and using starship
         
         #starship init fish | source
         #enable_transience
-        $HOME/bin/oh-my-posh init fish --config $HOME/.config/oh-my-posh/steggy-rosepine.toml | source
+        oh-my-posh init fish --config $HOME/.config/oh-my-posh/steggy-rosepine.toml | source
 
     end
 
