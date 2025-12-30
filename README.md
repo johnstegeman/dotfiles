@@ -20,10 +20,11 @@ An opinionated set of dotfiles and other configurations from John "Steggy" Stege
 - ❗️ [jbang](https://www.jbang.dev/) for running Java programs from self-contained source files
 - 🐍 [uv](https://docs.astral.sh/uv/) to manage Python versions, dependencies, and virtual environments
 - 👍🏽 Enhanced command-line utilities with aliases:
-  - `ls` → [eza](https://github.com/eza-community/eza)
+  - `ls` → [lsd](https://github.com/lsd-rs/lsd)
   - `du` → [dua](https://github.com/Byron/dua-cli)
   - `df` → [duf](https://github.com/muesli/duf)
   - `cat` → [bat](https://github.com/sharkdp/bat)
+  - `dig` → [doggo](https://github.com/mr-karan/doggo)
   - `rm` → [trash-cli](https://github.com/andreafrancia/trash-cli) (safe deletion)
 - 📚 [atuin](https://github.com/ellie/atuin) for shell history management
 - 🔍 [fzf](https://github.com/junegunn/fzf) for fuzzy finding
@@ -31,14 +32,14 @@ An opinionated set of dotfiles and other configurations from John "Steggy" Stege
 - 🎯 [leadr](https://github.com/ll-nick/leadr) for terminal session management
 - 🧩 [carapace](https://github.com/rsteube/carapace) for enhanced shell completions
 - 🔧 [jj](https://github.com/martinvonz/jj) (Jujutsu) version control with custom starship integration
-- 🐳 [multipass](https://multipass.run) on macOS for creating Ubuntu VMs
+- 🐳 [Orbstack](https://orbstack.dev/) on macOS for creating VMs
 - 🔄 [zmv](https://blog.smittytone.net/2021/04/03/how-to-use-zmv-z-shell-super-smart-file-renamer/) enabled in zsh (powerful command-line file renamer)
 
 ## Color Theme
 
 This configuration uses the **Rosé Pine** color theme across all supported applications:
 
-- ✅ **Starship** prompt (rose-pine palette)
+- ✅ **oh-my-posh** prompt (rose-pine palette)
 - ✅ **Bat** syntax highlighter (rose-pine theme)
 - ✅ **Helix** editor (rose_pine theme)
 - ✅ **Atuin** history (rosepine theme)
@@ -134,7 +135,7 @@ After installation, you may want to:
 - `~/.config/fish/` - Fish shell configuration
 - `~/.zshrc` - Zsh configuration (zsh4humans)
 - `~/.zshenv` - Zsh environment variables
-- `~/.config/starship.toml` - Starship prompt configuration
+- `~/.config/oh-my-posh/steggy-rosepine` - oh-my-posh prompt configuration
 - `~/.config/wezterm/wezterm.lua` - Wezterm terminal configuration
 - `~/.config/ghostty/config` - Ghostty terminal configuration (alternative)
 
@@ -204,7 +205,7 @@ Several configuration files use chezmoi templates for cross-platform compatibili
 - Supports both ARM (`/opt/homebrew`) and Intel (`/usr/local`) architectures
 - Includes LaunchDaemons for kanata keyboard layout
 - 1Password integration available
-- Multipass for Ubuntu VMs
+- Orbstack for containers and VMs
 
 ### Linux
 - Uses standard Linux package managers
@@ -277,6 +278,6 @@ This configuration is provided as-is for personal use. Feel free to fork and ada
 - [Rosé Pine](https://rosepinetheme.com/) - Beautiful color theme
 - [chezmoi](https://github.com/twpayne/chezmoi) - Dotfile management
 - [Fish Shell](https://fishshell.com/) - Friendly interactive shell
-- [Starship](https://starship.rs/) - Cross-shell prompt
+- [oh-my-posh](https://ohmyposh.dev/) - Cross-shell prompt
 - All the amazing open-source tools that make this configuration possible
 
