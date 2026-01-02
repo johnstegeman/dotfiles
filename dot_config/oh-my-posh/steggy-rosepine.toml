@@ -50,7 +50,7 @@ alignment = "left"
   background = "transparent"
   template = " {{ .FormattedMs }}"
   
-  [options]
+  [blocks.segments.properties]
   threshold = 2000
   style = "roundrock"
 
