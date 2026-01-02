@@ -48,10 +48,11 @@ alignment = "left"
   style = "plain"
   foreground = "p:gold"
   background = "transparent"
-  template = " {{ .Duration }}"
+  template = " {{ .FormattedMs }}"
   
-  [blocks.segments.properties]
-  min_duration = 2000
+  [options]
+  threshold = 2000
+  style = "roundrock"
 
 [[blocks]]
 type = "prompt"
