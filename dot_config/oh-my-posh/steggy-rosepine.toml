@@ -62,7 +62,7 @@ alignment = "right"
   style = "plain"
   foreground = "p:foam"
   background = "transparent"
-  template = " {{ .HEAD }}{{ if .Upstream }}{{ if .Upstream.Ahead }} ⇡{{ .Upstream.Ahead }}{{ end }}{{ if .Upstream.Behind }} ⇣{{ .Upstream.Behind }}{{ end }}{{ end }}{{ if .Working.Changed }} {{ .Working.String }}{{ end }}{{ if and (.Working.Changed) (.Staging.Changed) }} |{{ end }}{{ if .Staging.Changed }} {{ .Staging.String }}{{ end }}{{ if gt .StashCount 0 }}  {{ .StashCount }}{{ end }} "
+  template = " {{ .HEAD }}{{ if .Upstream }}{{ if .Ahead }} ⇡{{ .Ahead }}{{ end }}{{ if .Behind }} ⇣{{ .Behind }}{{ end }}{{ end }}{{ if .Working.Changed }} {{ .Working.String }}{{ end }}{{ if and (.Working.Changed) (.Staging.Changed) }} |{{ end }}{{ if .Staging.Changed }} {{ .Staging.String }}{{ end }}{{ if gt .StashCount 0 }}  {{ .StashCount }}{{ end }} "
   
   [blocks.segments.properties]
   display_status = true
@@ -77,6 +77,7 @@ alignment = "right"
   deleted_icon = " x"
   disable_with_jj = true
   fetch_status = true
+  fetch_push_status = true
   
   [[blocks.segments]]
   type = "jujutsu"
