@@ -36,7 +36,7 @@ cask "webex"  if OS.mac?
 cask "webstorm" if OS.mac?
 cask "wezterm"  if OS.mac?
 cask "zappy" if OS.mac?
-# cask "zen" if OS.mac?
+cask "zed" if OS.mac?
 brew "qmk/qmk/qmk" if OS.mac?
 brew "kanata" if OS.mac?
 brew "mas" if OS.mac?

@@ -38,6 +38,8 @@ config/dot_flox
 config/dot_flox/*
 config/dot_flox/**/*
 config/com.googlecode.iterm2.plist
+config/zed/*
+config/zed/**
 .ssh/known_hosts
 .config/configstore
 .config/configstore/*

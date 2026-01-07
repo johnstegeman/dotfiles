@@ -8,8 +8,8 @@ function cm --description 'wrapper for chezmoi: ap or ed'
     case ap
       chezmoi apply -v --no-pager -R=always
     case ed
-      if using code
-        code $(chezmoi source-path)
+      if using zed
+        zed $(chezmoi source-path)
       else
         echo "Error: code command not found" >&2
         return 1
