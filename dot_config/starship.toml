@@ -1,6 +1,34 @@
 add_newline = true
-format = "$os $directory$python$direnv$status$fill${custom.git_branch}${custom.git_status}${custom.starship-jj}$line_break$character"
+#format = "$os $directory$python$direnv$status$fill${custom.git_branch}${custom.git_status}${custom.starship-jj}$line_break$character"
+format = "$jujutsu_state$jujutsu_bookmark$jujutsu_closest_bookmarks$jujutsu_metrics$jujutsu_commit$jujutsu_change"
+#format = "$vcs"
 palette = "rose-pine"
+
+[vcs]
+git_modules = "$git_branch$git_metrics$git_status"
+jujutsu_modules = "$jujutsu_state$jujutsu_bookmark$jujutsu_closest_bookmarks$jujutsu_commit$jujutsu_change"
+order = ["jujutsu", "git"]
+
+[jujutsu_change]
+disabled = false
+
+[jujutsu_commit]
+disabled = false
+
+[jujutsu_status]
+disabled = false
+
+[jujutsu_state]
+disabled = false
+
+[jujutsu_bookmark]
+disabled = false
+
+[jujutsu_closest_bookmarks]
+disabled = false
+
+[git_metrics]
+disabled = false
 
 [fill]
 symbol = " "

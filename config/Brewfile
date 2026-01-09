@@ -43,6 +43,7 @@ brew "kanata" if OS.mac?
 brew "mas" if OS.mac?
 # mas "Email", id: 1489591003 if OS.mac?
 mas "Spark email", id: 6445813049 if OS.mac?
+mas "Davinci Resolve", id: 571213070 if OS.mac?
 cask "font-monaspace-nf" if OS.mac?
 
 #shell stuff

@@ -7,14 +7,26 @@
 // custom settings, run `zed: open default settings` from the
 // command palette (cmd-shift-p / ctrl-shift-p)
 {
+  "title_bar": {
+    "show_sign_in": false
+  },
+  "debugger": {
+    "button": false
+  },
+  "buffer_line_height": "comfortable",
   "colorize_brackets": true,
-  "icon_theme": "Colored Zed Icons Theme Dark",
+  "icon_theme": {
+    "mode": "system",
+    "light": "Colored Zed Icons Theme Dark",
+    "dark": "Monospace Icon Theme - Light"
+  },
   "helix_mode": false,
   "telemetry": {
     "diagnostics": false,
     "metrics": false
   },
   "project_panel": {
+    "button": true,
     "git_status": false
   },
   "outline_panel": {
@@ -49,7 +61,7 @@
   "buffer_font_size": 15,
   "theme": {
     "mode": "dark",
-    "light": "One Light",
+    "light": "Rosé Pine Dawn",
     "dark": "Rosé Pine"
   }
 }
