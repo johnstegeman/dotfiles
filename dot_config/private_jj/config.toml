@@ -16,3 +16,38 @@ write-change-id-header = true
 [aliases]
 # Use jj-spr from PATH (typically in ~/.cargo/bin or system PATH)
 spr = ["util", "exec", "--", "jj-spr"]
+
+
+[template-aliases]
+default_commit_description = '''
+"
+JJ: <type>: (If applied, this commit will...) <subject> (Max 50 char)
+JJ:  |<----  Using a Maximum Of 50 Characters  ---->|
+
+
+JJ:  Explain why this change is being made
+JJ:  |<----   Try To Limit Each Line to a Maximum Of 72 Characters   ---->|
+
+JJ:  Provide links or keys to any relevant tickets, articles or other resources
+JJ:  Example: Github issue #23
+
+JJ:  --- COMMIT END ---
+JJ:  Type can be
+JJ:     feat     (new feature)
+JJ:     fix      (bug fix)
+JJ:     refactor (refactoring production code)
+JJ:     style    (formatting, missing semi colons, etc; no code change)
+JJ:     docs     (changes to documentation)
+JJ:     test     (adding or refactoring tests; no production code change)
+JJ:     chore    (updating grunt tasks etc; no production code change)
+JJ:  --------------------
+JJ:  Remember to
+JJ:    Capitalize the subject line
+JJ:     Use the imperative mood in the subject line
+JJ:     Do not end the subject line with a period
+JJ:     Separate subject from body with a blank line
+JJ:     Use the body to explain what and why vs. how
+JJ:     Can use multiple lines with  for bullet points in body
+JJ:  --------------------
+"
+'''
