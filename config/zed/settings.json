@@ -7,61 +7,61 @@
 // custom settings, run `zed: open default settings` from the
 // command palette (cmd-shift-p / ctrl-shift-p)
 {
-  "title_bar": {
-    "show_sign_in": false
-  },
-  "debugger": {
-    "button": false
-  },
-  "buffer_line_height": "comfortable",
-  "colorize_brackets": true,
-  "icon_theme": {
-    "mode": "system",
-    "light": "Colored Zed Icons Theme Dark",
-    "dark": "Monospace Icon Theme - Light"
-  },
-  "helix_mode": false,
-  "telemetry": {
-    "diagnostics": false,
-    "metrics": false
-  },
-  "project_panel": {
-    "button": true,
-    "git_status": false
-  },
-  "outline_panel": {
-    "git_status": false
-  },
-  "base_keymap": "VSCode",
-  "tabs": {
-    "git_status": false
-  },
-  "git_panel": {
-    "button": false
-  },
-  "relative_line_numbers": "enabled",
-  "sticky_scroll": {
-    "enabled": true
-  },
-  "gutter": {
-    "line_numbers": true
-  },
-  "minimap": {
-    "show": "never"
-  },
-  "buffer_font_fallbacks": [
-    "Menlo",
-    "Monaco",
-    "Courier New",
-    "monospace"
-  ],
-  "buffer_font_family": "MesloLGM Nerd Font Mono",
-  "tab_size": 3,
-  "ui_font_size": 16,
-  "buffer_font_size": 15,
-  "theme": {
-    "mode": "dark",
-    "light": "Rosé Pine Dawn",
-    "dark": "Rosé Pine"
-  }
+   "title_bar": {
+      "show_sign_in": false,
+   },
+   "debugger": {
+      "button": false,
+   },
+   "buffer_line_height": "comfortable",
+   "colorize_brackets": true,
+   "icon_theme": {
+      "mode": "system",
+      "light": "Colored Zed Icons Theme Dark",
+      "dark": "Monospace Icon Theme - Light",
+   },
+   "helix_mode": false,
+   "telemetry": {
+      "diagnostics": false,
+      "metrics": false,
+   },
+   "project_panel": {
+      "button": true,
+      "git_status": false,
+   },
+   "outline_panel": {
+      "git_status": false,
+   },
+   "base_keymap": "VSCode",
+   "tabs": {
+      "git_status": false,
+   },
+   "git_panel": {
+      "button": false,
+   },
+   "relative_line_numbers": "enabled",
+   "sticky_scroll": {
+      "enabled": true,
+   },
+   "gutter": {
+      "line_numbers": true,
+   },
+   "minimap": {
+      "show": "never",
+   },
+   "buffer_font_fallbacks": ["Menlo", "Monaco", "Courier New", "monospace"],
+   "buffer_font_family": "MesloLGM Nerd Font Mono",
+   "tab_size": 3,
+   "ui_font_size": 16,
+   "buffer_font_size": 15,
+   "theme": {
+      "mode": "dark",
+      "light": "Rosé Pine Dawn",
+      "dark": "Rosé Pine",
+   },
+   "languages": {
+      "AsciiDoc": {
+         "soft_wrap": "editor_width",
+      },
+   },
 }
