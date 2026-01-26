@@ -36,6 +36,7 @@ truncation_length = 5
 
 [git_branch]
 format = "[[ $symbol $branch](fg:foam)]($style)"
+#format = '[](fg:green)[$symbol](fg:blue bg:green)[](fg:green)[$branch](fg:foreground bg:white)[](fg:white)'
 style = "fg:foam"
 symbol = ""
 
