@@ -7,6 +7,7 @@
 // custom settings, run `zed: open default settings` from the
 // command palette (cmd-shift-p / ctrl-shift-p)
 {
+   "soft_wrap": "editor_width",
    "title_bar": {
       "show_sign_in": false,
    },
@@ -49,7 +50,7 @@
    "minimap": {
       "show": "never",
    },
-   "buffer_font_fallbacks": ["Menlo", "Monaco", "Courier New", "monospace"],
+   "buffer_font_fallbacks": ["Menlo", "Monaco", "Courier New"],
    "buffer_font_family": "MesloLGM Nerd Font Mono",
    "tab_size": 3,
    "ui_font_size": 16,

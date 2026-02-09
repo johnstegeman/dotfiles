@@ -5,7 +5,8 @@ export default {
          match: "meet.google.com/*",
          browser: () => {
             return {
-               name: "Google Meet",
+               name: "Dia",
+               profile: "Work",
             };
          },
       },
