@@ -35,5 +35,6 @@
         "commit": false,
         "sync": false,
         "publish": false
-    }
+    },
+    "claudeCode.preferredLocation": "panel"
 }
