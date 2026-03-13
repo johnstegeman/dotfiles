@@ -5,7 +5,7 @@ redraw_prompt_line = true
 enabled = true
 delay_ms = 500
 fail_silently = true
-theme_name = "catppuccin-mocha"
+theme_name = "rose-pine"
 
 [panel.layout]
 border_type = "Rounded"

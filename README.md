@@ -1,283 +1,274 @@
 # dotfiles
 
-An opinionated set of dotfiles and other configurations from John "Steggy" Stegeman
+Personal dotfiles for John Stegeman, managed with [chezmoi](https://github.com/twpayne/chezmoi). Works on both macOS and Linux.
 
 ## Highlights
 
-- 🚀 Uses [chezmoi](https://github.com/twpayne/chezmoi) to manage and apply the configuration
-- 💻 Works on both macOS and Linux with cross-platform path handling
-- 🎨 [Rosé Pine](https://rosepinetheme.com/) color theme throughout (oh-my-posh, bat, helix, atuin, fish, tmux, VS Code, wezterm)
-- 🐟 **Fish shell** as the default shell with [oh-my-posh](https://ohmyposh.dev/) prompt and [fisher](https://github.com/jorgebucaran/fisher) for plugins
-- 🕺🏽 Zsh with [zsh4humans](https://github.com/romkatv/zsh4humans) and Powerlevel10k (still available, but Fish is default)
-- 🖥️ [Wezterm](https://wezfurlong.org/wezterm/) terminal emulator with Rosé Pine theme
-- ⌨️ [Gallium keyboard layout](https://github.com/galliumkb/gallium) using [kanata](https://github.com/jtroo/kanata)
-- 📝 [Helix](https://helix-editor.com/) editor with Rosé Pine theme and Gallium keymaps
-- 📑 [lnav](https://lnav.org/) for viewing logfiles
-- 🔐 [1Password](https://1password.com) (macOS only) integration for managing secrets via [chezmoi's 1Password capabilities](https://www.chezmoi.io/user-guide/password-managers/1password/)
-- 🕵🏽‍♀️ [SSH agent](https://developer.1password.com/docs/ssh/) integration with 1Password (store SSH private keys in 1Password)
-- 🍺 [Homebrew](https://brew.sh/) on macOS for installing utilities and GUI apps
-- ☕️ Version management with [mise](https://mise.jdx.dev/) (formerly rtx)
-- ❗️ [jbang](https://www.jbang.dev/) for running Java programs from self-contained source files
-- 🐍 [uv](https://docs.astral.sh/uv/) to manage Python versions, dependencies, and virtual environments
-- 👍🏽 Enhanced command-line utilities with aliases:
-  - `ls` → [lsd](https://github.com/lsd-rs/lsd)
-  - `du` → [dua](https://github.com/Byron/dua-cli)
-  - `df` → [duf](https://github.com/muesli/duf)
-  - `cat` → [bat](https://github.com/sharkdp/bat)
-  - `dig` → [doggo](https://github.com/mr-karan/doggo)
-  - `rm` → [trash-cli](https://github.com/andreafrancia/trash-cli) (safe deletion)
-- 📚 [atuin](https://github.com/ellie/atuin) for shell history management
-- 🔍 [fzf](https://github.com/junegunn/fzf) for fuzzy finding
-- 🗂️ [zoxide](https://github.com/ajeetdsouza/zoxide) for smart directory jumping
-- 🎯 [leadr](https://github.com/ll-nick/leadr) for terminal session management
-- 🧩 [carapace](https://github.com/rsteube/carapace) for enhanced shell completions
-- 🔧 [jj](https://github.com/martinvonz/jj) (Jujutsu) version control with custom starship integration
-- 🐳 [Orbstack](https://orbstack.dev/) on macOS for creating VMs
-- 🔄 [zmv](https://blog.smittytone.net/2021/04/03/how-to-use-zmv-z-shell-super-smart-file-renamer/) enabled in zsh (powerful command-line file renamer)
+- [chezmoi](https://github.com/twpayne/chezmoi) for dotfile management with cross-platform support
+- [Rosé Pine](https://rosepinetheme.com/) color theme applied consistently across all tools
+- [Fish shell](https://fishshell.com/) as the default shell with [Starship](https://starship.rs/) prompt
+- [Jujutsu (jj)](https://github.com/martinvonz/jj) as the primary version control system
+- [Helix](https://helix-editor.com/) as the primary editor
+- [Wezterm](https://wezfurlong.org/wezterm/) as the primary terminal emulator, with [Ghostty](https://ghostty.org/) and [Zellij](https://zellij.dev/) also configured
+- [Kanata](https://github.com/jtroo/kanata) for keyboard remapping with the [Gallium layout](https://github.com/galliumkb/gallium)
+- [1Password](https://1password.com) integration for secrets management (macOS)
+- [Homebrew](https://brew.sh/) for package management (macOS) with a tracked Brewfile
 
 ## Color Theme
 
-This configuration uses the **Rosé Pine** color theme across all supported applications:
+[Rosé Pine](https://rosepinetheme.com/) is applied across all tools that support it:
 
-- ✅ **oh-my-posh** prompt (rose-pine palette)
-- ✅ **Bat** syntax highlighter (rose-pine theme)
-- ✅ **Helix** editor (rose_pine theme)
-- ✅ **Atuin** history (rosepine theme)
-- ✅ **Fish shell** (Rosé Pine theme via fisher plugin)
-- ✅ **Tmux** (rose-pine/tmux plugin)
-- ✅ **VS Code** (Rosé Pine theme)
-- ✅ **Wezterm** (Rose Pine theme via plugin)
+| Tool | Theme |
+|------|-------|
+| Fish shell | `rose-pine/fish` plugin |
+| Starship prompt | Rose Pine palette |
+| Bat | `rose-pine` theme |
+| Delta (git diffs) | `rose-pine` syntax theme |
+| Atuin | Rose Pine theme |
+| Helix | `rose_pine` theme |
+| Tmux | `rose-pine/tmux` plugin |
+| VS Code | Rosé Pine extension |
+| Wezterm | Rose Pine plugin |
+| Ghostty | `rose-pine` theme |
+| Zellij | Rose Pine themes |
+| Btop | Custom `rose-pine` theme |
+| Leadr | `rose-pine` theme |
 
-Some tools may still use alternative themes where Rosé Pine is not available (e.g., git delta uses Solarized for syntax highlighting, bpytop uses solarized_dark).
+## Shell
 
-## Shell Configuration
+Fish is the default shell. Zsh is also configured as a fallback (with a custom prompt), but Fish is where all active development happens.
 
-### Fish Shell (Default)
+### Prompt
 
-The default shell is **Fish** with:
-- [Starship](https://starship.rs/) prompt with Rosé Pine palette
-- [Fisher](https://github.com/jorgebucaran/fisher) plugin manager
-- Custom functions for common tasks (git aliases, chezmoi shortcuts, etc.)
-- Enhanced utilities via function wrappers
-- Smart path management (only adds paths if directories exist)
+The prompt uses [Starship](https://starship.rs/). The configuration requires a custom fork of Starship that includes native Jujutsu (jj) support via `[vcs]` modules (`jujutsu_state`, `jujutsu_commit`, `jujutsu_change`, `jujutsu_closest_bookmarks`, `jujutsu_metrics`).
 
-Key Fish plugins:
-- `jorgebucaran/autopair.fish` - Automatic bracket/parenthesis pairing
-- `nickeb96/puffer-fish` - Enhanced directory navigation
-- `0rax/fish-bd` - Quick directory navigation
-- `PatrickF1/fzf.fish` - FZF integration
-- `icezyclon/zoxide.fish` - Zoxide integration
-- `rose-pine/fish` - Rosé Pine theme
-
-### Zsh (Available)
-
-Zsh is still configured and available with:
-- [zsh4humans](https://github.com/romkatv/zsh4humans) framework
-- Powerlevel10k prompt (if configured)
-- zmv for file renaming
-- Various zsh plugins and enhancements
-
-## Installation
-
-### Quick Install
-
-You can install chezmoi and apply this configuration in a single step:
-
-```bash
-sh -c "$(curl -fsLS get.chezmoi.io)" -- init --apply https://github.com/johnstegeman/dotfiles
+The prompt layout is:
+```
+<os> <directory> <python env> <status>          <vcs info>
+❯
 ```
 
-This will:
-- Install chezmoi
-- Clone this repository to chezmoi's local state directory (`~/.local/share/chezmoi`)
-- Apply the chezmoi local state to your home directory
+### Fisher Plugins
 
-**Note:** If you want to use your own fork, substitute the URL with your repository URL.
+Fish plugins are managed with [fisher](https://github.com/jorgebucaran/fisher):
 
-### Manual Installation
+| Plugin | Purpose |
+|--------|---------|
+| `jorgebucaran/autopair.fish` | Automatic bracket/quote pairing |
+| `nickeb96/puffer-fish` | Enhanced `...` directory navigation |
+| `0rax/fish-bd` | Jump back to a parent directory by name |
+| `PatrickF1/fzf.fish` | Fzf integration (file/history/pid search) |
+| `icezyclon/zoxide.fish` | Zoxide integration for smart `cd` |
+| `rose-pine/fish` | Rosé Pine color theme |
+| `johnstegeman/fish-take` | `take` command — mkdir and cd in one step |
 
-If you have already installed chezmoi, you can clone this repository into the chezmoi source state directory:
+### Tool Integrations
 
-```bash
-# Remove existing source directory if needed
-rm -rf ~/.local/share/chezmoi
+The following tools are initialized in `config.fish` when available:
 
-# Clone the repository
-git clone https://github.com/johnstegeman/dotfiles ~/.local/share/chezmoi
-
-# Apply the configuration
-chezmoi apply
-```
-
-### Post-Installation
-
-After installation, you may want to:
-
-1. **Install Homebrew packages** (macOS):
-   ```bash
-   brew bundle --file ~/config/Brewfile
-   ```
-
-2. **Install Fish plugins**:
-   ```bash
-   fisher update
-   ```
-
-3. **Install tmux plugins** (if using tmux):
-   - Press `Prefix + I` in tmux to install plugins
-
-4. **Configure 1Password integration** (macOS, optional):
-   - Follow [chezmoi's 1Password guide](https://www.chezmoi.io/user-guide/password-managers/1password/)
-
-## Configuration Files
-
-### Shell & Terminal
-- `~/.config/fish/` - Fish shell configuration
-- `~/.zshrc` - Zsh configuration (zsh4humans)
-- `~/.zshenv` - Zsh environment variables
-- `~/.config/oh-my-posh/steggy-rosepine` - oh-my-posh prompt configuration
-- `~/.config/wezterm/wezterm.lua` - Wezterm terminal configuration
-- `~/.config/ghostty/config` - Ghostty terminal configuration (alternative)
-
-### Editors
-- `~/.config/helix/config.toml` - Helix editor configuration
-- `~/.config/Code/User/settings.json` - VS Code settings (via template)
-
-### Version Control
-- `~/.config/git/config` - Git configuration with delta for diffs
-- `~/.config/jj/config.toml` - Jujutsu (jj) configuration
-
-### System Tools
-- `~/.config/tmux/tmux.conf` - Tmux configuration (minimal)
-- `~/.tmux.conf` - Main tmux configuration with plugins
-- `~/.config/bpytop/bpytop.conf` - System monitor configuration
-- `~/.config/atuin/config.toml` - Shell history configuration
-
-### Utilities
-- `~/.config/bat/config` - Bat syntax highlighter configuration
-- `~/.config/mise/config.toml` - Mise version manager configuration
-- `~/.config/leadr/` - Leadr session manager configuration
-
-## Key Features
-
-### Path Management
-- Automatic path detection (only adds paths if directories exist)
-- Cross-platform support (macOS ARM/Intel, Linux)
-- Smart homebrew path detection (`/opt/homebrew` or `/usr/local`)
-
-### Error Handling
-- Robust error handling in custom functions
-- Graceful fallbacks when tools are unavailable
-- Clear error messages for debugging
+- **Starship** — prompt (with transience enabled)
+- **Zoxide** — replaces `cd` with smart directory jumping
+- **Fzf** — fuzzy finder shell integration
+- **Atuin** — shell history (ctrl-r not overridden; atuin uses its own binding)
+- **Carapace** — enhanced completions for many CLI tools
+- **Leadr** — terminal session/command management
+- **uv** — shell completions generated on init
+- **Helix** — set as `$EDITOR`
 
 ### Custom Functions
 
-#### Fish Functions
-- `cm` - Chezmoi wrapper (apply, edit, cd)
-- `br` - Homebrew wrapper (update, clean, install)
-- `dock` - macOS Dock backup/restore
-- `jmr` - Jujutsu multi-remote setup
-- `mkvenv` - Create Python virtual environments with uv
-- `uvu` - Update uv lockfile and sync
-- `take` - Create directory and cd into it
-- Git aliases: `g`, `ga`, `gb`, `gc`, `gl`, `gp`, `gst`
-- Enhanced utilities: `ls`, `cat`, `df`, `du`, `rm` (with fallbacks)
+#### Utility wrappers
 
-#### Zsh Functions
-- `md` - Make directory and cd
-- `take` - Create directory and cd
-- `cmcd` - Change to chezmoi source directory
-- `cmedit` - Edit chezmoi source in VS Code
-- `download` - Download Neo4j distributions
-- `mcreate` - Create multipass VMs
-- `mssh` - SSH into multipass VMs
+These replace standard commands with better alternatives, falling back gracefully if the tool is not installed:
 
-### Template Support
-Several configuration files use chezmoi templates for cross-platform compatibility:
-- `settings.json.tmpl` - VS Code settings with home directory template
-- `com.example.kanata.plist.tmpl` - Kanata launch daemon with path templates
-- `executable_host.zsh.tmpl` - Host-specific zsh configuration
+| Function | Replaces | Tool |
+|----------|---------|------|
+| `ls` | `ls` | `eza` |
+| `ll` | `ls -l` | `eza -l` |
+| `la` | `ls -a` | `eza -a` |
+| `lla` | `ls -la` | `eza -la` |
+| `lt` | — | `eza --tree` |
+| `cat` | `cat` | `bat` |
+| `du` | `du` | `dua` |
+| `df` | `df` | `duf` |
+| `rm` | `rm` | `trash-cli` (moves to trash) |
+| `dig` | `dig` | `doggo` |
+| `cd` | `cd` | `zoxide` |
 
-## Platform-Specific Notes
+#### chezmoi — `cm`
 
-### macOS
-- Uses Homebrew for package management
-- Supports both ARM (`/opt/homebrew`) and Intel (`/usr/local`) architectures
-- Includes LaunchDaemons for kanata keyboard layout
-- 1Password integration available
-- Orbstack for containers and VMs
+Wrapper for common chezmoi operations:
 
-### Linux
-- Uses standard Linux package managers
-- Paths automatically adjusted for Linux filesystem structure
-- Some macOS-specific features are conditionally excluded
-
-## Customization
-
-### Adding Your Own Configuration
-
-1. **Fork this repository** (recommended)
-2. **Make changes** in your fork
-3. **Use chezmoi templates** for user-specific paths:
-   ```bash
-   # Example: Add a custom path
-   test -d {{ .chezmoi.homeDir }}/custom/bin; and fish_add_path {{ .chezmoi.homeDir }}/custom/bin
-   ```
-
-### Using 1Password for Secrets
-
-For sensitive data (SSH keys, API keys, etc.), use chezmoi's 1Password integration:
-
-```bash
-# Add a secret to 1Password
-chezmoi add --encrypt ~/.ssh/id_rsa
-
-# The file will be stored encrypted in 1Password
+```fish
+cm ap    # chezmoi apply -v
+cm ed    # open chezmoi source directory in Zed
+cm cd    # cd to chezmoi source directory
+cm ...   # pass-through to chezmoi for anything else
 ```
 
-See the [chezmoi 1Password guide](https://www.chezmoi.io/user-guide/password-managers/1password/) for details.
+#### Homebrew — `br`
 
-## Maintenance
+Wrapper for Homebrew bundle operations (macOS):
 
-### Updating Configuration
-
-```bash
-# Pull latest changes from repository
-chezmoi update
-
-# Review changes
-chezmoi diff
-
-# Apply changes
-chezmoi apply
+```fish
+br up     # update, upgrade, cleanup, doctor
+br in     # brew bundle install from ~/config/Brewfile
+br clean  # brew bundle cleanup --zap from ~/config/Brewfile
+br ...    # pass-through to brew for anything else
 ```
 
-### Managing Chezmoi State
+#### Jujutsu — `jmr`
 
-```bash
-# Edit a file in the source state
-chezmoi edit ~/.config/fish/config.fish
+Sets up a jj repo with two remotes (upstream + fork), configuring fetch from both and push to origin only:
 
-# Add a new file to chezmoi management
-chezmoi add ~/.newfile
-
-# Remove a file from chezmoi management
-chezmoi forget ~/.oldfile
+```fish
+jmr   # configure upstream/origin remotes and track bookmarks
 ```
 
-## Contributing
+#### Python — `mkvenv` / `uvu`
 
-This is a personal dotfiles repository, but suggestions and improvements are welcome! If you find something useful or have ideas for improvements, feel free to open an issue or submit a pull request.
+```fish
+mkvenv   # create a uv virtual environment
+uvu      # update uv lockfile and sync
+```
 
-## License
+#### GCP — `inf`
 
-This configuration is provided as-is for personal use. Feel free to fork and adapt for your own needs.
+SSH helper for connecting to GCP instances via gcloud:
 
-## Acknowledgments
+```fish
+inf gs   # ssh to inf-graph
+inf p1   # ssh to inf-prop1
+# ... p2 through p5
+```
 
-- [Rosé Pine](https://rosepinetheme.com/) - Beautiful color theme
-- [chezmoi](https://github.com/twpayne/chezmoi) - Dotfile management
-- [Fish Shell](https://fishshell.com/) - Friendly interactive shell
-- [oh-my-posh](https://ohmyposh.dev/) - Cross-shell prompt
-- All the amazing open-source tools that make this configuration possible
+#### macOS Dock — `dock`
 
+Backup and restore the macOS Dock configuration.
+
+#### Git aliases
+
+Short aliases wrapping common jj/git operations: `g`, `ga`, `gb`, `gc`, `gl`, `gp`, `gst`.
+
+## Version Control
+
+### Jujutsu (jj)
+
+[Jujutsu](https://github.com/martinvonz/jj) is the primary VCS. The Starship prompt shows jj state, commit, change ID, bookmarks, and metrics when inside a jj repository.
+
+### Git
+
+Git is configured with:
+- [Delta](https://github.com/dandavison/delta) as the pager with side-by-side diffs and Rose Pine syntax highlighting
+- SSH signing via 1Password's SSH agent
+- `diff3` conflict style
+
+## Editors
+
+| Editor | Role | Notes |
+|--------|------|-------|
+| [Helix](https://helix-editor.com/) | Primary | Rosé Pine theme, Gallium keymaps |
+| [Zed](https://zed.dev/) | Secondary | Used by `cm ed` to open dotfiles |
+| [VS Code](https://code.visualstudio.com/) | Available | Rosé Pine theme, settings via chezmoi template |
+| [Neovim](https://neovim.io/) | Available | — |
+
+## Terminals
+
+| Terminal | Role |
+|----------|------|
+| [Wezterm](https://wezfurlong.org/wezterm/) | Primary |
+| [Ghostty](https://ghostty.org/) | Alternative |
+| [Zellij](https://zellij.dev/) | Terminal multiplexer (Rose Pine theme) |
+| [Tmux](https://github.com/tmux/tmux) | Terminal multiplexer (rose-pine/tmux plugin) |
+
+## Development Tools
+
+| Tool | Purpose |
+|------|---------|
+| [mise](https://mise.jdx.dev/) | Version manager for Java (Temurin 24), Node, Rust, and CLI tools |
+| [uv](https://docs.astral.sh/uv/) | Python version and dependency management |
+| [jbang](https://www.jbang.dev/) | Run Java programs as self-contained scripts |
+
+## CLI Enhancements
+
+| Tool | Purpose |
+|------|---------|
+| [eza](https://github.com/eza-community/eza) | Modern `ls` replacement |
+| [bat](https://github.com/sharkdp/bat) | `cat` with syntax highlighting (Rose Pine theme) |
+| [delta](https://github.com/dandavison/delta) | Git diff pager |
+| [dua](https://github.com/Byron/dua-cli) | Interactive disk usage (`du` replacement) |
+| [duf](https://github.com/muesli/duf) | Disk free display (`df` replacement) |
+| [trash-cli](https://github.com/andreafrancia/trash-cli) | Safe `rm` that moves to trash |
+| [doggo](https://github.com/mr-karan/doggo) | DNS lookup (`dig` replacement) |
+| [ripgrep](https://github.com/BurntSushi/ripgrep) | Fast search |
+| [fd](https://github.com/sharkdp/fd) | Fast `find` replacement |
+| [fzf](https://github.com/junegunn/fzf) | Fuzzy finder |
+| [zoxide](https://github.com/ajeetdsouza/zoxide) | Smart `cd` with frecency |
+| [atuin](https://github.com/atuinsh/atuin) | Shell history with search (Rose Pine theme) |
+| [carapace](https://github.com/rsteube/carapace-bin) | Multi-shell completion |
+| [btop](https://github.com/aristocratos/btop) | System monitor (Rose Pine theme) |
+| [lnav](https://lnav.org/) | Log file viewer |
+| [leadr](https://github.com/ll-nick/leadr) | Terminal command session manager |
+| [just](https://github.com/casey/just) | Command runner |
+
+## Keyboard
+
+[Kanata](https://github.com/jtroo/kanata) remaps the keyboard to the [Gallium layout](https://github.com/galliumkb/gallium). On macOS, Kanata runs as a LaunchDaemon via a chezmoi template that resolves the correct binary path.
+
+Helix keybindings are also adjusted for the Gallium layout.
+
+## macOS
+
+- Package management via Homebrew with a tracked `~/config/Brewfile`
+- Supports both Apple Silicon (`/opt/homebrew`) and Intel (`/usr/local`) Homebrew paths
+- [1Password](https://1password.com) used for secrets; SSH keys stored in 1Password and accessed via the SSH agent integration
+- [Orbstack](https://orbstack.dev/) for containers and Linux VMs
+- [Raycast](https://www.raycast.com/) as the launcher
+- [Finicky](https://github.com/johnste/finicky) for URL routing
+
+## Documentation
+
+| Doc | Contents |
+|-----|---------|
+| [Installation](docs/installation.md) | Detailed setup steps, post-install configuration, platform notes |
+| [Fish Shell](docs/fish.md) | Plugins, tool integrations, all custom functions with usage examples |
+| [Version Control](docs/version-control.md) | Jujutsu (jj) workflow, multi-remote setup, git configuration |
+| [Utilities](docs/utilities.md) | CLI tools, command replacements, system monitoring |
+| [macOS Apps](docs/apps.md) | Homebrew casks — GUI apps with descriptions |
+| [Keyboard](docs/keyboard.md) | Gallium layout, Kanata remapper, Helix keybindings |
+| [Python](docs/python.md) | uv for version management, virtual environments, and dependencies |
+| [Java](docs/java.md) | mise for JDK management, jbang for scripting |
+| [Customizing](docs/customizing.md) | Forking, adding functions/plugins, secrets, cross-platform templates |
+
+## Installation
+
+```sh
+sh -c "$(curl -fsLS get.chezmoi.io)" -- init --apply https://github.com/johnstegeman/dotfiles
+```
+
+See [docs/installation.md](docs/installation.md) for full details including post-install steps and platform notes.
+
+## Secrets
+
+Sensitive files (SSH keys, etc.) are managed via chezmoi's [1Password integration](https://www.chezmoi.io/user-guide/password-managers/1password/). Private SSH keys are stored in 1Password and accessed through the 1Password SSH agent — no keys are stored in plaintext on disk.
+
+## Key File Locations
+
+| File | Purpose |
+|------|---------|
+| `~/.config/fish/config.fish` | Fish shell configuration |
+| `~/.config/fish/fish_plugins` | Fisher plugin list |
+| `~/.config/starship.toml` | Starship prompt configuration |
+| `~/.config/git/config` | Git configuration |
+| `~/.config/jj/config.toml` | Jujutsu configuration |
+| `~/.config/helix/config.toml` | Helix editor configuration |
+| `~/.config/wezterm/wezterm.lua` | Wezterm configuration |
+| `~/.config/ghostty/config` | Ghostty configuration |
+| `~/.config/zellij/` | Zellij configuration |
+| `~/.config/tmux/` | Tmux configuration |
+| `~/.config/atuin/config.toml` | Atuin history configuration |
+| `~/.config/btop/btop.conf` | Btop system monitor configuration |
+| `~/.config/leadr/config.toml` | Leadr configuration |
+| `~/.config/bat/config` | Bat configuration |
+| `~/.config/mise/config.toml` | Mise version manager configuration |
+| `~/config/Brewfile` | Homebrew bundle file (macOS) |

@@ -6,7 +6,7 @@
 	light = false
 	navigate = true
 	side-by-side = true
-	syntax-theme = "Solarized (dark)"
+	syntax-theme = "rose-pine"
 
 [filter "lfs"]
 	clean = "git-lfs clean -- %f"

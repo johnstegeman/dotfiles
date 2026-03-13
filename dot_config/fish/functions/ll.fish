@@ -1,6 +1,6 @@
 function ll
-  if using lsd
-    lsd -l $argv
+  if using eza
+    eza -l $argv
   else
     command ls -l $argv
   end

@@ -1,6 +1,6 @@
 function ls
-  if using lsd
-    lsd $argv
+  if using eza
+    eza $argv
   else
     command ls $argv
   end
