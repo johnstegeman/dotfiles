@@ -20,7 +20,7 @@ local theme = wezterm.plugin.require('https://github.com/neapsix/wezterm').main
 config.colors = theme.colors()
 
 --config.font = wezterm.font 'Maple Mono NF'
-config.font = wezterm.font 'Monaspace Neon NF'
+config.font = wezterm.font 'Monaspace Neon NF Light'
 
 config.quit_when_all_windows_are_closed = false
 config.enable_scroll_bar = true

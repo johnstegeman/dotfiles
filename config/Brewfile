@@ -15,7 +15,7 @@ cask "font-maple-mono-nf" if OS.mac?
 cask "font-meslo-lg-nerd-font" if OS.mac?
 cask "font-monaspace-nf" if OS.mac?
 cask "gcloud-cli" if OS.mac?
-# cask "ghostty" if OS.mac?
+cask "ghostty" if OS.mac?
 cask "gimp" if OS.mac?
 cask "google-drive" if OS.mac?
 cask "grammarly-desktop" if OS.mac?
@@ -59,7 +59,7 @@ mas "Davinci Resolve", id: 571213070 if OS.mac?
 brew "fish"
 brew "fisher"
 brew "oh-my-posh"
-brew "starship"
+# brew "starship"
 brew "tmux"
 brew "zsh"
 
