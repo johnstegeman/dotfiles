@@ -11,3 +11,8 @@ confirm-close-surface = "false"
 
 macos-option-as-alt = "true"
 theme = "Rose Pine"
+
+macos-window-buttons = hidden
+
+background-opacity = 1
+background-blur=16
