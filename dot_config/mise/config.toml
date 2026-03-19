@@ -2,10 +2,14 @@
 python.uv_venv_auto = true
 experimental = true
 idiomatic_version_file_enable_tools = ["swift"]
+auto_install = true
+jobs = 4
 
 [tools]
+go = "latest"
 java = "temurin-24"
 "ubi:ll-nick/leadr" = "latest"
 doggo = "latest"
 node = "latest"
+python = "latest"
 rust = "latest"
