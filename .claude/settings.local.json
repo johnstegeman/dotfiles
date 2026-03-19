@@ -7,7 +7,21 @@
       "Bash(brew leaves:*)",
       "Bash(jj bookmark:*)",
       "Bash(jj file:*)",
-      "Bash(jj st:*)"
+      "Bash(jj st:*)",
+      "Bash(wc:*)",
+      "Bash(python3 -c \"import sys,json; [print\\(json.dumps\\(json.loads\\(l\\), indent=2\\)\\) for l in sys.stdin if json.loads\\(l\\).get\\(''''type''''\\) in \\(''''user'''',''''assistant''''\\)]\")",
+      "mcp__memory__read-cypher",
+      "mcp__memory__write-cypher",
+      "Bash(for f:*)",
+      "Bash(do)",
+      "Bash(echo \"=== $f ===\")",
+      "Read(//private/tmp/claude-502/-Users-jstegeman--local-share-chezmoi/fd34e752-49b2-4201-8af9-531f120e8f36/tasks/**)",
+      "Bash(done)",
+      "WebFetch(domain:github.com)",
+      "WebFetch(domain:raw.githubusercontent.com)",
+      "WebFetch(domain:api.github.com)",
+      "Bash(jj diff:*)",
+      "Bash(fish -c '\necho \"separator_diff: [$tide_left_prompt_separator_diff_color]\" | xxd | head -3\necho \"separator_same: [$tide_left_prompt_separator_same_color]\" | xxd | head -3\necho \"os_bg: $tide_os_bg_color\"\necho \"left_prompt_prefix: [$tide_left_prompt_prefix]\" | xxd | head -3\n' 2>&1)"
     ]
   }
 }

@@ -35,13 +35,7 @@ status is-interactive; and begin
     end
 
     if test "$TERM" != dumb
-        #and using oh-my-posh
-        and using starship
-
-        starship init fish | source
-        enable_transience
-        #oh-my-posh init fish --config $HOME/.config/oh-my-posh/steggy-rosepine.toml | source
-
+        # tide is initialized automatically via fish_prompt (installed by fisher)
     end
 
     if using atuin
