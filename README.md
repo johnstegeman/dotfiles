@@ -9,7 +9,7 @@ Personal dotfiles for John Stegeman, managed with [chezmoi](https://github.com/t
 - [Fish shell](https://fishshell.com/) as the default shell with [Tide](https://github.com/IlanCosman/tide) prompt
 - [Jujutsu (jj)](https://github.com/martinvonz/jj) as the primary version control system
 - [Helix](https://helix-editor.com/) as the primary editor
-- [Wezterm](https://wezfurlong.org/wezterm/) as the primary terminal emulator, with [Ghostty](https://ghostty.org/) and [Zellij](https://zellij.dev/) also configured
+- [Ghostty](https://ghostty.org/) as the primary terminal emulator, with [cmux](https://github.com/anthropics/cmux) for agentic development and [Wezterm](https://wezfurlong.org/wezterm/) and [Zellij](https://zellij.dev/) also configured
 - [Kanata](https://github.com/jtroo/kanata) for keyboard remapping with the [Gallium layout](https://github.com/galliumkb/gallium)
 - [1Password](https://1password.com) integration for secrets management (macOS)
 - [Homebrew](https://brew.sh/) for package management (macOS) with a tracked Brewfile
@@ -178,8 +178,9 @@ Git is configured with:
 
 | Terminal | Role |
 |----------|------|
-| [Wezterm](https://wezfurlong.org/wezterm/) | Primary |
-| [Ghostty](https://ghostty.org/) | Alternative |
+| [Ghostty](https://ghostty.org/) | Primary |
+| [cmux](https://github.com/anthropics/cmux) | Agentic development (multi-pane Claude Code sessions) |
+| [Wezterm](https://wezfurlong.org/wezterm/) | Alternative |
 | [Zellij](https://zellij.dev/) | Terminal multiplexer (Rose Pine theme) |
 | [Tmux](https://github.com/tmux/tmux) | Terminal multiplexer (rose-pine/tmux plugin) |
 
