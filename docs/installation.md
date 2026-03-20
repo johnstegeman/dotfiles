@@ -48,9 +48,17 @@ If you use tmux, open a tmux session and press `Prefix + I` to install plugins v
 
 SSH keys and other secrets are stored in 1Password and retrieved via chezmoi's 1Password integration. Follow the [chezmoi 1Password guide](https://www.chezmoi.io/user-guide/password-managers/1password/) to set this up.
 
-### 5. Install the Starship custom fork
+### 5. Bootstrap with just (optional)
 
-The Starship configuration uses native Jujutsu (jj) modules available in a custom fork of Starship. Install it via cargo or mise as appropriate.
+A `Justfile` in the repo root provides convenience targets for common setup tasks:
+
+```fish
+just bootstrap   # brew bundle + mise install
+just brew        # brew bundle install
+just mise        # mise install
+just apply       # chezmoi apply
+just update      # brew + mise + chezmoi apply
+```
 
 ## Platform notes
 

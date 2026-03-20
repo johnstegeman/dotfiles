@@ -21,7 +21,8 @@
       "WebFetch(domain:raw.githubusercontent.com)",
       "WebFetch(domain:api.github.com)",
       "Bash(jj diff:*)",
-      "Bash(fish -c '\necho \"separator_diff: [$tide_left_prompt_separator_diff_color]\" | xxd | head -3\necho \"separator_same: [$tide_left_prompt_separator_same_color]\" | xxd | head -3\necho \"os_bg: $tide_os_bg_color\"\necho \"left_prompt_prefix: [$tide_left_prompt_prefix]\" | xxd | head -3\n' 2>&1)"
+      "Bash(fish -c '\necho \"separator_diff: [$tide_left_prompt_separator_diff_color]\" | xxd | head -3\necho \"separator_same: [$tide_left_prompt_separator_same_color]\" | xxd | head -3\necho \"os_bg: $tide_os_bg_color\"\necho \"left_prompt_prefix: [$tide_left_prompt_prefix]\" | xxd | head -3\n' 2>&1)",
+      "Bash(jj desc:*)"
     ]
   }
 }

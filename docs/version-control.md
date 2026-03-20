@@ -13,14 +13,15 @@ Key properties of jj relevant to this setup:
 
 ### Prompt integration
 
-The Starship prompt shows jj status when inside a jj repository via the `[vcs]` block with native jj modules:
+The Tide prompt shows jj status when inside a jj repository via a custom `_tide_item_jj.fish`. It displays:
 
-- `jujutsu_change` — the short change ID
-- `jujutsu_commit` — the commit hash
-- `jujutsu_closest_bookmarks` — nearest bookmark names
-- `jujutsu_metrics` — ahead/behind counts
+- File counts: `+added ~modified -deleted`
+- Short commit ID and change ID
+- Current bookmark, or closest ancestor bookmark prefixed with `↑`
+- State flags: 💥 conflict, 🚧 divergent, 👻 hidden, 🔒 immutable
+- Diff metrics: `+insertions -deletions`
 
-When not inside a jj repo, the prompt falls back to standard git information (branch, status).
+A custom `_tide_item_vcs.fish` wraps this — it uses `_tide_item_jj` inside jj repos and falls back to Tide's built-in `_tide_item_git` otherwise.
 
 ### Multi-remote workflow (`jmr`)
 

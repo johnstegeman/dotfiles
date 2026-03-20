@@ -6,7 +6,7 @@ Personal dotfiles for John Stegeman, managed with [chezmoi](https://github.com/t
 
 - [chezmoi](https://github.com/twpayne/chezmoi) for dotfile management with cross-platform support
 - [Rosé Pine](https://rosepinetheme.com/) color theme applied consistently across all tools
-- [Fish shell](https://fishshell.com/) as the default shell with [Starship](https://starship.rs/) prompt
+- [Fish shell](https://fishshell.com/) as the default shell with [Tide](https://github.com/IlanCosman/tide) prompt
 - [Jujutsu (jj)](https://github.com/martinvonz/jj) as the primary version control system
 - [Helix](https://helix-editor.com/) as the primary editor
 - [Wezterm](https://wezfurlong.org/wezterm/) as the primary terminal emulator, with [Ghostty](https://ghostty.org/) and [Zellij](https://zellij.dev/) also configured
@@ -21,7 +21,7 @@ Personal dotfiles for John Stegeman, managed with [chezmoi](https://github.com/t
 | Tool | Theme |
 |------|-------|
 | Fish shell | `rose-pine/fish` plugin |
-| Starship prompt | Rose Pine palette |
+| Tide prompt | Rose Pine colors via custom fish vars |
 | Bat | `rose-pine` theme |
 | Delta (git diffs) | `rose-pine` syntax theme |
 | Atuin | Rose Pine theme |
@@ -40,13 +40,15 @@ Fish is the default shell. Zsh is also configured as a fallback (with a custom p
 
 ### Prompt
 
-The prompt uses [Starship](https://starship.rs/). The configuration requires a custom fork of Starship that includes native Jujutsu (jj) support via `[vcs]` modules (`jujutsu_state`, `jujutsu_commit`, `jujutsu_change`, `jujutsu_closest_bookmarks`, `jujutsu_metrics`).
+The prompt uses [Tide](https://github.com/IlanCosman/tide) (v6), configured with Rose Pine colors in `~/.config/fish/conf.d/tide.fish`. Transience is enabled.
 
-The prompt layout is:
+The prompt layout:
 ```
-<os> <directory> <python env> <status>          <vcs info>
+<os> <directory> [python env] [status]          <vcs>
 ❯
 ```
+
+VCS info is provided by a custom `_tide_item_vcs.fish` that shows jj state in jj repos (change ID, commit ID, bookmark, file counts, diff metrics, state flags) and falls back to git otherwise.
 
 ### Fisher Plugins
 
@@ -66,7 +68,7 @@ Fish plugins are managed with [fisher](https://github.com/jorgebucaran/fisher):
 
 The following tools are initialized in `config.fish` when available:
 
-- **Starship** — prompt (with transience enabled)
+- **Tide** — prompt (with transience enabled)
 - **Zoxide** — replaces `cd` with smart directory jumping
 - **Fzf** — fuzzy finder shell integration
 - **Atuin** — shell history (ctrl-r not overridden; atuin uses its own binding)
@@ -154,7 +156,7 @@ Short aliases wrapping common jj/git operations: `g`, `ga`, `gb`, `gc`, `gl`, `g
 
 ### Jujutsu (jj)
 
-[Jujutsu](https://github.com/martinvonz/jj) is the primary VCS. The Starship prompt shows jj state, commit, change ID, bookmarks, and metrics when inside a jj repository.
+[Jujutsu](https://github.com/martinvonz/jj) is the primary VCS. The Tide prompt shows jj state (change ID, commit ID, bookmark, file counts, diff metrics, and state flags) when inside a jj repository via a custom `_tide_item_jj.fish`.
 
 ### Git
 
@@ -185,7 +187,7 @@ Git is configured with:
 
 | Tool | Purpose |
 |------|---------|
-| [mise](https://mise.jdx.dev/) | Version manager for Java (Temurin 24), Node, Rust, and CLI tools |
+| [mise](https://mise.jdx.dev/) | Version manager for Go, Java (Temurin 24), Node, Bun, Python, Rust, and CLI tools |
 | [uv](https://docs.astral.sh/uv/) | Python version and dependency management |
 | [jbang](https://www.jbang.dev/) | Run Java programs as self-contained scripts |
 
@@ -258,7 +260,7 @@ Sensitive files (SSH keys, etc.) are managed via chezmoi's [1Password integratio
 |------|---------|
 | `~/.config/fish/config.fish` | Fish shell configuration |
 | `~/.config/fish/fish_plugins` | Fisher plugin list |
-| `~/.config/starship.toml` | Starship prompt configuration |
+| `~/.config/fish/conf.d/tide.fish` | Tide prompt configuration |
 | `~/.config/git/config` | Git configuration |
 | `~/.config/jj/config.toml` | Jujutsu configuration |
 | `~/.config/helix/config.toml` | Helix editor configuration |

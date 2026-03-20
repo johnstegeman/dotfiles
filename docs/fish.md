@@ -4,15 +4,21 @@ Fish is the default shell. The configuration lives in `~/.config/fish/`.
 
 ## Prompt
 
-The prompt is [Starship](https://starship.rs/) using a custom fork with native Jujutsu (jj) support. Transience is enabled — the previous prompt lines collapse after execution.
+The prompt is [Tide](https://github.com/IlanCosman/tide) (v6), configured in `~/.config/fish/conf.d/tide.fish` with Rose Pine colors. Transience is enabled — previous prompt lines collapse after execution.
 
 The prompt layout:
 ```
-<os icon> <directory> [python env] [exit status]          <vcs info>
+<os icon> <directory> [python env] [status]          <vcs>
 ❯
 ```
 
-VCS info shows jj state when inside a jj repository (change ID, bookmarks, metrics), and git branch/status otherwise.
+VCS info is provided by a custom `_tide_item_vcs.fish` that tries jj first and falls back to Tide's built-in git item. Inside a jj repository, `_tide_item_jj.fish` shows:
+
+- File counts (`+added ~modified -deleted`)
+- Short commit ID and change ID
+- Current bookmark, or closest ancestor bookmark prefixed with `↑`
+- State flags: 💥 conflict, 🚧 divergent, 👻 hidden, 🔒 immutable
+- Diff metrics (`+insertions -deletions`)
 
 ## Plugins
 
@@ -20,6 +26,7 @@ Plugins are managed with [fisher](https://github.com/jorgebucaran/fisher). The p
 
 | Plugin | Purpose |
 |--------|---------|
+| `IlanCosman/tide@v6` | Tide prompt |
 | `jorgebucaran/autopair.fish` | Automatic bracket, quote, and parenthesis pairing |
 | `nickeb96/puffer-fish` | Type `...` to expand to `../..`, `....` to `../../..`, etc. |
 | `0rax/fish-bd` | `bd <name>` — jump back to a named parent directory |
@@ -40,7 +47,7 @@ The following tools are initialized in `config.fish` when present, using `if usi
 
 | Tool | Integration |
 |------|------------|
-| Starship | Prompt initialization + transience |
+| Tide | Prompt initialization + transience (initialized automatically via `fish_prompt`) |
 | Zoxide | Replaces `cd` |
 | Fzf | Shell keybindings |
 | Atuin | Shell history (ctrl-r not overridden) |
