@@ -5,3 +5,10 @@
 modules = ["packages"]
 [vcs]
 backend = "jj"
+
+
+[security]
+allow = [
+  "~/.ssh/config",   # config file has no secrets
+  "~/.ssh/id_rsa.pub",      # public key - not secret
+]
