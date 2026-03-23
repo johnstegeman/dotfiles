@@ -1,0 +1,10 @@
+# Shell module — brew packages and AI tools for this machine.
+# Add Homebrew packages via: haven brew install <name> --module shell
+# Add AI skills/commands:
+#
+# [ai]
+# skills   = ["gh:gstack/standard-skills@v1"]
+# commands = ["gh:myuser/my-commands@main"]
+#
+# [homebrew]
+# brewfile = "brew/Brewfile.shell"

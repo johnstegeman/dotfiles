@@ -1,0 +1,7 @@
+# haven configuration
+# Run `haven help` for usage.
+
+[profile.default]
+modules = ["packages"]
+[vcs]
+backend = "jj"

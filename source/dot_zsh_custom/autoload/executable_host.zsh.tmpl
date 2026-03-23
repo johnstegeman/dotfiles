@@ -1,0 +1,5 @@
+{% if data.host %}
+export host={{ data.host }}
+{% else %}
+export host=`hostname`
+{% endif %}

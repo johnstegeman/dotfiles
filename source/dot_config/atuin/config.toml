@@ -1,0 +1,11 @@
+ctrl_n_shortcuts = true
+enter_accept = true
+style = "full"
+search_mode = "daemon-fuzzy"
+
+[theme]
+name = "rosepine"
+
+[daemon]
+enabled = true
+autostart = true

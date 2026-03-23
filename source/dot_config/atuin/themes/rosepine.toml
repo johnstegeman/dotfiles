@@ -1,0 +1,9 @@
+[theme]
+name = "rosepine"
+
+[colors]
+AlertInfo = "#9ccfd8"
+Guidance = "#31748f"
+AlertError = "#eb6f92" 
+AlertWarn = "#f6c177"
+Important = "#eb6f92"
