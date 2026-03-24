@@ -82,13 +82,13 @@ These wrap modern CLI tools with graceful fallbacks to standard commands:
 | `dig` | `dig` | `doggo` | DNS lookup |
 | `cd` | `cd` | `zoxide` | Smart frecency-based navigation |
 
-### `cm` — chezmoi wrapper
+### `hv` — haven wrapper
 
 ```fish
-cm ap    # chezmoi apply -v (apply dotfiles)
-cm ed    # open chezmoi source directory in Zed
-cm cd    # cd to chezmoi source directory (~/.local/share/chezmoi)
-cm ...   # pass-through to chezmoi for any other subcommand
+hv ap    # haven apply (apply dotfiles)
+hv ed    # open haven source directory in Zed
+hv cd    # cd to haven source directory (~/.local/share/haven)
+hv ...   # pass-through to haven for any other subcommand
 ```
 
 ### `br` — Homebrew wrapper (macOS)
@@ -149,7 +149,7 @@ inf p5    # ssh to inf-prop5
 ### `dock` — macOS Dock backup/restore
 
 ```fish
-dock backup     # copy com.apple.dock.plist into the chezmoi source directory
+dock backup     # copy com.apple.dock.plist into the haven source directory
 dock restore    # restore the saved Dock plist and restart the Dock
 ```
 

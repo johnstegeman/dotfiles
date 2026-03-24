@@ -6,11 +6,11 @@ The keyboard uses the [Gallium layout](https://github.com/galliumkb/gallium) —
 
 ## Kanata
 
-[Kanata](https://github.com/jtroo/kanata) is a cross-platform software keyboard remapper that applies the Gallium layout. On macOS it runs as a LaunchDaemon, managed by a chezmoi template that resolves the correct binary path.
+[Kanata](https://github.com/jtroo/kanata) is a cross-platform software keyboard remapper that applies the Gallium layout. On macOS it runs as a LaunchDaemon, managed by a haven template that resolves the correct binary path.
 
 ### LaunchDaemon (macOS)
 
-The plist is stored in `config/LaunchDaemons/` as a chezmoi template (`com.example.kanata.plist.tmpl`). It is applied to `~/Library/LaunchAgents/` and automatically starts Kanata at login.
+The plist is stored in `config/LaunchDaemons/` as a haven template (`com.example.kanata.plist.tmpl`). It is applied to `~/Library/LaunchAgents/` and automatically starts Kanata at login.
 
 To restart Kanata after config changes:
 

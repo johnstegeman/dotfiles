@@ -2,24 +2,20 @@
 
 ## Quick install
 
-Install chezmoi and apply this configuration in a single step:
+Install this environment with haven in a single step:
 
 ```sh
-sh -c "$(curl -fsLS get.chezmoi.io)" -- init --apply https://github.com/johnstegeman/dotfiles
+haven init gh:johnstegeman/haven --apply
 ```
 
 This will:
-1. Install chezmoi to a temporary location
-2. Clone this repository to `~/.local/share/chezmoi`
-3. Apply the configuration to your home directory
+1. Clone this repository to `~/.local/share/haven`
+2. Apply the configuration to your home directory
 
-## Manual install
-
-If chezmoi is already installed:
+haven itself can be installed via Homebrew:
 
 ```sh
-chezmoi init https://github.com/johnstegeman/dotfiles
-chezmoi apply
+brew install johnstegeman/tap/haven
 ```
 
 ## Post-install steps
@@ -46,7 +42,7 @@ If you use tmux, open a tmux session and press `Prefix + I` to install plugins v
 
 ### 4. Configure 1Password (macOS, optional)
 
-SSH keys and other secrets are stored in 1Password and retrieved via chezmoi's 1Password integration. Follow the [chezmoi 1Password guide](https://www.chezmoi.io/user-guide/password-managers/1password/) to set this up.
+SSH keys and other secrets are stored in 1Password and retrieved via haven's 1Password integration. Set up the 1Password CLI and SSH agent before running `haven apply` on a new machine.
 
 ### 5. Bootstrap with just (optional)
 
@@ -56,8 +52,8 @@ A `Justfile` in the repo root provides convenience targets for common setup task
 just bootstrap   # brew bundle + mise install
 just brew        # brew bundle install
 just mise        # mise install
-just apply       # chezmoi apply
-just update      # brew + mise + chezmoi apply
+just apply       # haven apply
+just update      # brew + mise + haven apply
 ```
 
 ## Platform notes
@@ -66,7 +62,7 @@ just update      # brew + mise + chezmoi apply
 
 - Homebrew is required for most tooling. Install it from [brew.sh](https://brew.sh) if not already present.
 - Both Apple Silicon (`/opt/homebrew`) and Intel (`/usr/local`) Homebrew paths are handled automatically.
-- Kanata runs as a LaunchDaemon for keyboard remapping. The plist is managed by chezmoi as a template.
+- Kanata runs as a LaunchDaemon for keyboard remapping. The plist is managed by haven as a template.
 
 ### Linux
 
@@ -78,11 +74,11 @@ just update      # brew + mise + chezmoi apply
 
 ```fish
 # Pull and apply latest changes from the remote
-chezmoi update
+haven update
 
 # Or manually:
-cm cd          # cd to chezmoi source directory
+hv cd              # cd to haven source directory
 jj git fetch
 jj rebase -d main@origin
-cm ap          # chezmoi apply
+hv ap              # haven apply
 ```

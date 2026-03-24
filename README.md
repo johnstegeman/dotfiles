@@ -1,10 +1,10 @@
 # dotfiles
 
-Personal dotfiles for John Stegeman, managed with [chezmoi](https://github.com/twpayne/chezmoi). Works on both macOS and Linux.
+Personal dotfiles for John Stegeman, managed with [haven](https://github.com/johnstegeman/haven). Works on both macOS and Linux.
 
 ## Highlights
 
-- [chezmoi](https://github.com/twpayne/chezmoi) for dotfile management with cross-platform support
+- [haven](https://github.com/johnstegeman/haven) for dotfile and environment management with cross-platform support
 - [Rosé Pine](https://rosepinetheme.com/) color theme applied consistently across all tools
 - [Fish shell](https://fishshell.com/) as the default shell with [Tide](https://github.com/IlanCosman/tide) prompt
 - [Jujutsu (jj)](https://github.com/martinvonz/jj) as the primary version control system
@@ -97,15 +97,15 @@ These replace standard commands with better alternatives, falling back gracefull
 | `dig` | `dig` | `doggo` |
 | `cd` | `cd` | `zoxide` |
 
-#### chezmoi — `cm`
+#### haven — `hv`
 
-Wrapper for common chezmoi operations:
+Wrapper for common haven operations:
 
 ```fish
-cm ap    # chezmoi apply -v
-cm ed    # open chezmoi source directory in Zed
-cm cd    # cd to chezmoi source directory
-cm ...   # pass-through to chezmoi for anything else
+hv ap    # haven apply
+hv ed    # open haven source directory in Zed
+hv cd    # cd to haven source directory
+hv ...   # pass-through to haven for anything else
 ```
 
 #### Homebrew — `br`
@@ -170,8 +170,8 @@ Git is configured with:
 | Editor | Role | Notes |
 |--------|------|-------|
 | [Helix](https://helix-editor.com/) | Primary | Rosé Pine theme, Gallium keymaps |
-| [Zed](https://zed.dev/) | Secondary | Used by `cm ed` to open dotfiles |
-| [VS Code](https://code.visualstudio.com/) | Available | Rosé Pine theme, settings via chezmoi template |
+| [Zed](https://zed.dev/) | Secondary | Used by `hv ed` to open dotfiles |
+| [VS Code](https://code.visualstudio.com/) | Available | Rosé Pine theme, settings via haven template |
 | [Neovim](https://neovim.io/) | Available | — |
 
 ## Terminals
@@ -216,7 +216,7 @@ Git is configured with:
 
 ## Keyboard
 
-[Kanata](https://github.com/jtroo/kanata) remaps the keyboard to the [Gallium layout](https://github.com/galliumkb/gallium). On macOS, Kanata runs as a LaunchDaemon via a chezmoi template that resolves the correct binary path.
+[Kanata](https://github.com/jtroo/kanata) remaps the keyboard to the [Gallium layout](https://github.com/galliumkb/gallium). On macOS, Kanata runs as a LaunchDaemon via a haven template that resolves the correct binary path.
 
 Helix keybindings are also adjusted for the Gallium layout.
 
@@ -246,14 +246,14 @@ Helix keybindings are also adjusted for the Gallium layout.
 ## Installation
 
 ```sh
-sh -c "$(curl -fsLS get.chezmoi.io)" -- init --apply https://github.com/johnstegeman/dotfiles
+haven init gh:johnstegeman/haven --apply
 ```
 
 See [docs/installation.md](docs/installation.md) for full details including post-install steps and platform notes.
 
 ## Secrets
 
-Sensitive files (SSH keys, etc.) are managed via chezmoi's [1Password integration](https://www.chezmoi.io/user-guide/password-managers/1password/). Private SSH keys are stored in 1Password and accessed through the 1Password SSH agent — no keys are stored in plaintext on disk.
+Sensitive files (SSH keys, etc.) are managed via haven's [1Password integration](https://johnstegeman.github.io/haven/). Private SSH keys are stored in 1Password and accessed through the 1Password SSH agent — no keys are stored in plaintext on disk.
 
 ## Key File Locations
 
