@@ -2,7 +2,13 @@
 # Run `haven help` for usage.
 
 [profile.default]
-modules = ["packages"]
+modules = ["packages", "shell", "utilities"]
+
+[profile.macos]
+extends = "default"
+modules = ["macos"]
+
+
 [vcs]
 backend = "jj"
 

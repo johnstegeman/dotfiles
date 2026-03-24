@@ -2,5 +2,5 @@ requires_op = false
 
 
 [homebrew]
-brewfile = "brew/Brewfile.shell"
+brewfile = "brew/Brewfile.macos"
 sort = true

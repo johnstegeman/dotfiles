@@ -15,3 +15,4 @@ node_modules
 .ipynb_checkpoints/*
 uv.lock
 __marimo__
+**/.claude/settings.local.json

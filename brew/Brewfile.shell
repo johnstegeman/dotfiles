@@ -1,0 +1,4 @@
+brew "fish"
+brew "fisher"
+brew "tmux"
+brew "zsh"
