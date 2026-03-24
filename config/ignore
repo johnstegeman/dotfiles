@@ -32,7 +32,6 @@ Library/**/*
 docs
 docs/*
 docs/**/*
-settings.json
 .k9s/config.yml
 config/dot_flox
 config/dot_flox/*
