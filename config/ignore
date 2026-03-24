@@ -47,5 +47,6 @@ config/zed/**
 .lnav/**/*.sample
 .lnav/log_medatadata.db
 .lnav/*.history
+.lnav/crash/**
 README.md
 RECOMMENDATIONS.md
