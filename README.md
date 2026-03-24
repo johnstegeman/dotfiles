@@ -1,6 +1,6 @@
 # dotfiles
 
-Personal dotfiles for John Stegeman, managed with [chezmoi](https://github.com/twpayne/chezmoi). Works on both macOS and Linux.
+Personal dotfiles for John Stegeman, managed with [haven](https://github.com/johnstegeman/haven). Works on both macOS and Linux.
 
 ## Highlights
 
