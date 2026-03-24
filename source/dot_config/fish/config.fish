@@ -46,6 +46,10 @@ status is-interactive; and begin
         set -gx EDITOR hx
     end
 
+    if using haven
+       haven completions fish | source
+    end
+
     if using carapace
         set -Ux CARAPACE_BRIDGES 'zsh,fish,bash,inshellisense' # optional
         carapace _carapace | source
