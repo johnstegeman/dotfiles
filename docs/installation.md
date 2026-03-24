@@ -1,5 +1,7 @@
 # Installation
 
+# TODO: update for haven
+
 ## Quick install
 
 Install this environment with haven in a single step:
