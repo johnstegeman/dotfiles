@@ -2,5 +2,5 @@ requires_op = false
 
 
 [homebrew]
-brewfile = "brew/Brewfile.packages"
+brewfile = "brew/Brewfile.vcs"
 sort = true

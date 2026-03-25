@@ -1,0 +1,3 @@
+brew "helm"
+brew "kompose"
+brew "kubernetes-cli"

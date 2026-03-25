@@ -1,0 +1,7 @@
+brew "gh"
+brew "git"
+brew "git-delta"
+brew "git-lfs"
+brew "jj"
+# brew "lazygit"
+brew "subversion"
