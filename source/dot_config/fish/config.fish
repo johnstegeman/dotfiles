@@ -34,10 +34,6 @@ status is-interactive; and begin
         leadr --fish | source
     end
 
-    if test "$TERM" != dumb
-        # tide is initialized automatically via fish_prompt (installed by fisher)
-    end
-
     if using atuin
         atuin init fish --disable-ctrl-r | source
     end
@@ -48,6 +44,7 @@ status is-interactive; and begin
 
     if using haven
        haven completions fish | source
+       hv completions fish | sed "s/haven /hv /g" | source
     end
 
     if using carapace
