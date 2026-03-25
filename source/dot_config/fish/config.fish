@@ -52,4 +52,8 @@ status is-interactive; and begin
         carapace _carapace | source
     end
 
+    if using mise
+       mise activate fish | source
+    end
+
 end
