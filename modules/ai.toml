@@ -1,0 +1,6 @@
+requires_op = false
+
+
+[homebrew]
+brewfile = "brew/Brewfile.ai"
+sort = true

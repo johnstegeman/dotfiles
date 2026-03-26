@@ -6,7 +6,7 @@ modules = ["shell", "utilities", "cloud", "vcs", "k8s"]
 
 [profile.macos]
 extends = "default"
-modules = ["macos"]
+modules = ["macos", "ai"]
 
 
 [vcs]

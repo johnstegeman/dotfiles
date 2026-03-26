@@ -1,0 +1,3 @@
+
+brew "neo4j-mcp"
+brew "ollama"
