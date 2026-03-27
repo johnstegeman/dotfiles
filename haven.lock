@@ -1,0 +1,5 @@
+[sources]
+
+[skill."gh:johnstegeman/ai-skills/jujutsu"]
+sha = "2dcc4aaf55aa58f0912d42f881e77ba4cdf0d77417fb3c07a4145ee39119c611"
+fetched_at = "2026-03-26T20:23:49.772033+00:00"

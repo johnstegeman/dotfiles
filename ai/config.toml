@@ -1,4 +1,4 @@
 [skills]
-backend      = "skillkit"
-runner       = "bunx"        # "npx" (default) | "bunx" | "bun" | /path/to/binary
-timeout_secs = 60           # subprocess timeout (default: 60)
+backend      = "agent-skills"
+runner       = ["bunx", "agent-skills-cli"]
+#timeout_secs = 60           # subprocess timeout (default: 60)
