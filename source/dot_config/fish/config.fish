@@ -43,8 +43,7 @@ status is-interactive; and begin
     end
 
     if using haven
-       haven completions fish | source
-       hv completions fish | sed "s/haven /hv /g" | source
+       haven completions fish --cmd-name hv| sed "s/haven /hv /g" | source
     end
 
     if using carapace
