@@ -1,12 +1,13 @@
 export default {
-   defaultBrowser: "Zen",
+   defaultBrowser: "Arc",
    handlers: [
       {
          match: "meet.google.com/*",
          browser: () => {
             return {
                name: "Dia",
-               profile: "Work",
+               profile:
+                  "/Users/jstegeman/Library/Application Support/Dia/User Data/Profile 1",
             };
          },
       },

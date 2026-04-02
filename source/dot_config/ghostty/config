@@ -16,3 +16,5 @@ theme = "Rose Pine"
 
 background-opacity = 1
 background-blur=16
+
+shell-integration-features = ssh-terminfo,ssh-env

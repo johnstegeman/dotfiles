@@ -16,3 +16,4 @@ node_modules
 uv.lock
 __marimo__
 **/.claude/settings.local.json
+.workspaces
