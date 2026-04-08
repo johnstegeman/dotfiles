@@ -1,1 +1,0 @@
-alias kup="cd ~/Projects/qmk_firmware;git checkout master;git fetch upstream;git pull upstream master;git push origin master;cd -"

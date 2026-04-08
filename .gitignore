@@ -1,2 +1,4 @@
 # haven runtime files — do not commit
 .haven/
+.claude/**
+.vscode/settings.json
