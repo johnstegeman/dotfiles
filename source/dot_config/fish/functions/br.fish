@@ -6,7 +6,7 @@ function br
 
   switch $argv[1]
     case up
-      brew update; brew upgrade --greedy-auto-updates; brew cleanup; brew doctor
+      brew update; brew upgrade; brew cleanup; brew doctor
     case clean
       if test -f ~/config/Brewfile
         brew bundle --file ~/config/Brewfile --cleanup --zap
