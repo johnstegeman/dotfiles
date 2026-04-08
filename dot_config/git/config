@@ -1,0 +1,34 @@
+[core]
+	pager = delta
+
+[delta]
+	hyperlinks = true
+	light = false
+	navigate = true
+	side-by-side = true
+	syntax-theme = "rose-pine"
+
+[filter "lfs"]
+	clean = "git-lfs clean -- %f"
+	process = "git-lfs filter-process"
+	required = true
+	smudge = "git-lfs smudge -- %f"
+
+[gpg]
+	format = "ssh"
+
+[gpg "ssh"]
+	# Use ssh-keygen from PATH if available, otherwise fall back to system default
+	# Nix users: ensure openssh is in your PATH or configure this path manually
+	program = "ssh-keygen"
+
+[interactive]
+	# Use delta from PATH if available
+	# Nix users: ensure delta is in your PATH or configure this path manually
+	diffFilter = "delta --color-only"
+
+[merge]
+	conflictstyle = "diff3"
+
+[user]
+	email = "john.stegeman@gmail.com"

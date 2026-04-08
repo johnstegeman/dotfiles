@@ -1,0 +1,52 @@
+{{ if ne .chezmoi.os "darwin" }}
+.zsh_custom/homebrew.zsh
+.zsh_custom/macshorts.zsh
+Library
+Library/*
+Library/**/*
+.config/k9s/config.yml
+.iterm2_prefs
+.iterm2_prefs/*
+.iterm2_prefs/**/*
+.desktop_backgrounds
+.desktop_backgrounds/*
+.desktop_backgrounds/**/*
+.ssh/config
+{{ else }}
+.config/Bitwarden\ CLI/data.json
+.config/gtk-2.0/gtkfilechooser.ini
+{{ end }}
+.oh-my-zsh/cache
+.oh-my-zsh/cache/*
+.oh-my-zsh/cache/**/*
+.oh-my-zsh/custom/themes/powerlevel10k/gitstatus
+.oh-my-zsh/custom/themes/powerlevel10k/gitstatus/*
+.oh-my-zsh/custom/themes/powerlevel10k/gitstatus/**/*
+.oh-my-zsh/custom/themes/powerlevel10k/powerlevel10k.zsh-theme.zwc
+.oh-my-zsh/custom/themes/powerlevel10k/powerlevel9k.zsh-theme.zwc
+.oh-my-zsh/custom/themes/powerlevel10k/internal/configure.zsh.zwc
+.oh-my-zsh/custom/themes/powerlevel10k/internal/icons.zsh.zwc
+.oh-my-zsh/custom/themes/powerlevel10k/internal/p10k.zsh.zwc
+.oh-my-zsh/custom/themes/powerlevel10k/internal/parser.zsh.zwc
+.oh-my-zsh/custom/themes/powerlevel10k/internal/worker.zsh.zwc
+docs
+docs/*
+docs/**/*
+settings.json
+.k9s/config.yml
+config/dot_flox
+config/dot_flox/*
+config/dot_flox/**/*
+config/com.googlecode.iterm2.plist
+config/zed/*
+config/zed/**
+.ssh/known_hosts
+.config/configstore
+.config/configstore/*
+.config/configstore/**/*
+.lnav/*.json
+.lnav/**/*.sample
+.lnav/log_medatadata.db
+.lnav/*.history
+README.md
+RECOMMENDATIONS.md
