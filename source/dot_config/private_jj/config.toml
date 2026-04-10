@@ -15,8 +15,6 @@ write-change-id-header = true
 
 [aliases]
 # Use jj-spr from PATH (typically in ~/.cargo/bin or system PATH)
-spr = ["util", "exec", "--", "jj-spr"]
-
 
 [template-aliases]
 default_commit_description = '''
