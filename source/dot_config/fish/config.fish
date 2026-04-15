@@ -55,4 +55,8 @@ status is-interactive; and begin
        mise activate fish | source
     end
 
+    if using swiftly
+       source "/Users/jstegeman/.swiftly/env.fish"
+    end
+
 end
