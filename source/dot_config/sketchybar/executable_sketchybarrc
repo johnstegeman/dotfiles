@@ -1,0 +1,81 @@
+#!/usr/bin/env bash
+
+source "$HOME/.config/sketchybar/variables.sh"
+
+# Detect ultrawide (5120px physical) vs laptop (3456px physical)
+SCREEN_WIDTH=$(system_profiler SPDisplaysDataType 2>/dev/null | awk '/Resolution:/{print $2; exit}')
+: "${SCREEN_WIDTH:=5120}"
+
+if [ "$SCREEN_WIDTH" -ge 5000 ]; then
+    # Ultrawide: center bar in the middle zone, overlay menu bar
+    # margin = floor(5120 * 0.32) + gap/2 = 1638 + 5 = 1643 per side
+    BAR_MARGIN=$(( SCREEN_WIDTH * ZONE_LEFT_PCT / 100 + ZONE_GAP / 2 ))
+    BAR_Y_OFFSET=0
+    BAR_PADDING_L=640
+    BAR_PADDING_R=480
+    LAPTOP_MODE=false
+else
+    # Laptop: full-width bar in menu bar, workspace pills sit right of the notch
+    BAR_MARGIN=0
+    BAR_Y_OFFSET=0
+    BAR_PADDING_L=680
+    BAR_PADDING_R=10
+    LAPTOP_MODE=true
+fi
+
+# Dock height = visible frame y-origin (Quartz coords: y=0 is screen bottom).
+# y_offset pushes the bar up from the screen bottom edge by this many pixels,
+# so the bar sits in the gap above the dock rather than behind it.
+# Bar: transparent, sits in the menu bar area in the center zone.
+# position=top places the bar at the screen top, overlaying the macOS menu bar.
+# No notch on ultrawide = clean placement with no conflicts.
+sketchybar --bar \
+    position=top \
+    height=32 \
+    blur_radius=0 \
+    corner_radius=0 \
+    border_width=0 \
+    y_offset="$BAR_Y_OFFSET" \
+    margin="$BAR_MARGIN" \
+    topmost=window \
+    padding_left="$BAR_PADDING_L" \
+    padding_right="$BAR_PADDING_R" \
+    color=0x00000000 \
+    shadow=off
+
+# Defaults for all items
+sketchybar --default \
+    updates=when_shown \
+    icon.font="$FONT:Regular:14.0" \
+    icon.color="$FOREGROUND" \
+    label.font="$FONT:Regular:14.0" \
+    label.color="$FOREGROUND" \
+    background.corner_radius="$CORNER_RADIUS" \
+    background.height=26 \
+    background.drawing=off
+
+# Custom events fed by the AeroSpace event bridge (must be registered before items subscribe)
+sketchybar --add event aerospace_workspace_changed
+sketchybar --add event aerospace_focus_changed
+
+## Left
+source "$ITEM_DIR/spaces.sh"
+
+if [ "$LAPTOP_MODE" = false ]; then
+    source "$ITEM_DIR/front_app.sh"
+    source "$ITEM_DIR/zone.sh"
+
+    ## Right
+    source "$ITEM_DIR/mic.sh"
+    source "$ITEM_DIR/volume.sh"
+    source "$ITEM_DIR/battery.sh"
+    source "$ITEM_DIR/calendar.sh"
+    source "$ITEM_DIR/clock.sh"
+fi
+
+# Kill any previous bridge instance (e.g. from a prior reload), then start fresh
+pkill -f "aerospace_bridge.sh" 2>/dev/null
+"$PLUGIN_DIR/aerospace_bridge.sh" &
+disown
+
+sketchybar --update

@@ -1,9 +1,5 @@
 config-version = 2
 
-after-startup-command = [
-  'exec-and-forget borders active_color=0xffffffff inactive_color=0xff494d64 width=5.0'
-]
-
 exec-on-workspace-change = ['/usr/bin/env', 'fish', '/Users/jstegeman/bin/set_wp_for_workspace.fish']
 
 start-at-login = true
@@ -16,6 +12,10 @@ default-root-container-layout = 'accordion'
 default-root-container-orientation = 'auto'
 
 on-focused-monitor-changed = ['move-mouse monitor-lazy-center']
+[[on-monitor-changed]]
+run = ['exec-and-forget /opt/homebrew/bin/sketchybar --reload']
+[[on-startup]]
+run = ['exec-and-forget /opt/homebrew/bin/sketchybar --reload']
 automatically-unhide-macos-hidden-apps = false
 
 persistent-workspaces = ["1", "2", "3", "4", "5"]
@@ -46,6 +46,10 @@ run = ['layout floating']
 
 [[on-window-detected]]
 if.app-id = 'com.cmuxterm.app'
+run = ['layout floating']
+
+[[on-window-detected]]
+if.app-id = 'com.granola.app'
 run = ['layout floating']
 
 [[on-window-detected]]
@@ -95,6 +99,8 @@ run = 'move-node-to-workspace 1'
     alt-k = 'focus up'
     alt-l = 'focus right'
 
+    hyper-b = 'debug-log-marker'
+
     # Zone bindings (ultrawide)
     hyper-h = 'move-node-to-zone left'
     hyper-a = 'move-node-to-zone center'
@@ -128,7 +134,6 @@ run = 'move-node-to-workspace 1'
     alt-c = 'workspace C'
     alt-d = 'workspace D'
     alt-e = 'workspace E'
-    alt-f = 'workspace F'
     alt-g = 'workspace G'
     alt-i = 'workspace I'
     alt-m = 'workspace M'
@@ -137,7 +142,6 @@ run = 'move-node-to-workspace 1'
     alt-p = 'workspace P'
     alt-q = 'workspace Q'
     alt-r = 'workspace R'
-    alt-s = 'workspace S'
     alt-t = 'workspace T'
     alt-u = 'workspace U'
     alt-v = 'workspace V'
@@ -158,7 +162,6 @@ run = 'move-node-to-workspace 1'
     alt-shift-b = 'move-node-to-workspace B'
     alt-shift-c = 'move-node-to-workspace C'
     alt-shift-d = 'move-node-to-workspace D'
-    alt-shift-f = 'move-node-to-workspace F'
     alt-shift-g = 'move-node-to-workspace G'
     alt-shift-i = 'move-node-to-workspace I'
     alt-shift-m = 'move-node-to-workspace M'
@@ -167,7 +170,6 @@ run = 'move-node-to-workspace 1'
     alt-shift-p = 'move-node-to-workspace P'
     alt-shift-q = 'move-node-to-workspace Q'
     alt-shift-r = 'move-node-to-workspace R'
-    alt-shift-s = 'move-node-to-workspace S'
     alt-shift-t = 'move-node-to-workspace T'
     alt-shift-u = 'move-node-to-workspace U'
     alt-shift-v = 'move-node-to-workspace V'
@@ -181,6 +183,11 @@ run = 'move-node-to-workspace 1'
     alt-backtick = 'show-workspace-menu'
 
     alt-shift-semicolon = 'mode service'
+
+    hyper-s     = 'send-to-scratchpad'
+    meh-s       = 'scratchpad'
+    alt-shift-s = 'layout sticky'
+    alt-shift-f = 'layout floating'
 
 [mode.service.binding]
     esc = ['reload-config', 'mode main']
@@ -200,3 +207,10 @@ active-on = "never"
 widths = [0.32, 0.36, 0.32]
 layouts = ["accordion", "accordion", "accordion"]
 gap = 10
+
+
+[borders]
+enabled = true
+width = 2.0
+active-color = 0xffffffff
+inactive-color = 0x00000000
