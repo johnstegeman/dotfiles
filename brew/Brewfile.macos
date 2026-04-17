@@ -50,7 +50,6 @@ cask "webstorm"
 cask "wezterm"
 cask "zappy"
 cask "zed"
-brew "FelixKratz/formulae/borders"
 # mas "Email", id: 1489591003
 # mas "Spark email", id: 6445813049
 mas "Davinci Resolve", id: 571213070
