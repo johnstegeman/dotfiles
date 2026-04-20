@@ -27,6 +27,14 @@ offset-x = 24
 offset-y = 24
 padding = 30
 
+[accordion-indicator]
+enabled = true
+icon-size = 30
+icon-padding = 2
+bar-padding = 4
+position = 'left'
+vertical-navigation = false
+
 [key-mapping]
     preset = 'qwerty'
 
@@ -78,6 +86,10 @@ run = ['layout floating']
 [[on-window-detected]]
 if.app-id = 'us.zoom.xos'
 run = ['move-node-to-zone center']
+
+[[on-window-detected]]
+if.app-id = 'Cisco-Systems.Spark'
+run = ['layout floating']
 
 [[on-window-detected]]
 if.app-id = 'company.thebrowser.dia'
