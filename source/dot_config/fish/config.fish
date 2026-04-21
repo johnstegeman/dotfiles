@@ -7,7 +7,7 @@ status is-interactive; and begin
     # Add paths only if directories exist
     test -d /opt/homebrew/bin; and fish_add_path /opt/homebrew/bin
     test -d /opt/homebrew/opt/trash-cli/bin; and fish_add_path /opt/homebrew/opt/trash-cli/bin
-    test -d /Users/jstegeman/.swiftly/bin; and fish_add_path /Users/jstegeman/.swiftly/bin
+    # test -d /Users/jstegeman/.swiftly/bin; and fish_add_path /Users/jstegeman/.swiftly/bin
     test -d ~/bin; and fish_add_path ~/bin
     test -d ~/.cargo/bin; and fish_add_path ~/.cargo/bin
 
@@ -38,8 +38,8 @@ status is-interactive; and begin
         atuin init fish --disable-ctrl-r | source
     end
 
-    if using hx
-        set -gx EDITOR hx
+    if using nvim
+        set -gx EDITOR nvim
     end
 
     if using haven
@@ -55,8 +55,8 @@ status is-interactive; and begin
        mise activate fish | source
     end
 
-    if using swiftly
-       source "/Users/jstegeman/.swiftly/env.fish"
-    end
+    #if using swiftly
+    #   source "/Users/jstegeman/.swiftly/env.fish"
+    #end
 
 end
