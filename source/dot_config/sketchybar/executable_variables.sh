@@ -26,8 +26,3 @@ FONT="JetBrainsMono Nerd Font"
 
 ITEM_DIR="$HOME/.config/sketchybar/items"
 PLUGIN_DIR="$HOME/.config/sketchybar/plugins"
-
-# Must match [zones] gap in aerospace.toml
-ZONE_GAP=10
-# Must match [zones] widths[0] (left zone fraction × 100)
-ZONE_LEFT_PCT=32

@@ -53,6 +53,7 @@ cask "zed"
 # mas "Email", id: 1489591003
 # mas "Spark email", id: 6445813049
 mas "Davinci Resolve", id: 571213070
+brew "felixkratz/formulae/borders"
 brew "kanata"
 brew "mas"
 brew "qmk"

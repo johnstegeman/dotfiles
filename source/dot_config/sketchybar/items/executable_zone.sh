@@ -18,5 +18,6 @@ sketchybar --add item zone left \
     background.border_color="$COMMENT" \
     background.color="$BAR_COLOR" \
     background.drawing=on \
+    click_script="aerospace show-zone-picker" \
     script="$PLUGIN_DIR/zone.sh"
 sketchybar --subscribe zone aerospace_focus_changed

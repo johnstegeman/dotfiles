@@ -7,6 +7,14 @@
 // custom settings, run `zed: open default settings` from the
 // command palette (cmd-shift-p / ctrl-shift-p)
 {
+  "collaboration_panel": {
+    "dock": "left"
+  },
+  "agent": {
+    "dock": "right",
+    "favorite_models": [],
+    "model_parameters": []
+  },
   "soft_wrap": "editor_width",
   "title_bar": {
     "show_sign_in": false
@@ -27,10 +35,12 @@
     "metrics": false
   },
   "project_panel": {
+    "dock": "left",
     "button": true,
     "git_status": false
   },
   "outline_panel": {
+    "dock": "left",
     "git_status": false
   },
   "base_keymap": "VSCode",
@@ -38,6 +48,7 @@
     "git_status": false
   },
   "git_panel": {
+    "dock": "left",
     "button": false
   },
   "relative_line_numbers": "enabled",

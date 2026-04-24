@@ -1,7 +1,7 @@
 [settings]
 python.uv_venv_auto = "source"
 experimental = true
-idiomatic_version_file_enable_tools = ["swift"]
+# idiomatic_version_file_enable_tools = ["swift"]
 auto_install = true
 jobs = 4
 

@@ -7,15 +7,15 @@ SCREEN_WIDTH=$(system_profiler SPDisplaysDataType 2>/dev/null | awk '/Resolution
 : "${SCREEN_WIDTH:=5120}"
 
 if [ "$SCREEN_WIDTH" -ge 5000 ]; then
-    # Ultrawide: center bar in the middle zone, overlay menu bar
-    # margin = floor(5120 * 0.32) + gap/2 = 1638 + 5 = 1643 per side
-    BAR_MARGIN=$(( SCREEN_WIDTH * ZONE_LEFT_PCT / 100 + ZONE_GAP / 2 ))
+    # Ultrawide: keep the bar compact and centered so the groups don't leave a giant empty middle.
+    ULTRAWIDE_BAR_WIDTH=1050
+    BAR_MARGIN=$(( (SCREEN_WIDTH - ULTRAWIDE_BAR_WIDTH) / 2 ))
     BAR_Y_OFFSET=0
-    BAR_PADDING_L=640
-    BAR_PADDING_R=480
+    BAR_PADDING_L=8
+    BAR_PADDING_R=8
     LAPTOP_MODE=false
 else
-    # Laptop: full-width bar in menu bar, workspace pills sit right of the notch
+    # Laptop: full-width bar in menu bar, keep it minimal because of the notch.
     BAR_MARGIN=0
     BAR_Y_OFFSET=0
     BAR_PADDING_L=680
@@ -23,12 +23,6 @@ else
     LAPTOP_MODE=true
 fi
 
-# Dock height = visible frame y-origin (Quartz coords: y=0 is screen bottom).
-# y_offset pushes the bar up from the screen bottom edge by this many pixels,
-# so the bar sits in the gap above the dock rather than behind it.
-# Bar: transparent, sits in the menu bar area in the center zone.
-# position=top places the bar at the screen top, overlaying the macOS menu bar.
-# No notch on ultrawide = clean placement with no conflicts.
 sketchybar --bar \
     position=top \
     height=32 \
@@ -54,9 +48,10 @@ sketchybar --default \
     background.height=26 \
     background.drawing=off
 
-# Custom events fed by the AeroSpace event bridge (must be registered before items subscribe)
+# Custom events fed by AeroSpace event bridges.
 sketchybar --add event aerospace_workspace_changed
 sketchybar --add event aerospace_focus_changed
+sketchybar --add event aerospace_preset_changed
 
 ## Left
 source "$ITEM_DIR/spaces.sh"
@@ -64,6 +59,11 @@ source "$ITEM_DIR/spaces.sh"
 if [ "$LAPTOP_MODE" = false ]; then
     source "$ITEM_DIR/front_app.sh"
     source "$ITEM_DIR/zone.sh"
+
+    sketchybar --add item spacer.zone_preset left \
+        --set spacer.zone_preset width=4 background.drawing=off label.drawing=off icon.drawing=off
+
+    source "$ITEM_DIR/preset.sh"
 
     ## Right
     source "$ITEM_DIR/mic.sh"
@@ -73,9 +73,11 @@ if [ "$LAPTOP_MODE" = false ]; then
     source "$ITEM_DIR/clock.sh"
 fi
 
-# Kill any previous bridge instance (e.g. from a prior reload), then start fresh
+# Kill previous bridge instances (e.g. from a prior reload), then start fresh.
 pkill -f "aerospace_bridge.sh" 2>/dev/null
+pkill -f "preset_bridge.sh" 2>/dev/null
 "$PLUGIN_DIR/aerospace_bridge.sh" &
+"$PLUGIN_DIR/preset_bridge.sh" &
 disown
 
 sketchybar --update

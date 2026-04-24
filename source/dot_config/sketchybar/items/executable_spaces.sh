@@ -1,13 +1,12 @@
 #!/usr/bin/env bash
 
-# AeroSpace workspaces. Each item subscribes to the aerospace_workspace_changed custom event
-# fired by the persistent bridge in plugins/aerospace_bridge.sh.
+# Keep laptop mode minimal because of the notch.
 WORKSPACES=("1" "P")
 
-# On laptop: items go on the right side (away from notch). On ultrawide: left side with spacers.
+# On laptop: items go on the right side (away from notch). On ultrawide: keep the cluster compact.
 if [ "$LAPTOP_MODE" = false ]; then
     sketchybar --add item spacer.left left \
-        --set spacer.left width=10 background.drawing=off label.drawing=off icon.drawing=off
+        --set spacer.left width=4 background.drawing=off label.drawing=off icon.drawing=off
 fi
 
 for ws in "${WORKSPACES[@]}"; do
@@ -35,5 +34,5 @@ sketchybar --add bracket spaces '/space\..*/' \
 
 if [ "$LAPTOP_MODE" = false ]; then
     sketchybar --add item spacer.mid left \
-        --set spacer.mid width=5 background.drawing=off label.drawing=off icon.drawing=off
+        --set spacer.mid width=3 background.drawing=off label.drawing=off icon.drawing=off
 fi
