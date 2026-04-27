@@ -4,7 +4,6 @@
 
 sketchybar --add item preset left \
     --set preset \
-    icon="Layout" \
     icon.color="$COMMENT" \
     icon.padding_left=8 \
     icon.padding_right=4 \

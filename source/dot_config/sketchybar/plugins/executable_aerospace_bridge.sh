@@ -2,12 +2,14 @@
 # Persistent bridge: reads AeroSpace event stream, fires sketchybar custom events.
 # Started by sketchybarrc on every reload (previous instance killed first).
 
-/usr/local/bin/aerospace subscribe monitor-changed focused-workspace-changed focus-changed --no-send-initial 2>/dev/null | \
+/usr/local/bin/aerospace subscribe monitor-changed focused-workspace-changed focus-changed 2>/dev/null | \
 while IFS= read -r line; do
     EVENT=$(printf '%s' "$line" | sed 's/.*"_event":"\([^"]*\)".*/\1/')
     case "$EVENT" in
         monitor-changed)
-            sketchybar --reload
+            # AeroSpace already reloads SketchyBar on monitor changes via aerospace.toml.
+            # Doing it again here creates a reload loop.
+            :
             ;;
         focused-workspace-changed)
             WS=$(printf '%s' "$line" | sed 's/.*"workspace":"\([^"]*\)".*/\1/')
