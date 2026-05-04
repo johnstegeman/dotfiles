@@ -50,8 +50,22 @@ app-ids = [
     'com.apple.finder',
     'com.apple.FaceTime',
     'com.apple.QuickTimePlayerX',
+    'com.amazon.QuickWork.mac',
     'Cisco-Systems.Spark',
 ]
+
+[meeting]
+preset = 'meeting'
+workspace = '1'
+app-ids = [
+    'company.thebrowser.dia',
+    'us.zoom.xos',
+    'com.microsoft.teams2',
+    'Cisco-Systems.Spark',
+]
+support-app-ids = ['com.granola.app']
+meeting-zone = 'center'
+support-zone = 'right'
 
 # Window-detection rules for non-default behaviors
 [[on-window-detected]]
@@ -91,7 +105,7 @@ run = 'move-node-to-workspace 1'
 
     hyper-b = 'exec-and-forget aerospace zone-preset balanced'
     hyper-f = 'exec-and-forget aerospace zone-focus-mode toggle'
-    hyper-m = 'exec-and-forget aerospace zone-preset meeting'
+    hyper-m = 'exec-and-forget aerospace meeting-mode toggle'
     hyper-0 = 'exec-and-forget aerospace zone-preset --reset'
 
     # Move within tiling tree
@@ -160,6 +174,15 @@ new-window = 'after-focused'
 
 [zones.behavior.right]
 new-window = 'after-focused'
+
+
+[zones.app-routing]
+"company.thebrowser.dia" = 'center'
+"us.zoom.xos" = 'center'
+"com.microsoft.teams2" = 'center'
+"Cisco-Systems.Spark" = 'center'
+"com.granola.app" = 'right'
+
 
 [[zone-presets]]
 name = "balanced"
