@@ -6,7 +6,7 @@ auto_install = true
 jobs = 4
 
 [tools]
-java = "temurin-24"
+java = "21"
 "ubi:ll-nick/leadr" = "latest"
 doggo = "latest"
 bun = "latest"
