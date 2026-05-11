@@ -11,3 +11,8 @@ java = "21"
 doggo = "latest"
 bun = "latest"
 python = "latest"
+awscli = { version = "latest", symlink_bins = "true" }
+kubectl = "latest"
+helm = "latest"
+kompose = "latest"
+trufflehog = "latest"
