@@ -7,8 +7,8 @@ function codex --description 'Launch Codex through Headroom'
     end
 
     if test (count $argv) -gt 0
-        command headroom wrap codex -- $argv
+        command headroom wrap codex --no-context-tool --no-serena -- $argv
     else
-        command headroom wrap codex
+        command headroom wrap codex --no-context-tool --no-serena
     end
 end

@@ -7,8 +7,8 @@ function claude --description 'Launch Claude through Headroom'
     end
 
     if test (count $argv) -gt 0
-        command headroom wrap claude -- $argv
+        command headroom wrap claude --no-context-tool --no-serena -- $argv
     else
-        command headroom wrap claude
+        command headroom wrap claude --no-context-tool --no-serena
     end
 end

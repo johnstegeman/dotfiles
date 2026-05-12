@@ -11,11 +11,10 @@ function headroom-install-service --description 'Install the default Headroom pe
         return 0
     end
 
-    command headroom install apply \
-        --preset persistent-service \
-        --profile default \
-        --port 8787 \
-        --scope provider \
-        --providers manual \
-        --memory
+command headroom install apply \
+    --preset persistent-service \
+    --profile default \
+    --port 8787 \
+    --scope provider \
+    --providers manual
 end
