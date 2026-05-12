@@ -2,3 +2,4 @@
 brew "gemini-cli"
 brew "neo4j-mcp"
 brew "ollama"
+brew "rtk"

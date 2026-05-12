@@ -16,3 +16,5 @@ kubectl = "latest"
 helm = "latest"
 kompose = "latest"
 trufflehog = "latest"
+"npm:agent-skills-cli" = "latest"
+"pipx:headroom-ai" = { version = "latest", extras = "all" }

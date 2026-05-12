@@ -1,0 +1,2 @@
+source    = "gh:johnstegeman/ai-skills/skills/jujutsu@main"
+platforms = "all"
