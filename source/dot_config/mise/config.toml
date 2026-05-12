@@ -7,7 +7,7 @@ jobs = 4
 
 [tools]
 java = "21"
-"ubi:ll-nick/leadr" = "latest"
+#"ubi:ll-nick/leadr" = "latest"
 doggo = "latest"
 bun = "latest"
 python = "latest"

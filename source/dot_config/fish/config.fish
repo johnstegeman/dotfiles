@@ -30,10 +30,6 @@ status is-interactive; and begin
         zoxide init fish | source
     end
 
-    if using leadr
-        leadr --fish | source
-    end
-
     if using atuin
         atuin init fish --disable-ctrl-r | source
     end
