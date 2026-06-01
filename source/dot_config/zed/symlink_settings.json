@@ -50,7 +50,7 @@
   },
   "git_panel": {
     "dock": "left",
-    "button": false
+    "button": true
   },
   "relative_line_numbers": "enabled",
   "sticky_scroll": {

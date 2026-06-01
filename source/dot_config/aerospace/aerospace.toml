@@ -78,6 +78,16 @@ if.window-title-regex-substring = '^Personal:'
 run = 'move-node-to-workspace P'
 
 [[on-window-detected]]
+if.app-id = 'com.vivaldi.Vivaldi'
+if.window-title-regex-substring = '^Work:'
+run = 'move-node-to-workspace 1'
+
+[[on-window-detected]]
+if.app-id = 'com.vivaldi.Vivaldi'
+if.window-title-regex-substring = '^Personal:'
+run = 'move-node-to-workspace P'
+
+[[on-window-detected]]
 if.app-id = 'company.thebrowser.dia'
 if.window-title-regex-substring = '^Work:'
 run = 'move-node-to-workspace 1'
@@ -149,7 +159,7 @@ run = 'move-node-to-workspace 1'
 
 [zones]
 gap = 10
-focus-mode-collapsed-width = 80
+focus-mode-collapsed-width = 500
 
 [[zones.zone]]
 id = "left"

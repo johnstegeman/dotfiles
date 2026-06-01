@@ -93,11 +93,12 @@ set -gx tide_character_color_failure $rp_love
 set -gx tide_character_bg_color      normal
 
 # --- Git item (used by _tide_item_vcs when not in a jj repo) ---
-# Starship: git_branch fg:foam  git_status untracked=gold modified=iris staged=pine deleted=love
+# Custom git segment mirrors jj density: branch/upstream=foam, add=pine,
+# modified/untracked=gold, deleted/conflicted=love.
 set -U  tide_git_icon              (printf '\ue0a0')  # U+E0A0 nerd font branch icon
 set -gx tide_git_color_branch      $rp_foam
 set -gx tide_git_color_staged      $rp_pine
-set -gx tide_git_color_dirty       $rp_iris
+set -gx tide_git_color_dirty       $rp_gold
 set -gx tide_git_color_untracked   $rp_gold
 set -gx tide_git_color_conflicted  $rp_love
 set -gx tide_git_color_upstream    $rp_foam
