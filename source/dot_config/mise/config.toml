@@ -16,5 +16,5 @@ kubectl = "latest"
 helm = "latest"
 kompose = "latest"
 trufflehog = "latest"
-"pipx:headroom-ai" = { version = "latest", extras = "all" }
+#"pipx:headroom-ai" = { version = "latest", extras = "all" }
 node = "latest"

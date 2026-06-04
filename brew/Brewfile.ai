@@ -2,6 +2,5 @@
 brew "gastownhall/gascity/gascity"
 brew "neo4j-mcp"
 brew "ollama"
-brew "rtk"
 cask "antigravity-cli"
 cask "entire"
