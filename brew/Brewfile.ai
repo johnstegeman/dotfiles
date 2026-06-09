@@ -1,6 +1,4 @@
 
 brew "gastownhall/gascity/gascity"
 brew "neo4j-mcp"
-brew "ollama"
 cask "antigravity-cli"
-cask "entire"

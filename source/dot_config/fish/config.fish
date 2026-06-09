@@ -47,10 +47,6 @@ status is-interactive; and begin
         carapace _carapace | source
     end
 
-    if using mise
-       mise activate fish | source
-    end
-
     if using swiftly
        source "/Users/jstegeman/.swiftly/env.fish"
     end
