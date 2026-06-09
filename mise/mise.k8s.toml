@@ -1,0 +1,5 @@
+[tools]
+helm = "latest"
+kompose = "latest"
+kubectl = "latest"
+#"ubi:ll-nick/leadr" = "latest"

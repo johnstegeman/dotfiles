@@ -1,0 +1,5 @@
+[tools]
+"1password" = "latest"
+"1password-cli" = "latest"
+# mas = "latest"
+ollama = "latest"

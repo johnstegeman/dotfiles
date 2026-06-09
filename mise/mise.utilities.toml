@@ -1,0 +1,11 @@
+[tools]
+doggo = "latest"
+entireio-cli = "latest"
+gh = "latest"
+java = "21"
+jbang = "latest"
+jq = "latest"
+lua = "latest"
+luajit = "latest"
+neovim = "latest"
+trufflehog = "latest"

@@ -4,3 +4,6 @@ requires_op = false
 [homebrew]
 brewfile = "brew/Brewfile.ai"
 sort = true
+
+[mise]
+config = "mise/mise.ai.toml"

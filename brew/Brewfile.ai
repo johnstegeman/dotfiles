@@ -2,3 +2,4 @@
 brew "gastownhall/gascity/gascity"
 brew "neo4j-mcp"
 cask "antigravity-cli"
+cask "claude"

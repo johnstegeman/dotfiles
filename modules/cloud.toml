@@ -4,3 +4,6 @@ requires_op = false
 [homebrew]
 brewfile = "brew/Brewfile.cloud"
 sort = true
+
+[mise]
+config = "mise/mise.cloud.toml"
