@@ -4,4 +4,5 @@ claude-code = "latest"
 codex = "latest"
 opencode = "latest"
 rtk = "latest"
+pi = "latest"
 #"pipx:headroom-ai" = { version = "latest", extras = "all" }
