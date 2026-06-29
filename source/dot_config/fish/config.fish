@@ -5,7 +5,7 @@ end
 status is-interactive; and begin
 
     # Add paths only if directories exist
-    test -d /opt/homebrew/bin; and fish_add_path /opt/homebrew/bin
+    test -d /opt/homebrew/bin; and /opt/homebrew/bin/brew shellenv | source
     test -d /opt/homebrew/opt/trash-cli/bin; and fish_add_path /opt/homebrew/opt/trash-cli/bin
     test -d /Users/jstegeman/.swiftly/bin; and fish_add_path /Users/jstegeman/.swiftly/bin
     test -d ~/bin; and fish_add_path ~/bin
