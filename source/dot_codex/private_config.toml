@@ -1,8 +1,3 @@
-# --- Headroom proxy (auto-injected by headroom wrap codex) ---
-model_provider = "headroom"
-openai_base_url = "http://127.0.0.1:8787/v1"
-# --- end Headroom ---
-
 model = "gpt-5.4"
 model_reasoning_effort = "xhigh"
 [projects."/Users/jstegeman/Projects/_mine/AeroSpace"]
@@ -44,6 +39,12 @@ trust_level = "trusted"
 [projects."/Users/jstegeman/Projects/_ai/recall-recorder"]
 trust_level = "trusted"
 
+[projects."/Users/jstegeman/conductor/repos/Starter project"]
+trust_level = "trusted"
+
+[projects."/Users/jstegeman/Projects/_mine/cy-ai"]
+trust_level = "trusted"
+
 [tui.model_availability_nux]
 "gpt-5.5" = 4
 
@@ -75,32 +76,25 @@ enabled = true
 [plugins."presentations@openai-primary-runtime"]
 enabled = true
 
-# --- Headroom MCP server ---
-[mcp_servers.headroom]
-command = "headroom"
-args = ["mcp", "serve"]
-
-[mcp_servers.headroom.tools.headroom_stats]
-approval_mode = "approve"
-
-[mcp_servers.headroom.tools.headroom_retrieve]
-approval_mode = "approve"
-# --- end Headroom MCP server ---
-
-# --- Headroom proxy (auto-injected by headroom wrap codex) ---
-[model_providers.headroom]
-name = "OpenAI via Headroom proxy"
-base_url = "http://127.0.0.1:8787/v1"
-supports_websockets = true
-
 [hooks.state]
 
 [hooks.state."/Users/jstegeman/.codex/hooks.json:session_start:0:0"]
-trusted_hash = "sha256:a0f99817beb85bb91fc3a4fceca2b4805237ba567b2751137a6b804df2ac7efb"
+trusted_hash = "sha256:132228ded42a79f2930a1a492d645b7fb83658de25c3ee785a81e7665da82be6"
 
 [hooks.state."/Users/jstegeman/.codex/hooks.json:user_prompt_submit:0:0"]
-trusted_hash = "sha256:ee4ad349bb08f846179e33c6de5d9792ec89788fd44e187229bea69716628a1c"
+trusted_hash = "sha256:5ad2ce0e16bc5b59e4fca029e14032490bae6ecdbcc34369635820d533790a37"
 
 [hooks.state."/Users/jstegeman/.codex/hooks.json:stop:0:0"]
+trusted_hash = "sha256:22e6ec1e8950954ce08edf64b1a731b1c0add5d0293c9940b0ccf6869c8e47d4"
+
+[hooks.state."/Users/jstegeman/.codex/hooks.json:session_start:1:0"]
+trusted_hash = "sha256:a0f99817beb85bb91fc3a4fceca2b4805237ba567b2751137a6b804df2ac7efb"
+
+[hooks.state."/Users/jstegeman/.codex/hooks.json:user_prompt_submit:1:0"]
+trusted_hash = "sha256:ee4ad349bb08f846179e33c6de5d9792ec89788fd44e187229bea69716628a1c"
+
+[hooks.state."/Users/jstegeman/.codex/hooks.json:stop:1:0"]
 trusted_hash = "sha256:b19f61edcffd751cd610f0d31478656ddb0ae0cfdc61203c921ddc001896303a"
-# --- end Headroom ---
+
+[hooks.state."/Users/jstegeman/.codex/hooks.json:session_start:2:0"]
+trusted_hash = "sha256:543f8879a66c77c565379f14f7f078a6179651adc1817f28489fa9ae6a4a3e21"

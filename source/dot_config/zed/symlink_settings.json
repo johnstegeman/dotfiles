@@ -26,7 +26,7 @@
   "buffer_line_height": "comfortable",
   "colorize_brackets": true,
   "icon_theme": {
-    "mode": "system",
+    "mode": "dark",
     "light": "Colored Zed Icons Theme Dark",
     "dark": "Monospace Icon Theme - Light"
   },
@@ -69,7 +69,7 @@
   "buffer_font_size": 15,
   "theme": {
     "mode": "dark",
-    "light": "Rosé Pine Dawn",
+    "light": "Rosé Pine",
     "dark": "Rosé Pine"
   },
   "languages": {

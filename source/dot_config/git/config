@@ -32,3 +32,5 @@
 
 [user]
 	email = "john.stegeman@gmail.com"
+[beads]
+	role = maintainer

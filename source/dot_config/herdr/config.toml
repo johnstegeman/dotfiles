@@ -1,0 +1,14 @@
+onboarding = false
+
+[ui]
+agent_panel_sort = "spaces"
+
+[theme]
+name = "rose-pine"
+auto_switch = false
+
+[keys]
+navigate_pane_left = "h"      # left arrow always focuses the pane to the left
+navigate_pane_down = "a"
+navigate_pane_up = "o"
+navigate_pane_right = "e"     # right arrow always focuses the pane to the right
