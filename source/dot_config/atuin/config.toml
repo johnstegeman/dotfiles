@@ -4,7 +4,7 @@ style = "full"
 search_mode = "daemon-fuzzy"
 
 [theme]
-name = "rosepine"
+name = "catppuccin-mocha-blue"
 
 [daemon]
 enabled = true

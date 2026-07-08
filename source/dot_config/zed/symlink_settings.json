@@ -69,8 +69,8 @@
   "buffer_font_size": 15,
   "theme": {
     "mode": "dark",
-    "light": "Rosé Pine",
-    "dark": "Rosé Pine"
+    "light": "Catppuccin Latte",
+    "dark": "Catppuccin Mocha"
   },
   "languages": {
     "AsciiDoc": {

@@ -10,7 +10,7 @@ window-width = "156"
 confirm-close-surface = "false"
 
 macos-option-as-alt = "true"
-theme = "Rose Pine"
+theme = "Catppuccin Mocha"
 
 # macos-window-buttons = hidden
 

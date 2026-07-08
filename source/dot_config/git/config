@@ -1,12 +1,15 @@
 [core]
 	pager = delta
 
+[include]
+	path = "~/.config/git/catppuccin.gitconfig"
+
 [delta]
 	hyperlinks = true
 	light = false
 	navigate = true
 	side-by-side = true
-	syntax-theme = "rose-pine"
+	features = catppuccin-mocha
 
 [filter "lfs"]
 	clean = "git-lfs clean -- %f"
