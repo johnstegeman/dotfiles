@@ -1,5 +1,4 @@
 [tools]
-claude = "latest"
 claude-code = "latest"
 codex = "latest"
 opencode = "latest"

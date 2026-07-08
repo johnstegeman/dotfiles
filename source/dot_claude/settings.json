@@ -1,5 +1,42 @@
 {
-  "effortLevel": "high",
+  "model": "sonnet",
+  "hooks": {
+    "PreToolUse": [
+      {
+        "matcher": "Bash",
+        "hooks": [
+          {
+            "type": "command",
+            "command": "rtk hook claude"
+          }
+        ]
+      }
+    ],
+    "SessionStart": [
+      {
+        "hooks": [
+          {
+            "type": "command",
+            "command": "mkdir -p ~/.claude/session_starts && jq -r '.session_id' | { read sid; jq -n --arg sid \"$sid\" --arg cwd \"$(pwd)\" --argjson ts $(date +%s) '{\"session_id\":$sid,\"start_time\":$ts,\"cwd\":$cwd}' > ~/.claude/session_starts/\"$PPID\".json; }"
+          }
+        ]
+      },
+      {
+        "matcher": "*",
+        "hooks": [
+          {
+            "type": "command",
+            "command": "bash '/Users/jstegeman/.claude/hooks/herdr-agent-state.sh' session",
+            "timeout": 10
+          }
+        ]
+      }
+    ]
+  },
+  "statusLine": {
+    "type": "command",
+    "command": "npx -y @owloops/claude-powerline@latest"
+  },
   "enabledPlugins": {
     "clangd-lsp@claude-plugins-official": true,
     "claude-powerline@claude-powerline": true,
@@ -13,66 +50,29 @@
   "extraKnownMarketplaces": {
     "claude-powerline": {
       "source": {
-        "repo": "Owloops/claude-powerline",
-        "source": "github"
+        "source": "github",
+        "repo": "Owloops/claude-powerline"
       }
     },
     "context-mode": {
       "source": {
-        "repo": "mksglu/context-mode",
-        "source": "github"
+        "source": "github",
+        "repo": "mksglu/context-mode"
       }
     },
     "hone-ai": {
       "source": {
-        "repo": "oskarhane/hone-ai",
-        "source": "github"
+        "source": "github",
+        "repo": "oskarhane/hone-ai"
       }
     },
     "karpathy-skills": {
       "source": {
-        "repo": "forrestchang/andrej-karpathy-skills",
-        "source": "github"
+        "source": "github",
+        "repo": "forrestchang/andrej-karpathy-skills"
       }
     }
   },
-  "hooks": {
-    "PreToolUse": [
-      {
-        "hooks": [
-          {
-            "command": "rtk hook claude",
-            "type": "command"
-          }
-        ],
-        "matcher": "Bash"
-      }
-    ],
-    "SessionStart": [
-      {
-        "hooks": [
-          {
-            "command": "mkdir -p ~/.claude/session_starts && jq -r '.session_id' | { read sid; jq -n --arg sid \"$sid\" --arg cwd \"$(pwd)\" --argjson ts $(date +%s) '{\"session_id\":$sid,\"start_time\":$ts,\"cwd\":$cwd}' > ~/.claude/session_starts/\"$PPID\".json; }",
-            "type": "command"
-          }
-        ]
-      },
-      {
-        "hooks": [
-          {
-            "command": "bash '/Users/jstegeman/.claude/hooks/herdr-agent-state.sh' session",
-            "timeout": 10,
-            "type": "command"
-          }
-        ],
-        "matcher": "*"
-      }
-    ]
-  },
-  "model": "sonnet[1m]",
-  "skipDangerousModePermissionPrompt": true,
-  "statusLine": {
-    "command": "npx -y @owloops/claude-powerline@latest",
-    "type": "command"
-  }
+  "effortLevel": "high",
+  "skipDangerousModePermissionPrompt": true
 }
