@@ -10,7 +10,7 @@ window-width = "156"
 confirm-close-surface = "false"
 
 macos-option-as-alt = "true"
-theme = "Catppuccin Mocha"
+theme = "TokyoNight Night"
 
 # macos-window-buttons = hidden
 

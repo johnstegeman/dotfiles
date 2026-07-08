@@ -4,7 +4,7 @@ style = "full"
 search_mode = "daemon-fuzzy"
 
 [theme]
-name = "catppuccin-mocha-blue"
+name = "tokyonight-night"
 
 [daemon]
 enabled = true

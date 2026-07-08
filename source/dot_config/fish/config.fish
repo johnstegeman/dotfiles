@@ -11,7 +11,7 @@ status is-interactive; and begin
     test -d ~/bin; and fish_add_path ~/bin
     test -d ~/.cargo/bin; and fish_add_path ~/.cargo/bin
 
-    fish_config theme choose "Rosé Pine"
+    fish_config theme choose "TokyoNight Night"
 
     set -xg VIRTUAL_ENV_DISABLE_PROMPT yes
     set -gx LEADR_CONFIG_DIR ~/.config/leadr

@@ -4,7 +4,7 @@ onboarding = false
 agent_panel_sort = "spaces"
 
 [theme]
-name = "catppuccin-mocha"
+name = "tokyonight-night"
 auto_switch = false
 
 [keys]

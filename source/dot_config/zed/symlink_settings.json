@@ -69,8 +69,8 @@
   "buffer_font_size": 15,
   "theme": {
     "mode": "dark",
-    "light": "Catppuccin Latte",
-    "dark": "Catppuccin Mocha"
+    "light": "Tokyo Night Light",
+    "dark": "Tokyo Night"
   },
   "languages": {
     "AsciiDoc": {

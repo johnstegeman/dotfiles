@@ -2,14 +2,14 @@
 	pager = delta
 
 [include]
-	path = "~/.config/git/catppuccin.gitconfig"
+	path = "~/.config/git/tokyonight.gitconfig"
 
 [delta]
 	hyperlinks = true
 	light = false
 	navigate = true
 	side-by-side = true
-	features = catppuccin-mocha
+	syntax-theme = "tokyonight_night"
 
 [filter "lfs"]
 	clean = "git-lfs clean -- %f"
