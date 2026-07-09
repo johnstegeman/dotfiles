@@ -69,8 +69,8 @@
   "buffer_font_size": 15,
   "theme": {
     "mode": "dark",
-    "light": "Tokyo Night Light",
-    "dark": "Tokyo Night"
+    "light": "Ayu Light",
+    "dark": "Ayu Dark"
   },
   "languages": {
     "AsciiDoc": {

@@ -1,0 +1,12 @@
+[theme]
+name = "ayu-dark"
+
+[colors]
+AlertInfo = "#AAD94C"
+AlertWarn = "#E6B450"
+AlertError = "#F07178"
+Annotation = "#59C2FF"
+Base = "#BFBDB6"
+Guidance = "#5A6673"
+Important = "#FF8F40"
+Title = "#59C2FF"

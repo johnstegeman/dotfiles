@@ -4,7 +4,7 @@ style = "full"
 search_mode = "daemon-fuzzy"
 
 [theme]
-name = "tokyonight-night"
+name = "ayu-dark"
 
 [daemon]
 enabled = true

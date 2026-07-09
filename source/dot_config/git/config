@@ -1,15 +1,12 @@
 [core]
 	pager = delta
 
-[include]
-	path = "~/.config/git/tokyonight.gitconfig"
-
 [delta]
 	hyperlinks = true
 	light = false
 	navigate = true
 	side-by-side = true
-	syntax-theme = "tokyonight_night"
+	syntax-theme = "Ayu Dark"
 
 [filter "lfs"]
 	clean = "git-lfs clean -- %f"
