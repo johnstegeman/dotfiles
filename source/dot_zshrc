@@ -148,3 +148,4 @@ setopt append_history
 # Disable homebrew-not-found
 
 [[ ! -v functions[command_not_found_handler] ]] || unfunction command_not_found_handler
+if command -v wt >/dev/null 2>&1; then eval "$(command wt config shell init zsh)"; fi

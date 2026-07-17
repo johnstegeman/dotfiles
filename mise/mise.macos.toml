@@ -1,5 +1,4 @@
 [tools]
-"1password" = "latest"
-"1password-cli" = "latest"
+"1password-cli" = "2.37.0-beta.01"
 # mas = "latest"
 ollama = "latest"

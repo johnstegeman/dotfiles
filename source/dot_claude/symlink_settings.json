@@ -1,5 +1,5 @@
 {
-  "model": "sonnet",
+  "model": "opus[1m]",
   "hooks": {
     "PreToolUse": [
       {
@@ -38,14 +38,15 @@
     "command": "npx -y @owloops/claude-powerline@latest"
   },
   "enabledPlugins": {
-    "clangd-lsp@claude-plugins-official": true,
+    "clangd-lsp@claude-plugins-official": false,
     "claude-powerline@claude-powerline": true,
     "context-mode@context-mode": false,
-    "hone@hone-ai": true,
-    "rust-analyzer-lsp@claude-plugins-official": true,
+    "hone@hone-ai": false,
+    "rust-analyzer-lsp@claude-plugins-official": false,
     "serena@claude-plugins-official": false,
     "superpowers@claude-plugins-official": true,
-    "swift-lsp@claude-plugins-official": true
+    "swift-lsp@claude-plugins-official": false,
+    "langfuse-observability@langfuse-observability": true
   },
   "extraKnownMarketplaces": {
     "claude-powerline": {
@@ -71,8 +72,24 @@
         "source": "github",
         "repo": "forrestchang/andrej-karpathy-skills"
       }
+    },
+    "langfuse-observability": {
+      "source": {
+        "source": "github",
+        "repo": "langfuse/Claude-Observability-Plugin"
+      }
     }
   },
   "effortLevel": "high",
+  "pluginConfigs": {
+    "langfuse-observability@langfuse-observability": {
+      "options": {
+        "LANGFUSE_PUBLIC_KEY": "pk-lf-b2642124-e784-4c73-bc63-7b7b6e8b6772",
+        "LANGFUSE_BASE_URL": "https://langfuse.pmm.neo4j.me",
+        "LANGFUSE_USER_ID": "john.stegeman@neo4j.com",
+        "CC_LANGFUSE_DEBUG": true
+      }
+    }
+  },
   "skipDangerousModePermissionPrompt": true
 }
