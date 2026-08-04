@@ -1,5 +1,6 @@
 
 brew "gastownhall/gascity/gascity"
+brew "hermes-agent"
 brew "neo4j-mcp"
 cask "antigravity-cli"
 cask "claude"

@@ -6,3 +6,4 @@ rtk = "latest"
 pi = "latest"
 antigravity-cli = "latest"
 #"pipx:headroom-ai" = { version = "latest", extras = "all" }
+"github:can1357/oh-my-pi" = "latest"
