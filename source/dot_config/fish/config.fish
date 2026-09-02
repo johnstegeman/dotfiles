@@ -52,3 +52,8 @@ status is-interactive; and begin
     end
 
 end
+
+# Added by LM Studio CLI (lms)
+set -gx PATH $PATH /Users/jstegeman/.lmstudio/bin
+# End of LM Studio CLI section
+
