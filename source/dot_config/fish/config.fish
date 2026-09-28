@@ -26,10 +26,6 @@ status is-interactive; and begin
         fzf --fish | source
     end
 
-    if using zoxide
-        zoxide init fish | source
-    end
-
     if using atuin
         atuin init fish --disable-ctrl-r | source
     end
@@ -56,4 +52,3 @@ end
 # Added by LM Studio CLI (lms)
 set -gx PATH $PATH /Users/jstegeman/.lmstudio/bin
 # End of LM Studio CLI section
-

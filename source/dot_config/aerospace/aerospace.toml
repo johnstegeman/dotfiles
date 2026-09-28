@@ -12,12 +12,13 @@ default-root-container-layout = 'stack'
 default-root-container-orientation = 'auto'
 
 on-focused-monitor-changed = ['move-mouse monitor-lazy-center']
-[[on-monitor-changed]]
-run = ['exec-and-forget /opt/homebrew/bin/sketchybar --reload']
+
 after-startup-command = [
-    'exec-and-forget /opt/homebrew/bin/sketchybar --reload',
-    'exec-and-forget /opt/homebrew/bin/borders active_color=0xffffffff inactive_color=0x00000000 width=4.0 hidpi=on',
+    'exec-and-forget /opt/homebrew/bin/borders active_color=0xffffffff inactive_color=0x00000000 width=7.0 hidpi=on',
 ]
+
+[[on-monitor-changed]]
+run = []
 automatically-unhide-macos-hidden-apps = false
 
 persistent-workspaces = ["1", "2", "3", "4", "5"]

@@ -4,3 +4,4 @@ experimental = true
 # idiomatic_version_file_enable_tools = ["swift"]
 auto_install = true
 jobs = 4
+minimum_release_age_excludes = ["pi"]

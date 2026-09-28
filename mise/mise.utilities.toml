@@ -2,7 +2,7 @@
 doggo = "latest"
 entireio-cli = "latest"
 gh = "latest"
-java = "27"
+java = "temurin-27"
 jbang = "latest"
 jq = "latest"
 lua = "latest"

@@ -1,0 +1,367 @@
+# ze.sh -- a frecency-based directory jumper and file tracker
+# Originally derived from z.sh: https://github.com/rupa/z
+# Repository: https://github.com/jghub/ze
+#
+# Copyright (c) 2009 rupa deadwyler
+# Copyright (c) 2026 Joerg van den Hoff (jghub)
+#
+# ze.sh is a substantially modified fork of z.sh. Original z.sh was distributed
+# under the WTFPL v2. ze.sh is distributed under the MIT License.
+# -----------------------------------------------------------------------------
+# shellcheck shell=ksh
+# shellcheck disable=SC2016  # awk/fzf scripts in single quotes must not expand
+function _ze_init {
+    typeset datadir=${_ZE_DIR:-$HOME/.ze}
+    if [[ -e $datadir && ! -d $datadir ]]; then
+        printf '%s\n' "ze: $datadir exists and is not a directory (remove it or set _ZE_DIR suitably)" >&2
+        return 1
+    elif [[ ! -d $datadir ]]; then
+        mkdir -p "$datadir" || { printf '%s\n' "ze: could not create $datadir" >&2; return 1; }
+    fi
+    typeset datafile mode
+    for mode in files dirs; do
+        [[ $mode == files ]] && datafile=$datadir/'zef.db' || datafile=$datadir/'ze.db'
+        if [[ -e "$datafile" && ! -f "$datafile" ]]; then
+            printf '%s\n' "ze: not a regular file: $datafile" >&2
+            return 1
+        elif [[ ! -f $datafile ]]; then
+            touch "$datafile" || { printf '%s\n' "ze: could not create $datafile" >&2; return 1; }
+        fi
+        if [[ -z ${_ZE_OWNER:-} && ! -O $datafile ]]; then
+            printf '%s\n' "ze: $datafile not owned by current user (set _ZE_OWNER to override)" >&2
+            return 1
+        fi
+        typeset -i dbsize dbmax=${_ZE_DBMAX:-640}
+        dbsize=$(wc -l < "$datafile")
+        ((dbsize <= dbmax)) && continue
+
+        typeset -i margin nprune dbfrac=32
+        typeset tempfile lambda=${_ZE_LAMBDA:-8e-3}
+        tempfile=$(mktemp "${datafile}.XXXXXX") || return 1
+        ((margin = dbmax/dbfrac))
+        ((nprune = dbsize - dbmax + margin))
+        (   set -o pipefail  # sub-process avoids overriding user settings
+            LC_ALL=C awk -F'|' -v lambda="$lambda" '
+                BEGIN { OFS = FS; OFMT = "%.17g" }
+                NF == 4 {  # remove/ignore invalid entries
+                    lines[++nr] = $0
+                    if ($3 > tmax) tmax = $3
+                }
+                END {
+                    for (i = 1; i <= nr; i++) {
+                        split(lines[i], f)
+                        print f[1], f[2], f[3], f[4], f[4] * exp(-lambda * (tmax - f[3]))
+                    }
+                }' "$datafile" | LC_ALL=C sort -t'|' -k5,5g -k1,1 | awk -F'|' -v nprune="$nprune" '
+                        BEGIN { OFS = FS; OFMT = "%.17g" } NR > nprune { print $1, $2, $3, $4 }' >| "$tempfile"
+        )
+        _ze_commit $? "$tempfile" "$mode" || return
+    done
+}
+
+function _ze_commit {  ## rc tempfile dirs|files
+    (($# == 3)) || return 1                          # safeguard against manual misuse
+    typeset tempfile=$2 mode=$3
+    case $1 in
+        ''|*[!0-9]*) return 1;;                      # safeguard against manual misuse (rc must be numeric)
+    esac
+    typeset -i rc=$1
+    typeset datafile
+    case $mode in
+        dirs)  datafile="${_ZE_DIR:-$HOME/.ze}/ze.db";;
+        files) datafile="${_ZE_DIR:-$HOME/.ze}/zef.db";;
+        *) return 1;;    # this function overwrites a datafile, so an unrecognized mode is treated as error
+    esac
+    [[ $tempfile == "$datafile."* ]] || return 1      # safeguard against manual misuse
+    ((rc == 0)) || { \rm -f "$tempfile"; return 1; }
+
+    [[ ${_ZE_OWNER:-} ]] && { chown "$_ZE_OWNER":"$(id -ng "$_ZE_OWNER")" "$tempfile" || { \rm -f "$tempfile"; return 1; }; }
+    # atomic replacement prevents db corruption in case of a race condition (although "last writer
+    # wins" implies loss of updates from any competing writers)
+    \mv -f "$tempfile" "$datafile" || { \rm -f "$tempfile"; return 1; }
+}
+
+if ! _ze_init; then
+    printf '%s\n' "ze: initialization failed, giving up" >&2
+    unset -f _ze_commit _ze_init
+    return 1
+fi
+unset -f _ze_init
+
+# shellcheck disable=SC2015 # the A && B || C construct is not problematic here (function definition will never return error in B)
+# shellcheck disable=SC2164 # false positive in this context
+[[ ${ZSH_VERSION:-} ]] && function _ze_builtin_cd { CDPATH='' builtin cd -- "$@"; } || function _ze_builtin_cd { CDPATH='' command cd -- "$@"; }
+
+function _ze_read {  ## [dirs|files]
+    typeset mode=${1:-dirs}
+    typeset datafile="${_ZE_DIR:-$HOME/.ze}"
+    [[ $mode == files ]] && datafile+='/zef.db' || datafile+='/ze.db'
+    typeset -a lines; lines=()
+    typeset pathname remains ifs='|'
+    while IFS=$ifs read -r pathname remains; do
+        if [[ $mode == files ]]; then
+            [[ -f $pathname ]] && lines+=("$pathname$ifs$remains")
+        else
+            [[ -d $pathname ]] && lines+=("$pathname$ifs$remains")
+        fi
+    done < "$datafile"
+    (( ${#lines[@]} )) && printf '%s\n' "${lines[@]}"
+}
+
+function _ze_cd {
+    if _ze_builtin_cd "$@"; then
+        # ksh93 may emit job-control notifications for the backgrounded helper despite wrapping it in
+        # a subshell (this happens not in all terminal emulators, but in most). this makes
+        # redirection of stderr to /dev/null necessary.
+        if [[ ${_ZE_RESOLVE_SYMLINKS:-} ]]; then
+            (_ze_record "$(command pwd -P 2>/dev/null)" &) 2>/dev/null
+        else
+            (_ze_record "$PWD" &) 2>/dev/null
+        fi
+    else
+        return $?
+    fi
+}
+
+function _ze_open {  ## origname opcode
+    typeset origname=${1:?"_ze_open: pathname required"} pathname 
+    [[ -f $origname ]] || { printf '%s\n' "ze: not a regular file: $origname" >&2; return 1; }
+    typeset -i opcode=${2:-2}
+
+    if [[ ${_ZE_RESOLVE_SYMLINKS:-} ]]; then
+        pathname=$(command realpath -- "$origname" 2>/dev/null)
+    else
+        pathname=$(_ze_builtin_cd "$(dirname -- "$origname")" 2>/dev/null && printf '%s/%s' "$PWD" "$(basename -- "$origname")")
+    fi
+    # shellcheck disable=SC2181 # irrelevant
+    (($?)) && { printf '%s\n' "ze: could not resolve path: $origname" >&2; return 1; }
+
+    [[ -r $pathname ]] || { printf '%s\n' "ze: file not readable: $pathname" >&2; return 1; }
+
+    if [[ -s $pathname ]]; then
+        LC_ALL=C grep -Iq . -- "$pathname" || { printf '%s\n' "ze: refusing to open '$pathname': binary file" >&2; return 1; }
+    fi
+
+    (_ze_record "$pathname" "" files &) 2>/dev/null
+
+    typeset opcmd lastchoice
+    case $opcode in 
+        1) opcmd=${_ZE_OPEN:-${VISUAL:-${EDITOR:-nano}}}; lastchoice='vi';;
+        *) opcmd=${_ZE_PAGER:-${PAGER:-less -NRS}}; lastchoice='more';;
+    esac
+    command -v "${opcmd%% *}" >/dev/null 2>&1 || opcmd=$lastchoice
+    [[ ${ZSH_VERSION:-} ]] && setopt local_options sh_word_split  # word splitting of $opcmd has to work in zsh, too
+    $opcmd "$pathname"
+}
+
+function _ze_pick {  ## mode
+    awk -v mode="${1%s}" '
+        { buf[NR] = $0 }
+        END {
+            if (NR > 0) fmt = "%" length(NR) "d"; else exit 1
+            brightred = "\033[91m"; off = "\033[0m"; if (mode == "") mode = "index"
+            for (nr = NR; nr >= 1; nr--) printf fmt"\t%s\n", nr, buf[nr] > "/dev/stderr"
+            printf "%sselect %s [1-%d]: %s", brightred, mode, NR, off > "/dev/stderr"
+            if ((getline n < "/dev/tty") <= 0) { print ""; exit 130 }
+            if (n == "") n = 1
+            if (n ~ /^[1-9][0-9]*$/ && n <= NR) print buf[n]; else exit 1
+        }'
+}
+
+function _ze_find { ## pattern typ [dirs|files] [cflag]
+    typeset metric header mode=${3:-dirs} preview
+    typeset -a fzfopts zopts; zopts=(-l)
+    ((${4:-0})) && zopts+=(-c)                     # pass -c on to the nested _ze -l call
+    case $2 in
+        visits) metric='visit count'; zopts+=(-r);;
+        recent) metric='recency'; zopts+=(-t);;
+        *)      metric='EMS score';;
+    esac
+    case $mode in
+        files) preview='head -256 -- {2..}'; zopts+=(-o);;
+        *)     preview='LC_ALL=C ls -AC --color=always {2..}';;
+    esac
+
+    if [[ ${_ZE_NO_FZF:-} ]] || ! command -v fzf > /dev/null; then
+        (set -o pipefail; _ze "${zopts[@]}" -- "$1" | cut -f2- |
+            awk '{ buf[NR] = $0 } END { while (NR) print buf[NR--] }' | _ze_pick "$mode")
+    else
+        header="${mode%s} stack ranked by $metric"
+        fzfopts=( -0 -e --no-sort --preview-window='top,19%' --header="$header" --color='header:bright-red' --preview "$preview" )
+        (set -o pipefail; _ze "${zopts[@]}" -- "$1" | cut -f2- |
+            awk '{ buf[NR] = $0 } END { offs = NR+1; while (NR) print offs-NR "\t" buf[NR--] }' | SHELL=/bin/sh fzf "${fzfopts[@]}" | cut -f2-)
+    fi
+}
+
+function _ze_dig { ## dirs|files [fdopts_and_args]
+    typeset mode=$1; shift
+    if command -v fd >/dev/null; then
+        typeset fdex=fd
+    elif command -v fdfind >/dev/null; then
+        typeset fdex=fdfind
+    else
+        printf '%s\n' "'fd' not found" >&2; return 1
+    fi
+    typeset fdtype=d preview
+    typeset -a fdargs; fdargs=(-Ipa)
+    typeset -a filter; filter=(cat)
+    case $mode in
+        files) fdtype=f
+               typeset block='\.('
+               block+='png|jpg|jpeg|heic|gif|bmp|ico|webp|pdf|zip|tar|gz|bz2|xz|7z|rar|mp3|mp4|mkv|avi|mov'
+               block+='|wav|flac|woff|woff2|ttf|otf|eot|so|o|a|dylib|dll|exe|class|pyc|pyo|jar|war'
+               block+=')$'
+               filter=(grep -viE "$block")
+               preview='head -256 -- {2..}';;
+        *) preview='LC_ALL=C ls -AC --color=always {2..}';;
+    esac
+    fdargs+=(-t"$fdtype" "$@")
+    # shellcheck disable=SC2124 # this scalar assignment ensures join by single space independent of IFS
+    typeset argstring="${fdargs[@]}"
+    if [[ ${_ZE_NO_FZF:-} ]] || ! command -v fzf > /dev/null; then
+        (set -o pipefail; $fdex "${fdargs[@]}" | LC_ALL=C "${filter[@]}" | LC_ALL=C sort | _ze_pick "$mode")
+    else
+        typeset -a fzfopts
+        fzfopts=( -0 -e --no-sort --preview-window='top,19%' --header="$fdex $argstring" --color='header:bright-red' --preview "$preview" )
+        (set -o pipefail; $fdex "${fdargs[@]}" | LC_ALL=C "${filter[@]}" | LC_ALL=C sort | nl | SHELL=/bin/sh fzf "${fzfopts[@]}" | cut -f2-)
+    fi
+}
+
+function _ze_record { ## pathname [oldpwd] [dirs|files]
+    # preserve the original 1-2 arg (pathname, oldpwd) interface used by zex.sh
+    typeset pathname=${1:-"/"} oldpwd=${2:-${OLDPWD:-}} mode=${3:-dirs}  # 'pathname default="/" safeguards against manual misuse
+    typeset datafile lambda=${_ZE_LAMBDA:-8e-3}
+
+    if [[ $mode == files ]]; then
+        [[ -f $pathname ]] || return 1
+        datafile="${_ZE_DIR:-$HOME/.ze}/zef.db"
+    else
+        [[ -d $pathname ]] || return 1
+        datafile="${_ZE_DIR:-$HOME/.ze}/ze.db"
+        # navigation to $HOME, $oldpwd, or "/" aren't worth recording
+        [[ $pathname == "$HOME" || $pathname == "$oldpwd" || $pathname == "/" ]] && return
+    fi
+    [[ $pathname == *\|* ]] && { printf '\nze: "|" in pathname: "%s" will not be tracked\n' "$pathname"; return; }
+
+    typeset tempfile
+    tempfile=$(mktemp "${datafile}.XXXXXX") || return 1
+
+    pathname=$pathname LC_ALL=C awk -v lambda="$lambda" -F"|" '
+        BEGIN { pathname = ENVIRON["pathname"]; OFS = FS; OFMT = "%.17g" }
+        NF == 4 {  # remove invalid entries from db (injection of new invalid pathname is prevented by independent test above).
+            if ($1 == pathname) {
+                visits = $2
+                ticks = $3
+                score = $4
+            } else print
+            if ($3 > tmax) tmax = $3
+        }
+        END { print pathname, visits + 1, tmax + 1, score * exp(-lambda * (tmax + 1 - ticks)) + 1 }
+    ' "$datafile" 2>/dev/null >| "$tempfile"
+    _ze_commit $? "$tempfile" "$mode"
+}
+
+function _ze {
+    typeset lambda=${_ZE_LAMBDA:-8e-3}
+
+    typeset fnd='' opt='' typ='' mode=dirs cwd=''
+    typeset -i list=0 finder=0 digger=0 emit=0 opcode=0 cflag=0
+    typeset -a fdargs; fdargs=()
+    while (($#)); do case "$1" in
+        --) shift; while (($#)); do fnd+=${fnd:+ }$1; fdargs+=("$1"); shift; done;;
+         -) fnd='-';;
+        -*) opt=${1:1}; while [[ $opt ]]; do case ${opt:0:1} in
+                c) cflag=1;;
+                d) digger=1;;
+                e) emit=1;;
+                f) finder=1;;
+                h) printf '%s\n' "${_ZE_CMD:-ze} [-Vcdefhloprt] args" >&2; return;;
+                l) list=1;;
+                o) opcode=1; mode=files;;
+                p) opcode=2; mode=files;;
+                r) typ="visits";;
+                t) typ="recent";;
+                V) typeset ze_version="ze v3.4.0"; printf '%s\n' "$ze_version"; return;;
+                *) ;;   # silently ignore unrecognized options
+            esac; opt=${opt:1}; done;;
+         *) fnd+=${fnd:+ }$1; fdargs+=("$1");;
+    esac; (($#)) && shift; done
+
+    if ((digger || finder)); then
+        # NOTE TO SELF: the "${fdargs[@]+"${fdargs[@]}"}" construct below is required for 'set -u'
+        # safety under mksh specifically: mksh treats a zero-element array (even one explicitly
+        # assigned via fdargs=()) as indistinguishable from an unset variable for "${arr[@]}"
+        # expansion, and faults under nounset. bash, zsh, and ksh93 do not have this problem: plain
+        # "${fdargs[@]}" is fine there even on a zero-element array. A further observation is that
+        # zsh will expand "${fdargs[@]+"${fdargs[@]}"}" to include an extra, empty argument that will
+        # be passed to _ze_dig. This is only a non-issue because that arg will then be ignored in
+        # the 'fd' call.
+        ((digger)) && fnd=$(_ze_dig "$mode" "${fdargs[@]+"${fdargs[@]}"}")
+        ((finder)) && fnd=$(_ze_find "$fnd" "$typ" "$mode" "$cflag")
+        [[ $fnd ]] || return 1
+        ((emit)) && { printf '%s\n' "$fnd"; return; }
+    fi
+
+    if ((cflag)); then  # restrict matches to the subtree below the current directory
+        [[ ${_ZE_RESOLVE_SYMLINKS:-} ]] && cwd=$(command pwd -P 2>/dev/null) || cwd=$PWD
+        [[ $fnd ]] || list=1  # if bare -c with no args, just list
+    fi
+
+    if ((opcode)); then
+        ((!(list || emit))) && [[ -n $fnd && -f $fnd ]] && { _ze_open "$fnd" $opcode; return; }
+    else
+        ((!(list || emit))) && [[ -d ${fnd:-$HOME} || $fnd == "-" ]] && { _ze_cd "${fnd:-$HOME}"; return; }
+    fi
+
+    typeset result
+    result=$(_ze_read "$mode" | fnd=$fnd cwd=$cwd LC_ALL='' LC_NUMERIC=C awk -v list="$list" -v typ="$typ" -v lambda="$lambda" -F"|" '
+        BEGIN {
+            q = ENVIRON["fnd"]
+            cwd = ENVIRON["cwd"]; if (cwd != "" && cwd != "/") cwd = cwd "/"
+            gsub(" ", ".*", q)
+            lq = tolower(q)
+            case_sensitive = (q != lq)
+            if (!case_sensitive) q = lq
+            hi_score = -1e300
+        }
+        {
+           lines[NR] = $0
+           if ($3 > tmax) tmax = $3
+        }
+        END {
+            for (i = 1; i <= NR; i++) {
+                split(lines[i], f)
+                if (cwd != "" && index(f[1], cwd) != 1) continue
+                candidate = case_sensitive ? f[1] : tolower(f[1])
+                if (candidate ~ q) {
+                    pathname = f[1]
+                    if (typ == "visits") {
+                        score[pathname] = f[2]
+                    } else if (typ == "recent") {
+                        score[pathname] = f[3]
+                    } else score[pathname] = f[4] * exp(-lambda * (tmax - f[3]))
+                    if (score[pathname] > hi_score) {
+                        best_match = pathname
+                        hi_score = score[pathname]
+                    }
+                }
+            }
+            if (!best_match) exit(1)
+            if (list)
+                for (x in score) printf "%-12s\t%s\n", score[x], x | "LC_ALL=C sort -k1,1g -k2,2"
+            else print best_match
+        }
+    ')
+    typeset -i rc=$?; ((rc)) && { printf 'no match\n' >&2; return $rc; }
+
+    if ((list || emit)); then
+        printf '%s\n' "$result"
+    elif ((opcode)); then
+        _ze_open "$result" $opcode
+    else
+        _ze_cd "$result"
+    fi
+}
+
+# shellcheck disable=SC2086,SC2139 # false alarm
+alias ${_ZE_CMD:-ze}='_ze'

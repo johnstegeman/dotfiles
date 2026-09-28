@@ -51,6 +51,12 @@ trust_level = "trusted"
 [projects."/Users/jstegeman/Projects/_pmm/pmm-iris"]
 trust_level = "trusted"
 
+[projects."/Users/jstegeman/Library/Application Support/orca/rate-limit-pty-cwd"]
+trust_level = "trusted"
+
+[tui]
+screen_reader_detection_done = true
+
 [tui.model_availability_nux]
 "gpt-5.5" = 4
 "gpt-5.6-sol" = 2
@@ -107,26 +113,29 @@ trusted_hash = "sha256:f57f065033f5cf5d359a04bc11fce77c6442d1efdf386e0228ea16ac9
 trusted_hash = "sha256:5e944c21fd61f88bd351786522790ca9200de2d9d254d908ba3e6c107aaae4ca"
 
 [hooks.state."/Users/jstegeman/.codex/hooks.json:pre_tool_use:0:0"]
-trusted_hash = "sha256:814f474e4da3fdb3a66331f1dcd27b3ab3d013ccec643050252dc0c6274805ae"
+trusted_hash = "sha256:33153c88ce09e9a5b899b9cb33dd23382be394a3e1cdb421e44e0b3778e8bdf2"
 
 [hooks.state."/Users/jstegeman/.codex/hooks.json:permission_request:0:0"]
-trusted_hash = "sha256:3467cbc91d4ce1b5dcfd3734e4b65bf160004ea2bf033a747bd87914da4510ba"
+trusted_hash = "sha256:bd2c29369e47a438a3f2c1c18896d7bd86ce58c0eb5542f1c3b879e427f92fc9"
 
 [hooks.state."/Users/jstegeman/.codex/hooks.json:post_tool_use:0:0"]
-trusted_hash = "sha256:d47aef60e9eb4e0056fd437703288b385325ed58a7f04109f0f9324ffa10a143"
+trusted_hash = "sha256:a452131ceaecacb08404d1a8d49d85315fdf109905d152859c32b538c9002f93"
 
 [hooks.state."/Users/jstegeman/.codex/hooks.json:session_start:0:0"]
-trusted_hash = "sha256:2b1c2c649fe1439ab12ea04722338b40ee950e9d415613df5bb7b65f9b9a5850"
+trusted_hash = "sha256:d853ef9fbaf2ff5c8504bf2463675664aaf29a8016c6a35293a6ddc053b4f030"
 
 [hooks.state."/Users/jstegeman/.codex/hooks.json:user_prompt_submit:0:0"]
-trusted_hash = "sha256:481f9c0f31622a579e0c00bdc9d8f8c74e69b4baba56f31328e5b45714c13deb"
+trusted_hash = "sha256:5383e8af0fe09d96df4e6d0f5f3edaec15485d6162a1a749b5c69e7242eb0478"
 
 [hooks.state."/Users/jstegeman/.codex/hooks.json:subagent_start:0:0"]
-trusted_hash = "sha256:653bde4d3bfcfc705b88f90d812916bb38932646f64717e253552a3863ca3f1d"
+trusted_hash = "sha256:269737162a0cf2b29b3e40df23411c02a8bbdeb5f471243c924dac116624cdcf"
 
 [hooks.state."/Users/jstegeman/.codex/hooks.json:subagent_stop:0:0"]
-trusted_hash = "sha256:01140bca3ff3c742c60fb6de8de17dae7394482d485d1097273e59958edb4667"
+trusted_hash = "sha256:62ff9ef7fcca3784011e955f35ee3612b11168b2f62bd772f08adefb918d34be"
 
 [hooks.state."/Users/jstegeman/.codex/hooks.json:stop:0:0"]
-trusted_hash = "sha256:5c9493e935b8ca459dd8bc0d703d438bb2d2ab189cbda14b173f4669bf8378c3"
+trusted_hash = "sha256:1ae8ee19d95298f7bc4821368a7d4600b9f9d36c68695812c19419b28b5ad53e"
+
+[hooks.state."/Users/jstegeman/.codex/hooks.json:interrupt:0:0"]
+trusted_hash = "sha256:78b430d1d7794c49e6d83a36964d4082d05ec72023ccc38244e97b8e08d054d2"
 
