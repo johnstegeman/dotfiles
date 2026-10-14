@@ -2,8 +2,9 @@
 claude-code = "latest"
 codex = "latest"
 opencode = "latest"
-rtk = "latest"
+#rtk = "latest"
 pi = "latest"
 antigravity-cli = "latest"
 #"pipx:headroom-ai" = { version = "latest", extras = "all" }
 "github:can1357/oh-my-pi" = "latest"
+"github:neo4j/mcp" = "latest"
