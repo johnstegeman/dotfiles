@@ -41,7 +41,8 @@ file is deleted — the docs are never made true by softening them into vaguenes
 - `AGENTS.md`: it carries the managed beads block and generic agent rules, no claims
   about this repo's contents.
 - Documenting dead tooling (leadr, cmux, sketchybar). It gets deleted, not described.
-- Installing anything, or changing which tools are in use.
+- Installing anything beyond the `teabyii.ayu` VS Code extension, which the palette
+  migration requires to make its own setting valid, or changing which tools are in use.
 
 ## Anti-goals
 
@@ -455,6 +456,15 @@ in one of these groups:
 5. `fish -n` parses every changed fish function; `fish -n source/dot_config/fish/config.fish`.
 6. wezterm is not installed on this machine, so there is no runtime check: the Lua is
    reviewed by inspection for the colour-table shape and the removed plugin call.
-7. `haven apply --files` succeeds and `haven status` / `haven diff` are clean (packages and
-   AI skills are not part of this work — see §4). The files in §5's home list are gone.
-8. jj only: `jj st` / `jj desc`, never `git`.
+7. Full `haven apply` runs — the owner authorized it, so packages and AI skills are
+   installed alongside files — and afterwards `haven status` / `haven diff` are clean. The
+   files in §5's home list are gone.
+8. `code --install-extension teabyii.ayu` succeeds, and VS Code's `workbench.colorTheme`
+   resolves to a real theme rather than falling back.
+9. jj only: `jj st` / `jj desc`, never `git`.
+
+## 10. Authorization
+
+The owner has authorized, for this work: deleting the tracked and home-directory files in
+§5, a full `haven apply` (files, Homebrew packages, mise, AI skills), and
+`code --install-extension teabyii.ayu`.
