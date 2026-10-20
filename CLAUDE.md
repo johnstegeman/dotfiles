@@ -9,9 +9,11 @@ Haven is a personal dotfiles management system for macOS and Linux. The `haven` 
 ## Key Commands
 
 ```sh
-haven apply              # Deploy all configs (or: hv ap)
-haven source-path        # Print path to this source directory
+haven apply              # Deploy files, install tracked Homebrew/mise packages, fetch AI skills (or: hv ap)
+haven source-path        # Print path to this repo
 haven diff               # Show what would change on next apply
+haven status             # Show drift between tracked sources and live destinations
+haven list               # The authoritative inventory: tracked files + packages + AI skills
 ```
 
 There are no tests or build steps — this is a configuration repository.
@@ -22,10 +24,10 @@ There are no tests or build steps — this is a configuration repository.
 
 `haven.toml` defines **profiles** that select which **modules** to load:
 
-- `default` profile: shell, utilities, cloud, vcs, k8s
-- `macos` profile: extends default + macos, ai
+- `default` profile: shell, utilities, vcs, cloud
+- `macos` profile: extends `default` + macos, ai
 
-Each module (`modules/*.toml`) references a Brewfile in `brew/Brewfile.<module>`. Modules are lightweight — they just point to their Brewfile and set `requires_op = false`.
+Each module (`modules/*.toml`) points at a Brewfile in `brew/Brewfile.<module>` and a mise config in `mise/mise.<module>.toml`, and sets `requires_op = false`. `k8s.toml` exists but no profile loads it.
 
 ### Source Directory Mapping
 
@@ -36,33 +38,38 @@ Files under `source/` are deployed by haven using a naming convention:
 | `dot_config/` | `~/.config/` | `dot_config/fish/config.fish` → `~/.config/fish/config.fish` |
 | `dot_` | `~/.<name>` | `dot_finicky.js` → `~/.finicky.js` |
 | `private_dot_` | `~/.<name>` (restricted perms) | `private_dot_ssh/` → `~/.ssh/` |
-| `dot_claude/` | `~/.claude/` | Claude Code global config |
+| `executable_` | same path, executable bit set | `bin/executable_zex.sh` → `~/bin/zex.sh` |
+| `symlink_` | symlink instead of a copy | `dot_config/zed/symlink_settings.json` |
+| `.tmpl` suffix | rendered as a Tera template | `config/LaunchDaemons/com.example.kanata.plist.tmpl` |
+| `source/config/` | `~/config/` (no dot prefix) | `source/config/Gallium.cfg` → `~/config/Gallium.cfg` |
 
-### AI Skills
+### AI tooling
 
-`ai/skills/` contains Claude Code skills. Each skill has a `skill.toml` pointing to a source repo and an `all.md` prompt file. Skills are run via the `agent-skills-cli` runner configured in `ai/config.toml`.
+`ai/config.toml` configures the `agent-skills` backend (runner: `bunx agent-skills-cli`) over `ai/platforms.toml`; `haven ai` manages skills across platforms. `ai/skills/` is currently empty — skills are fetched per `haven.lock` entries, not vendored here.
 
 ### Fish Shell Functions
 
 All custom shell functions live in `source/dot_config/fish/functions/`. Key patterns:
 
-- **Tool wrappers** (`ls.fish`, `cat.fish`, `rm.fish`, etc.) check for the enhanced tool with `using <tool>` and fall back to the original command
-- **`using.fish`** is the availability checker used throughout `config.fish` and all function files
-- **`starship_transient_prompt_func.fish`** styles Starship's transient prompt (the rest of the prompt lives in `source/dot_config/starship.toml`, using Starship's native jj modules)
+- **Tool wrappers** (`ls.fish`, `cat.fish`, `rm.fish`, …) check for the enhanced tool with `using <tool>` and fall back to the original command
+- **`using.fish`** is the availability checker used throughout `config.fish` and every wrapper
+- **`cd.fish`** delegates to `ze` (a frecency jumper backed by `~/bin/ze.sh` + `~/bin/zex.sh`); there is no zoxide
+- **`starship_transient_prompt_func.fish`** styles Starship's transient prompt; the rest of the prompt is `source/dot_config/starship.toml`, using Starship's native jj modules
 
 ## Important Conventions
 
-- **Jujutsu (jj) is the primary VCS**, not git. This repo has a `.jj/` directory. Always use the `/jujutsu` skill for VCS operations.
-- **Rosé Pine** is the universal color theme — maintain consistency when adding or modifying tool configs.
+- **Jujutsu (jj) is the only VCS used here.** This repo is colocated jj + git (`[vcs] backend = "jj"` in `haven.toml`). Use jj commands — `jj st`, `jj desc`, `jj new`, `jj git push`. Do not run `git` commands in this repo.
+- **Ayu Dark** is the color theme on every tool that supports theming, expressed per tool (fish theme, starship palette, inline wezterm table, and so on). Keep new configs on Ayu Dark.
+- **Neovim** is the editor (`$EDITOR`). Helix is configured but not installed.
 - **1Password** manages all secrets. Never store keys, tokens, or credentials in plaintext. Files under `private_*` paths use 1Password integration.
-- **Homebrew packages** are split across per-module Brewfiles in `brew/`. Add new packages to the appropriate module's Brewfile, not a central file.
+- **Packages** go into per-module Brewfiles (`brew/`) or mise configs (`mise/`, `mise.toml`) — never into a central Brewfile. There is no `~/config/Brewfile`; `haven apply` (or `haven pkg install`) is how the machine and the repo stay in sync.
 - **`using <tool>`** is the standard pattern for conditional tool initialization in Fish. Use it rather than `command -q` or `type -q` directly.
-
+- **Dead config gets deleted.** If a tool is no longer installed and its config is not a deliberate fallback, remove both — this repo has a history of docs and theme files outliving the tools they described.
 
 <!-- BEGIN BEADS INTEGRATION v:1 profile:minimal hash:1105d646 -->
 ## Beads Issue Tracker
 
-This project uses **bd (beads)** for issue tracking. Run `bd prime` to see full workflow context and commands.
+This project uses **bd** (beads) for issue tracking. Run `bd prime` to see full workflow context and commands.
 
 ### Quick Reference
 
@@ -93,7 +100,7 @@ The managed Beads block is task-tracking guidance, not permission to override re
 
 This protocol applies when ending a Beads implementation workflow. It is subordinate to explicit user, repository, and orchestrator instructions.
 
-1. **File issues for remaining work** - Create beads for anything that needs follow-up
+1. **File issues for remaining work** - Create beads for anything that remains
 2. **Run quality gates** (if code changed) - Tests, linters, builds
 3. **Update issue status** - Close finished work, update in-progress items
 4. **Handle git/sync by active profile**:

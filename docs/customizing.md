@@ -10,16 +10,20 @@
 
 ## Making and applying changes
 
-The `hv` Fish function wraps common haven operations:
+The `hv` Fish function wraps the common haven operations:
 
 ```fish
-hv ed    # open the haven source directory in Zed
-hv cd    # cd to ~/.local/share/haven
-hv ap    # haven apply (apply changes to your home directory)
-hv ...   # pass-through to haven for any other subcommand
+hv ap        # haven apply — deploy files and tracked packages
+hv ed        # open the haven source directory in Zed
+hv cd        # cd to the haven source directory (~/.local/share/haven)
+hv note "…"  # annotate haven's telemetry log
+hv bug "…"   # same, tagged as a bug (also: action, question)
+hv ...       # anything else passes through to haven
 ```
 
-Edit files directly in the haven source directory (`~/.local/share/haven/source`), then run `hv ap` to apply them. haven uses the same magic-name encoding as chezmoi:
+Edit files in the source directory (`~/.local/share/haven/source`), then `hv ap`.
+
+haven uses the same magic-name encoding as chezmoi:
 
 | Prefix | Meaning |
 |--------|---------|
@@ -27,17 +31,32 @@ Edit files directly in the haven source directory (`~/.local/share/haven/source`
 | `private_` | Applied with restricted permissions (600/700) |
 | `executable_` | Applied as executable |
 | `symlink_` | Creates a symlink instead of copying |
-| `.tmpl` suffix | Treated as a Tera template (for cross-platform paths, secrets, etc.) |
+| `.tmpl` suffix | Rendered as a Tera template (cross-platform paths, secrets, etc.) |
+
+`haven list` shows every tracked file with the destination it maps to.
 
 ## Adding Fish functions
 
-Add a new file to `source/dot_config/fish/functions/` with the function name as the filename:
+Add a file to `source/dot_config/fish/functions/` named after the function:
 
 ```
 source/dot_config/fish/functions/myfunction.fish
 ```
 
-Fish auto-loads functions from this directory — no need to source anything.
+Fish auto-loads functions from that directory — nothing needs sourcing. Start with
+`function myfunction`, and use `using <tool>` for optional dependencies:
+
+```fish
+function myfunction
+    if using ripgrep
+        rg $argv
+    else
+        command grep -r $argv
+    end
+end
+```
+
+Document it in [fish.md](fish.md) — the function table there is meant to be complete.
 
 ## Adding Fish plugins
 
@@ -49,33 +68,39 @@ nickeb96/puffer-fish
 your-username/your-plugin    ← add here
 ```
 
-Then run `fisher update` to install it.
+Then run `fisher update`. Update [fish.md](fish.md) at the same time — the plugin table there
+is the list, not a subset of it.
 
-## Modifying the Homebrew Brewfile
+## Adding packages
 
-The Brewfiles are in the `brew/` directory in the haven source. After editing, install new packages:
-
-```fish
-br in      # brew bundle install
-```
-
-To remove packages that are no longer in the Brewfile:
+Packages are tracked per module, and haven owns the set:
 
 ```fish
-br clean   # brew bundle cleanup --zap
+haven pkg install ripgrep          # records it in the right Brewfile
+haven pkg install iterm2 --cask
+haven apply                        # or: br in
 ```
+
+To add something by hand, put it in the module's Brewfile (`brew/Brewfile.utilities`,
+`brew/Brewfile.shell`, …) or its mise config (`mise/mise.<module>.toml`). There is no
+central `~/config/Brewfile`, and no `br clean` — removing a package means
+`haven pkg uninstall`.
 
 ## Using 1Password for secrets
 
-Secrets (SSH keys, API tokens, etc.) are stored in 1Password and retrieved by haven at apply time. To add a new secret, reference it in a haven template using Tera syntax with the 1Password helper:
+Secrets live in 1Password and are fetched by haven at apply time. Reference them in a
+template with Tera syntax and the 1Password helper:
 
 ```
 {{ op("op://vault/item/field") }}
 ```
 
+Keep such files under `private_` paths so they are applied with restricted permissions, and
+never commit the value itself.
+
 ## Cross-platform configuration
 
-Use Tera template conditionals to apply config only on certain platforms:
+Tera conditionals restrict config to one platform:
 
 ```
 {% if os == "macos" %}
@@ -83,15 +108,16 @@ Use Tera template conditionals to apply config only on certain platforms:
 {% endif %}
 ```
 
-The home directory is available as `{{ home_dir }}` in templates.
+`{{ home_dir }}` is available in templates, along with everything `haven data` lists.
 
 ## Committing changes
 
-This repo uses [Jujutsu (jj)](version-control.md) for version control:
+This repo uses [Jujutsu (jj)](version-control.md) — no `git` commands:
 
 ```fish
 hv cd               # go to the source directory
 jj st               # check status — changes are auto-snapshotted
 jj desc -m "msg"    # describe the current commit
+jj new              # start the next change
 jj git push -b main # push to remote
 ```

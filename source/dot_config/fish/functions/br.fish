@@ -7,18 +7,13 @@ function br
   switch $argv[1]
     case up
       brew update; brew upgrade; brew cleanup; brew doctor
-    case clean
-      if test -f ~/config/Brewfile
-        brew bundle --file ~/config/Brewfile --cleanup --zap
-      else
-        echo "Error: Brewfile not found at ~/config/Brewfile" >&2
-        return 1
-      end
     case in
-      if test -f ~/config/Brewfile
-        brew bundle --file ~/config/Brewfile
+      # Packages are tracked per module (modules/*.toml -> brew/Brewfile.*), so haven is the
+      # only thing that knows the whole set. There is no central ~/config/Brewfile.
+      if using haven
+        haven apply
       else
-        echo "Error: Brewfile not found at ~/config/Brewfile" >&2
+        echo "Error: haven is not installed" >&2
         return 1
       end
     case '*'

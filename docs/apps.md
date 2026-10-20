@@ -1,94 +1,105 @@
 # macOS Applications
 
-Applications installed via Homebrew casks, managed through `~/config/Brewfile`. Install all of them with `br in`.
+GUI applications come from Homebrew casks, tracked in `brew/Brewfile.macos` (and
+`brew/Brewfile.ai` for the AI clients). This page is the same list with a word about each —
+if the two disagree, the Brewfile wins. The `Cask` column is the exact name to paste into a
+`brew` command.
 
-## Productivity & Utilities
+Install everything tracked with:
 
-| App | Description |
-|-----|-------------|
-| [Raycast](https://www.raycast.com/) | Launcher and productivity tool — replaces Spotlight |
-| [Maccy](https://maccy.app/) | Clipboard manager — remembers clipboard history and lets you paste any prior entry |
-| [Bartender](https://www.macbartender.com/) | Hides and organizes menu bar icons (useful on MacBooks with the camera notch) |
-| [SizeUp](https://www.irradiatedsoftware.com/sizeup/) | Window management with keyboard shortcuts |
-| [Shottr](https://shottr.cc/) | Screenshot utility with annotation tools |
-| [Zappy](https://zapier.com/zappy) | Screenshot and animated GIF capture |
-| [Logi Options+](https://www.logitech.com/en-us/software/logi-options-plus.html) | Configuration for Logitech peripherals |
+```fish
+br in      # haven apply — files, casks and formulae
+```
 
-## Communication & Calendar
+## Productivity and Utilities
 
-| App | Description |
-|-----|-------------|
-| [Slack](https://slack.com/) | Team messaging |
-| [Webex](https://www.webex.com/) | Video conferencing |
-| [Notion](https://www.notion.so/) | Notes and docs |
-| [Notion Calendar](https://www.notion.so/product/calendar) | Calendar app with Google Calendar integration — shows upcoming meetings in menu bar |
-| [Notion Mail](https://www.notion.so/product/mail) | Email client integrated with Notion |
-| [Asana](https://asana.com/) | Project management |
+| App | Cask | Description |
+|-----|------|-------------|
+| [Asana](https://asana.com/) | `asana` | Project management |
+| [Canva](https://www.canva.com/) | `canva` | Design tool |
+| [Gemini](https://gemini.google.com/) | `google-gemini` | Google's AI assistant, as a desktop app |
+| [Grammarly Desktop](https://www.grammarly.com/desktop) | `grammarly-desktop` | Writing assistant |
+| [Granola](https://www.granola.ai/) | `granola` | AI meeting notes |
+| [IINA](https://iina.io/) | `iina` | Video player |
+| [Keymapp](https://www.zsa.io/keymapp/) | `keymapp` | ZSA keyboard configurator (Moonlander, Voyager) |
+| [Logi Options+](https://www.logitech.com/en-us/software/logi-options-plus.html) | `logi-options+` | Logitech peripheral configuration |
+| [Microsoft AutoUpdate](https://docs.microsoft.com/en-us/deployoffice/mac/update-office-for-mac-using-msupdate) | `microsoft-auto-update` | Keeps Microsoft apps current |
+| [SizeUp](https://www.irradiatedsoftware.com/sizeup/) | `sizeup` | Window management with keyboard shortcuts |
+| [Vorssaint](https://github.com/vorssaint/vorssaint-utils) | `vorssaint` | Menu bar toolkit: keep-awake, system monitor, volume mixer |
+
+## Browsers
+
+| App | Cask | Description |
+|-----|------|-------------|
+| [Dia](https://www.diabrowser.com/) | `thebrowsercompany-dia` | Browser from The Browser Company |
+
+## Communication and Calendar
+
+| App | Cask | Description |
+|-----|------|-------------|
+| [Slack](https://slack.com/) | `slack` | Team messaging |
+| [Webex](https://www.webex.com/) | `webex` | Video conferencing |
+| [Notion Calendar](https://www.notion.so/product/calendar) | `notion-calendar` | Calendar with Google Calendar integration |
+| [Notion Mail](https://www.notion.so/product/mail) | `notion-mail` | Email client integrated with Notion |
 
 ## Development
 
-| App | Description |
-|-----|-------------|
-| [Orbstack](https://orbstack.dev/) | Fast, lightweight Docker and Linux VM manager (Docker Desktop replacement) |
-| [IntelliJ IDEA](https://www.jetbrains.com/idea/) | JetBrains IDE for Java/Kotlin |
-| [PyCharm](https://www.jetbrains.com/pycharm/) | JetBrains IDE for Python |
-| [RustRover](https://www.jetbrains.com/rust/) | JetBrains IDE for Rust |
-| [WebStorm](https://www.jetbrains.com/webstorm/) | JetBrains IDE for JavaScript/TypeScript |
-| [Visual Studio Code](https://code.visualstudio.com/) | Code editor (Rosé Pine theme) |
-| [Zed](https://zed.dev/) | Fast, modern code editor — used by `cm ed` to open dotfiles |
-| [Neo4j Desktop](https://neo4j.com/download/) | GUI for managing local Neo4j graph database instances |
-| [Google Cloud CLI](https://cloud.google.com/sdk/gcloud) | CLI tools for Google Cloud Platform |
-| [Wezterm](https://wezfurlong.org/wezterm/) | GPU-accelerated terminal emulator (primary) |
-| [Ghostty](https://ghostty.org/) | Fast terminal emulator (alternative) |
-| [Karabiner Elements](https://karabiner-elements.pqrs.org/) | Keyboard customization — used alongside Kanata |
-| [Keymapp](https://www.zsa.io/keymapp/) | ZSA keyboard configurator |
+| App | Cask | Description |
+|-----|------|-------------|
+| [Orbstack](https://orbstack.dev/) | `orbstack` | Docker and Linux VM manager (Docker Desktop replacement) |
+| [IntelliJ IDEA](https://www.jetbrains.com/idea/) | `intellij-idea` | JetBrains IDE for Java and Kotlin |
+| [PyCharm](https://www.jetbrains.com/pycharm/) | `pycharm` | JetBrains IDE for Python |
+| [RustRover](https://www.jetbrains.com/rust/) | `rustrover` | JetBrains IDE for Rust |
+| [WebStorm](https://www.jetbrains.com/webstorm/) | `webstorm` | JetBrains IDE for JavaScript and TypeScript |
+| [Visual Studio Code](https://code.visualstudio.com/) | `visual-studio-code` | Editor — Ayu Dark via the `teabyii.ayu` extension; settings tracked as a symlinked `settings.json` |
+| [Zed](https://zed.dev/) | `zed` | Fast editor; what `hv ed` opens the haven source in |
+| [Neo4j Desktop](https://neo4j.com/download/) | `neo4j-desktop` | GUI for local Neo4j instances |
+| [Karabiner Elements](https://karabiner-elements.pqrs.org/) | `karabiner-elements` | Lower-level keyboard remapping, alongside Kanata |
+| [Ghostty](https://ghostty.org/) | `ghostty` | Terminal — the primary one |
+| [Wezterm](https://wezfurlong.org/wezterm/) | `wezterm` | Terminal — alternative, config tracked, not currently installed |
+| [Orca](https://github.com/stablyai/orca) | `stablyai/orca/orca` | Agent worktrees, terminals and runtimes |
 
 ## AI
 
-| App | Description |
-|-----|-------------|
-| [Claude](https://claude.ai/download) | Anthropic's Claude desktop app |
-| [Claude Code](https://claude.ai/claude-code) | Claude Code CLI |
-| [Antigravity](https://antigravity.dev/) | AI coding assistant |
-| [Cmux](https://github.com/nicholasgasior/cmux) | AI terminal assistant |
+| App | Cask | Description |
+|-----|------|-------------|
+| [Claude](https://claude.ai/download) | `claude` | Anthropic's Claude desktop app |
+| [Antigravity CLI](https://antigravity.dev/) | `antigravity-cli` | AI coding assistant CLI |
 
-## Security & Storage
+Claude Code, Codex, opencode, and pi are installed through mise (`mise/mise.ai.toml`), not
+as casks.
 
-| App | Description |
-|-----|-------------|
-| [1Password](https://1password.com/) | Password manager |
-| [1Password CLI](https://developer.1password.com/docs/cli/) | CLI integration (required for chezmoi secrets) |
-| [Google Drive](https://www.google.com/drive/) | Cloud storage sync |
-| [Microsoft AutoUpdate](https://docs.microsoft.com/en-us/deployoffice/mac/update-office-for-mac-using-msupdate) | Keeps Microsoft apps up to date |
+## Security and Storage
+
+| App | Cask | Description |
+|-----|------|-------------|
+| [1Password](https://1password.com/) | `1password` | Password manager; supplies secrets through its SSH agent and CLI |
+| [Google Drive](https://www.google.com/drive/) | `google-drive` | Cloud storage sync |
 
 ## Creative
 
-| App | Description |
-|-----|-------------|
-| [Affinity](https://affinity.serif.com/) | Affinity suite (Designer, Photo, Publisher) |
-| [GIMP](https://www.gimp.org/) | Open source image editor |
-| [Minecraft](https://www.minecraft.net/) | Minecraft |
+| App | Cask | Description |
+|-----|------|-------------|
+| [Affinity](https://affinity.serif.com/) | `affinity` | Designer, Photo, Publisher |
+| [GIMP](https://www.gimp.org/) | `gimp` | Open source image editor |
+| [Minecraft](https://www.minecraft.net/) | `minecraft` | Minecraft |
 
 ## Fonts
 
-| Font | Description |
-|------|-------------|
-| Maple Mono NF | Coding font with Nerd Font icons |
-| Meslo LG Nerd Font | Nerd Font patched Meslo for Powerline/icon support |
-| Monaspace NF | GitHub's Monaspace family with Nerd Font icons |
+| Font | Cask | Description |
+|------|------|-------------|
+| JetBrains Mono NF | `font-jetbrains-mono-nerd-font` | Nerd Font build of JetBrains Mono |
+| Maple Mono NF | `font-maple-mono-nf` | Coding font with Nerd Font icons |
+| Meslo LG Nerd Font | `font-meslo-lg-nerd-font` | Patched Meslo for Powerline and icon support |
+| Monaspace NF | `font-monaspace-nf` | GitHub's Monaspace family with Nerd Font icons (used by Ghostty and Wezterm) |
 
 ## Mac App Store
 
-| App | Description |
-|-----|-------------|
-| DaVinci Resolve | Professional video editing |
+| App | Ref | Description |
+|-----|-----|-------------|
+| Davinci Resolve | `mas "Davinci Resolve", id: 571213070` | Video editor; `mas` itself is a tracked brew formula |
 
-## Homebrew Brewfile
+## Homebrew formulae in this module
 
-The full Brewfile is at `~/config/Brewfile`. It installs both casks (GUI apps, above) and formulae (CLI tools — see [utilities.md](utilities.md)).
-
-```fish
-br in      # install everything in the Brewfile
-br up      # update Homebrew and upgrade all installed packages
-br clean   # remove anything installed that isn't in the Brewfile
-```
+`borders` (focus rings for AeroSpace), `kanata` (key remapper), and `mas`. Everything else
+lives in the other modules — see [utilities.md](utilities.md).

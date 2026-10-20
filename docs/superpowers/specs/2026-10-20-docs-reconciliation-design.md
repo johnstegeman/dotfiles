@@ -368,6 +368,8 @@ source/dot_config/fish/functions/cdi.fish
 source/dot_config/bat/themes/rose-pine.tmTheme
 source/dot_config/bat/themes/rose-pine-dawn.tmTheme
 source/dot_config/bat/themes/rose-pine-moon.tmTheme
+source/dot_config/tmux/tmux.conf        (shadowed: nothing sources it, and its values
+                                         contradict dot_tmux.conf)
 ```
 
 **Home directory** — haven does not prune orphans, so each deployed copy is removed by
@@ -388,6 +390,7 @@ path after the source is gone:
 ~/.config/fish/functions/cm.fish
 ~/.config/fish/functions/cdi.fish
 ~/.config/bat/themes/rose-pine.tmTheme, rose-pine-dawn.tmTheme, rose-pine-moon.tmTheme
+~/.config/tmux/tmux.conf
 ~/config/Brewfile
 ```
 

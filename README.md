@@ -5,243 +5,146 @@ Personal dotfiles for John Stegeman, managed with [haven](https://github.com/joh
 ## Highlights
 
 - [haven](https://github.com/johnstegeman/haven) for dotfile and environment management with cross-platform support
-- [Rosé Pine](https://rosepinetheme.com/) color theme applied consistently across all tools
-- [Fish shell](https://fishshell.com/) as the default shell with a [Starship](https://starship.rs/) prompt (Ayu Dark palette, native jj support)
-- [Jujutsu (jj)](https://github.com/martinvonz/jj) as the primary version control system
-- [Helix](https://helix-editor.com/) as the primary editor
-- [Ghostty](https://ghostty.org/) as the primary terminal emulator, with [cmux](https://github.com/anthropics/cmux) for agentic development and [Wezterm](https://wezfurlong.org/wezterm/) and [Zellij](https://zellij.dev/) also configured
-- [Kanata](https://github.com/jtroo/kanata) for keyboard remapping with the [Gallium layout](https://github.com/galliumkb/gallium)
+- [Ayu Dark](https://github.com/ayu-theme) as the color theme across every tool that supports theming
+- [Fish shell](https://fishshell.com/) with a [Starship](https://starship.rs/) prompt (native jj support) and `ze` for frecency navigation
+- [Jujutsu (jj)](https://github.com/martinvonz/jj) as the version control system
+- [Neovim](https://neovim.io/) as the editor
+- [Ghostty](https://ghostty.org/) as the terminal, with [tmux](https://github.com/tmux/tmux) for multiplexing
+- herdr and [Orca](https://github.com/stablyai/orca) for running AI coding agents in panes and worktrees
+- [Kanata](https://github.com/jtroo/kanata) for keyboard remapping with the [Gallium layout](https://github.com/galliumkb/gallium), and [AeroSpace](https://github.com/nikitabobko/AeroSpace) for window management
 - [1Password](https://1password.com) integration for secrets management (macOS)
-- [Homebrew](https://brew.sh/) for package management (macOS) with a tracked Brewfile
+- [Homebrew](https://brew.sh/) and [mise](https://mise.jdx.dev/) for packages, both tracked in this repo
 
 ## Color Theme
 
-[Rosé Pine](https://rosepinetheme.com/) is applied across all tools that support it:
+Ayu Dark, everywhere. Each tool applies it through its own mechanism:
 
-| Tool | Theme |
-|------|-------|
-| Fish shell | `Ayu Dark` theme (tracked in `fish/themes/`) |
-| Starship prompt | Ayu Dark palette (`[palettes.ayu-dark]`) |
-| Bat | `rose-pine` theme |
-| Delta (git diffs) | `rose-pine` syntax theme |
-| Atuin | Rose Pine theme |
-| Helix | `rose_pine` theme |
-| Tmux | `rose-pine/tmux` plugin |
-| VS Code | Rosé Pine extension |
-| Wezterm | Rose Pine plugin |
-| Ghostty | `rose-pine` theme |
-| Zellij | Rose Pine themes |
-| Btop | Custom `rose-pine` theme |
-| Leadr | `rose-pine` theme |
+| Tool | Ayu Dark via |
+|------|--------------|
+| Fish shell | `fish_config theme choose "Ayu Dark"` (`fish/themes/Ayu Dark.theme`) |
+| Starship prompt | `[palettes.ayu-dark]` in `starship.toml` |
+| Neovim | `ayu` colorscheme via AstroNvim |
+| Helix | built-in `ayu_dark` theme |
+| Zed | `Ayu Dark` / `Ayu Light` |
+| VS Code | `Ayu Dark` theme, from the `teabyii.ayu` extension |
+| Ghostty | `theme = "Ayu"` |
+| Wezterm | inline ANSI table in `wezterm.lua` |
+| tmux | `tmux/ayu.conf` |
+| bat | `--theme='Ayu Dark'` |
+| delta | `syntax-theme = "Ayu Dark"` |
+| Atuin | `[theme] name = "ayu-dark"` |
+| btop | `color_theme = "ayu"` |
+| herdr | `[theme] name = "ayu-dark"` |
+| zellij | `theme "ayu_dark"` (config still tracked; zellij is being retired) |
 
 ## Shell
 
-Fish is the default shell. Zsh is also configured as a fallback (with a custom prompt), but Fish is where all active development happens.
+Fish is the default shell. Zsh is configured as a fallback but sees no real use.
 
 ### Prompt
 
-The prompt uses [Starship](https://starship.rs/), configured with the Ayu Dark palette in `~/.config/starship.toml` and initialised from `config.fish` (`starship init fish` + `enable_transience`). Transience is enabled — previous prompt lines collapse after execution.
+[Starship](https://starship.rs/) with the Ayu Dark palette, initialized from `config.fish`
+(`starship init fish` + `enable_transience`). Transience is on, so finished prompt lines
+collapse.
 
-The prompt layout:
 ```
 <os> <directory> [python env] [status]          <vcs>
 ❯
 ```
 
-VCS info comes from Starship's native modules, selected with `[vcs] order = ["jj", "git"]`: inside a jj repo `jj_bookmark`/`jj_change`/`jj_metrics`/`jj_status` render from a single `jj` call (bookmark, change ID, lines added/removed, per-file status flags), and the `git_*` modules take over elsewhere. There are no `[custom]` prompt modules.
+VCS comes from Starship's native modules with `[vcs] order = ["jj", "git"]`: inside a jj
+repo the `jj_*` modules render from a single `jj` call (bookmark, change ID, lines
+added/removed, per-file flags), and the `git_*` modules take over elsewhere. There are no
+`[custom]` prompt modules.
 
-### Fisher Plugins
+### Plugins
 
-Fish plugins are managed with [fisher](https://github.com/jorgebucaran/fisher):
+Managed with [fisher](https://github.com/jorgebucaran/fisher), listed in
+`fish/fish_plugins`:
 
-| Plugin | Purpose |
-|--------|---------|
-| `jorgebucaran/autopair.fish` | Automatic bracket/quote pairing |
-| `nickeb96/puffer-fish` | Enhanced `...` directory navigation |
-| `0rax/fish-bd` | Jump back to a parent directory by name |
-| `PatrickF1/fzf.fish` | Fzf integration (file/history/pid search) |
-| `icezyclon/zoxide.fish` | Zoxide integration for smart `cd` |
-| `rose-pine/fish` | Rosé Pine color theme |
-| `johnstegeman/fish-take` | `take` command — mkdir and cd in one step |
+- `jorgebucaran/autopair.fish` — automatic bracket and quote pairing
+- `nickeb96/puffer-fish` — `...` expands to `../..`, and so on
+- `PatrickF1/fzf.fish` — fzf integration
+- `johnstegeman/fish-take` — `take <dir>`, mkdir and cd in one step
 
-### Tool Integrations
+`fisher update` installs and updates them all.
 
-The following tools are initialized in `config.fish` when available:
+### Navigation
 
-- **Starship** — prompt (with transience enabled)
-- **Zoxide** — replaces `cd` with smart directory jumping
-- **Fzf** — fuzzy finder shell integration
-- **Atuin** — shell history (ctrl-r not overridden; atuin uses its own binding)
-- **Carapace** — enhanced completions for many CLI tools
-- **Leadr** — terminal session/command management
-- **uv** — shell completions generated on init
-- **Helix** — set as `$EDITOR`
-
-### Custom Functions
-
-#### Utility wrappers
-
-These replace standard commands with better alternatives, falling back gracefully if the tool is not installed:
-
-| Function | Replaces | Tool |
-|----------|---------|------|
-| `ls` | `ls` | `eza` |
-| `ll` | `ls -l` | `eza -l` |
-| `la` | `ls -a` | `eza -a` |
-| `lla` | `ls -la` | `eza -la` |
-| `lt` | — | `eza --tree` |
-| `cat` | `cat` | `bat` |
-| `du` | `du` | `dua` |
-| `df` | `df` | `duf` |
-| `rm` | `rm` | `trash-cli` (moves to trash) |
-| `dig` | `dig` | `doggo` |
-| `cd` | `cd` | `zoxide` |
-
-#### haven — `hv`
-
-Wrapper for common haven operations:
-
-```fish
-hv ap    # haven apply
-hv ed    # open haven source directory in Zed
-hv cd    # cd to haven source directory
-hv ...   # pass-through to haven for anything else
-```
-
-#### Homebrew — `br`
-
-Wrapper for Homebrew bundle operations (macOS):
-
-```fish
-br up     # update, upgrade, cleanup, doctor
-br in     # brew bundle install from ~/config/Brewfile
-br clean  # brew bundle cleanup --zap from ~/config/Brewfile
-br ...    # pass-through to brew for anything else
-```
-
-#### Jujutsu — `jmr`
-
-Sets up a jj repo with two remotes (upstream + fork), configuring fetch from both and push to origin only:
-
-```fish
-jmr   # configure upstream/origin remotes and track bookmarks
-```
-
-#### Python — `mkvenv` / `uvu`
-
-```fish
-mkvenv   # create a uv virtual environment
-uvu      # update uv lockfile and sync
-```
-
-#### GCP — `inf`
-
-SSH helper for connecting to GCP instances via gcloud:
-
-```fish
-inf gs   # ssh to inf-graph
-inf p1   # ssh to inf-prop1
-# ... p2 through p5
-```
-
-#### macOS Dock — `dock`
-
-Backup and restore the macOS Dock configuration.
-
-#### Git aliases
-
-Short aliases wrapping common jj/git operations: `g`, `ga`, `gb`, `gc`, `gl`, `gp`, `gst`.
-
-## Version Control
-
-### Jujutsu (jj)
-
-[Jujutsu](https://github.com/martinvonz/jj) is the primary VCS. The Starship prompt shows jj state when inside a jj repository via its native jj modules (bookmark, change ID, lines added/removed, per-file status flags) — see [docs/version-control.md](docs/version-control.md#prompt-integration).
-
-### Git
-
-Git is configured with:
-- [Delta](https://github.com/dandavison/delta) as the pager with side-by-side diffs and Rose Pine syntax highlighting
-- SSH signing via 1Password's SSH agent
-- `diff3` conflict style
+`cd` is wrapped by `ze`, a frecency-based directory jumper (its `ze.sh` and `zex.sh` live
+in `~/bin`). `..` is a small tracked function. There is no zoxide.
 
 ## Editors
 
 | Editor | Role | Notes |
 |--------|------|-------|
-| [Helix](https://helix-editor.com/) | Primary | Rosé Pine theme, Gallium keymaps |
-| [Zed](https://zed.dev/) | Secondary | Used by `hv ed` to open dotfiles |
-| [VS Code](https://code.visualstudio.com/) | Available | Rosé Pine theme, settings via haven template |
-| [Neovim](https://neovim.io/) | Available | — |
+| [Neovim](https://neovim.io/) | Primary | `$EDITOR`; AstroNvim with the `ayu` colorscheme. The config is its own repo at `~/.config/nvim` — only its flash plugin spec is tracked here |
+| [Helix](https://helix-editor.com/) | Configured, not installed | `helix/config.toml` and Ayu Dark are tracked for whenever it is |
+| [Zed](https://zed.dev/) | Secondary | What `hv ed` opens the source directory in |
+| [VS Code](https://code.visualstudio.com/) | Available | Settings tracked as a symlinked `settings.json` |
 
 ## Terminals
 
 | Terminal | Role |
 |----------|------|
 | [Ghostty](https://ghostty.org/) | Primary |
-| [cmux](https://github.com/anthropics/cmux) | Agentic development (multi-pane Claude Code sessions) |
-| [Wezterm](https://wezfurlong.org/wezterm/) | Alternative |
-| [Zellij](https://zellij.dev/) | Terminal multiplexer (Rose Pine theme) |
-| [Tmux](https://github.com/tmux/tmux) | Terminal multiplexer (rose-pine/tmux plugin) |
+| [tmux](https://github.com/tmux/tmux) | Multiplexer — tpm plugins, prefix `Ctrl+Space` |
+| herdr | Terminal workspace manager for AI coding agents |
+| [Orca](https://github.com/stablyai/orca) | Agent worktrees, terminals and runtimes |
+| [Wezterm](https://wezfurlong.org/wezterm/) | Alternative — cask tracked in `brew/Brewfile.macos`, not currently installed |
 
-## Development Tools
+zellij's config is still tracked, but zellij is being retired and nothing here depends on
+it.
 
-| Tool | Purpose |
-|------|---------|
-| [mise](https://mise.jdx.dev/) | Version manager for Go, Java (Temurin 24), Node, Bun, Python, Rust, and CLI tools |
-| [uv](https://docs.astral.sh/uv/) | Python version and dependency management |
-| [jbang](https://www.jbang.dev/) | Run Java programs as self-contained scripts |
+## Version Control
 
-## CLI Enhancements
+[jj](https://github.com/martinvonz/jj) is the primary VCS and the configured haven backend
+(`[vcs] backend = "jj"`). This repo is colocated jj + git. Git is configured for the
+repositories that still need it — delta as pager, SSH commit signing through 1Password,
+`diff3` conflicts. See [docs/version-control.md](docs/version-control.md).
 
-| Tool | Purpose |
-|------|---------|
-| [eza](https://github.com/eza-community/eza) | Modern `ls` replacement |
-| [bat](https://github.com/sharkdp/bat) | `cat` with syntax highlighting (Rose Pine theme) |
-| [delta](https://github.com/dandavison/delta) | Git diff pager |
-| [dua](https://github.com/Byron/dua-cli) | Interactive disk usage (`du` replacement) |
-| [duf](https://github.com/muesli/duf) | Disk free display (`df` replacement) |
-| [trash-cli](https://github.com/andreafrancia/trash-cli) | Safe `rm` that moves to trash |
-| [doggo](https://github.com/mr-karan/doggo) | DNS lookup (`dig` replacement) |
-| [ripgrep](https://github.com/BurntSushi/ripgrep) | Fast search |
-| [fd](https://github.com/sharkdp/fd) | Fast `find` replacement |
-| [fzf](https://github.com/junegunn/fzf) | Fuzzy finder |
-| [zoxide](https://github.com/ajeetdsouza/zoxide) | Smart `cd` with frecency |
-| [atuin](https://github.com/atuinsh/atuin) | Shell history with search (Rose Pine theme) |
-| [carapace](https://github.com/rsteube/carapace-bin) | Multi-shell completion |
-| [btop](https://github.com/aristocratos/btop) | System monitor (Rose Pine theme) |
-| [lnav](https://lnav.org/) | Log file viewer |
-| [leadr](https://github.com/ll-nick/leadr) | Terminal command session manager |
-| [just](https://github.com/casey/just) | Command runner |
+## Packages
 
-## Keyboard
+Two mechanisms, both tracked here:
 
-[Kanata](https://github.com/jtroo/kanata) remaps the keyboard to the [Gallium layout](https://github.com/galliumkb/gallium). On macOS, Kanata runs as a LaunchDaemon via a haven template that resolves the correct binary path.
+- **Homebrew** — one Brewfile per module (`brew/Brewfile.shell`, `.utilities`, `.vcs`,
+  `.cloud`, `.k8s`, `.macos`, `.ai`), selected by `modules/*.toml`.
+- **mise** — runtimes and CLI tools (`mise/mise.*.toml`, plus `tools` in `mise.toml`).
 
-Helix keybindings are also adjusted for the Gallium layout.
+`haven list` prints the authoritative inventory of both. [docs/utilities.md](docs/utilities.md)
+describes the tools themselves and [docs/apps.md](docs/apps.md) covers GUI apps.
+
+## Keyboard and Windows
+
+[Kanata](https://github.com/jtroo/kanata) remaps the keyboard to the
+[Gallium layout](https://github.com/galliumkb/gallium) from `~/config/Gallium.cfg`. On macOS
+it runs as a user LaunchDaemon whose plist is a haven template that resolves the binary
+path.
+
+Window management is [AeroSpace](https://github.com/nikitabobko/AeroSpace) with
+`felixkratz/borders` drawing focus rings. See [docs/keyboard.md](docs/keyboard.md).
 
 ## macOS
 
-- Package management via Homebrew with a tracked `~/config/Brewfile`
-- Supports both Apple Silicon (`/opt/homebrew`) and Intel (`/usr/local`) Homebrew paths
-- [1Password](https://1password.com) used for secrets; SSH keys stored in 1Password and accessed via the SSH agent integration
+- [1Password](https://1password.com) for secrets; SSH keys live in 1Password and are used
+  through its SSH agent
 - [Orbstack](https://orbstack.dev/) for containers and Linux VMs
-- [Raycast](https://www.raycast.com/) as the launcher
 - [Finicky](https://github.com/johnste/finicky) for URL routing
+- Homebrew paths handled for both Apple Silicon (`/opt/homebrew`) and Intel (`/usr/local`)
 
 ## Documentation
 
 | Doc | Contents |
 |-----|---------|
-| [Installation](docs/installation.md) | Detailed setup steps, post-install configuration, platform notes |
-| [Fish Shell](docs/fish.md) | Plugins, tool integrations, all custom functions with usage examples |
-| [Version Control](docs/version-control.md) | Jujutsu (jj) workflow, multi-remote setup, git configuration |
-| [Utilities](docs/utilities.md) | CLI tools, command replacements, system monitoring |
+| [Fish Shell](docs/fish.md) | Prompt, plugins, tool integrations, every tracked function |
+| [Utilities](docs/utilities.md) | CLI tools and what they replace |
 | [macOS Apps](docs/apps.md) | Homebrew casks — GUI apps with descriptions |
-| [Keyboard](docs/keyboard.md) | Gallium layout, Kanata remapper, Helix keybindings |
-| [Python](docs/python.md) | uv for version management, virtual environments, and dependencies |
-| [Java](docs/java.md) | mise for JDK management, jbang for scripting |
-| [Customizing](docs/customizing.md) | Forking, adding functions/plugins, secrets, cross-platform templates |
+| [Version Control](docs/version-control.md) | jj workflow, multi-remote setup, git configuration |
+| [Keyboard](docs/keyboard.md) | Gallium layout, Kanata, Helix keybindings, window management |
+| [Python](docs/python.md) | uv for versions, virtual environments and dependencies |
+| [Java](docs/java.md) | mise for JDKs, jbang for scripting |
+| [Customizing](docs/customizing.md) | Forking, adding functions and plugins, secrets, templates |
+| [Installation](docs/installation.md) | Setup steps — partially reworked, sections still reference chezmoi |
 
 ## Installation
 
@@ -249,11 +152,11 @@ Helix keybindings are also adjusted for the Gallium layout.
 haven init gh:johnstegeman/haven --apply
 ```
 
-See [docs/installation.md](docs/installation.md) for full details including post-install steps and platform notes.
-
 ## Secrets
 
-Sensitive files (SSH keys, etc.) are managed via haven's [1Password integration](https://johnstegeman.github.io/haven/). Private SSH keys are stored in 1Password and accessed through the 1Password SSH agent — no keys are stored in plaintext on disk.
+SSH keys and other secrets are managed through haven's
+[1Password integration](https://johnstegeman.github.io/haven/). Private keys live in
+1Password and are used through its SSH agent — no plaintext keys on disk.
 
 ## Key File Locations
 
@@ -261,17 +164,18 @@ Sensitive files (SSH keys, etc.) are managed via haven's [1Password integration]
 |------|---------|
 | `~/.config/fish/config.fish` | Fish shell configuration |
 | `~/.config/fish/fish_plugins` | Fisher plugin list |
-| `~/.config/starship.toml` | Starship prompt configuration (Ayu Dark palette) |
+| `~/.config/starship.toml` | Starship prompt (Ayu Dark palette) |
 | `~/.config/git/config` | Git configuration |
 | `~/.config/jj/config.toml` | Jujutsu configuration |
-| `~/.config/helix/config.toml` | Helix editor configuration |
-| `~/.config/wezterm/wezterm.lua` | Wezterm configuration |
-| `~/.config/ghostty/config` | Ghostty configuration |
-| `~/.config/zellij/` | Zellij configuration |
-| `~/.config/tmux/` | Tmux configuration |
-| `~/.config/atuin/config.toml` | Atuin history configuration |
-| `~/.config/btop/btop.conf` | Btop system monitor configuration |
-| `~/.config/leadr/config.toml` | Leadr configuration |
-| `~/.config/bat/config` | Bat configuration |
-| `~/.config/mise/config.toml` | Mise version manager configuration |
-| `~/config/Brewfile` | Homebrew bundle file (macOS) |
+| `~/.config/helix/config.toml` | Helix configuration |
+| `~/.config/nvim/` | Neovim — config maintained outside this repo |
+| `~/.config/ghostty/config` | Ghostty terminal |
+| `~/.config/wezterm/wezterm.lua` | Wezterm terminal |
+| `~/.tmux.conf` | tmux (sources `~/.config/tmux/ayu.conf`) |
+| `~/.config/herdr/config.toml` | herdr workspace manager |
+| `~/.config/aerospace/aerospace.toml` | AeroSpace window manager |
+| `~/.config/atuin/config.toml` | Atuin history |
+| `~/.config/btop/btop.conf` | btop |
+| `~/.config/bat/config` | bat |
+| `~/.config/mise/config.toml` | mise |
+| `~/config/Gallium.cfg` | Kanata layout |

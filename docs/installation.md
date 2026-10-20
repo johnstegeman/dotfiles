@@ -46,18 +46,6 @@ If you use tmux, open a tmux session and press `Prefix + I` to install plugins v
 
 SSH keys and other secrets are stored in 1Password and retrieved via haven's 1Password integration. Set up the 1Password CLI and SSH agent before running `haven apply` on a new machine.
 
-### 5. Bootstrap with just (optional)
-
-A `Justfile` in the repo root provides convenience targets for common setup tasks:
-
-```fish
-just bootstrap   # brew bundle + mise install
-just brew        # brew bundle install
-just mise        # mise install
-just apply       # haven apply
-just update      # brew + mise + haven apply
-```
-
 ## Platform notes
 
 ### macOS

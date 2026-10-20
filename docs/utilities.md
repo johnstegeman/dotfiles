@@ -1,10 +1,13 @@
 # CLI Utilities
 
-Modern command-line tools installed via Homebrew and managed in `~/config/Brewfile`.
+Modern command-line tools, grouped by where they come from. Package truth lives in
+`brew/Brewfile.*` (Homebrew) and `mise/mise.*.toml` + the root `mise.toml` (mise);
+`haven list` prints the authoritative inventory of both. This page is a tour of what is
+there and why.
 
 ## Command replacements
 
-These tools replace standard Unix commands and are wrapped in Fish functions with fallbacks. See [fish.md](fish.md) for the wrapper details.
+Wrapped in Fish functions with fallbacks — see [fish.md](fish.md) for the wrappers.
 
 | Function | Replaces | Tool | Description |
 |----------|---------|------|-------------|
@@ -12,81 +15,81 @@ These tools replace standard Unix commands and are wrapped in Fish functions wit
 | `cat` | `cat` | [bat](https://github.com/sharkdp/bat) | Syntax highlighting, line numbers, git diff integration |
 | `du` | `du` | [dua](https://github.com/Byron/dua-cli) | Interactive disk usage analyzer |
 | `df` | `df` | [duf](https://github.com/muesli/duf) | Disk free with colored, grouped output |
-| `rm` | `rm` | [trash-cli](https://github.com/andreafrancia/trash-cli) | Moves files to trash instead of permanently deleting |
+| `rm` | `rm` | [trash-cli](https://github.com/andreafrancia/trash-cli) | Moves files to trash instead of deleting |
 | `dig` | `dig` | [doggo](https://github.com/mr-karan/doggo) | DNS lookup with readable output |
-| `cd` | `cd` | [zoxide](https://github.com/ajeetdsouza/zoxide) | Frecency-based directory jumping — type `z <partial>` |
+| `cd` | `cd` | `ze` | Frecency-based directory jumping (see below) |
 
-## Search & navigation
+## Search and navigation
 
 | Tool | Command | Description |
 |------|---------|-------------|
 | [ripgrep](https://github.com/BurntSushi/ripgrep) | `rg` | Fast regex search, respects `.gitignore` |
 | [fd](https://github.com/sharkdp/fd) | `fd` | Fast `find` replacement with sensible defaults |
-| [fzf](https://github.com/junegunn/fzf) | `fzf` | Fuzzy finder — integrated into Fish via `fzf.fish` plugin |
-| [zoxide](https://github.com/ajeetdsouza/zoxide) | `z`, `zi` | Smart `cd` with frecency; `zi` opens interactive picker |
+| [fzf](https://github.com/junegunn/fzf) | `fzf` | Fuzzy finder; shell integration via `fzf --fish`, plus the fzf.fish fish plugin |
+| `ze` | `ze` | Frecency-based directory jumper from `~/bin/ze.sh` — what `cd` is bound to |
 
 ## Shell history
 
-[Atuin](https://github.com/atuinsh/atuin) replaces shell history with a searchable, syncable SQLite database.
-
-- Rosé Pine theme applied
-- ctrl-r is not overridden — Atuin uses its own binding
-- Initialized with `atuin init fish --disable-ctrl-r`
+[Atuin](https://github.com/atuinsh/atuin) replaces shell history with a searchable SQLite
+database, initialized with `atuin init fish --disable-ctrl-r` so Ctrl-R stays fish's own.
+Ayu Dark theme; daemon-based fuzzy search.
 
 ## Completions
 
-[Carapace](https://github.com/rsteube/carapace-bin) provides enhanced completions for many CLI tools across shells. Bridges are enabled for zsh, fish, bash, and inshellisense.
-
-## Shell history management
-
-[Leadr](https://github.com/ll-nick/leadr) shows a context-aware panel of relevant commands. Activated with the configured key binding. Rosé Pine theme applied.
-
-## System monitoring
-
-| Tool | Command | Description |
-|------|---------|-------------|
-| [btop](https://github.com/aristocratos/btop) | `btop` | System monitor — CPU, memory, network, processes. Rosé Pine theme. |
-| [bottom](https://github.com/ClementTsang/bottom) | `btm` | Lightweight Rust-based system stats |
-| [htop](https://htop.dev/) | `htop` | Interactive process viewer |
+[Carapace](https://github.com/rsteube/carapace-bin) provides enhanced completions for many
+CLI tools. Bridges are enabled for zsh, fish, bash, and inshellisense.
 
 ## Version control
 
 | Tool | Description |
 |------|-------------|
-| [delta](https://github.com/dandavison/delta) | Git diff pager with syntax highlighting (Rosé Pine theme) and side-by-side view |
+| [jj](https://github.com/martinvonz/jj) | Jujutsu — the primary VCS, configured as haven's `[vcs] backend` |
+| [delta](https://github.com/dandavison/delta) | Diff pager with Ayu Dark syntax highlighting and side-by-side view |
 | [gh](https://cli.github.com/) | Official GitHub CLI |
 | [git-lfs](https://git-lfs.github.com/) | Git Large File Storage |
 
-See [version-control.md](version-control.md) for jj and git configuration details.
+See [version-control.md](version-control.md) for jj and git configuration.
 
 ## Network
 
 | Tool | Command | Description |
 |------|---------|-------------|
 | [httpie](https://httpie.io/) | `http`, `https` | Human-friendly HTTP client |
-| [nmap](https://nmap.org/) | `nmap` | Network scanner and security tool |
-| [wget](https://www.gnu.org/software/wget/) | `wget` | File download, supports recursive site mirroring |
+| [nmap](https://nmap.org/) | `nmap` | Network scanner |
+| [wget](https://www.gnu.org/software/wget/) | `wget` | File download, supports recursive mirroring |
 | [curl](https://curl.se/) | `curl` | Data transfer tool |
-| doggo | `dig` alias | DNS lookup — see command replacements above |
+| [awscli](https://aws.amazon.com/cli/) | `aws` | AWS CLI (cloud module, which the default profile loads) |
+| [gcloud](https://cloud.google.com/sdk/gcloud) | `gcloud` | Google Cloud CLI (cloud module) |
 
 ## Kubernetes
 
-| Tool | Command | Description |
-|------|---------|-------------|
-| [kubectl](https://kubernetes.io/docs/reference/kubectl/) | `kubectl` | Kubernetes CLI |
-| [helm](https://helm.sh/) | `helm` | Kubernetes package manager |
-| [kompose](https://kompose.io/) | `kompose` | Convert docker-compose files to Kubernetes manifests |
+[kubectl](https://kubernetes.io/docs/reference/kubectl/),
+[helm](https://helm.sh/), and [kompose](https://kompose.io/) are pinned in
+`mise/mise.k8s.toml`. No profile loads the `k8s` module, so a fresh `haven apply` does not
+install them — add `k8s` to a profile in `haven.toml` if you want them tracked.
 
-## Other tools
+## Everything else, mise-managed
 
-| Tool | Command | Description |
-|------|---------|-------------|
-| [jq](https://jqlang.github.io/jq/) | `jq` | JSON processor and formatter |
-| [just](https://github.com/casey/just) | `just` | Command runner / task file tool |
-| [lnav](https://lnav.org/) | `lnav` | Log file viewer with search, filtering, and format detection |
-| [asciinema](https://asciinema.org/) | `asciinema` | Terminal session recorder |
-| [fzy](https://github.com/jhawthorn/fzy) | `fzy` | Fuzzy text selector (used by some tools internally) |
-| [less](https://www.greenwoodsoftware.com/less/) | `less` | Pager (used as fallback by various tools) |
-| [subversion](https://subversion.apache.org/) | `svn` | Legacy SVN version control |
-| [awscli](https://aws.amazon.com/cli/) | `aws` | AWS CLI |
-| [go](https://golang.org/) | `go` | Go programming language toolchain |
+Runtimes and CLI tools pinned in `mise/mise.*.toml`:
+
+`jq`, `just`, `bottom` (`btm`), `asciinema`, `neovim`, `bun`, `node`, `python`, `uv`,
+`lua`/`luajit`, `sqlite`, `terraform`, `worktrunk` (`wt`), `hunk`, `tuicr`, `trufflehog`,
+`actionlint`, `coreutils`, `clang-format`, `make`, `tree-sitter`, `dua`, `neo4j-cli`,
+`aura-cli`, beads (`bd`), and the AI CLIs: `claude-code`, `codex`, `opencode`, `pi`,
+`oh-my-pi`, `antigravity-cli`.
+
+## Homebrew formulae
+
+`btop`, `cypher-shell`, `fzy`, `gnupg`, `htop`, `httpie`, `less`, `mise`, `mkdocs`, `nmap`,
+`pkgconf`, `trash-cli`, `wget` (utilities module); `fish`, `fisher`, `zsh` (shell module);
+`git`, `subversion` (vcs module); `borders`, `kanata`, `mas`, `vorssaint` (macos module).
+
+## Installed outside both
+
+`herdr` lives in `~/.local/bin` and is updated by its own updater (`herdr update`). It is a
+terminal workspace manager for AI coding agents, themed with `[theme] name = "ayu-dark"`.
+
+## Not installed
+
+`leadr`, `lnav`, `zoxide`, `go`, and `rust` are not part of this environment. Their config
+entries were removed rather than left describing something absent.

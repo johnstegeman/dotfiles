@@ -22,7 +22,6 @@ status is-interactive; and begin
     end
 
     set -xg VIRTUAL_ENV_DISABLE_PROMPT yes
-    set -gx LEADR_CONFIG_DIR ~/.config/leadr
 
     abbr -a -- - 'cd -'
 

@@ -50,6 +50,6 @@ mas "Davinci Resolve", id: 571213070
 brew "felixkratz/formulae/borders"
 brew "kanata"
 brew "mas"
-brew "vorssaint"
+cask "vorssaint"
 # brew "qmk"
 # brew "sketchybar"

@@ -25,7 +25,7 @@
    "editor.lineNumbers": "relative",
    "git.openRepositoryInParentFolders": "always",
    "editor.minimap.enabled": false,
-   "workbench.colorTheme": "Rosé Pine",
+   "workbench.colorTheme": "Ayu Dark",
    "terminal.integrated.shellIntegration.enabled": false,
    "git.enabled": false,
    "git.autorefresh": false,
