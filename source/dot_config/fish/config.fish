@@ -13,6 +13,14 @@ status is-interactive; and begin
 
     fish_config theme choose "Ayu Dark"
 
+    # Prompt: starship, configured in ~/.config/starship.toml with the Ayu Dark palette.
+    # enable_transience collapses finished prompts; starship_transient_prompt_func keeps the
+    # transient ❯ in Ayu cyan (red after a failed command).
+    if using starship
+        starship init fish | source
+        enable_transience
+    end
+
     set -xg VIRTUAL_ENV_DISABLE_PROMPT yes
     set -gx LEADR_CONFIG_DIR ~/.config/leadr
 

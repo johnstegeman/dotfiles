@@ -4,7 +4,16 @@ Fish is the default shell. The configuration lives in `~/.config/fish/`.
 
 ## Prompt
 
-The prompt is [Tide](https://github.com/IlanCosman/tide) (v6), configured in `~/.config/fish/conf.d/tide.fish` with Rose Pine colors. Transience is enabled — previous prompt lines collapse after execution.
+The prompt is [Starship](https://starship.rs/), configured in `~/.config/starship.toml` with the Ayu Dark palette and initialised in `config.fish`:
+
+```fish
+if using starship
+    starship init fish | source
+    enable_transience
+end
+```
+
+Transience is enabled — previous prompt lines collapse after execution. The transient `❯` is styled by `functions/starship_transient_prompt_func.fish` so it stays Ayu cyan (red after a failed command) instead of Starship's default bold green.
 
 The prompt layout:
 ```
@@ -12,13 +21,14 @@ The prompt layout:
 ❯
 ```
 
-VCS info is provided by a custom `_tide_item_vcs.fish` that tries jj first and falls back to Tide's built-in git item. Inside a jj repository, `_tide_item_jj.fish` shows:
+VCS info comes from Starship's native modules, selected by `[vcs] order = ["jj", "git"]` — there are no `[custom]` prompt modules. Inside a jj repository the `jj_*` modules render from a single `jj show @` call:
 
-- File counts (`+added ~modified -deleted`)
-- Short commit ID and change ID
-- Current bookmark, or closest ancestor bookmark prefixed with `↑`
-- State flags: 💥 conflict, 🚧 divergent, 👻 hidden, 🔒 immutable
-- Diff metrics (`+insertions -deletions`)
+- `jj_bookmark` — current bookmark, or the nearest ancestor bookmark (`@remote` for remote bookmarks, `*` when the bookmark is out of sync with its remotes)
+- `jj_change` — change ID
+- `jj_metrics` — lines added/removed (`+added -deleted`)
+- `jj_status` — per-file flags: `!` conflict, `◆` immutable, `~` modified, `+` added, `✘` deleted, `»` renamed
+
+In non-jj git repositories the `git_branch` / `git_status` / `git_metrics` modules take over: branch, staged/modified/untracked/deleted counts, stashes, ahead/behind (`⇡n` / `⇣n` / `⇕⇡n⇣n`) and lines added/removed.
 
 ## Plugins
 
@@ -26,7 +36,6 @@ Plugins are managed with [fisher](https://github.com/jorgebucaran/fisher). The p
 
 | Plugin | Purpose |
 |--------|---------|
-| `IlanCosman/tide@v6` | Tide prompt |
 | `jorgebucaran/autopair.fish` | Automatic bracket, quote, and parenthesis pairing |
 | `nickeb96/puffer-fish` | Type `...` to expand to `../..`, `....` to `../../..`, etc. |
 | `0rax/fish-bd` | `bd <name>` — jump back to a named parent directory |
@@ -47,7 +56,7 @@ The following tools are initialized in `config.fish` when present, using `if usi
 
 | Tool | Integration |
 |------|------------|
-| Tide | Prompt initialization + transience (initialized automatically via `fish_prompt`) |
+| Starship | Prompt initialization + transience (`starship init fish`, `enable_transience`) |
 | Zoxide | Replaces `cd` |
 | Fzf | Shell keybindings |
 | Atuin | Shell history (ctrl-r not overridden) |

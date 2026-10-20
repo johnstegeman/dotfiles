@@ -6,7 +6,7 @@ Personal dotfiles for John Stegeman, managed with [haven](https://github.com/joh
 
 - [haven](https://github.com/johnstegeman/haven) for dotfile and environment management with cross-platform support
 - [Rosé Pine](https://rosepinetheme.com/) color theme applied consistently across all tools
-- [Fish shell](https://fishshell.com/) as the default shell with [Tide](https://github.com/IlanCosman/tide) prompt
+- [Fish shell](https://fishshell.com/) as the default shell with a [Starship](https://starship.rs/) prompt (Ayu Dark palette, native jj support)
 - [Jujutsu (jj)](https://github.com/martinvonz/jj) as the primary version control system
 - [Helix](https://helix-editor.com/) as the primary editor
 - [Ghostty](https://ghostty.org/) as the primary terminal emulator, with [cmux](https://github.com/anthropics/cmux) for agentic development and [Wezterm](https://wezfurlong.org/wezterm/) and [Zellij](https://zellij.dev/) also configured
@@ -20,8 +20,8 @@ Personal dotfiles for John Stegeman, managed with [haven](https://github.com/joh
 
 | Tool | Theme |
 |------|-------|
-| Fish shell | `rose-pine/fish` plugin |
-| Tide prompt | Rose Pine colors via custom fish vars |
+| Fish shell | `Ayu Dark` theme (tracked in `fish/themes/`) |
+| Starship prompt | Ayu Dark palette (`[palettes.ayu-dark]`) |
 | Bat | `rose-pine` theme |
 | Delta (git diffs) | `rose-pine` syntax theme |
 | Atuin | Rose Pine theme |
@@ -40,7 +40,7 @@ Fish is the default shell. Zsh is also configured as a fallback (with a custom p
 
 ### Prompt
 
-The prompt uses [Tide](https://github.com/IlanCosman/tide) (v6), configured with Rose Pine colors in `~/.config/fish/conf.d/tide.fish`. Transience is enabled.
+The prompt uses [Starship](https://starship.rs/), configured with the Ayu Dark palette in `~/.config/starship.toml` and initialised from `config.fish` (`starship init fish` + `enable_transience`). Transience is enabled — previous prompt lines collapse after execution.
 
 The prompt layout:
 ```
@@ -48,7 +48,7 @@ The prompt layout:
 ❯
 ```
 
-VCS info is provided by a custom `_tide_item_vcs.fish` that shows jj state in jj repos (change ID, commit ID, bookmark, file counts, diff metrics, state flags) and falls back to git otherwise.
+VCS info comes from Starship's native modules, selected with `[vcs] order = ["jj", "git"]`: inside a jj repo `jj_bookmark`/`jj_change`/`jj_metrics`/`jj_status` render from a single `jj` call (bookmark, change ID, lines added/removed, per-file status flags), and the `git_*` modules take over elsewhere. There are no `[custom]` prompt modules.
 
 ### Fisher Plugins
 
@@ -68,7 +68,7 @@ Fish plugins are managed with [fisher](https://github.com/jorgebucaran/fisher):
 
 The following tools are initialized in `config.fish` when available:
 
-- **Tide** — prompt (with transience enabled)
+- **Starship** — prompt (with transience enabled)
 - **Zoxide** — replaces `cd` with smart directory jumping
 - **Fzf** — fuzzy finder shell integration
 - **Atuin** — shell history (ctrl-r not overridden; atuin uses its own binding)
@@ -156,7 +156,7 @@ Short aliases wrapping common jj/git operations: `g`, `ga`, `gb`, `gc`, `gl`, `g
 
 ### Jujutsu (jj)
 
-[Jujutsu](https://github.com/martinvonz/jj) is the primary VCS. The Tide prompt shows jj state (change ID, commit ID, bookmark, file counts, diff metrics, and state flags) when inside a jj repository via a custom `_tide_item_jj.fish`.
+[Jujutsu](https://github.com/martinvonz/jj) is the primary VCS. The Starship prompt shows jj state when inside a jj repository via its native jj modules (bookmark, change ID, lines added/removed, per-file status flags) — see [docs/version-control.md](docs/version-control.md#prompt-integration).
 
 ### Git
 
@@ -261,7 +261,7 @@ Sensitive files (SSH keys, etc.) are managed via haven's [1Password integration]
 |------|---------|
 | `~/.config/fish/config.fish` | Fish shell configuration |
 | `~/.config/fish/fish_plugins` | Fisher plugin list |
-| `~/.config/fish/conf.d/tide.fish` | Tide prompt configuration |
+| `~/.config/starship.toml` | Starship prompt configuration (Ayu Dark palette) |
 | `~/.config/git/config` | Git configuration |
 | `~/.config/jj/config.toml` | Jujutsu configuration |
 | `~/.config/helix/config.toml` | Helix editor configuration |

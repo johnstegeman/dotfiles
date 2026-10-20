@@ -48,7 +48,7 @@ All custom shell functions live in `source/dot_config/fish/functions/`. Key patt
 
 - **Tool wrappers** (`ls.fish`, `cat.fish`, `rm.fish`, etc.) check for the enhanced tool with `using <tool>` and fall back to the original command
 - **`using.fish`** is the availability checker used throughout `config.fish` and all function files
-- **`_tide_item_vcs.fish`** and **`_tide_item_jj.fish`** provide Jujutsu-aware prompt integration
+- **`starship_transient_prompt_func.fish`** styles Starship's transient prompt (the rest of the prompt lives in `source/dot_config/starship.toml`, using Starship's native jj modules)
 
 ## Important Conventions
 

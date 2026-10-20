@@ -1,159 +1,123 @@
+# Starship prompt — Ayu Dark.
+#
+# Layout:
+#   line 1 left:  [ os ] [ path ] [ python ] [ status ]
+#   line 1 right: [ vcs ]  (jj in jj repos, git otherwise — right-aligned via $fill)
+#   line 2:       ❯
+#
+# VCS uses starship's native jj modules (starship 1.27+): one `jj show @` call per prompt,
+# jj-vs-git selection by [vcs] order. There are deliberately no [custom] modules.
+#
+# Transience is enabled in config.fish (`enable_transience`); the transient ❯ is rendered by
+# functions/starship_transient_prompt_func.fish.
+
+palette = "ayu-dark"
+
 add_newline = true
-format = "$os $directory$python$direnv$status$fill$vcs$line_break$character"
-#format = "$jujutsu_state$jujutsu_bookmark$jujutsu_closest_bookmarks$jujutsu_metrics$jujutsu_commit$jujutsu_change"
-#format = "$vcs"
-palette = "rose-pine"
 
+format = "$os $directory$python$status$fill$vcs$line_break$character"
+
+# --- Ayu Dark palette ---------------------------------------------------------
+# Values match the "Ayu Dark" fish theme in fish/themes/ (yellow is Ayu's E6B450, brought over
+# from the tide config that used it).
+[palettes.ayu-dark]
+text = "#BFBDB6"    # default foreground
+comment = "#5A6673" # dimmed / secondary
+orange = "#FF8F40"  # path, renames
+red = "#F07178"     # errors, deletions, conflicts
+yellow = "#E6B450"  # modifications
+green = "#AAD94C"   # additions, python
+cyan = "#39BAE6"    # bookmarks, branches, prompt character
+purple = "#D2A6FF"  # jj change id (fish_color_param)
+
+# --- VCS ----------------------------------------------------------------------
+# jj first, git otherwise. jj_modules/git_modules spell out the segment order.
 [vcs]
-git_modules = "$git_branch$git_metrics$git_status"
-jujutsu_modules = "$jujutsu_state$jujutsu_commit$jujutsu_change$jujutsu_closest_bookmarks$jujutsu_metrics"
-order = ["jujutsu", "git"]
+order = ["jj", "git"]
+jj_modules = "$jj_bookmark$jj_change$jj_metrics$jj_status"
+git_modules = "$git_branch$git_status$git_metrics"
 
-[jujutsu_change]
-disabled = false
+# Bookmark on @ (or the nearest ancestor bookmark), with @remote for remote ones.
+[jj_bookmark]
+format = "[$symbol$bookmark(@$remote)]($style) "
+symbol = "\ue0a0 "
+style = "fg:cyan"
+truncation_length = 32
 
-[jujutsu_commit]
-disabled = false
+# Change id (no commit id — see bead haven-9ay).
+[jj_change]
+format = "$change "
+prefix_style = "fg:purple"
+suffix_style = "fg:purple"
+change_hash_length = 6
 
-[jujutsu_bookmark]
-disabled = false
+# Lines added/removed in the working-copy change.
+[jj_metrics]
+format = "([+$added](fg:green) )([-$deleted](fg:red) )"
+only_nonzero_diffs = true
 
-[jujutsu_closest_bookmarks]
-disabled = false
-
-[jujutsu_metrics]
-disabled = false
-
-
-[fill]
-symbol = " "
-
-[directory]
-format = "[$path]($style)"
-style = "fg:iris"
-truncate_to_repo = false
-truncation_length = 5
+# Per-file status flags: ! conflicted, ◆ immutable, ~ modified, + added, ✘ deleted, » renamed.
+# jj's "empty description" marker (◌) only exists inside $all, which has a single style, so it is not shown.
+[jj_status]
+format = "([$conflicted](fg:red)[$immutable](fg:comment)[$modified](fg:yellow)[$added](fg:green)[$deleted](fg:red)[$renamed](fg:orange) )"
 
 [git_branch]
-format = "[[ $symbol $branch](fg:foam)]($style)"
-#format = '[](fg:green)[$symbol](fg:blue bg:green)[](fg:green)[$branch](fg:foreground bg:white)[](fg:white)'
-style = "fg:foam"
-symbol = ""
+format = "[$symbol$branch]($style) "
+symbol = "\ue0a0 "
+style = "fg:cyan"
+truncation_length = 32
 
 [git_status]
+format = "([$conflicted](fg:red))([$deleted](fg:red))([$renamed](fg:orange))([$modified](fg:yellow))([$staged](fg:green))([$untracked](fg:yellow))([$stashed](fg:yellow))([$ahead_behind](fg:cyan) )"
+# ahead/behind/diverged must be spelled out: the built-in defaults for these render the arrows
+# without the counts (verified: default gives "⇡", these give "⇡1").
 ahead = " ⇡${count}"
 behind = " ⇣${count}"
-deleted = "[ x${count}](fg:love)"
-format = " $untracked$modified$staged$deleted"
-modified = "[ !${count}](fg:iris)"
-staged = "[ +${count}](fg:pine)"
-untracked = "[ ?${count}](fg:gold)"
+diverged = " ⇕⇡${ahead_count}⇣${behind_count}"
+conflicted = " !${count}"
+deleted = " ✘${count}"
+renamed = " »${count}"
+modified = " ~${count}"
+staged = " +${count}"
+untracked = " ?${count}"
 
-[custom.git_status]
-when = "! jj --ignore-working-copy root"
-command = "starship module git_status"
-description = "Only show git_status if we're not in a jj repo"
+[git_metrics]
+format = "([+$added](fg:green) )([-$deleted](fg:red) )"
+only_nonzero_diffs = true
 
-[custom.git_commit]
-shell = ["sh", "--norc"]
-when = "! jj --ignore-working-copy root"
-command = "starship module git_commit"
-description = "Only show git_commit if we're not in a jj repo"
-
-[custom.git_branch]
-shell = ["sh", "--norc"]
-when = "! jj --ignore-working-copy root"
-command = "starship module git_branch"
-description = "Only show git_branch if we're not in a jj repo"
-
-[hostname]
-ssh_only = false
-
+# --- Left side ----------------------------------------------------------------
 [os]
 disabled = false
-format = "[$symbol ]($style)"
+format = "[$symbol]($style)"
 style = "fg:text"
 
 [os.symbols]
-Macos = ""
-Ubuntu = ""
+Macos = "\uf179" # nf-fa-apple
+Linux = "\uf17c" # nf-fa-linux
 
-[palettes.osaka]
-base0 = "#839395"
-base01 = "#002c38"
-base02 = "#268bd3"
-base03 = "#001419"
-base04 = "#849900"
-base05 = "#db302d"
-base06 = "#6d71c4"
-base07 = "#d23681"
-bg01 = "#1a1b25"
-palette0 = "#15161d"
-palette1 = "#e77d8f"
-palette10 = "#a8cd76"
-palette11 = "#d8b172"
-palette12 = "#82a1f1"
-palette13 = "#b69bf1"
-palette14 = "#90cdfa"
-palette15 = "#c2caf1"
-palette2 = "#a8cd76"
-palette3 = "#d8b172"
-palette4 = "#82a1f1"
-palette5 = "#b69bf1"
-palette6 = "#90cdfa"
-palette7 = "#aab1d3"
-palette8 = "#424866"
-palette9 = "#e77d8f"
-
-
-[palettes.rose-pine]
-overlay = '#26233a'
-love = '#eb6f92'
-gold = '#f6c177'
-rose = '#ebbcba'
-pine = '#31748f'
-foam = '#9ccfd8'
-iris = '#c4a7e7'
-text = '#e0def4'
+[directory]
+format = "[$path]($style)"
+style = "fg:orange"
+truncation_length = 5
+truncate_to_repo = false
 
 [python]
-format = "[ $symbol$pyenv_prefix($version)(\\($virtualenv\\))]($style)"
-style = "pine"
-symbol = ""
+format = "[$symbol($version)(\\($virtualenv\\))]($style) "
+style = "fg:green"
+symbol = "\ue235 " # nf-md-language_python
 
-# custom module for jj status
-[custom.jj]
-shell = ["sh", "--norc"]
-description = "The current jj status"
-when = "jj --ignore-working-copy root"
+# ✘ in Ayu red when the previous command failed; nothing on success.
+[status]
+disabled = false
+format = "[$symbol]($style) "
+symbol = "✘"
+success_symbol = ""
+style = "fg:red"
+
+# --- Right alignment and character -------------------------------------------
+[fill]
 symbol = " "
-command = '''
-jj log --revisions @ --no-graph --ignore-working-copy --color always --limit 1 --template '
-  separate(" ",
-    change_id.shortest(4),
-    bookmarks,
-    "|",
-    concat(
-      if(conflict, "💥"),
-      if(divergent, "🚧"),
-      if(hidden, "👻"),
-      if(immutable, "🔒"),
-    ),
-    raw_escape_sequence("\x1b[1;32m") ++ if(empty, "⛔"),
-    raw_escape_sequence("\x1b[1;32m") ++ coalesce(
-      truncate_end(29, description.first_line(), "…"),
-      "(no desc)",
-    ) ++ raw_escape_sequence("\x1b[0m"),
-  )
-'
-'''
-
-[custom.starship-jj]
-when = "true"
-shell = ["sh", "--norc"]
-# Use starship-jj from PATH (typically in ~/.cargo/bin or system PATH)
-command = "starship-jj --ignore-working-copy starship prompt"
 
 [character]
-success_symbol = '[❯](foam) '
-error_symbol = '[❯](love) '
+success_symbol = "[❯](fg:cyan) "
+error_symbol = "[❯](fg:red) "

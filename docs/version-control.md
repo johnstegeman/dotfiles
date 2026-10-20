@@ -13,15 +13,24 @@ Key properties of jj relevant to this setup:
 
 ### Prompt integration
 
-The Tide prompt shows jj status when inside a jj repository via a custom `_tide_item_jj.fish`. It displays:
+The Starship prompt shows jj status when inside a jj repository, using Starship's native jj modules (selected by `[vcs] order = ["jj", "git"]` in `~/.config/starship.toml`). All of it comes from a single `jj` invocation per prompt:
 
-- File counts: `+added ~modified -deleted`
-- Short commit ID and change ID
-- Current bookmark, or closest ancestor bookmark prefixed with `↑`
-- State flags: 💥 conflict, 🚧 divergent, 👻 hidden, 🔒 immutable
-- Diff metrics: `+insertions -deletions`
+- `jj_bookmark` — the current bookmark, or the nearest ancestor bookmark; `@remote` marks remote bookmarks and `*` marks a bookmark that is out of sync with its remotes (jj's own decoration)
+- `jj_change` — the change ID (the commit ID is deliberately not shown)
+- `jj_metrics` — lines added/removed: `+added -deleted`
+- `jj_status` — per-file flags: `!` conflict, `◆` immutable, `~` modified, `+` added, `✘` deleted, `»` renamed
 
-A custom `_tide_item_vcs.fish` wraps this — it uses `_tide_item_jj` inside jj repos and falls back to Tide's built-in `_tide_item_git` otherwise.
+Outside jj repositories the `git_branch` / `git_status` / `git_metrics` modules render instead: branch, staged/modified/untracked/deleted/renamed/conflicted counts, stashes (`$`), ahead/behind (`⇡n`/`⇣n`, `⇕⇡n⇣n` when diverged) and lines added/removed.
+
+Because the jj modules run inline rather than in a background fish job, the prompt blocks for the duration of that `jj` call. Median of 15 runs with starship 1.27.0 / jj 0.46.0 on this machine:
+
+| Context | `starship prompt` |
+|---|---|
+| no repository | 13 ms |
+| clean git repository | 27 ms |
+| this repo, ~870-line working-copy diff | 55 ms |
+
+The `jj show @` call alone is 16 ms on a clean working copy and 48 ms when the working copy has a large diff, so the cost tracks how much changed, not repo size.
 
 ### Multi-remote workflow (`jmr`)
 
