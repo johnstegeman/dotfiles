@@ -99,10 +99,19 @@ The palette story becomes single and true rather than two-sided.
 wezterm keeps `config.color_scheme = 'Solarized Osaka Dark'` commented out next to the new
 table, so the alternative stays discoverable.
 
-The wezterm table uses the canonical values below, which match the tracked
-`fish/themes/Ayu Dark.theme` and the `[palettes.ayu-dark]` block in `starship.toml`. Where
-those three disagree, the fish theme wins and the other two are brought into line — one
-palette, three renderings.
+Three files express Ayu Dark at three different levels of abstraction, and none of them is
+edited:
+
+- **wezterm** needs a 16-colour ANSI set plus background, foreground and cursor. It gets the
+  canonical Ayu Dark ANSI values below (upstream ayu-colors).
+- **`fish/themes/Ayu Dark.theme`** uses semantic slots (`green`, `keyword`, `param`,
+  `cyan`) and has no background or foreground at all. It stays as it is.
+- **`starship.toml`** uses eight named slots in `[palettes.ayu-dark]`. It stays as it is.
+
+An earlier draft of this document said those three could be brought "into line". They
+cannot: they are not the same kind of artifact, and forcing agreement would repaint the
+prompt and the shell. Only wezterm gains a table; the values below are what goes in it and
+no other file is touched to match.
 
 | Role | Ayu Dark |
 |---|---|
@@ -142,8 +151,9 @@ provides.
 
 Two adjacent corrections fall out of this:
 
-- `..` is a tracked local function (`functions/...fish`, which defines `..` → `cd ..`),
-  and puffer-fish owns `...` expansion. Both get a line.
+- `..` is a tracked local function. Its file is literally named `...fish` — dot-prefixed,
+  so a plain `ls` hides it — and it defines `..` → `cd ..`. Puffer-fish owns `...`
+  expansion. Both get a line.
 - `fzf.fish`'s documented `Ctrl+Alt+F`/`Ctrl+R`/`Ctrl+Alt+P` bindings must be checked
   against the installed plugin before being restated; if unverifiable, the row is
   reduced to "fzf integration".
@@ -161,24 +171,31 @@ Structure, in order. README links to `docs/` and stops duplicating tables.
 3. **Color Theme.** One table, tool → mechanism, all Ayu Dark. This is the only place
    the mapping lives.
 4. **Shell.** Fish is the shell; Starship prompt (transience, native jj modules, layout
-   diagram — keep, it is accurate); `ze` for frecency navigation; four fisher plugins
-   **as a list linking to `docs/fish.md`**, not a table with purposes; tool integrations
-   as a short bullet list; a pointer to `docs/fish.md` for the function inventory.
-5. **Editors.** Table: Neovim primary (`$EDITOR`, note that the bulk of the config lives
-   outside this repo — only `lua/plugins/flash.lua` is tracked); Helix configured but not
-   installed; Zed secondary (`hv ed`); VS Code available.
-6. **Terminals.** Ghostty primary; wezterm alternative; tmux multiplexer (Ayu);
-   `herdr` — terminal workspace manager for AI coding agents; orca — worktree/agent
-   management. One line noting zellij's config is still tracked but it is being retired.
-7. **Development tools.** mise (runtimes + CLI) and Homebrew (per-module Brewfiles) as the
-   two package mechanisms, pointing at `docs/utilities.md` for what is in them. `just`
-   stays listed as an installed CLI tool, not as a bootstrap path.
-8. **Keyboard**, **macOS** — keep, corrected per the keyboard notes in §3.
-9. **Documentation index.** Keep the nine-row table minus `installation.md`'s description
-   change; every row must match a file that exists.
-10. **Installation.** Keep `haven init gh:johnstegeman/haven --apply`; no `just` recipes.
-11. **Secrets**, **Key file locations.** Correct paths; add `~/.config/herdr/config.toml`,
-    drop zellij's row, drop `~/.config/leadr/`, `~/config/Brewfile` never listed.
+   diagram — keep, it is accurate); `ze` for frecency navigation; the four fisher plugins
+   as a plain list linking to `docs/fish.md`. No function tables and no examples: one
+   sentence points at `docs/fish.md` for the inventory.
+5. **Editors.** Table: Neovim primary (`$EDITOR`, with the note that the bulk of the
+   config lives outside this repo — only `lua/plugins/flash.lua` is tracked); Helix
+   configured but not installed; Zed secondary (`hv ed`); VS Code available, Ayu Dark via
+   the `teabyii.ayu` extension.
+6. **Terminals.** Ghostty primary; wezterm alternative — its cask is tracked in
+   `brew/Brewfile.macos` and it is not installed on this machine right now, which the
+   page says in the same breath as the config; tmux multiplexer (Ayu); `herdr` — terminal
+   workspace manager for AI coding agents; orca — worktree/agent management. One line:
+   zellij's config is still tracked but it is being retired.
+7. **Version control.** Three sentences: jj is primary, this repo is colocated jj, git is
+   configured for repositories that need it. Links to `docs/version-control.md`. No
+   tables, no aliases — those live in `docs/fish.md` and `docs/version-control.md`.
+8. **Development tools.** One short table naming mise and Homebrew as the two package
+   mechanisms, plus a pointer to `docs/utilities.md`. The old `CLI Enhancements` table
+   dissolves into `docs/utilities.md`; `just` appears only as an installed CLI tool, not
+   as a bootstrap path.
+9. **Keyboard**, **macOS** — keep, corrected per the keyboard notes in §3.
+10. **Documentation index.** Nine rows, every one matching a file that exists.
+11. **Installation.** `haven init gh:johnstegeman/haven --apply` only.
+12. **Secrets**, **Key file locations.** Correct paths; add
+    `~/.config/herdr/config.toml` and `~/.config/aerospace/aerospace.toml`; drop zellij's
+    row and `~/.config/leadr/`; never list `~/config/Brewfile`.
 
 ### CLAUDE.md
 
@@ -206,8 +223,11 @@ Structure, in order. README links to `docs/` and stops duplicating tables.
   `conf.d/00_mise.fish`. Remove zoxide, leadr.
 - Abbreviations: `-` → `cd -`.
 - Command replacements: `ls/ll/la/lla/lt`, `cat`, `du`, `df`, `rm`, `dig`, and
-  `cd` → `ze`, `cdi` → `zi`.
-- Function reference, one row each, grouped: haven (`hv`, with its `note`/`bug`/`action`/
+  `cd` → `ze`. There is no zoxide and no `cdi` — that function is deleted (§4).
+- Function reference: one row per tracked function file in a grouped table, with a short
+  snippet only where behaviour is not obvious from the row (flags, fallbacks, wrapper
+  targets). The `###` section per function goes away — README inherits no examples, so
+  nothing is duplicated. Rows: haven (`hv`, with its `note`/`bug`/`action`/
   `question` telemetry cases), Homebrew (`br`), jj (`jmr`, `jjskill`), Python (`mkvenv`,
   `uvu`, `plo`), GCP (`inf`), macOS (`dock`), beads (`bi`), agent helpers (`rclaude`,
   `rcodex`, `headroom-install-service`), misc (`download`, `vivaldi_restore`,
@@ -219,27 +239,31 @@ Structure, in order. README links to `docs/` and stops duplicating tables.
 ### docs/utilities.md
 
 Restructure around where a tool comes from, because that is what a reader needs to know
-to reproduce it:
+to reproduce it. This page is a curated tour, not an exhaustive manifest: the casks in
+`docs/apps.md` get a completeness gate (§9), this page does not.
 
-- **Command replacements** (unchanged in substance, `cd` → `ze`, `cdi` → `zi`).
+- **Command replacements** (unchanged in substance, `cd` → `ze`).
 - **Search & navigation**: ripgrep, fd, fzf, `ze`.
 - **Shell history**: atuin (Ayu Dark, `--disable-ctrl-r`).
 - **Completions**: carapace.
 - **Version control**: delta (Ayu Dark), gh, git-lfs, jj.
-- **Network**: httpie, nmap, wget, curl, doggo.
-- **Kubernetes**: kubectl, helm, kompose — all mise-managed, k8s module not in the
-  default profile (say so).
+- **Network**: httpie, nmap, wget, curl, doggo, plus `awscli` and `gcloud` from the cloud
+  module — which the **default profile loads**.
+- **Kubernetes**: kubectl, helm, kompose. mise-managed, and the k8s module is *not* in the
+  default profile (say so, since the tools are installed anyway).
 - **Everything else, mise-managed**: jq, just, bottom, asciinema, neovim, bun, node,
   python, uv, lua/luajit, sqlite, terraform, worktrunk, hunk, tuicr, trufflehog,
-  actionlint, beads (`bd`), neo4j-cli, aura-cli, cypher-shell, and the AI CLIs
-  (claude-code, codex, opencode, pi).
-- **Homebrew formulae**: btop, fzy, gnupg, htop, httpie, less, mise, mkdocs, nmap,
-  pkgconf, trash-cli, wget, borders, kanata, mas, vorssaint.
+  actionlint, beads (`bd`), neo4j-cli, aura-cli, coreutils, clang-format, make,
+  tree-sitter, `dua`, and the AI CLIs (claude-code, codex, opencode, pi, oh-my-pi,
+  antigravity-cli).
+- **Homebrew formulae**: btop, `cypher-shell`, fzy, gnupg, htop, httpie, less, mise,
+  mkdocs, nmap, pkgconf, trash-cli, wget; plus fish, fisher, zsh (shell module), git,
+  subversion (vcs module), borders, kanata, mas, vorssaint (macos module).
 - **Installed outside both** (`~/.local/bin`): herdr.
-- **Deliberately absent**: leadr, lnav, zoxide, go, rust, awscli-as-brew.
+- **Deliberately absent**: leadr, lnav, zoxide, go, rust.
 
 Close with one sentence: the authoritative inventory is `mise/mise.*.toml` +
-`brew/Brewfile.*`, viewable via `haven list`.
+`brew/Brewfile.*`, rendered by `haven list`.
 
 ### docs/apps.md
 
@@ -248,8 +272,11 @@ Gone: Raycast, Maccy, Bartender, Shottr, Zappy, Notion, Claude Code (mise), Goog
 CLI (mise), cmux, Antigravity-the-cask. Added: Asana, Canva, Dia, Grammarly, Granola,
 Google Gemini, IINA, Claude, Antigravity CLI, Orca, `thebrowsercompany-dia`. Terminal row
 inverts (Ghostty primary, wezterm alternative). Zed's "used by `cm ed`" becomes
-"`hv ed`". VS Code's theme cell becomes Ayu Dark. Davinci Resolve noted as installable
-manually (its `mas` line is commented out); `mas` itself is a tracked brew formula.
+"`hv ed`". VS Code's theme cell becomes Ayu Dark, noting the `teabyii.ayu` extension is
+what supplies it; the tracked settings file is
+`source/private_Library/private Application Support/private Code/User/symlink_settings.json`.
+Davinci Resolve is mas-managed — its `mas` line is active (id 571213070), and `mas` itself
+is a tracked brew formula.
 
 `br in` is no longer the install command for these (§4); the page points at
 `haven apply` / `br in` per the new definition.
@@ -311,6 +338,8 @@ Delete only the `### 5. Bootstrap with just (optional)` section. Nothing else.
 | `source/dot_config/fish/functions/br.fish` | `in` → `haven apply`; drop `clean`; keep `up` (`brew update; brew upgrade; brew cleanup; brew doctor`) | `~/config/Brewfile` is an orphan that contradicts the module Brewfiles; `br clean` would zap tracked packages |
 | `source/dot_config/fish/functions/dock.fish` | `chezmoi source-path` → `haven source-path` | chezmoi is not installed; the function has been dead |
 | `source/dot_config/fish/functions/cm.fish` | delete | dead chezmoi wrapper; `hv` covers it |
+| `source/dot_config/fish/functions/cdi.fish` | delete | wraps `zi` from zoxide, which is not installed — the function silently does nothing |
+| `source/dot_config/fish/config.fish` | drop the `LEADR_CONFIG_DIR` line | leadr is being deleted; the variable is orphaned |
 | `~/config/Brewfile` | delete (untracked, in `$HOME`) | stale orphan, 2026-03-19, contradicts tracked packages |
 
 `br in` becoming `haven apply` means one command installs packages *and* files. That is
@@ -334,6 +363,10 @@ source/dot_config/fish/themes/solarized_osaka_dark.theme
 source/dot_config/wezterm/colors/osaka_dark.toml
 source/dot_config/helix/themes/Solarized_Osaka.toml
 source/dot_config/fish/functions/cm.fish
+source/dot_config/fish/functions/cdi.fish
+source/dot_config/bat/themes/rose-pine.tmTheme
+source/dot_config/bat/themes/rose-pine-dawn.tmTheme
+source/dot_config/bat/themes/rose-pine-moon.tmTheme
 ```
 
 **Home directory** — haven does not prune orphans, so each deployed copy is removed by
@@ -352,6 +385,8 @@ path after the source is gone:
 ~/.config/wezterm/colors/osaka_dark.toml
 ~/.config/helix/themes/Solarized_Osaka.toml
 ~/.config/fish/functions/cm.fish
+~/.config/fish/functions/cdi.fish
+~/.config/bat/themes/rose-pine.tmTheme, rose-pine-dawn.tmTheme, rose-pine-moon.tmTheme
 ~/config/Brewfile
 ```
 
@@ -366,7 +401,7 @@ in one of these groups:
 | File | Group |
 |---|---|
 | `ls ll la lla lt cat du df rm dig` | command replacements |
-| `cd cdi` | command replacements (ze, zoxide picker) |
+| `cd` | command replacements (→ `ze`) |
 | `hv` | haven |
 | `br` | Homebrew |
 | `jmr jjskill` | jj |
@@ -396,7 +431,12 @@ in one of these groups:
   them with the versions and date, and say they are indicative.
 - **`docs/apps.md` completeness.** Casks that are commented out of the Brewfile (cmux,
   figma, mailbird, mimestream, outlook, temurin) are simply absent from the page, not
-  listed as "not used".
+  listed as "not used". `docs/utilities.md` gets no such gate — it is a curated tour
+  ending in a pointer to `haven list`.
+- **Ayu Dark's three renderings.** wezterm gets the canonical ANSI table; the fish theme
+  and `starship.toml` are left exactly as they are (§1).
+- **wezterm is tracked but not installed.** The config migration happens anyway; the docs
+  say "alternative, installed by the macos Brewfile" rather than claiming it is live.
 - **README length.** Cut from 11.7 KB to roughly half: the plugin table, the
   command-replacement table, the CLI-enhancements table and the expanded function
   examples move to `docs/`.
@@ -404,16 +444,17 @@ in one of these groups:
 ## 9. Verification
 
 1. No tracked doc mentions: `rose-pine`, `Rosé Pine` (except the migration note in this
-   spec), `cmux`, `zoxide` (except the `cdi` picker line), `chezmoi`, `leadr`, `lnav`,
-   `sketchybar`, `raycast`, `spotlight`, `helix` as primary, `temurin-24`, `k8s` as a
-   default profile.
+   spec), `cmux`, `zoxide`, `leadr`, `lnav`, `sketchybar`, `raycast`, `spotlight`, `helix`
+   as primary, `temurin-24`, `k8s` as a default profile. `chezmoi` may appear only in
+   `docs/customizing.md`'s accurate sentence about haven using the same magic-name
+   encoding; everywhere else it is a banned word.
 2. Every relative link in README/docs resolves to a file that exists.
 3. §6 table: one doc row per function file, no function file undocumented.
 4. Every `cask` in `brew/Brewfile.macos`/`.ai` appears in `docs/apps.md`; every app in
    `docs/apps.md` exists in a Brewfile.
 5. `fish -n` parses every changed fish function; `fish -n source/dot_config/fish/config.fish`.
-6. Wezterm config loads (`wezterm --config-file ... show-keys` or equivalent) if wezterm
-   is available; otherwise a syntax check by inspection.
-7. `haven apply` succeeds, then `haven status` and `haven diff` are clean, and the files
-   in §5 home list are gone.
-8. jj only: `jj st`/`jj desc`, never `git`.
+6. wezterm is not installed on this machine, so there is no runtime check: the Lua is
+   reviewed by inspection for the colour-table shape and the removed plugin call.
+7. `haven apply --files` succeeds and `haven status` / `haven diff` are clean (packages and
+   AI skills are not part of this work — see §4). The files in §5's home list are gone.
+8. jj only: `jj st` / `jj desc`, never `git`.
