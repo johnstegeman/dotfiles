@@ -54,6 +54,7 @@ app-ids = [
     'com.amazon.QuickWork.mac',
     'Cisco-Systems.Spark',
     'com.microsoft.Outlook',
+    'com.superlogical.rex',
 ]
 
 [meeting]

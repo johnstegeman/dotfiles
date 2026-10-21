@@ -96,7 +96,7 @@ Macos = "\uf179" # nf-fa-apple
 Linux = "\uf17c" # nf-fa-linux
 
 [directory]
-format = "[$path]($style)"
+format = "[$path]($style) "
 style = "fg:orange"
 truncation_length = 5
 truncate_to_repo = false
