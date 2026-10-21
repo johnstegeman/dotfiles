@@ -119,5 +119,5 @@ style = "fg:red"
 symbol = " "
 
 [character]
-success_symbol = "[❯](fg:cyan) "
-error_symbol = "[❯](fg:red) "
+success_symbol = "[❯](fg:cyan)"
+error_symbol = "[❯](fg:red)"
