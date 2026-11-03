@@ -11,7 +11,7 @@
 # Transience is enabled in config.fish (`enable_transience`); the transient ❯ is rendered by
 # functions/starship_transient_prompt_func.fish.
 
-palette = "ayu-dark"
+palette = "catppuccin_mocha"
 
 add_newline = true
 
@@ -30,6 +30,34 @@ green = "#AAD94C"   # additions, python
 cyan = "#39BAE6"    # bookmarks, branches, prompt character
 purple = "#D2A6FF"  # jj change id (fish_color_param)
 
+[palettes.catppuccin_mocha]
+rosewater = "#f5e0dc"
+flamingo = "#f2cdcd"
+pink = "#f5c2e7"
+mauve = "#cba6f7"
+red = "#f38ba8"
+maroon = "#eba0ac"
+peach = "#fab387"
+yellow = "#f9e2af"
+green = "#a6e3a1"
+teal = "#94e2d5"
+sky = "#89dceb"
+sapphire = "#74c7ec"
+blue = "#89b4fa"
+lavender = "#b4befe"
+text = "#cdd6f4"
+subtext1 = "#bac2de"
+subtext0 = "#a6adc8"
+overlay2 = "#9399b2"
+overlay1 = "#7f849c"
+overlay0 = "#6c7086"
+surface2 = "#585b70"
+surface1 = "#45475a"
+surface0 = "#313244"
+base = "#1e1e2e"
+mantle = "#181825"
+crust = "#11111b"
+
 # --- VCS ----------------------------------------------------------------------
 # jj first, git otherwise. jj_modules/git_modules spell out the segment order.
 [vcs]
@@ -41,14 +69,14 @@ git_modules = "$git_branch$git_status$git_metrics"
 [jj_bookmark]
 format = "[$symbol$bookmark(@$remote)]($style) "
 symbol = "\ue0a0 "
-style = "fg:cyan"
+style = "fg:teal"
 truncation_length = 32
 
 # Change id (no commit id — see bead haven-9ay).
 [jj_change]
 format = "$change "
-prefix_style = "fg:purple"
-suffix_style = "fg:purple"
+prefix_style = "fg:lavender"
+suffix_style = "fg:lavender"
 change_hash_length = 6
 
 # Lines added/removed in the working-copy change.
@@ -59,12 +87,12 @@ only_nonzero_diffs = true
 # Per-file status flags: ! conflicted, ◆ immutable, ~ modified, + added, ✘ deleted, » renamed.
 # jj's "empty description" marker (◌) only exists inside $all, which has a single style, so it is not shown.
 [jj_status]
-format = "([$conflicted](fg:red)[$immutable](fg:comment)[$modified](fg:yellow)[$added](fg:green)[$deleted](fg:red)[$renamed](fg:orange) )"
+format = "([$conflicted](fg:red)[$immutable](fg:comment)[$modified](fg:yellow)[$added](fg:green)[$deleted](fg:red)[$renamed](fg:peach) )"
 
 [git_branch]
 format = "[$symbol$branch]($style) "
 symbol = "\ue0a0 "
-style = "fg:cyan"
+style = "fg:teal"
 truncation_length = 32
 
 [git_status]
@@ -97,7 +125,7 @@ Linux = "\uf17c" # nf-fa-linux
 
 [directory]
 format = "[$path]($style) "
-style = "fg:orange"
+style = "fg:peach"
 truncation_length = 5
 truncate_to_repo = false
 
@@ -119,5 +147,5 @@ style = "fg:red"
 symbol = " "
 
 [character]
-success_symbol = "[❯](fg:cyan)"
+success_symbol = "[❯](fg:teal)"
 error_symbol = "[❯](fg:red)"

@@ -11,7 +11,7 @@ status is-interactive; and begin
     test -d ~/bin; and fish_add_path ~/bin
     test -d ~/.cargo/bin; and fish_add_path ~/.cargo/bin
 
-    fish_config theme choose "Ayu Dark"
+    fish_config theme choose "catppuccin-mocha"
 
     # Prompt: starship, configured in ~/.config/starship.toml with the Ayu Dark palette.
     # enable_transience collapses finished prompts; starship_transient_prompt_func keeps the
