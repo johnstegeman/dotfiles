@@ -71,7 +71,11 @@ function ginit --description "Initialize a new worktrunk + jj + beads repo from 
         '[post-start]' \
         'copy = "wt step copy-ignored --require-include"' \
         '[post-remove]' \
-        'jj = "jj workspace forget {{ branch }} 2>/dev/null || true"' \
+        # Forget the jj workspace by the one name worktrunk always has: the path
+        # it just removed. `{{ branch }}` cannot be used here -- it is undefined
+        # for a detached worktree, which is all `jj workspace add` creates, so
+        # the template failed to expand and the hook never ran at all.
+        'jj = "jj workspace list -T '\''name ++ \"|\" ++ root ++ \"\\n\"'\'' | awk -F'\''|'\'' -v p='\''{{ worktree_path }}'\'' '\''$2==p{print $1}'\'' | xargs jj workspace forget 2>/dev/null || true"' \
         >.config/wt.toml
     git add -A
     git commit -qm "seed: README, gitignore, worktreeinclude, worktrunk post-start hooks"

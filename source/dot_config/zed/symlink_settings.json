@@ -70,7 +70,7 @@
   "theme": {
     "mode": "dark",
     "light": "Ayu Light",
-    "dark": "Ayu Dark"
+    "dark": "Catppuccin Mocha"
   },
   "languages": {
     "AsciiDoc": {

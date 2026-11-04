@@ -4,7 +4,7 @@ style = "full"
 search_mode = "daemon-fuzzy"
 
 [theme]
-name = "ayu-dark"
+name = "catppuccin-mocha-lavender"
 
 [daemon]
 enabled = true

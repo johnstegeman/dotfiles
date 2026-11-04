@@ -9,6 +9,7 @@ status is-interactive; and begin
     test -d /opt/homebrew/opt/trash-cli/bin; and fish_add_path /opt/homebrew/opt/trash-cli/bin
     test -d /Users/jstegeman/.swiftly/bin; and fish_add_path /Users/jstegeman/.swiftly/bin
     test -d ~/bin; and fish_add_path ~/bin
+    test -d ~/.local/bin; and fish_add_path ~/.local/bin
     test -d ~/.cargo/bin; and fish_add_path ~/.cargo/bin
 
     fish_config theme choose "catppuccin-mocha"
@@ -52,6 +53,10 @@ status is-interactive; and begin
 
     if using swiftly
        source "/Users/jstegeman/.swiftly/env.fish"
+    end
+
+    if using djo
+       djo shell completion fish | source
     end
 
 end

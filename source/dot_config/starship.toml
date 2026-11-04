@@ -96,7 +96,7 @@ style = "fg:teal"
 truncation_length = 32
 
 [git_status]
-format = "([$conflicted](fg:red))([$deleted](fg:red))([$renamed](fg:orange))([$modified](fg:yellow))([$staged](fg:green))([$untracked](fg:yellow))([$stashed](fg:yellow))([$ahead_behind](fg:cyan) )"
+format = "([$conflicted](fg:red))([$deleted](fg:red))([$renamed](fg:peach))([$modified](fg:yellow))([$staged](fg:green))([$untracked](fg:yellow))([$stashed](fg:yellow))([$ahead_behind](fg:cyan) )"
 # ahead/behind/diverged must be spelled out: the built-in defaults for these render the arrows
 # without the counts (verified: default gives "⇡", these give "⇡1").
 ahead = " ⇡${count}"
