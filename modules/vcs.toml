@@ -1,9 +1,4 @@
 requires_op = false
 
-
-[homebrew]
-brewfile = "brew/Brewfile.vcs"
-sort = true
-
 [mise]
 config = "mise/mise.vcs.toml"

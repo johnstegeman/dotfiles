@@ -2,7 +2,7 @@
 # Run `haven help` for usage.
 
 [profile.default]
-modules = ["shell", "utilities", "vcs", "cloud"]
+modules = ["shell", "utilities", "vcs", "cloud", "k8s"]
 
 [profile.macos]
 extends = "default"
